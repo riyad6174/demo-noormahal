@@ -1,0 +1,42 @@
+{
+  "name": "nm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.5.1",
+    "@plaiceholder/next": "^3.0.0",
+    "aos": "^2.3.4",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1",
+    "framer-motion": "^10.12.16",
+    "google-spreadsheet": "^4.0.2",
+    "googleapis": "^120.0.0",
+    "html-react-parser": "^4.0.0",
+    "lqip": "^2.1.0",
+    "moment": "^2.29.4",
+    "next": "13.4.7",
+    "plaiceholder": "^3.0.0",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-datepicker": "^4.14.1",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.1",
+    "react-html-parser": "^2.0.2",
+    "react-icons": "^4.10.1",
+    "react-image-gallery": "^1.2.12",
+    "react-photo-gallery": "^8.0.0",
+    "react-player": "^2.12.0",
+    "sass": "^1.63.6",
+    "sharp": "^0.32.2",
+    "swiper": "^9.4.1"
+  }
+}

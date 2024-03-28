@@ -1,0 +1,17 @@
+.containerInsta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+
+.containerInsta img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: all 100ms ease-out;
+}
+
+.containerInsta img:hover {
+  transform: scale(1.04);
+}

@@ -1,0 +1,197 @@
+// .terms_wrapper {
+//   .header_area {
+//     max-width: 850px;
+//     width: 100%;
+//   }
+//   .term_area {
+//     position: relative;
+//     margin-top: 50px;
+//     padding: 60px 0;
+//     background: #f5efe7;
+//     @include media-break-width(1200, 1499) {
+//       padding: 50px 0;
+//     }
+//     @include media-break-width(992, 1199) {
+//       margin-top: 40px;
+//       padding: 40px 0;
+//     }
+//     @include media-break-width(768, 991) {
+//       padding: 30px 0;
+//     }
+//     @include max-media-width(991) {
+//       margin-top: 30px;
+//     }
+//     @include max-media-width(767) {
+//       padding: 20px 0;
+//     }
+//   }
+//   .blog-container {
+//     position: relative;
+//     z-index: 5;
+//   }
+//   .left_shape {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//   }
+//   .right_shape {
+//     position: absolute;
+//     bottom: 0;
+//     right: 0;
+//   }
+//   .accordion {
+//     @include max-media-width(1199) {
+//       padding: 0 30px;
+//     }
+//   }
+//   .accordion-item {
+//     margin-bottom: 20px;
+//     padding-bottom: 20px;
+//     border: none;
+//     border-bottom: 1px solid #000;
+//     background-color: transparent;
+//     border-radius: 0;
+//     -webkit-border-radius: 0;
+//     -moz-border-radius: 0;
+//     -ms-border-radius: 0;
+//     -o-border-radius: 0;
+//     @include max-media-width(991) {
+//       padding-bottom: 10px;
+//     }
+//   }
+//   .accordion-header {
+//     position: relative;
+//   }
+//   .icon_area {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 28px;
+//     height: 28px;
+//     border-radius: 50%;
+//     border: 1px solid black;
+//     i {
+//       font-size: 22px;
+//     }
+//     .minus_icon {
+//       display: none;
+//     }
+//   }
+//   .accordion-button {
+//     position: relative;
+//     font-family: timeFontRegular;
+//     font-size: 21px;
+//     text-transform: uppercase;
+//     color: #000;
+//     letter-spacing: 1px;
+//     padding: 0;
+//     border: none;
+//     box-shadow: none;
+//     background-color: transparent;
+//     padding-right: 28px;
+//     @include media-break-width(992, 1199) {
+//       font-size: 21px;
+//     }
+//     @include media-break-width(768, 991) {
+//       font-size: 20px;
+//     }
+//     @include max-media-width(767) {
+//       font-size: 18px;
+//     }
+//     &:focus {
+//       border: none;
+//       outline: none;
+//       box-shadow: none;
+//     }
+//     &::after {
+//       display: none;
+//     }
+//     &:not(.collapsed) {
+//       .icon_area {
+//         .plus_icon {
+//           display: none;
+//         }
+//         .minus_icon {
+//           display: block;
+//         }
+//       }
+//     }
+//   }
+//   .accordion-body {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+//   .term_content_item {
+//     margin-top: 30px;
+//     h4 {
+//       font-size: 21px;
+//       font-weight: 600;
+//       @include max-media-width(991) {
+//         font-size: 19px;
+//       }
+//     }
+//     p {
+//       margin-top: 20px;
+//       @include max-media-width(991) {
+//         margin-top: 10px;
+//       }
+//     }
+//   }
+//   .terms_list {
+//     padding-left: 20px;
+//     margin-top: 20px;
+//     @include max-media-width(991) {
+//       margin-top: 10px;
+//     }
+//     p {
+//       margin: 0px;
+//     }
+//     li {
+//       list-style-type: disc;
+//     }
+//   }
+//   .terms_space_list {
+//     li {
+//       margin-bottom: 16px;
+//       @include max-media-width(991) {
+//         margin-top: 6px;
+//       }
+//     }
+//   }
+// }
+
+section .section-title {
+  text-align: center;
+  color: #f5efe7;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+#tabs {
+  background: #f5efe7;
+  color: #636360;
+}
+#tabs h6.section-title {
+  color: #4e4d4d;
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #f3f3f3;
+  background-color: transparent;
+  border-color: transparent transparent #f3f3f3;
+  border-bottom: 2px solid !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+#tabs .nav-tabs .nav-link {
+  // border: 1px solid transparent;
+  // border-top-left-radius: 0.25rem;
+  // border-top-right-radius: 0.25rem;
+  color: #141111;
+  font-size: 20px;
+  border-radius: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
