@@ -1,12 +1,16 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
+import image1 from '../../../public/assets/images/dinings/frontier_mail_1.jpg';
+import image4 from '../../../public/assets/images/dinings/polobar1.jpg';
+import image2 from '../../../public/assets/images/dinings/dining_img2.png';
+import image5 from '../../../public/assets/images/dinings/Khaas_Mahal.jpg';
+import image6 from '../../../public/assets/images/dinings/cakefactory.jpg';
 import Head from 'next/head';
 import DiningBanner from '@/components/organisms/Banners/DiningPageBanner';
 // import image1 from '/public/assets/images/shape/place_shape.png'
 import { useForm } from 'react-hook-form';
-import { getDining, postBook } from '@/utils/API';
-import HtmlParser from 'react-html-parser';
-function page({ dinningData }) {
+// import Layout from '@/components/Layout';
+function page() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -37,45 +41,27 @@ function page({ dinningData }) {
       console.error('Error submitting form data:', error);
     }
 
-    try {
-      setIsLoading(true);
-      data.title = 'dining';
-      data.type = 'book';
-      const response = await postBook(data);
-      setIsLoading(false);
-      if (response.status == 200 || response.status == 200) {
-        console.log('Form data submitted successfully!');
-        setIsSubmitted(true);
-      } else {
-        console.error('Failed to submit form data.');
-      }
-    } catch (error) {
-      console.error('Error submitting form data:', error);
-    }
-
     // Reset the form after submission
     reset();
   };
   return (
     <div>
+      <Head>
+        <title>Exquisite Dining | Noormahal Palace</title>
+        <meta
+          name='keywords'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+        />
+        <meta
+          name='description'
+          content="Indulge in a culinary journey of flavors at Noormahal Palace's dining venues.From traditional delights to international cuisines, elevate your dining experience with us."
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
+      {/* <Layout> */}
       <main>
-        <Head>
-          <title>
-            Hotel with Restaurants in Karnal – Hotel NoorMahal Palace
-          </title>
-          <meta
-            name='keywords'
-            content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
-          />
-          <meta
-            name='description'
-            content='⦁	A hotel with restaurants in Karnal, NoorMahal Palace has a 24 hour coffee shop, multi-cuisine and open air restaurant, Cake Factory and a Royal Sports Bar. Book your table now!'
-          />
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
-          <link rel='icon' href='/favicon.ico' />
-        </Head>
         <DiningBanner />
-
         {/* <!-- Dinner   Section  --> */}
         <section className='dining_wrapper facilities_wrapper'>
           <div className='header_area text-center mx-auto'>
@@ -101,109 +87,301 @@ function page({ dinningData }) {
           </div>
 
           <div className='dining_item_area'>
-            {dinningData?.map((dine, index) => {
-              if (index % 2 == 0) {
-                return (
-                  <div key={index} className='dining_grid'>
-                    <div className='img' data-aos='fade-right'>
-                      <Image
-                        width={1000}
-                        height={600}
-                        src={`https://api.noormahalpalace.com/${dine.images[0].path}`}
-                        alt='dinings image'
-                      />
+            <div className='dining_grid'>
+              <div className='img' data-aos='fade-right'>
+                <img
+                  src='assets/images/meetings/Lounge.jpg'
+                  alt='dinings image'
+                />
+              </div>
+              <div className='content' data-aos='fade-left'>
+                <div className='inner_content_area mx-auto d-flex flex-column justify-content-center align-items-center'>
+                  <h3 className='heading_title text-center text-uppercase'>
+                    THE LOUNGE
+                  </h3>
+                  <p>
+                    The Lounge Access is on the Lobby Floor of the hotel for an
+                    ultra quick check in with welcome drinks on arrival. On
+                    special occasions, you can access the lounge in the evening
+                    for complimentary drinks and light snacks.
+                  </p>
+                  <div className='d-flex justify-content-center align-items-baseline  gap-3 total-capacity'>
+                    <div className='d-flex flex-column justify-content-center align-items-center gap-3'>
+                      <p className='text-uppercase'>total capacity</p>
+                      <p style={{ fontSize: '28px' }}>35</p>
                     </div>
-                    <div className='content' data-aos='fade-left'>
-                      <div className='inner_content_area mx-auto d-flex flex-column justify-content-center align-items-center'>
-                        <h3 className='heading_title text-center text-uppercase'>
-                          {dine.title}
-                        </h3>
-                        <span>{HtmlParser(dine?.description)}</span>
-                        {dine.totalCapacity && dine.settingCapacity > 0 ? (
-                          <div className='d-flex justify-content-center align-items-baseline  gap-3 total-capacity'>
-                            <div className='d-flex flex-column justify-content-center align-items-center gap-3'>
-                              <p className='text-uppercase'>total capacity</p>
-                              <p style={{ fontSize: '28px' }}>
-                                {dine?.totalCapacity}
-                              </p>
-                            </div>
-                            <div>|</div>
-                            <div className='d-flex  flex-column justify-content-center align-items-center gap-3'>
-                              <p className='text-uppercase'>Seating capacity</p>
-                              <p style={{ fontSize: '28px' }}>
-                                {dine?.settingCapacity}
-                              </p>
-                            </div>
-                          </div>
-                        ) : null}
-
-                        <div className='text-center'>
-                          <button
-                            className='book_table_btn'
-                            data-bs-toggle='modal'
-                            data-bs-target='#exampleModal'
-                          >
-                            <span>{dine?.btnName} </span>
-                          </button>
-                        </div>
-                      </div>
+                    <div>|</div>
+                    <div className='d-flex  flex-column justify-content-center align-items-center gap-3'>
+                      <p className='text-uppercase'>Seating capacity</p>
+                      <p style={{ fontSize: '28px' }}>30</p>
                     </div>
                   </div>
-                );
-              } else {
-                return (
-                  <div key={index} className='dining_grid'>
-                    <div className='img' data-aos='fade-right'>
-                      <img
-                        src={`https://api.noormahalpalace.com/${dine.images[0].path}`}
-                        alt='dinings image'
-                      />
-                    </div>
-                    <div className='content' data-aos='fade-left'>
-                      <div className='inner_content_area mx-auto d-flex flex-column justify-content-center align-items-center'>
-                        <h3 className='heading_title text-center text-uppercase'>
-                          {dine.title}
-                        </h3>
-                        <span> {HtmlParser(dine?.description)}</span>
-                        {dine.totalCapacity > 0 &&
-                          dine.settingCapacity >
-                            0(
-                              <div className='d-flex justify-content-center align-items-baseline  gap-3 total-capacity'>
-                                <div className='d-flex flex-column justify-content-center align-items-center gap-3'>
-                                  <p className='text-uppercase'>
-                                    total capacity
-                                  </p>
-                                  <p style={{ fontSize: '28px' }}>
-                                    {dine?.totalCapacity}
-                                  </p>
-                                </div>
-                                <div>|</div>
-                                <div className='d-flex  flex-column justify-content-center align-items-center gap-3'>
-                                  <p className='text-uppercase'>
-                                    Seating capacity
-                                  </p>
-                                  <p style={{ fontSize: '28px' }}>
-                                    {dine?.seatingCapacity}
-                                  </p>
-                                </div>
-                              </div>
-                            )}
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Book A Table </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='dining_grid'>
+              <div className='img' data-aos='fade-right'>
+                <img
+                  src='assets/images/dinings/Banner2.jpg'
+                  alt='dinings image'
+                />
+              </div>
+              <div className='content' data-aos='fade-left'>
+                <div className='inner_content_area mx-auto'>
+                  <h3 className='heading_title text-center text-uppercase'>
+                    Jal Mahal
+                  </h3>
+                  <p>
+                    Jal Mahal adoring the Beauty of Noormahal Palace, bringing
+                    you the perfect reflections. Enjoy a perfect getaway with
+                    your family and friends at Noormahal Palace and take
+                    beautiful memories away.
+                  </p>
 
-                        <div className='text-center'>
-                          <button
-                            className='book_table_btn'
-                            data-bs-toggle='modal'
-                            data-bs-target='#exampleModal'
-                          >
-                            <span>{dine?.btnName} </span>
-                          </button>
-                        </div>
-                      </div>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Book A Table </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='dining_grid'>
+              <div className='img' data-aos='fade-right'>
+                <Image
+                  width={1000}
+                  height={1000}
+                  src={image1}
+                  alt='dinings image'
+                />
+              </div>
+              <div className='content' data-aos='fade-left'>
+                <div className='inner_content_area mx-auto'>
+                  <h3 className='heading_title text-center text-uppercase'>
+                    The Frontier Mail
+                  </h3>
+                  <p>
+                    Step back in time with our award winning restaurant, which
+                    takes its inspiration from the legendry Frontier Mail train
+                    that operated between Bombay and Peshawar during the
+                    pre-independence days. The menu comprises of cuisines from
+                    the regions through which the train made its initial
+                    journey.
+                  </p>
+                  <div className='time_grid'>
+                    <div className='d-flex flex-column justify-content-start align-items-start text-center'>
+                      <li style={{ fontSize: '19px', listStyleType: 'disc' }}>
+                        Lunch Timing
+                      </li>
+                      <p style={{ marginLeft: '25px', paddingTop: '10px' }}>
+                        Monday to Sunday
+                      </p>
+                      <p style={{ marginLeft: '25px' }}>
+                        12:30 hrs - 15:30 hrs
+                      </p>
+                    </div>
+                    <div className='d-flex flex-column justify-content-start align-items-start'>
+                      <li style={{ fontSize: '19px', listStyleType: 'disc' }}>
+                        Dinner Timing
+                      </li>
+                      <p style={{ marginLeft: '25px', paddingTop: '10px' }}>
+                        {' '}
+                        Only on Saturday and Sunday{' '}
+                      </p>
+                      <p style={{ marginLeft: '25px' }}>
+                        19:30 hrs - 23:00 hrs
+                      </p>
                     </div>
                   </div>
-                );
-              }
-            })}
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Book A Table </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='dining_grid'>
+              <div className='img' data-aos='fade-right'>
+                <Image
+                  width={1000}
+                  height={1000}
+                  src={image2}
+                  alt='dinings image'
+                />
+              </div>
+              <div className='content' data-aos='fade-left'>
+                <div className='inner_content_area mx-auto'>
+                  <h3 className='heading_title text-center text-uppercase'>
+                    The Brown Sugar
+                  </h3>
+                  <p>
+                    A place where you can enjoy an international dining
+                    experience that is quite unforgettable, this all day diner
+                    offers buffet meals as well as an à la carte menu. Relax,
+                    entertain or conduct leisurely meetings over a wide range of
+                    exotic teas, coffees and savories. It also features
+                    delectable buffet meals.
+                  </p>
+
+                  <div className='time_grid'>
+                    <div className='d-flex flex-column justify-content-start align-items-start'>
+                      <li style={{ fontSize: '19px', listStyleType: 'disc' }}>
+                        Round the Clock
+                      </li>
+                      <p style={{ marginLeft: '1.6em', paddingTop: '10px' }}>
+                        24 hrs Coffee Shop
+                      </p>
+                    </div>
+                    <div className='d-flex flex-column justify-content-start align-items-start'>
+                      <li style={{ fontSize: '19px', listStyleType: 'disc' }}>
+                        Buffet Breakfast Timing
+                      </li>
+                      <p style={{ marginLeft: '1.6em', paddingTop: '10px' }}>
+                        {' '}
+                        07:00 hrs - 10:30 hrs{' '}
+                      </p>
+                    </div>
+                  </div>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Book A Table </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='dining_grid'>
+              <div className='img' data-aos='fade-right'>
+                <Image
+                  width={1000}
+                  height={1000}
+                  src={image4}
+                  alt='dinings image'
+                />
+              </div>
+              <div className='content' data-aos='fade-left'>
+                <div className='inner_content_area mx-auto'>
+                  <h3 className='heading_title text-center text-uppercase'>
+                    The Polo Bar
+                  </h3>
+                  <p>
+                    Adorned with trophies and memorabilia of the yesteryears,
+                    this colonial style English bar serves signature cocktails
+                    inspired by the royal sport. The shelves are lined with the
+                    finest rare whiskies, single malts, cognacs, wines and
+                    liqueurs, and a hand-picked selection of Cuban cigars.
+                  </p>
+
+                  <div className=''>
+                    <div className='d-flex flex-column justify-content-start align-items-start'>
+                      <li style={{ fontSize: '19px', listStyleType: 'disc' }}>
+                        Bar Timing
+                      </li>
+                      <p style={{ marginLeft: '1.6em', paddingTop: '10px' }}>
+                        11:00 hrs - 00:00 hrs
+                      </p>
+                    </div>
+                  </div>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Book A Table </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='dining_grid'>
+              <div className='img' data-aos='fade-right'>
+                <Image
+                  width={1000}
+                  height={1000}
+                  src={image5}
+                  alt='dinings image'
+                />
+              </div>
+              <div className='content' data-aos='fade-left'>
+                <div className='inner_content_area mx-auto'>
+                  <h3 className='heading_title text-center text-uppercase'>
+                    Khaas Mahal
+                  </h3>
+                  <p>
+                    An exclusive al fresco restaurant for a niche dining
+                    experience, this is a great place to enjoy a delectable
+                    melt-in-the-mouth meal under the light of a stellar sky.
+                    Available on special dining request.
+                  </p>
+
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Book A Table </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='dining_grid'>
+              <div className='img' data-aos='fade-right'>
+                <Image
+                  width={1000}
+                  height={1000}
+                  src={image6}
+                  alt='dinings image'
+                />
+              </div>
+              <div className='content' data-aos='fade-left'>
+                <div className='inner_content_area mx-auto'>
+                  <h3 className='heading_title text-center text-uppercase'>
+                    The Cake Factory
+                  </h3>
+                  <p>
+                    The Cake Factory offers a delicious spread of freshly baked
+                    hand-crafted breads, tarts, an assortment of savories as
+                    well as freshly baked cakes, pastries, pralines and
+                    truffles.
+                  </p>
+
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Book A Table </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <div
@@ -382,23 +560,9 @@ function page({ dinningData }) {
           </div>
         </div>
       </main>
+      {/* </Layout> */}
     </div>
   );
 }
 
 export default page;
-
-export async function getServerSideProps() {
-  try {
-    const responseDinning = await getDining();
-
-    if (!responseDinning || !responseDinning.data) {
-      throw new Error('Invalid Dinning API response');
-    }
-    const dinningData = responseDinning.data.data.reverse() || [];
-    return { props: { dinningData } };
-  } catch (error) {
-    console.log(error);
-    return { props: { dinningData: [] } };
-  }
-}
