@@ -23,7 +23,7 @@ function WeddingBanner() {
   const [data, setData] = useState([]);
 
   const fetchBannerData = useCallback(async () => {
-    const response = await getBanner('wedding');
+    const response = await getBanner('weddingPlan');
     if (response && response.status) {
       if (response.data && Object.keys(response.data.data).length > 0) {
         setData(response.data?.data);
