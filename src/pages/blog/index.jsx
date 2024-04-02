@@ -1,10 +1,11 @@
-import { getBlog } from '@/utils/API';
+import { getBlog, getSeo } from '@/utils/API';
 import { BlogMain } from '@/utils/Contents/blog';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useCallback, useEffect, useState } from 'react';
 
-function page() {
+function page({ seoData }) {
   const [slicedIndex, setSlicedIndex] = useState(6);
   const [data, setData] = useState([]);
 
@@ -23,6 +24,31 @@ function page() {
   }, [fetchData]);
   return (
     <div>
+      <Head>
+        <title>
+          {seoData && seoData.metaTitle
+            ? seoData.metaTitle
+            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
+        </title>
+        <meta
+          name='keywords'
+          content={
+            seoData && seoData.keyWords
+              ? seoData.keyWords
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          }
+        />
+        <meta
+          name='description'
+          content={
+            seoData && seoData.metaDescription
+              ? seoData.metaDescription
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+          }
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <section className='blog_wrapper pt-4 default_section_gap'>
         <div className='blog-container mx-auto'>
           <div className='blog_grid'>
@@ -90,3 +116,18 @@ function page() {
 }
 
 export default page;
+
+export async function getServerSideProps() {
+  try {
+    const responseSeo = await getSeo('blog');
+
+    if (!responseSeo || !responseSeo.data) {
+      throw new Error('Invalid Seo API response');
+    }
+    const seoData = responseSeo.data.data || {};
+    return { props: { seoData } };
+  } catch (error) {
+    console.log(error);
+    return { props: { seoData: {} } };
+  }
+}

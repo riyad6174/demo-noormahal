@@ -1,11 +1,12 @@
 import MeetingBanner from '@/components/organisms/Banners/MeetingBanner';
 import MeetingSlider from '@/components/organisms/MeetingSlider';
 import MeetingSection from '@/components/pageComponents/meetingPage/MeetingSection';
-import { getMeeting } from '@/utils/API';
+import { getMeeting, getSeo } from '@/utils/API';
+import Head from 'next/head';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-function page({ meetingData }) {
+function page({ meetingData, seoData }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -41,6 +42,31 @@ function page({ meetingData }) {
   };
   return (
     <div>
+      <Head>
+        <title>
+          {seoData && seoData.metaTitle
+            ? seoData.metaTitle
+            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
+        </title>
+        <meta
+          name='keywords'
+          content={
+            seoData && seoData.keyWords
+              ? seoData.keyWords
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          }
+        />
+        <meta
+          name='description'
+          content={
+            seoData && seoData.metaDescription
+              ? seoData.metaDescription
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+          }
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <main>
         <MeetingBanner />
         {/* <!-- Dinner   Section  --> */}
@@ -219,14 +245,20 @@ export default page;
 export async function getServerSideProps() {
   try {
     const responseMeeting = await getMeeting();
+    const responseSeo = await getSeo('meeting');
 
     if (!responseMeeting || !responseMeeting.data) {
       throw new Error('Invalid Dinning API response');
     }
+    if (!responseSeo || !responseSeo.data) {
+      throw new Error('Invalid Seo API response');
+    }
     const meetingData = responseMeeting.data.data || [];
-    return { props: { meetingData } };
+    const seoData = responseSeo.data.data || {};
+
+    return { props: { meetingData, seoData } };
   } catch (error) {
     console.log(error);
-    return { props: { meetingData: [] } };
+    return { props: { meetingData: [], seoData: {} } };
   }
 }

@@ -127,19 +127,14 @@ export default function page() {
                   </div>
                 </div>
               </div> */}
-            <div className='promotion-container mx-auto'>
+            {/* <div className='promotion-container mx-auto'>
               <div className='promotion_img text-center'>
                 <img
                   src='assets/images/promotion/rangbarse.jpg'
                   alt='promotion image'
                 />
               </div>
-              {/* <div className="promotion_img text-center">
-              <img
-                src="assets/images/promotion/Staycation_Packages_19jun.jpg"
-                alt="promotion image"
-              />
-            </div> */}
+  
               <div className='d-flex gap-4 justify-content-center py-4'>
                 <a
                   href='assets/images/promotion/rangbarse.pdf'
@@ -161,7 +156,7 @@ export default function page() {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className='promotion-container mx-auto'>
               <div className='promotion_img text-center'>
                 <img

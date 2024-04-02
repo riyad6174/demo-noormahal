@@ -10,14 +10,16 @@ function Index() {
   return (
     <div>
       <Head>
-        <title>Media Covers | Noormahal Palace</title>
+        <title>Press and Media | Noormahal Palace</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='wedding venues in chandigarh,
+                wedding destination near delhi,
+                Luxury 5 Star Hotels in Karnal,'
         />
         <meta
           name='description'
-          content='⦁	Latest news, events, and media coverage of Noormahal Palace - Your gateway to a world of luxury and heritage!'
+          content='Latest news, events, and media coverage of Noormahal Palace - Your gateway to a world of luxury and heritage!'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />

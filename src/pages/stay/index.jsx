@@ -5,22 +5,33 @@ import React from 'react';
 import RoomFacilities from '@/components/pageComponents/StayPage/RoomFacilities';
 
 import Rooms from '@/components/pageComponents/StayPage/Rooms';
-import { getStayRooms } from '@/utils/API';
+import { getSeo, getStayRooms } from '@/utils/API';
 
-function page({ roomData }) {
+function page({ roomData, seoData }) {
+  console.log(seoData, 'seo data');
   return (
     <div>
       <Head>
         <title>
-          Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace
+          {seoData && seoData.metaTitle
+            ? seoData.metaTitle
+            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
         </title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content={
+            seoData && seoData.keyWords
+              ? seoData.keyWords
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          }
         />
         <meta
           name='description'
-          content='An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+          content={
+            seoData && seoData.metaDescription
+              ? seoData.metaDescription
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+          }
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -43,10 +54,7 @@ function page({ roomData }) {
               the splendour of the Indian Royalty at Noormahal Palace, ‘The
               Jewel of Karnal’.
             </p>
-            <p>
-              Please note that the pool at our hotel will be closed for
-              maintenance from March 16th to March 24th, 2024.
-            </p>
+
             <div className='shape2'>
               <img
                 src='assets/images/shape/experience_shape.png'
@@ -68,14 +76,19 @@ export default page;
 export async function getServerSideProps() {
   try {
     const responseRoom = await getStayRooms();
+    const responseSeo = await getSeo('stay');
 
     if (!responseRoom || !responseRoom.data) {
       throw new Error('Invalid STAY API response');
     }
+    if (!responseSeo || !responseSeo.data) {
+      throw new Error('Invalid Seo API response');
+    }
     const roomData = responseRoom.data.data || [];
-    return { props: { roomData } };
+    const seoData = responseSeo.data.data || {};
+    return { props: { roomData, seoData } };
   } catch (error) {
     console.log(error);
-    return { props: { roomData: [] } };
+    return { props: { roomData: [], seoData: {} } };
   }
 }

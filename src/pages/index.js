@@ -4,25 +4,39 @@ import { Inter } from 'next/font/google';
 import Navbar from '@/components/organisms/Navbar';
 import StorySection from '@/components/StorySection';
 import SwiperBanner from '@/components/organisms/Slider';
-import { getAmenities, getExperience, getNews } from '@/utils/API';
+import { getAmenities, getExperience, getNews, getSeo } from '@/utils/API';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home({ newsData, amenitiesData, experienceData }) {
+export default function Home({
+  newsData,
+  amenitiesData,
+  experienceData,
+  seoData,
+}) {
   return (
     <>
       <Head>
         <title>
-          Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel
-          NoorMahal Palace, Karnal
+          {seoData && seoData.metaTitle
+            ? seoData.metaTitle
+            : '  Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'}
         </title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content={
+            seoData && seoData.keyWords
+              ? seoData.keyWords
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          }
         />
         <meta
           name='description'
-          content='One of the best 5 star luxury business hotels in Karnal, Panipat, Kurukshetra Haryana, NoorMahal Palace is located near IOCL, bus stand and railway station. Book online and get best deals.'
+          content={
+            seoData && seoData.metaDescription
+              ? seoData.metaDescription
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+          }
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -44,6 +58,7 @@ export async function getServerSideProps() {
     const newsResponse = await getNews();
     const amenitiesResponse = await getAmenities();
     const experienceRespone = await getExperience();
+    const responseSeo = await getSeo('overview');
 
     if (!newsResponse || !newsResponse.data) {
       throw new Error('Invalid news API response');
@@ -55,18 +70,27 @@ export async function getServerSideProps() {
     if (!experienceRespone || !experienceRespone.data) {
       throw new Error('Invalid amenities API response');
     }
+    if (!responseSeo || !responseSeo.data) {
+      throw new Error('Invalid Seo API response');
+    }
 
     const newsData = newsResponse?.data?.data || [];
     const amenitiesData = amenitiesResponse.data.data || [];
     const experienceData = experienceRespone.data.data || [];
+    const seoData = responseSeo.data.data || {};
 
     return {
-      props: { newsData, amenitiesData, experienceData },
+      props: { newsData, amenitiesData, experienceData, seoData },
     };
   } catch (error) {
     console.error('Error fetching data:', error);
     return {
-      props: { newsData: [], amenitiesData: [], experienceData: [] },
+      props: {
+        newsData: [],
+        amenitiesData: [],
+        experienceData: [],
+        seoData: {},
+      },
     };
   }
 }

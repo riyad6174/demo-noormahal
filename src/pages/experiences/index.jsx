@@ -7,12 +7,38 @@ import ExperiencesSection from '@/components/pageComponents/experiencePage/Exper
 import GymForm from '@/components/pageComponents/experiencePage/GymForm';
 import RecreationForm from '@/components/pageComponents/experiencePage/RecreationForm';
 import SpaForm from '@/components/pageComponents/experiencePage/SpaForm';
-import { getExperience, getExperiencesData } from '@/utils/API';
+import { getExperience, getExperiencesData, getSeo } from '@/utils/API';
+import Head from 'next/head';
 import React from 'react';
 
-function page({ experienceData }) {
+function page({ experienceData, seoData }) {
   return (
     <div>
+      <Head>
+        <title>
+          {seoData && seoData.metaTitle
+            ? seoData.metaTitle
+            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
+        </title>
+        <meta
+          name='keywords'
+          content={
+            seoData && seoData.keyWords
+              ? seoData.keyWords
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          }
+        />
+        <meta
+          name='description'
+          content={
+            seoData && seoData.metaDescription
+              ? seoData.metaDescription
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+          }
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <SpaBanner />
       <main>
         {/* <!-- Dinner   Section  --> */}
@@ -158,14 +184,20 @@ export default page;
 export async function getServerSideProps() {
   try {
     const responseExperience = await getExperiencesData();
+    const responseSeo = await getSeo('experience');
 
     if (!responseExperience || !responseExperience.data) {
       throw new Error('Invalid Dinning API response');
     }
+    if (!responseSeo || !responseSeo.data) {
+      throw new Error('Invalid Seo API response');
+    }
     const experienceData = responseExperience.data.data.reverse() || [];
-    return { props: { experienceData } };
+    const seoData = responseSeo.data.data || {};
+
+    return { props: { experienceData, seoData } };
   } catch (error) {
     console.log(error);
-    return { props: { experienceData: [] } };
+    return { props: { experienceData: [], seoData: {} } };
   }
 }

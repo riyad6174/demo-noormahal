@@ -140,7 +140,7 @@ function index() {
           </div>
         </div>
       </section>
-      <FloatingButton />
+      {/* <FloatingButton /> */}
     </div>
   );
 }

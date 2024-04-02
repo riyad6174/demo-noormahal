@@ -311,3 +311,14 @@ export async function getSettings() {
   const response = await Axios.get(`${baseURL}/setting/NM2020242361`, header);
   return response;
 }
+
+//seo
+
+export async function getSeo(pageName) {
+  const header = {
+    header: 'Content-Type:application/json',
+  };
+  const response = await Axios.get(`${baseURL}/seo/${pageName}`, header);
+  console.log(baseURL);
+  return response;
+}

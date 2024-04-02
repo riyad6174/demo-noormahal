@@ -3,12 +3,12 @@ import EventGallarySlider from '@/components/organisms/EventGallarySlider';
 import EventPlan from '@/components/pageComponents/weddingPage/EventPlan';
 import Memories from '@/components/pageComponents/weddingPage/Memories';
 import SpecialService from '@/components/pageComponents/weddingPage/SpecialService';
-import { getEvent, postEnquire } from '@/utils/API';
+import { getEvent, getSeo, postEnquire } from '@/utils/API';
 import Head from 'next/head';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-function page({ eventData }) {
+function page({ eventData, seoData }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -63,16 +63,25 @@ function page({ eventData }) {
     <>
       <Head>
         <title>
-          Wedding Venues in Karnal - Royal Indian, Destination Weddings near
-          Delhi, Chandigarh, Punjab
+          {seoData && seoData.metaTitle
+            ? seoData.metaTitle
+            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
         </title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content={
+            seoData && seoData.keyWords
+              ? seoData.keyWords
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          }
         />
         <meta
           name='description'
-          content='An ideal royal Indian destination wedding venue in Karnal near Delhi, Chandigarh and Punjab, pre-wedding venues near Chandigarh, Pre-weddings shoot near delhi, NoorMahal Palace has banquet halls in Karnal. Enquire online and get the best deals on the official website.'
+          content={
+            seoData && seoData.metaDescription
+              ? seoData.metaDescription
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+          }
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -280,14 +289,20 @@ export default page;
 export async function getServerSideProps() {
   try {
     const responseEvent = await getEvent();
+    const responseSeo = await getSeo('weddingPlan');
 
     if (!responseEvent || !responseEvent.data) {
       throw new Error('Invalid Dinning API response');
     }
+    if (!responseSeo || !responseSeo.data) {
+      throw new Error('Invalid Seo API response');
+    }
     const eventData = responseEvent.data.data || [];
-    return { props: { eventData } };
+    const seoData = responseSeo.data.data || {};
+
+    return { props: { eventData, seoData } };
   } catch (error) {
     console.log(error);
-    return { props: { eventData: [] } };
+    return { props: { eventData: [], seoData: {} } };
   }
 }

@@ -20,11 +20,12 @@ function ExperiencesSection({ experienceData }) {
           if (index % 2 === 0) {
             return (
               <div key={index} className='dining_grid'>
-                <div className='img'>
+                {/* <div className='img'>
                   <img
                     src={`https://api.noormahalpalace.com/${experience?.service[0].images[0].path}`}
                   />
-                </div>
+                </div> */}
+                <RecrationalSlider images={experience.service[0].images} />
                 <div className='content'>
                   <div className='inner_content_area mx-auto'>
                     <h3 className='heading_title text-center'>
