@@ -5,6 +5,7 @@ import faqImage from '../../../public/assets/images/faq/lobby.jpg';
 import { getFaq } from '@/utils/API';
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Head from 'next/head';
 function index() {
   const [faqData, setFaqData] = useState([]);
 
@@ -26,6 +27,21 @@ function index() {
 
   return (
     <div>
+      <Head>
+        <title>Frequently Asked Questions | Noormahal Palace</title>
+        <meta
+          name='keywords'
+          content='wedding venues in chandigarh,
+                wedding destination near delhi,
+                Luxury 5 Star Hotels in Karnal,'
+        />
+        <meta
+          name='description'
+          content='Find answers to commonly asked questions about Noormahal Palace, including accommodations, amenities, dining, events, and more.'
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <StayBanner />
       <main>
         {/* <!-- Faq  Section  --> */}

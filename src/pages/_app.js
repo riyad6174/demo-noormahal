@@ -18,6 +18,7 @@ import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 // 3rd party css
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { getSettings } from '@/utils/API';
+import { StructuredData } from '@/components/StructuredData';
 
 export default function App({ Component, pageProps }) {
   const [data, setData] = useState([]);
@@ -70,6 +71,8 @@ export default function App({ Component, pageProps }) {
       {showContent && (
         <>
           <GoogleAnalytics />
+          <StructuredData />
+
           <Navbar data={data} />
           <Component {...pageProps} />
           <Footer data={data} />

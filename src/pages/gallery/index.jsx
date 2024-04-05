@@ -1,11 +1,25 @@
 import AllImages from '@/components/pageComponents/galleryPage/AllImages';
 import { FloatingButton } from '@/components/pageComponents/galleryPage/FloatingButton';
+import Head from 'next/head';
 
 import React from 'react';
 
 function index() {
   return (
     <div>
+      <Head>
+        <title>Gallery | Noormahal Palace</title>
+        <meta
+          name='keywords'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+        />
+        <meta
+          name='description'
+          content=' Explore the visual grandeur of Noormahal Palace through our gallery. View images showcasing the elegant architecture, luxurious interiors, and memorable experiences.'
+        />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <section className='gallery_wrapper pt-5 default_section_gap'>
         <div className='header_area text-center mx-auto'>
           <h2 className='story_title yellow-color-c2'>OUR</h2>

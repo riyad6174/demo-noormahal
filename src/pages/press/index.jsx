@@ -19,7 +19,7 @@ function Index() {
         />
         <meta
           name='description'
-          content='Latest news, events, and media coverage of Noormahal Palace - Your gateway to a world of luxury and heritage!'
+          content='Read about Noormahal Palace in the press and media. Discover articles, features, and stories highlighting our luxury hotel, services, and events.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
