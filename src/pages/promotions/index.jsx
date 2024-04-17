@@ -1,3 +1,4 @@
+// import Layout from '@/components/Layout';
 import PromotionBanner from '@/components/organisms/Banners/PromotionBanner';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -127,17 +128,17 @@ export default function page() {
                   </div>
                 </div>
               </div> */}
-            {/* <div className='promotion-container mx-auto'>
+            <div className='promotion-container mx-auto'>
               <div className='promotion_img text-center'>
                 <img
-                  src='assets/images/promotion/rangbarse.jpg'
+                  src='assets/images/promotion/classicspa.jpg'
                   alt='promotion image'
                 />
               </div>
-  
+
               <div className='d-flex gap-4 justify-content-center py-4'>
                 <a
-                  href='assets/images/promotion/rangbarse.pdf'
+                  href='assets/images/promotion/classicSpaPackage.pdf'
                   target='_blank'
                   className='d-block'
                 >
@@ -156,7 +157,7 @@ export default function page() {
                   </button>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div className='promotion-container mx-auto'>
               <div className='promotion_img text-center'>
                 <img
