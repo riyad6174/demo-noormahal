@@ -118,7 +118,7 @@ function AwardSlider() {
               </SwiperSlide>
               <SwiperSlide className=''>
                 <div className='award_gallery_item'>
-                  <a href='assets/images/awards/award3.jpg'>
+                  <a href='assets/images/awards/wow1.jpg'>
                     <img
                       src='assets/images/awards/wow1.jpg'
                       alt='event image'
