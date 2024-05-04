@@ -28,30 +28,8 @@ function StorySection({
     'IGQWRNY0tVMGRqTGpKSWs1U3lJcW92ZAUZAoQzFQbmQ0WlBudVBBVE5vR1pWUE4xU2ZAOUDI1RElWbTB5R1IzLXc0WjFnSUlPbEk5dUZA0Q2JRRmVHcDZApb08wTU1TakIyelpUTFY1OHhuZAHd4QVZAVQXdJTFBSUERla28ZD';
 
   useEffect(() => {
-    // Check if the popup has been shown before
-    const hasShownPopup = localStorage.getItem('hasShownPopup');
-
-    // If the popup hasn't been shown before, show it and set the flag in localStorage
-    if (!hasShownPopup) {
-      setShowPopUp(true);
-      localStorage.setItem('hasShownPopup', 'true');
-    } else {
-      setShowPopUp(false);
-    }
+    setShowPopUp(true);
   }, []);
-
-  useEffect(() => {
-    // If the popup is currently visible, hide it after 9 seconds
-    if (showPopUp) {
-      const hideTimeout = setTimeout(() => {
-        setShowPopUp(false);
-      }, 9000); // Hide after 9 seconds
-
-      // Clear the timeout when the component unmounts or when showPopUp changes
-      return () => clearTimeout(hideTimeout);
-    }
-  }, []);
-
   return (
     <div>
       <main>
@@ -115,6 +93,11 @@ function StorySection({
         <NewsSection newsData={newsData} />
       </main>
       {/* <Popup showPopUp={showPopUp} setShowPopUp={setShowPopUp} /> */}
+      <Popup
+        showPopUp={showPopUp}
+        setShowPopUp={setShowPopUp}
+        className={` ${showPopUp ? 'show-modal' : 'hide-modal'}  `}
+      />
     </div>
   );
 }

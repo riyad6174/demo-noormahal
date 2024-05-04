@@ -1,4 +1,3 @@
-// import Layout from '@/components/Layout';
 import PromotionBanner from '@/components/organisms/Banners/PromotionBanner';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -53,7 +52,7 @@ export default function page() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      {/* <Layout> */}
+
       <PromotionBanner />
       <main>
         <section className='promotion_wrapper default_section_gap'>
@@ -196,7 +195,6 @@ export default function page() {
           </div>
         </section>
       </main>
-      {/* </Layout> */}
       <div
         className='modal fade modal-form rounded-0'
         id='exampleModal'

@@ -28,47 +28,38 @@ function AwardSlider() {
     },
 
     1450: {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetweenSlides: 2,
     },
     1950: {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetweenSlides: 2,
     },
   };
   return (
     <div>
-      <div className='header_area text-center mx-auto'>
-        <h2 className='story_title'>
-          <span className='black-color-0c'> Awards</span>
-        </h2>
-      </div>
       <div
         className='container mb-4 memories_slider position-relative'
         id='memoriesSlider'
       >
-        {/* <div className='swiper'>
+        <div className='swiper'>
           <div className='swiper-wrapper'>
             <Swiper
-           loop={true}
-           centeredSlides={true}
-           autoplay={{
-             delay: 4000,
-            //  disableOnInteraction: false,
-             // reverseDirection: true,
-            //   watchOverflow: true,
-           }}
-           breakpoints={breakpoints}
- 
-           
-           speed='1500'
-           effect='fade'
-           pagination={{
-             clickable: true,
-           }}
-           modules={[Autoplay, Pagination]}
-           className='mySwipe  swiper-slide '
-             
+              loop={true}
+              // centeredSlides={true}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+                watchOverflow: true,
+              }}
+              breakpoints={breakpoints}
+              speed='1500'
+              effect='fade'
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Autoplay, Pagination]}
+              className='mySwipe  swiper-slide '
             >
               <SwiperSlide className=''>
                 <div className='award_gallery_item'>
@@ -103,38 +94,40 @@ function AwardSlider() {
                   </a>
                 </div>
               </SwiperSlide>
-             
+              <SwiperSlide className=''>
+                <div className='award_gallery_item'>
+                  <a href='assets/images/awards/award4.jpg'>
+                    <img
+                      src='assets/images/awards/award4.jpg'
+                      alt='event image'
+                      className='border border-5 border-light shadow-md'
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className=''>
+                <div className='award_gallery_item'>
+                  <a href='assets/images/awards/wow.jpg'>
+                    <img
+                      src='assets/images/awards/wow.jpg'
+                      alt='event image'
+                      className='border border-5 border-light shadow-md'
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className=''>
+                <div className='award_gallery_item'>
+                  <a href='assets/images/awards/award3.jpg'>
+                    <img
+                      src='assets/images/awards/wow1.jpg'
+                      alt='event image'
+                      className='border border-5 border-light shadow-md'
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
             </Swiper>
-          </div>
-        </div> */}
-        <div className='row justify-content-center'>
-          <div className='col-md-3 award_gallery_item d-flex justify-content-center'>
-            <img
-              src='assets/images/awards/award1.jpg'
-              alt='event image'
-              className='border border-5 border-light shadow-md'
-            />
-          </div>
-          <div className='col-md-3 award_gallery_item d-flex justify-content-center'>
-            <img
-              src='assets/images/awards/award2.jpg'
-              alt='event image'
-              className='border border-5 border-light shadow-md'
-            />
-          </div>
-          <div className='col-md-3 award_gallery_item d-flex justify-content-center'>
-            <img
-              src='assets/images/awards/award3.jpg'
-              alt='event image'
-              className='border border-5 border-light shadow-md'
-            />
-          </div>
-          <div className='col-md-3 award_gallery_item d-flex justify-content-center'>
-            <img
-              src='assets/images/awards/award4.jpg'
-              alt='event image'
-              className='border border-5 border-light shadow-md'
-            />
           </div>
         </div>
       </div>
