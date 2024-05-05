@@ -25,6 +25,17 @@ function Index() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section className='media_wrapper default_section_gap pt-5'>
+        <div className='header_area text-center mx-auto'>
+          <h2 className='story_title yellow-color-c2'>
+            <span className='black-color-0c'> Awards</span>
+          </h2>
+          {/* <p className='pt-2 pb-1'>
+            One of the most preferred destinations for a big fat Indian wedding
+            or for a leisurely weekend getaway, Hotel Noormahal Palace has been
+            the receiver of many accolades. To learn more about us, explore
+            these news bites.
+          </p> */}
+        </div>
         <AwardSlider />
 
         <div className='header_area text-center mx-auto'>
