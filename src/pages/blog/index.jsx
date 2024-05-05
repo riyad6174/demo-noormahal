@@ -62,6 +62,8 @@ function page({ seoData }) {
                         width={500}
                         src={`https://api.noormahalpalace.com/${item.image?.path}`}
                         alt='blog image'
+                        // style={{ height: '100%', width: '100%' }}
+                        className='w-full h-full object-fit-cover'
                       />
                     </Link>
 

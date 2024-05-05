@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BiLogoTripAdvisor } from 'react-icons/bi';
 
 function Footer({ data }) {
-  console.log(data.address, data.email, data.phone, data.social);
+  console.log(data.address, data.email, data.phone, data.social, data);
   return (
     <div>
       <footer className='footer_wrapper'>
@@ -124,7 +124,7 @@ function Footer({ data }) {
           </div>
         </div>
         <div className='copyright_area '>
-          <p>Copyright@2023 Noormahal Palace. All Right Reserved.</p>
+          <p>{data?.copyright}</p>
         </div>
       </footer>
     </div>

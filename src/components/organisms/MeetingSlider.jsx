@@ -22,7 +22,7 @@ function MeetingSlider() {
     const response = await getGuestReview();
     if (response && response.status) {
       if (response.data && Object.keys(response.data.data).length > 0) {
-        setData(response.data?.data);
+        setData(response.data?.data.reverse());
         console.log(response.data?.data, 'guest review');
       }
     }
