@@ -57,9 +57,7 @@ function page({ seoData }) {
                 return (
                   <div className='blog_item' data-aos='fade-up'>
                     <Link href={`/blog/${item.slug}`} className='title'>
-                      <Image
-                        height={250}
-                        width={500}
+                      <img
                         src={`https://api.noormahalpalace.com/${item.image?.path}`}
                         alt='blog image'
                         // style={{ height: '100%', width: '100%' }}
