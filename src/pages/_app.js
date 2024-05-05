@@ -17,6 +17,10 @@ import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 
 // 3rd party css
 import 'react-image-gallery/styles/css/image-gallery.css';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import { getSettings } from '@/utils/API';
 import { StructuredData } from '@/components/StructuredData';
 

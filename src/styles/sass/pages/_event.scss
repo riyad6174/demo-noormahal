@@ -636,16 +636,16 @@
       width: 350px;
     }
     @include media-break-width(992, 1199) {
-      height: 140px;
-      width: 350px;
+      height: 110px;
+      width: 250px;
     }
     @include media-break-width(768, 991) {
-      height: 120px;
-      width: 300px;
+      height: 110px;
+      width: 200px;
     }
     @include max-media-width(767) {
-      height: 120px;
-      width: 300px;
+      height: 110px;
+      width: 100%;
     }
     &:hover {
       opacity: 0.8;
