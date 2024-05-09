@@ -62,14 +62,10 @@ function StorySection({
                 </p>
               </div>
               <div className='story_image_area item_grid'>
-                <Image
-                  width={400}
-                  height={600}
-                  src={homeImage}
+                <img
+                  src='assets/images/home/story_img1.jpg'
                   alt='story image'
-                  placeholder='blur'
                   data-aos='fade-up'
-                  className='object-fit-cover'
                 />
                 <img
                   src='assets/images/home/story_img2.jpg'

@@ -449,7 +449,7 @@
       margin-top: 50px;
     }
     img {
-      max-height: 350px;
+      max-height: 381px;
       &:nth-child(1) {
         margin-top: 76px;
       }
@@ -658,7 +658,7 @@
     .place_item {
       position: relative;
       display: block;
-      height: 100%;
+      height: 320px;
       width: 100%;
       overflow: hidden;
       @include media-break-width(1200, 1499) {
@@ -1353,8 +1353,13 @@
     }
   }
 }
+/* Section */
+/* Section */
+
+// modal css starts
+//later change the class name to avoid modal showing error
 ._hide-modal {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
@@ -1366,6 +1371,17 @@
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
   z-index: 9999;
 }
+
+// .modal-content {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   background-color: white;
+//   padding: 1rem 1.5rem;
+//   width: 24rem;
+//   border-radius: 0.5rem;
+// }
 
 .close-button {
   float: right;
@@ -1380,6 +1396,13 @@
   transition: all 1s linear;
   transform: scale(1.1);
 }
+
+// ._show-modal {
+//   opacity: 1;
+//   visibility: visible;
+//   transform: scale(1);
+//   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+// }
 
 ._show-modal {
   position: fixed;

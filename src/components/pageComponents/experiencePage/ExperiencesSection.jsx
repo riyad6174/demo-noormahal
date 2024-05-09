@@ -31,7 +31,9 @@ function ExperiencesSection({ experienceData }) {
                     <h3 className='heading_title text-center'>
                       {experience?.service[0]?.title}
                     </h3>
-                    <p>{HtmlParser(experience?.service[0]?.description)}</p>
+                    <span className='text-center'>
+                      {HtmlParser(experience?.service[0]?.description)}
+                    </span>
 
                     <div className='text-center'>
                       <button
