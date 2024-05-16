@@ -104,66 +104,7 @@ function SpaRituals() {
                   </div>
                 </div>
               </div>
-              <div className='price_accordion_item'>
-                {/* <button
-                  type="button"
-                  id="headingMessage"
-                  className="accordion_btn"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseMassage"
-                  aria-expanded="false"
-                  aria-controls="collapseMassage"
-                >
-                  <span>Massages</span>
-                  <div className="arrow_icon">
-                    <img
-                      src="assets/icon/cross_icon.png"
-                      alt="cross icon"
-                      className="cross_icon"
-                    />
-                    <img
-                      src="assets/icon/plus_icon.png"
-                      alt="cross icon"
-                      className="plus_icon"
-                    />
-                  </div>
-                </button> */}
-                <div
-                  className='accordion_body_area'
-                  id='collapseMassage'
-                  aria-labelledby='headingMassage'
-                  data-bs-parent='#spaFaqAccordion'
-                >
-                  <div className='list_item d-flex-between'>
-                    <h4>Face Treatments</h4>
-                    <div className='time_area d-flex align-items-center justify-content-end flex-wrap g-sm'>
-                      <h4>40 min.</h4>
-                      <h4>$ 35</h4>
-                    </div>
-                  </div>
-                  <div className='list_item d-flex-between'>
-                    <h4>Face Treatments</h4>
-                    <div className='time_area d-flex align-items-center justify-content-end flex-wrap g-sm'>
-                      <h4>40 min.</h4>
-                      <h4>$ 35</h4>
-                    </div>
-                  </div>
-                  <div className='list_item d-flex-between'>
-                    <h4>Face Treatments</h4>
-                    <div className='time_area d-flex align-items-center justify-content-end flex-wrap g-sm'>
-                      <h4>40 min.</h4>
-                      <h4>$ 35</h4>
-                    </div>
-                  </div>
-                  <div className='list_item d-flex-between'>
-                    <h4>Face Treatments</h4>
-                    <div className='time_area d-flex align-items-center justify-content-end flex-wrap g-sm'>
-                      <h4>40 min.</h4>
-                      <h4>$ 35</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
               <div className='text-center'>
                 <button
                   data-bs-toggle='modal'

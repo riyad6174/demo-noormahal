@@ -19,7 +19,7 @@ function LeftMenu() {
   }, [fetchData]);
 
   return (
-    <div className='price_left_area'>
+    <div className='price_left_area mt-5'>
       {data.map((item) => {
         return (
           <div className='price_left_item'>
