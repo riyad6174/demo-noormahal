@@ -25,14 +25,19 @@ function NewsSection({ newsData }) {
                   <div
                     className=''
                     style={{
-                      height: '50px',
-                      width: '100px',
+                      height: '70px',
+                      width: '110px',
                       objectFit: 'contain',
                     }}
                   >
                     <img
                       src={`https://api.noormahalpalace.com/${news.image.path}`}
-                      alt='ad-news style={{objectFit:"cover,height:"100,width:"100%"%""}}'
+                      alt='ad-news '
+                      style={{
+                        objectFit: 'fill',
+                        height: '87%',
+                        width: '100%',
+                      }}
                     />
                   </div>
                   <p className='news-text pt-2'>{news.title}</p>

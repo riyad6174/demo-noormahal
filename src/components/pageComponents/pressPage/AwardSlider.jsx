@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 
 function AwardSlider() {
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 1500,
     autoplay: true,

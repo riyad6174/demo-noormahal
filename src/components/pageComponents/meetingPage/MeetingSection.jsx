@@ -2,6 +2,7 @@ import React from 'react';
 import HtmlParser from 'react-html-parser';
 
 function MeetingSection({ meetingData }) {
+  console.log(meetingData);
   return (
     <div>
       <div className='dining_item_area'>
@@ -30,7 +31,7 @@ function MeetingSection({ meetingData }) {
                         <h3 className='heading_title text-center'>
                           {meeting.title}
                         </h3>
-                        {HtmlParser(meeting.description)}
+                        <span>{HtmlParser(meeting.description)}</span>
                         <div className='d-flex justify-content-center align-items-baseline  gap-3 total-capacity'>
                           <div className='d-flex gap-3 flex-column align-items-center justify-content-center'>
                             <p className='text-uppercase'>total capacity</p>

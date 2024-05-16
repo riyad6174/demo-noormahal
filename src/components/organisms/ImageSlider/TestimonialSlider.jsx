@@ -72,9 +72,7 @@ function TestimonialSlider() {
                       src={`https://api.noormahalpalace.com/${testimonial?.image?.path}`}
                     />
                   </div>
-                  <p className='description'>
-                    {HtmlParser(testimonial.message)}
-                  </p>
+                  {HtmlParser(testimonial.message)}
                   <div className='testimonial-profile'>
                     <h3 className='title'>{testimonial.name}</h3> <br />
                     <span className='post'>{testimonial.profession}</span>

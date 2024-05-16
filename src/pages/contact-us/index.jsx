@@ -1,4 +1,3 @@
-import { postContact } from '@/utils/API';
 import Head from 'next/head';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -43,13 +42,23 @@ function index() {
   const onSubmit = async (data) => {
     try {
       setIsLoading(true);
-      data.title = 'contact';
-      data.type = 'contact';
-      const response = await postContact(data);
+      const response = await fetch('/api/submitContact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          sheetName: 'contact',
+          spreadsheetId: '1fio4F5mQxqhrDwt9P5NjE_lHkIUy74s6Ng7dZfD4Mk0',
+        }), // Change the sheet name as per your requirement
+      });
       setIsLoading(false);
-      if (response.status == 200 || response.status == 200) {
+      if (response.ok) {
         console.log('Form data submitted successfully!');
         setIsSubmitted(true);
+      } else {
+        console.error('Failed to submit form data.');
       }
     } catch (error) {
       console.error('Error submitting form data:', error);
@@ -64,9 +73,7 @@ function index() {
         <title>Contact Us | Noormahal Palace</title>
         <meta
           name='keywords'
-          content='wedding venues in chandigarh,
-                wedding destination near delhi,
-                Luxury 5 Star Hotels in Karnal,'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
         />
         <meta
           name='description'
@@ -75,6 +82,7 @@ function index() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+
       <section className='contact_wrapper default_section_gap pt-5'>
         <div className='header_area text-center mx-auto'>
           <h2 className='story_title yellow-color-c2'>
@@ -206,6 +214,70 @@ function index() {
                   </p>
                 </div>
               </div>
+              {/* <div className='address_item'>
+                <button
+                  type='button'
+                  className='dropdonw_btn  d-flex-between '
+                  onClick={() => {
+                    setToggled(true);
+                  }}
+                >
+                  <span>BY AIR </span>
+                  <div className='icon'>
+                    <BiPlus />
+                    <BiMinus />
+                  </div>
+                </button>
+                <div className='address_area '>
+                  <h4>BY AIR</h4>
+                  <p>
+                    The vintage historical Karnal railway station is situated 7
+                    KM away from the main Delhi-Panipat-Karnal-Ambala-Kalka line
+                    also called DUK route.
+                  </p>
+                </div>
+              </div> */}
+              {/* <div className='address_item'>
+                <button
+                  type='button'
+                  className='dropdonw_btn  d-flex-between '
+                  onClick={() => {
+                    setToggled(true);
+                  }}
+                >
+                  <span>BY AIR </span>
+                  <div className='icon'>
+                    <BiPlus />
+                    <BiMinus />
+                  </div>
+                </button>
+                <div className='address_area'>
+                  <h4>BY ROAD</h4>
+                  <p>
+                    Noormahal Palace is connected by roads and national highways
+                    connecting major cities like
+                  </p>
+                  <ul>
+                    <li>
+                      <b>Delhi : </b> 122 KM
+                    </li>
+                    <li>
+                      <b>Chandigarh:</b> 127 KM
+                    </li>
+                    <li>
+                      <b>Karnal:</b> 6 KM.
+                    </li>
+                    <li>
+                      <b>Punjab:</b> 262 KM.
+                    </li>
+                  </ul>
+                  <p>
+                    Visitors can also avail state roadways and air conditioned
+                    private buses and ordinary bus services from
+                    Noormahal Palace.
+                  </p>
+                </div>
+              </div> */}
             </div>
             <div className='overlay' id='dropdwonOverlay'></div>
           </div>
@@ -263,7 +335,7 @@ function index() {
                   <div className='input_row'>
                     <input
                       type='tel'
-                      name='phone'
+                      name='number'
                       placeholder='Phone Number'
                       required
                       {...register('phone', {})}
@@ -278,7 +350,7 @@ function index() {
                   <textarea
                     name='message'
                     id=''
-                    rows='2'
+                    rows='4'
                     className='w-100 border-0'
                     placeholder='Write Message'
                     required
@@ -291,35 +363,6 @@ function index() {
                     <span> SUBMIT</span>
                   </button>
                 </div>
-                {isSubmitted && (
-                  <div
-                    className='d-flex justify-content-start align-items-start flex-column pt-4 px-4 m-2'
-                    style={{
-                      backgroundColor: '#faf4ea',
-                      transition: 'all ease-in-out 0.2s ',
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontSize: '18px',
-                        fontWeight: '600',
-                        color: '#c29a5c',
-                      }}
-                    >
-                      Thanks For Contacting us!
-                    </p>
-                    <p
-                      style={{
-                        fontSize: '14px',
-                        fontWeight: '400',
-                        color: '#c29a5c',
-                      }}
-                    >
-                      We appreciate that you have taken the time to write us.{' '}
-                      <br />I will respond very soon.
-                    </p>
-                  </div>
-                )}
               </form>
               {/* Noormahal Palace, Nirmal Kutia Chowk ,NH1 Sector-32, Karnal-Delhi (NCR) INDIA */}
               <div className='contact_info p-4 m-2'>

@@ -61,7 +61,7 @@ function SpaWellness() {
                   <h4 className='story_title yellow-color-c2 text-capitalize'>
                     {data.subTitle}
                   </h4>
-                  <p>{data.description}</p>
+                  <p>{data?.description}</p>
                   <button
                     data-bs-toggle='modal'
                     data-bs-target='#exampleModal'

@@ -86,7 +86,424 @@ function StorySection({
           <InstaFeedGallery token={instaToken} limit={6} />
         </section>
 
-        <NewsSection newsData={newsData} />
+        {/* <NewsSection newsData={newsData} /> */}
+        <marquee loop={30} scrollamount='10'>
+          <div className='marquee pt-5'>
+            <Link
+              href='https://www.gqindia.com/content/looking-for-a-secluded-valentines-day-getaway-these-places-near-mumbai-and-delhi-would-be-perfect'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div
+                className='d-flex align-items-center gap-4 justify-content-center  text-center '
+                style={{}}
+              >
+                <div
+                  className=''
+                  style={{
+                    paddingBottom: '10px',
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img src='/assets/images/news/gq.png' alt='ad-news ' />
+                </div>
+                <p className='news-text pt-4'>
+                  Looking for a secluded Valentine's Day getaway? These 11
+                  places near Mumbai and Delhi would be perfect
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://curlytales.com/noormahal-palace-in-karnal-invites-you-to-enjoy-a-regal-stay-this-long-weekend/'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div
+                className='d-flex align-items-center gap-4 justify-content-center  text-center '
+                style={{}}
+              >
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img src='/assets/images/news/press2.webp' alt='ad-news ' />
+                </div>
+                <p className='news-text pt-2'>
+                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  This Long Weekend
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://www.luxurytravelmagazine.com/news-articles/enjoy-lavish-celebrations-at-indias-incredible-palace-hotel-noor-mahal'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div
+                className='d-flex align-items-center gap-4 justify-content-center  text-center '
+                style={{}}
+              >
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img
+                    src='/assets/images/news/press3.png'
+                    alt='ad-news'
+                    style={{
+                      objectFit: 'contain',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+                <p className='news-text pt-2'>
+                  Enjoy Lavish Celebrations at India's Incredible Palace Hotel,
+                  Noormahal
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://thedailyguardian.com/roop-partap-choudhary-recreating-old-wines-in-new-bottles/'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div className='d-flex align-items-center gap-4 justify-content-center  text-center  '>
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img
+                    src='/assets/images/news/press4.png'
+                    alt='ad-news'
+                    style={{
+                      objectFit: 'contain',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+                <p className='news-text pt-2'>
+                  Roop Pratap Choudhary: Recreating old wines in new bottle
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://www.luxuryfacts.com/index.php/sections/article/Noor-Mahal-A-Pinnacle-of-Royal-Palace-Life'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div className='d-flex align-items-center gap-4 justify-content-center  text-center '>
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img
+                    src='/assets/images/news/press5.png'
+                    alt='ad-news'
+                    style={{
+                      objectFit: 'contain',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+                <p className='news-text pt-3'>
+                  Noormahal - A Pinnacle of Royal Palace Life
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://curlytales.com/noormahal-palace-in-karnal-invites-you-to-enjoy-a-regal-stay-this-long-weekend/'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div
+                className='d-flex align-items-center gap-4 justify-content-center  text-center '
+                style={{}}
+              >
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img src='/assets/images/news/press2.webp' alt='ad-news ' />
+                </div>
+                <p className='news-text pt-2'>
+                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  This Long Weekend
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://www.luxurytravelmagazine.com/news-articles/enjoy-lavish-celebrations-at-indias-incredible-palace-hotel-noor-mahal'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div
+                className='d-flex align-items-center gap-4 justify-content-center  text-center '
+                style={{}}
+              >
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img
+                    src='/assets/images/news/press3.png'
+                    alt='ad-news'
+                    style={{
+                      objectFit: 'contain',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+                <p className='news-text pt-2'>
+                  Enjoy Lavish Celebrations at India's Incredible Palace Hotel,
+                  Noormahal
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://thedailyguardian.com/roop-partap-choudhary-recreating-old-wines-in-new-bottles/'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div className='d-flex align-items-center gap-4 justify-content-center  text-center  '>
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img
+                    src='/assets/images/news/press4.png'
+                    alt='ad-news'
+                    style={{
+                      objectFit: 'contain',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+                <p className='news-text pt-2'>
+                  Roop Pratap Choudhary: Recreating old wines in new bottle
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://www.luxuryfacts.com/index.php/sections/article/Noor-Mahal-A-Pinnacle-of-Royal-Palace-Life'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div className='d-flex align-items-center gap-4 justify-content-center  text-center '>
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img
+                    src='/assets/images/news/press5.png'
+                    alt='ad-news'
+                    style={{
+                      objectFit: 'contain',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+                <p className='news-text pt-3'>
+                  Noormahal - A Pinnacle of Royal Palace Life
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://curlytales.com/noormahal-palace-in-karnal-invites-you-to-enjoy-a-regal-stay-this-long-weekend/'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div
+                className='d-flex align-items-center gap-4 justify-content-center  text-center '
+                style={{}}
+              >
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img src='/assets/images/news/press2.webp' alt='ad-news ' />
+                </div>
+                <p className='news-text pt-2'>
+                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  This Long Weekend
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://www.luxurytravelmagazine.com/news-articles/enjoy-lavish-celebrations-at-indias-incredible-palace-hotel-noor-mahal'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div
+                className='d-flex align-items-center gap-4 justify-content-center  text-center '
+                style={{}}
+              >
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img
+                    src='/assets/images/news/press3.png'
+                    alt='ad-news'
+                    style={{
+                      objectFit: 'contain',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+                <p className='news-text pt-2'>
+                  Enjoy Lavish Celebrations at India's Incredible Palace Hotel,
+                  Noormahal
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://thedailyguardian.com/roop-partap-choudhary-recreating-old-wines-in-new-bottles/'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div className='d-flex align-items-center gap-4 justify-content-center  text-center  '>
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img
+                    src='/assets/images/news/press4.png'
+                    alt='ad-news'
+                    style={{
+                      objectFit: 'contain',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+                <p className='news-text pt-2'>
+                  Roop Pratap Choudhary: Recreating old wines in new bottle
+                </p>
+              </div>
+            </Link>
+            <Link
+              href='https://www.luxuryfacts.com/index.php/sections/article/Noor-Mahal-A-Pinnacle-of-Royal-Palace-Life'
+              style={{
+                textDecoration: 'none',
+                padding: '0 30px',
+                borderRight: '2px solid gray',
+              }}
+            >
+              <div className='d-flex align-items-center gap-4 justify-content-center  text-center '>
+                <div
+                  className=''
+                  style={{
+                    height: '50px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }}
+                >
+                  <img
+                    src='/assets/images/news/press5.png'
+                    alt='ad-news'
+                    style={{
+                      objectFit: 'contain',
+                      height: '100%',
+                      width: '100%',
+                    }}
+                  />
+                </div>
+                <p className='news-text pt-3'>
+                  Noormahal - A Pinnacle of Royal Palace Life
+                </p>
+              </div>
+            </Link>
+          </div>
+        </marquee>
       </main>
       {/* <Popup showPopUp={showPopUp} setShowPopUp={setShowPopUp} /> */}
       <Popup

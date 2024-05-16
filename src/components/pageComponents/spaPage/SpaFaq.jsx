@@ -42,7 +42,9 @@ function SpaFaq() {
                 {data?.faq?.map((singleFAQ, index) => (
                   <Accordion.Item eventKey={index.toString()}>
                     <Accordion.Header> {singleFAQ.question}</Accordion.Header>
-                    <Accordion.Body>{singleFAQ.answer}</Accordion.Body>
+                    <Accordion.Body>
+                      <p>{singleFAQ.answer}</p>
+                    </Accordion.Body>
                   </Accordion.Item>
                 ))}
               </Accordion>
