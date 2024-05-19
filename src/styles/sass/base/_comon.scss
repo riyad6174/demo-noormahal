@@ -367,7 +367,7 @@ input[type='number'] {
     }
   }
 }
-// 
+//
 .story_title {
   font-family: timeFontRegular;
   font-style: normal;
@@ -683,7 +683,7 @@ input[type='number'] {
     height: 100%;
     border-radius: 5px;
     color: #f9fafd;
-   
+
     background-color: #c29a5c;
     // background-color: #ffffff;
     transition: all 0.5s ease;
@@ -1442,7 +1442,6 @@ input[type='number'] {
 //   justify-content: center;
 // }
 
-
 .swiper-button-next,
 .swiper-button-prev {
   &::after {
@@ -1460,6 +1459,14 @@ input[type='number'] {
 .swiper-wrapper {
   transition-timing-function: linear;
 }
+
+// stay-swiper
+#custom-swiper-bottom {
+  .hero_wrapper .swiper-pagination {
+    bottom: 8px;
+  }
+}
+
 .news-text {
   display: flex;
   align-items: center;
@@ -1470,10 +1477,8 @@ input[type='number'] {
   text-align: center;
 }
 
-
-input[type="time"]:not(:valid):before {
-  content:'Time:';
-  margin-right:.6em;
-  color:#9d9d9d;
+input[type='time']:not(:valid):before {
+  content: 'Time:';
+  margin-right: 0.6em;
+  color: #9d9d9d;
 }
-

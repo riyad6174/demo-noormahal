@@ -1,5 +1,6 @@
 import { getBlog, getSeo } from '@/utils/API';
 import { BlogMain } from '@/utils/Contents/blog';
+import moment from 'moment';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -88,7 +89,9 @@ function page({ seoData }) {
                         /> */}
                           <h4>{item.author}</h4>
                         </div>
-                        <a href='#'>{item.publishedDate.split('T')[0]}</a>
+                        <a href='#'>
+                          {moment(item.publishedDate).format('MMM D, YYYY')}
+                        </a>
                       </div>
                     </div>
                   </div>

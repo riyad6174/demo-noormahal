@@ -79,7 +79,7 @@ function MeetingSection({ meetingData }) {
                         <h3 className='heading_title text-center'>
                           {meeting.title}
                         </h3>
-                        <p>{HtmlParser(meeting.description)}</p>
+                        <span>{HtmlParser(meeting.description)}</span>
 
                         <div className='d-flex justify-content-center align-items-baseline  gap-3 total-capacity'>
                           <div className='d-flex gap-3 flex-column align-items-center justify-content-center'>

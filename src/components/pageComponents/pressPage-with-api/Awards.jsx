@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import slider1 from '../../public/assets/images/hero/hero_slider_img1.png';
@@ -10,10 +11,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper';
+import { Autoplay, Pagination , Navigation } from 'swiper';
 import Image from 'next/image';
 
-function MemorySlider() {
+function Awards() {
   // Responsive breakpoints
   const breakpoints = {
     // when window width is <= 499px
@@ -34,10 +35,7 @@ function MemorySlider() {
   };
   return (
     <div>
-      <div
-        className='memories_slider position-relative'
-        id='custom-memories-slider'
-      >
+      <div className=' position-relative' id='memoriesSlider'>
         <div className='swiper'>
           <div className='swiper-wrapper'>
             <Swiper
@@ -55,7 +53,7 @@ function MemorySlider() {
               pagination={{
                 clickable: true,
               }}
-              modules={[Autoplay, Pagination, Navigation]}
+              modules={[Autoplay, Pagination , Navigation]}
               className='mySwipe  swiper '
             >
               <SwiperSlide className='swiper-slide'>
@@ -65,92 +63,6 @@ function MemorySlider() {
                       src='assets/images/event/memories_img1.png'
                       alt='event image'
                       className='event_img'
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </a>
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide className='swiper-slide'>
-                <div className='event_gallery_item'>
-                  <a href='assets/images/weedings/1.jpg'>
-                    <img
-                      src='assets/images/weedings/1.jpg'
-                      alt='event image'
-                      className='event_img'
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className='swiper-slide'>
-                <div className='event_gallery_item'>
-                  <a href='assets/images/weedings/2.jpg'>
-                    <img
-                      src='assets/images/weedings/2.jpg'
-                      alt='event image'
-                      className='event_img'
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className='swiper-slide'>
-                <div className='event_gallery_item'>
-                  <a href='assets/images/weedings/3.jpg'>
-                    <img
-                      src='assets/images/weedings/3.jpg'
-                      alt='event image'
-                      className='event_img'
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className='swiper-slide'>
-                <div className='event_gallery_item'>
-                  <a href='assets/images/weedings/4.jpg'>
-                    <img
-                      src='assets/images/weedings/4.jpg'
-                      alt='event image'
-                      className='event_img'
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className='swiper-slide'>
-                <div className='event_gallery_item'>
-                  <a href='assets/images/weedings/5.jpg'>
-                    <img
-                      src='assets/images/weedings/5.jpg'
-                      alt='event image'
-                      className='event_img'
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className='swiper-slide'>
-                <div className='event_gallery_item'>
-                  <a href='assets/images/event/memories_img1.png'>
-                    <img
-                      src='assets/images/event/memories_img1.png'
-                      alt='event image'
-                      className='event_img'
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </a>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className='swiper-slide'>
-                <div className='event_gallery_item'>
-                  <a href='assets/images/weedings/6.jpg'>
-                    <img
-                      src='assets/images/weedings/6.jpg'
-                      alt='event image'
-                      className='event_img'
-                      style={{ objectFit: 'cover' }}
                     />
                   </a>
                 </div>
@@ -162,12 +74,12 @@ function MemorySlider() {
                       src='assets/images/event/memories_img3.png'
                       alt='event image'
                       className='event_img'
-                      style={{ objectFit: 'cover' }}
                     />
                   </a>
                 </div>
               </SwiperSlide>
 
+       
               <SwiperSlide className='swiper-slide'>
                 <div className='event_gallery_item'>
                   <a href='assets/images/event/memories_img2.png'>
@@ -175,7 +87,84 @@ function MemorySlider() {
                       src='assets/images/event/memories_img2.png'
                       alt='event image'
                       className='event_img'
-                      style={{ objectFit: 'cover' }}
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+          
+              <SwiperSlide className='swiper-slide'>
+                <div className='event_gallery_item'>
+                  <a href='assets/images/weedings/1.jpg'>
+                    <img
+                      src='assets/images/weedings/1.jpg'
+                      alt='event image'
+                      className='event_img'
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className='swiper-slide'>
+                <div className='event_gallery_item'>
+                  <a href='assets/images/weedings/2.jpg'>
+                    <img
+                      src='assets/images/weedings/2.jpg'
+                      alt='event image'
+                      className='event_img'
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className='swiper-slide'>
+                <div className='event_gallery_item'>
+                  <a href='assets/images/weedings/3.jpg'>
+                    <img
+                      src='assets/images/weedings/3.jpg'
+                      alt='event image'
+                      className='event_img'
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className='swiper-slide'>
+                <div className='event_gallery_item'>
+                  <a href='assets/images/weedings/4.jpg'>
+                    <img
+                      src='assets/images/weedings/4.jpg'
+                      alt='event image'
+                      className='event_img'
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className='swiper-slide'>
+                <div className='event_gallery_item'>
+                  <a href='assets/images/weedings/5.jpg'>
+                    <img
+                      src='assets/images/weedings/5.jpg'
+                      alt='event image'
+                      className='event_img'
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className='swiper-slide'>
+                <div className='event_gallery_item'>
+                  <a href='assets/images/event/memories_img1.png'>
+                    <img
+                      src='assets/images/event/memories_img1.png'
+                      alt='event image'
+                      className='event_img'
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className='swiper-slide'>
+                <div className='event_gallery_item'>
+                  <a href='assets/images/weedings/6.jpg'>
+                    <img
+                      src='assets/images/weedings/6.jpg'
+                      alt='event image'
+                      className='event_img'
                     />
                   </a>
                 </div>
@@ -187,7 +176,6 @@ function MemorySlider() {
                       src='assets/images/weedings/10.jpg'
                       alt='event image'
                       className='event_img'
-                      style={{ objectFit: 'cover' }}
                     />
                   </a>
                 </div>
@@ -206,4 +194,4 @@ function MemorySlider() {
   );
 }
 
-export default MemorySlider;
+export default Awards;

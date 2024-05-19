@@ -65,33 +65,6 @@ function StayBanner() {
               </SwiperSlide>
             );
           })}
-          {/* <SwiperSlide className='swiper-slide'>
-            <Image
-              width={1500}
-              height={1500}
-              className='hero_item '
-              src={slider1}
-              alt='slider image'
-            />
-          </SwiperSlide>
-          <SwiperSlide className='swiper-slide'>
-            <Image
-              width={1500}
-              height={1500}
-              className=' hero_item '
-              src={slider2}
-              alt='slider image'
-            />
-          </SwiperSlide>
-          <SwiperSlide className='swiper-slide'>
-            <Image
-              width={1500}
-              height={1500}
-              className=' hero_item '
-              src={slider3}
-              alt='slider image'
-            />
-          </SwiperSlide> */}
         </Swiper>
         <CheckIn />
       </section>

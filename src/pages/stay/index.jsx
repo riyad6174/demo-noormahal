@@ -38,7 +38,9 @@ function page({ roomData, seoData }) {
       </Head>
       <main>
         {/* banner */}
-        <StayBanner />
+        <div id='custom-swiper-bottom'>
+          <StayBanner />
+        </div>
         {/* <!-- Luxurious Section  --> */}
         <section className='luxurious_wrapper'>
           <div className='header_area text-center mx-auto'>

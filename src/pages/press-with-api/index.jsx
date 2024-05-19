@@ -1,28 +1,25 @@
-// import AwardSlider from '@/components/organisms/AwardSlider';
-// import LatestNews from '@/components/pageComponents/pressPage-with-api/LatestNews';
-// import TwentyFour from '@/components/pageComponents/pressPage-with-api/TwentyFour';
-// import TwentyThree from '@/components/pageComponents/pressPage-with-api/TwentyThree';
-// import TwentyTwo from '@/components/pageComponents/pressPage-with-api/TwentyTwo';
-import AwardSlider from '@/components/organisms/AwardSlider';
-import LatestNews from '@/components/pageComponents/pressPage/LatestNews';
-import TwentyFour from '@/components/pageComponents/pressPage/TwentyFour';
-import TwentyThree from '@/components/pageComponents/pressPage/TwentyThree';
-import TwentyTwo from '@/components/pageComponents/pressPage/TwentyTwo';
+import LatestNews from '@/components/pageComponents/pressPage-with-api/LatestNews';
+import TwentyThree from '@/components/pageComponents/pressPage-with-api/TwentyThree';
+import TwentyTwo from '@/components/pageComponents/pressPage-with-api/TwentyTwo';
+import TwentyFour from '@/components/pageComponents/pressPage-with-api/TwentyFour'; // Import the component for 2024
 import Head from 'next/head';
 import React from 'react';
+import AwardSlider from '@/components/pageComponents/pressPage-with-api/AwardSlider';
 
-function index() {
+function Index() {
   return (
     <div>
       <Head>
         <title>Press and Media | Noormahal Palace</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='wedding venues in chandigarh,
+                wedding destination near delhi,
+                Luxury 5 Star Hotels in Karnal,'
         />
         <meta
           name='description'
-          content='	Read about Noormahal Palace in the press and media. Discover articles, features, and stories highlighting our luxury hotel, services, and events.'
+          content='Read about Noormahal Palace in the press and media. Discover articles, features, and stories highlighting our luxury hotel, services, and events.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -66,12 +63,12 @@ function index() {
               <li className='nav-item' role='presentation'>
                 <button
                   className='nav-link active'
-                  id='pills-profile-tab'
+                  id='pills-contact-tab'
                   data-bs-toggle='pill'
-                  data-bs-target='#pills-2024'
+                  data-bs-target='#pills-contact'
                   type='button'
                   role='tab'
-                  aria-controls='pills-2024'
+                  aria-controls='pills-contact'
                   aria-selected='false'
                 >
                   2024
@@ -93,7 +90,7 @@ function index() {
               </li>
               <li className='nav-item' role='presentation'>
                 <button
-                  className='nav-link '
+                  className='nav-link'
                   id='pills-home-tab'
                   data-bs-toggle='pill'
                   data-bs-target='#pills-home'
@@ -105,6 +102,7 @@ function index() {
                   2022
                 </button>
               </li>
+              {/* New tab for 2024 */}
             </ul>
             <div className='tab-content' id='pills-tabContent'>
               <div
@@ -117,7 +115,7 @@ function index() {
                 <TwentyThree />
               </div>
               <div
-                className='tab-pane fade '
+                className='tab-pane fade'
                 id='pills-home'
                 role='tabpanel'
                 aria-labelledby='pills-home-tab'
@@ -125,12 +123,13 @@ function index() {
               >
                 <TwentyTwo />
               </div>
+              {/* Content for 2024 tab */}
               <div
                 className='tab-pane fade show active'
-                id='pills-2024'
+                id='pills-contact'
                 role='tabpanel'
-                aria-labelledby='pills-home-tab'
-                tabIndex='1'
+                aria-labelledby='pills-contact-tab'
+                tabIndex='2'
               >
                 <TwentyFour />
               </div>
@@ -142,4 +141,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

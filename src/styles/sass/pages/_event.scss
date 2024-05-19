@@ -657,3 +657,20 @@
     }
   }
 }
+
+#custom-memories-slider {
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 44px;
+  }
+}
+
+.event_wrapper {
+  .swiper-pagination .swiper-pagination-bullet {
+    border-color: white !important;
+    opacity: 1 !important;
+  }
+  .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: white;
+  }
+}
