@@ -68,7 +68,9 @@ function page({ meetingData, seoData }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
-        <MeetingBanner />
+        <div id='custom-swiper-bottom'>
+          <MeetingBanner />
+        </div>
         {/* <!-- Dinner   Section  --> */}
 
         <section className='dining_wrapper facilities_wrapper'>
@@ -94,7 +96,9 @@ function page({ meetingData, seoData }) {
           </div>
           <MeetingSection meetingData={meetingData} />
         </section>
-        <MeetingSlider />
+        <div id='custom-swiper-bottom'>
+          <MeetingSlider />
+        </div>
         <div
           className='modal fade modal-form rounded-0'
           id='exampleModal'

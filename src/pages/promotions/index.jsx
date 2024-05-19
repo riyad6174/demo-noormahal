@@ -52,8 +52,9 @@ export default function page() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-
-      <PromotionBanner />
+      <div id='custom-swiper-bottom'>
+        <PromotionBanner />
+      </div>
       <main>
         <section className='promotion_wrapper default_section_gap'>
           <div className='header_area text-center mx-auto'>

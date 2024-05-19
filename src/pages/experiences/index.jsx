@@ -39,7 +39,9 @@ function page({ experienceData, seoData }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <SpaBanner />
+      <div id='custom-swiper-bottom'>
+        <SpaBanner />
+      </div>
       <main>
         {/* <!-- Dinner   Section  --> */}
         <section className='dining_wrapper facilities_wrapper'>

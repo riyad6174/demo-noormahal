@@ -86,7 +86,9 @@ function page({ eventData, seoData }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <WeddingBanner />
+      <div id='custom-swiper-bottom'>
+        <WeddingBanner />
+      </div>
 
       <section className='event_wrapper'>
         <div className='header_area text-center mx-auto'>

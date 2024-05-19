@@ -61,7 +61,9 @@ function page() {
       </Head>
       {/* <Layout> */}
       <main>
-        <DiningBanner />
+        <div id='custom-swiper-bottom'>
+          <DiningBanner />
+        </div>
         {/* <!-- Dinner   Section  --> */}
         <section className='dining_wrapper facilities_wrapper'>
           <div className='header_area text-center mx-auto'>

@@ -110,7 +110,9 @@ function index({ seoData }) {
       </Head>
 
       <main>
-        <SpaBanner />
+        <div id='custom-swiper-bottom'>
+          <SpaBanner />
+        </div>
         {/* <!-- Spa  Section  --> */}
         <SpaWellness />
         {/* <!-- Spa Price Section  --> */}

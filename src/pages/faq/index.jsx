@@ -42,7 +42,9 @@ function index() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <StayBanner />
+      <div id='custom-swiper-bottom'>
+        <StayBanner />
+      </div>
       <main>
         {/* <!-- Faq  Section  --> */}
         <section className='faq_wrapper default_section_gap'>
