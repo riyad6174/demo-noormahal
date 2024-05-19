@@ -1359,7 +1359,7 @@
 // modal css starts
 //later change the class name to avoid modal showing error
 ._hide-modal {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
