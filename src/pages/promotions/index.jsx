@@ -52,9 +52,7 @@ export default function page() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div id='custom-swiper-bottom'>
-        <PromotionBanner />
-      </div>
+      <PromotionBanner />
       <main>
         <section className='promotion_wrapper default_section_gap'>
           <div className='header_area text-center mx-auto'>
@@ -67,37 +65,6 @@ export default function page() {
               the ordinary' choices for you. Experience your money's worth with
               the most attractive offers in town.
             </p>
-            {/* <div className='promotion-container mx-auto'>
-                <div className='promotion_img text-center'>
-                  <img
-                    src='assets/images/promotion/turkeyDinner.jpg'
-                    alt='promotion image'
-                  />
-                </div>
-       
-                <div className='d-flex gap-4 justify-content-center py-4'>
-                  <a
-                    href='assets/images/promotion/ChristmasMenu.pdf'
-                    target='_blank'
-                    className=''
-                  >
-                    {' '}
-                    <button className='book_table_btn' type='button'>
-                      <span>KNOW MORE</span>
-                    </button>
-                  </a>
-
-                  <div className='text-center'>
-                    <button
-                      className='book_table_btn'
-                      data-bs-toggle='modal'
-                      data-bs-target='#exampleModal'
-                    >
-                      <span>Enquire Now </span>
-                    </button>
-                  </div>
-                </div>
-              </div> */}
             {/* <div className='promotion-container mx-auto'>
                 <div className='promotion_img text-center'>
                   <img
@@ -127,7 +94,77 @@ export default function page() {
                     </button>
                   </div>
                 </div>
-              </div> */}
+              </div> */}{' '}
+            <div className='promotion-container mx-auto'>
+              <div className='promotion_img text-center'>
+                <img
+                  src='assets/images/promotion/royal_escape_noormahal.jpg'
+                  alt='promotion image'
+                />
+              </div>
+              {/* <div className="promotion_img text-center">
+              <img
+                src="assets/images/promotion/Staycation_Packages_19jun.jpg"
+                alt="promotion image"
+              />
+            </div> */}
+              <div className='d-flex gap-4 justify-content-center py-4'>
+                <a
+                  href='assets/images/promotion/knowmore.jpg'
+                  target='_blank'
+                  className='d-none'
+                >
+                  {' '}
+                  <button className='book_table_btn'>
+                    <span>KNOW MORE</span>
+                  </button>
+                </a>
+                <div className='text-center'>
+                  <button
+                    className='book_table_btn'
+                    data-bs-toggle='modal'
+                    data-bs-target='#exampleModal'
+                  >
+                    <span>Enquire Now </span>
+                  </button>
+                </div>
+              </div>
+            </div>{' '}
+            <div className='promotion-container mx-auto'>
+              <div className='promotion_img text-center'>
+                <img
+                  src='assets/images/promotion/sunday_splendor_noormahal.jpg'
+                  alt='promotion image'
+                />
+              </div>
+              {/* <div className="promotion_img text-center">
+              <img
+                src="assets/images/promotion/Staycation_Packages_19jun.jpg"
+                alt="promotion image"
+              />
+            </div> */}
+              <div className='d-flex gap-4 justify-content-center py-4'>
+                <a
+                  href='assets/images/promotion/knowmore.jpg'
+                  target='_blank'
+                  className='d-none'
+                >
+                  {' '}
+                  <button className='book_table_btn'>
+                    <span>KNOW MORE</span>
+                  </button>
+                </a>
+                <div className='text-center'>
+                  <button
+                    className='book_table_btn'
+                    data-bs-toggle='modal'
+                    data-bs-target='#exampleModal'
+                  >
+                    <span>Enquire Now </span>
+                  </button>
+                </div>
+              </div>
+            </div>
             <div className='promotion-container mx-auto'>
               <div className='promotion_img text-center'>
                 <img
