@@ -1,3 +1,4 @@
+// import Layout from '@/components/Layout';
 import PromotionBanner from '@/components/organisms/Banners/PromotionBanner';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -52,6 +53,7 @@ export default function page() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+      {/* <Layout> */}
       <PromotionBanner />
       <main>
         <section className='promotion_wrapper default_section_gap'>
@@ -95,6 +97,76 @@ export default function page() {
                   </div>
                 </div>
               </div> */}{' '}
+            <div className='promotion-container mx-auto'>
+              <div className='promotion_img text-center'>
+                <img
+                  src='assets/images/promotion/web_cover.jpg'
+                  alt='promotion image'
+                />
+              </div>
+              {/* <div className="promotion_img text-center">
+              <img
+                src="assets/images/promotion/Staycation_Packages_19jun.jpg"
+                alt="promotion image"
+              />
+            </div> */}
+              <div className='d-flex gap-4 justify-content-center py-4'>
+                <a
+                  href='assets/images/promotion/30_years_offer.pdf'
+                  target='_blank'
+                  className=''
+                >
+                  {' '}
+                  <button className='book_table_btn'>
+                    <span>KNOW MORE</span>
+                  </button>
+                </a>
+                <div className='text-center'>
+                  <button
+                    className='book_table_btn'
+                    data-bs-toggle='modal'
+                    data-bs-target='#exampleModal'
+                  >
+                    <span>Enquire Now </span>
+                  </button>
+                </div>
+              </div>
+            </div>{' '}
+            <div className='promotion-container mx-auto'>
+              <div className='promotion_img text-center'>
+                <img
+                  src='assets/images/promotion/mango_mania.jpg'
+                  alt='promotion image'
+                />
+              </div>
+              {/* <div className="promotion_img text-center">
+              <img
+                src="assets/images/promotion/Staycation_Packages_19jun.jpg"
+                alt="promotion image"
+              />
+            </div> */}
+              <div className='d-flex gap-4 justify-content-center py-4'>
+                <a
+                  href='assets/images/promotion/Mango.pdf'
+                  target='_blank'
+                  className=''
+                >
+                  {' '}
+                  <button className='book_table_btn'>
+                    <span>KNOW MORE</span>
+                  </button>
+                </a>
+                <div className='text-center'>
+                  <button
+                    className='book_table_btn'
+                    data-bs-toggle='modal'
+                    data-bs-target='#exampleModal'
+                  >
+                    <span>Enquire Now </span>
+                  </button>
+                </div>
+              </div>
+            </div>{' '}
             <div className='promotion-container mx-auto'>
               <div className='promotion_img text-center'>
                 <img
@@ -233,6 +305,7 @@ export default function page() {
           </div>
         </section>
       </main>
+      {/* </Layout> */}
       <div
         className='modal fade modal-form rounded-0'
         id='exampleModal'

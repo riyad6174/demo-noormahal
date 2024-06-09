@@ -50,8 +50,9 @@ function PromotionBanner() {
             return (
               <SwiperSlide key={index} className='swiper-slide'>
                 <Image
-                  width={1500}
-                  height={1500}
+                  width={2000}
+                  height={2000}
+                  property={true}
                   className='hero_item '
                   src={`https://api.noormahalpalace.com/${banner.image.path}`}
                   alt='slider image'
