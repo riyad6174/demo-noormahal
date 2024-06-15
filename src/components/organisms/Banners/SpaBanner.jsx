@@ -94,8 +94,8 @@ function SpaBanner() {
             return (
               <SwiperSlide key={index} className='swiper-slide'>
                 <Image
-                  width={1500}
-                  height={1500}
+                  width={1600}
+                  height={1600}
                   className='hero_item '
                   src={`https://api.noormahalpalace.com/${banner.image.path}`}
                   alt='slider image'

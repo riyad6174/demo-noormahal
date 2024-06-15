@@ -9,7 +9,7 @@ function TwentyFour() {
     const response = await getPressByYear(2024);
     if (response && response.status) {
       if (response.data && Object.keys(response.data.data).length > 0) {
-        setPressData(response.data.data);
+        setPressData(response.data.data.reverse());
         console.log(response.data.data, 'media');
       }
     }
