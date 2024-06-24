@@ -58,10 +58,11 @@ function ExperiencesSection({ experienceData }) {
             return (
               <div key={index} className='dining_grid'>
                 <div className='img'>
-                  <img
+                  {/* <img
                     src={`https://api.noormahalpalace.com/${experience.service[0].images[0].path}`}
                     alt='dinings image'
-                  />
+                  /> */}
+                  <RecrationalSlider images={experience.service[0].images} />
                 </div>
                 <div className='content'>
                   <div className='inner_content_area mx-auto'>
