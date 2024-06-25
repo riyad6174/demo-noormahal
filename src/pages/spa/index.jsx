@@ -27,16 +27,12 @@ function index({ seoData }) {
   const onSubmit = async (data) => {
     try {
       setIsLoading(true);
-      const response = await fetch('/api/submitSpa', {
+      const response = await fetch('/api/submitEvents', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...data,
-          sheetName: 'spa',
-          spreadsheetId: '1y7OPm4M4JVh38JqendkknQj0TlT8hOwRLE_fcoJk_x4',
-        }), // Change the sheet name as per your requirement
+        body: JSON.stringify({ ...data, sheetName: 'experience' }), // Change the sheet name as per your requirement
       });
       setIsLoading(false);
       if (response.ok) {
@@ -52,6 +48,35 @@ function index({ seoData }) {
     // Reset the form after submission
     reset();
   };
+
+  // const onSubmit = async (data) => {
+  //   try {
+  //     setIsLoading(true);
+  //     const response = await fetch('/api/submitSpa', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         ...data,
+  //         sheetName: 'spa',
+  //         spreadsheetId: '1y7OPm4M4JVh38JqendkknQj0TlT8hOwRLE_fcoJk_x4',
+  //       }), // Change the sheet name as per your requirement
+  //     });
+  //     setIsLoading(false);
+  //     if (response.ok) {
+  //       console.log('Form data submitted successfully!');
+  //       setIsSubmitted(true);
+  //     } else {
+  //       console.error('Failed to submit form data.');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error submitting form data:', error);
+  //   }
+
+  //   // Reset the form after submission
+  //   reset();
+  // };
   // const onFormSubmit = async (data) => {
   //   console.log(data)
   //   try {

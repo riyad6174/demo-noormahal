@@ -91,7 +91,7 @@ function page({ experienceData, seoData }) {
             </div>
 
             {/* <form className="contact-form modal-form"> */}
-            <SpaForm />
+            <DinningForm />
           </div>
         </div>
       </div>
