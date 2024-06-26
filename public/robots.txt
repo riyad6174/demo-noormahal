@@ -1,11 +1,16 @@
 # https://www.robotstxt.org/robotstxt.html
 
-User-agent: SemrushBot
-Disallow:
-User-agent: Twitterbot
-Allow: /blog/*
-
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://www.noormahalpalace.com/sitemap.xml
+User-agent: Ubersuggest
+Allow: /
+
+User-agent: Semrushbot-SI
+Allow: /
+
+User-agent: SiteAuditBot
+Crawl-delay: 1
+Allow: /
+
+Sitemap: https://www.noormahalpalace.com/sitemap.xml 
