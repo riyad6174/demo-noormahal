@@ -35,6 +35,8 @@ function index() {
                 wedding destination near delhi,
                 Luxury 5 Star Hotels in Karnal,'
         />
+        <meta name='robots' content='index, follow' />
+
         <meta
           name='description'
           content='Find answers to commonly asked questions about Noormahal Palace, including accommodations, amenities, dining, events, and more.'

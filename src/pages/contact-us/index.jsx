@@ -75,6 +75,8 @@ function index() {
           name='keywords'
           content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
         />
+        <meta name='robots' content='index, follow' />
+
         <meta
           name='description'
           content='Contact Noormahal Palace for reservations, inquiries, and assistance. Our dedicated team is here to help you plan your perfect getaway, event, or dining experience.'

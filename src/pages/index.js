@@ -22,6 +22,7 @@ export default function Home({
             ? seoData.metaTitle
             : '  Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'}
         </title>
+        <meta name='robots' content='index, follow' />
         <meta
           name='keywords'
           content={

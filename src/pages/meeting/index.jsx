@@ -48,6 +48,8 @@ function page({ meetingData, seoData }) {
             ? seoData.metaTitle
             : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
         </title>
+        <meta name='robots' content='index, follow' />
+
         <meta
           name='keywords'
           content={

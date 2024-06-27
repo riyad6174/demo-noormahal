@@ -11,6 +11,8 @@ function index() {
           id='bootstrap-css'
         />
         <title>Terms and Conditions | Noormahal Palace</title>
+        <meta name='robots' content='index, follow' />
+
         <meta
           name='keywords'
           content='wedding venues in chandigarh,

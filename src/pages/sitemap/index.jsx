@@ -15,6 +15,8 @@ export default function page() {
                 wedding destination near delhi,
                 Luxury 5 Star Hotels in Karnal,'
         />
+        <meta name='robots' content='index, follow' />
+
         <meta
           name='description'
           content='Navigate through the Noormahal Palace website using our sitemap. Find links to all important pages, helping you discover the richness of our offerings.'
