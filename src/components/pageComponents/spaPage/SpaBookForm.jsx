@@ -89,7 +89,10 @@ function SpaBookForm() {
                     healthclub@noormahal.in
                   </a>{' '}
                   <br />
-                  Web : <a href='www.noormahal.in'>www.noormahal.in</a>{' '}
+                  Web :{' '}
+                  <a href='https://www.noormahalpalace.com/' target='_blank'>
+                    www.noormahal.com
+                  </a>{' '}
                 </h4>
               </div>
             </div>

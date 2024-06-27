@@ -60,8 +60,10 @@ export default function page() {
       <main>
         <section className='promotion_wrapper default_section_gap'>
           <div className='header_area text-center mx-auto'>
-            <h2 className='story_title yellow-color-c2'>OUR</h2>
-            <h2 className='story_title'>SPECIAL OFFERS</h2>
+            <h1>
+              <span className='story_title yellow-color-c2'>OUR</span>
+              <span className='story_title'>SPECIAL OFFERS</span>
+            </h1>
             <p className='pt-2 pb-1'>
               For our guests to make the most of our warm hospitality, we have
               curated various lucrative offers and packages. Being one of the

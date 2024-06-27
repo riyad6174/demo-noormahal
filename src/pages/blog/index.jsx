@@ -53,6 +53,16 @@ function page({ seoData }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <section className='blog_wrapper pt-4 default_section_gap'>
+        <div className='header_area text-center mx-auto mb-5'>
+          <h1 className='story_title yellow-color-c2 '>BLOG</h1>
+
+          <div className='shape2'>
+            <img
+              src='assets/images/shape/experience_shape.png'
+              alt='place shape'
+            />
+          </div>
+        </div>
         <div className='blog-container mx-auto'>
           <div className='blog_grid'>
             {data.length > 0 &&

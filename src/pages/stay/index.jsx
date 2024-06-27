@@ -46,10 +46,10 @@ function page({ roomData, seoData }) {
         {/* <!-- Luxurious Section  --> */}
         <section className='luxurious_wrapper'>
           <div className='header_area text-center mx-auto'>
-            <h2 className='story_title yellow-color-c2'>
+            <h1 className='story_title yellow-color-c2'>
               OUR <br />
               LUXURIOUS STAY
-            </h2>
+            </h1>
             <p className='pt-2 pb-1'>
               At Noormahal Palace, Karnal, we have an inventory of 125 elegant
               rooms and suites, furnished with premium furniture and upholstery.

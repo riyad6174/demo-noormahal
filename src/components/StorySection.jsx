@@ -38,14 +38,16 @@ function StorySection({
           <div className='story-container mx-auto'>
             <div className='story_grid'>
               <div className='content item_grid' data-aos='fade-up'>
-                <h2 className='story_title yellow-color-a4'>
-                  <span> Story Of</span>
-                </h2>
+                <h1>
+                  <span className='story_title yellow-color-a4'>
+                    <span> Story Of</span>
+                  </span>
 
-                <h2 className='story_title mt-2'>
-                  <span>Noormahal Palace, &nbsp; </span>
-                  <span> karnal</span>
-                </h2>
+                  <span className='story_title mt-2'>
+                    <span>Noormahal Palace, &nbsp; </span>
+                    <span> karnal</span>
+                  </span>
+                </h1>
 
                 <p>
                   {' '}

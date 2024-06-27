@@ -28,7 +28,7 @@ export default function page() {
       <main>
         <section className='promotion_wrapper default_section_gap'>
           <div className='header_area text-center mx-auto'>
-            <h2 className='story_title yellow-color-c2'>SITE MAP</h2>
+            <h1 className='story_title yellow-color-c2'>SITE MAP</h1>
           </div>
 
           <div className='room-facilities pt-5 '>

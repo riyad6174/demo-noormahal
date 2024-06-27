@@ -41,10 +41,10 @@ function Index() {
         <AwardSlider />
 
         <div className='header_area text-center mx-auto'>
-          <h2 className='story_title yellow-color-c2'>
+          <h1 className='story_title yellow-color-c2'>
             OUR <br />
             <span className='black-color-0c'> LATEST NEWS</span>
-          </h2>
+          </h1>
           <p className='pt-2 pb-1'>
             One of the most preferred destinations for a big fat Indian wedding
             or for a leisurely weekend getaway, Hotel Noormahal Palace has been

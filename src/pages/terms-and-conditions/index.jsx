@@ -31,10 +31,10 @@ function index() {
       </Head>
       <section className='terms_wrapper default_section_gap container pt-5'>
         <div className='header_area text-center mx-auto'>
-          <h2 className='story_title yellow-color-c2'>
+          <h1 className='story_title yellow-color-c2'>
             OUR <br />
             <span className='black-color-0c'> TERMS & CONDITIONS</span>
-          </h2>
+          </h1>
           <div className='shape2'>
             <img src='assets/images/shape/place_shape.png' alt='place shape' />
           </div>

@@ -87,11 +87,11 @@ function index() {
 
       <section className='contact_wrapper default_section_gap pt-5'>
         <div className='header_area text-center mx-auto'>
-          <h2 className='story_title yellow-color-c2'>
+          <h1 className='story_title yellow-color-c2'>
             HOW CAN YOU
             <br />
             <span className='black-color-0c'>REACH US </span>
-          </h2>
+          </h1>
           <div className='shape2'>
             <img src='assets/images/shape/place_shape.png' alt='place shape' />
           </div>

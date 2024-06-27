@@ -24,8 +24,10 @@ function index() {
       </Head>
       <section className='gallery_wrapper pt-5 default_section_gap'>
         <div className='header_area text-center mx-auto'>
-          <h2 className='story_title yellow-color-c2'>OUR</h2>
-          <h2 className='story_title'>GALLERY</h2>
+          <h1>
+            <span className='story_title yellow-color-c2'>OUR</span>
+            <span className='story_title'>GALLERY</span>
+          </h1>
         </div>
         <div className='gallery-container mx-auto'>
           {/* <div className='tab_btn_area d-flex align-items-center justify-content-center'>
