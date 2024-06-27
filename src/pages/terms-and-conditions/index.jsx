@@ -787,9 +787,10 @@ function index() {
                         attract charges.
                       </li>
                       <li>
-                        Outside food is not allowed on hotel premises. If
-                        consumed, the hotel will not be held responsible for any
-                        health issues.
+                        Food brought from outside the property is not permitted
+                        on the premises. Food ordered through any third-party
+                        aggregator/delivery service such as Zomato and Swiggy is
+                        not permitted on the premises.
                       </li>
                       <li>
                         The guests are requested to keep their valuables inside
