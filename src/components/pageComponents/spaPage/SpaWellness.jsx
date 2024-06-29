@@ -26,7 +26,7 @@ function SpaWellness() {
           className='flower_icon'
         />
         {/* <h4 className="spa_sub_title">Welcome to</h4> */}
-        <h2 className='story_title text-capitalize pt-5'> Spa And Wellness</h2>
+        <h1 className='story_title text-capitalize pt-5'> Spa And Wellness</h1>
         {/* <h2 className="story_title text-capitalize">Experience</h2> */}
         <p className='pt-2 pb-1'>
           We have integrated healing and wellness modalities from various

@@ -81,9 +81,9 @@ function page({ experienceData, seoData }) {
         <div className='modal-dialog rounded-0'>
           <div className='modal-content rounded-0'>
             <div className='modal-header'>
-              <h1 className='modal-title fs-5' id='exampleModalLabel'>
+              <p className='modal-title fs-5' id='exampleModalLabel'>
                 ENQUIRE FORM
-              </h1>
+              </p>
               <button
                 type='button'
                 className='btn-close'
@@ -108,9 +108,9 @@ function page({ experienceData, seoData }) {
         <div className='modal-dialog rounded-0'>
           <div className='modal-content rounded-0'>
             <div className='modal-header'>
-              <h1 className='modal-title fs-5' id='exampleModalLabel'>
+              <p className='modal-title fs-5' id='exampleModalLabel'>
                 ENQUIRE FORM
-              </h1>
+              </p>
               <button
                 type='button'
                 className='btn-close'
@@ -135,9 +135,9 @@ function page({ experienceData, seoData }) {
         <div className='modal-dialog rounded-0'>
           <div className='modal-content rounded-0'>
             <div className='modal-header'>
-              <h1 className='modal-title fs-5' id='exampleModalLabel'>
+              <p className='modal-title fs-5' id='exampleModalLabel'>
                 MEMBERSHIP FORM
-              </h1>
+              </p>
               <button
                 type='button'
                 className='btn-close'
@@ -162,9 +162,9 @@ function page({ experienceData, seoData }) {
         <div className='modal-dialog rounded-0'>
           <div className='modal-content rounded-0'>
             <div className='modal-header'>
-              <h1 className='modal-title fs-5' id='exampleModalLabel'>
+              <p className='modal-title fs-5' id='exampleModalLabel'>
                 ENQUIRE FORM
-              </h1>
+              </p>
               <button
                 type='button'
                 className='btn-close'

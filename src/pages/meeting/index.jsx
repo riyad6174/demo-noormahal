@@ -77,10 +77,10 @@ function page({ meetingData, seoData }) {
 
         <section className='dining_wrapper facilities_wrapper'>
           <div className='header_area text-center mx-auto'>
-            <h2 className='story_title yellow-color-c2'>
+            <h1 className='story_title yellow-color-c2'>
               MEETINGS <br />
               <span className='black-color-0c'> FOR FLAWLESS PLANNING</span>
-            </h2>
+            </h1>
             <p className='pt-2 pb-1'>
               Noormahal Palace offers a wide variety of recreational facilities
               for guests to unwind – either by themselves or in the company of
@@ -111,9 +111,9 @@ function page({ meetingData, seoData }) {
           <div className='modal-dialog rounded-0'>
             <div className='modal-content rounded-0'>
               <div className='modal-header'>
-                <h1 className='modal-title fs-5' id='exampleModalLabel'>
+                <p className='modal-title fs-5' id='exampleModalLabel'>
                   ENQUIRY FORM
-                </h1>
+                </p>
                 <button
                   type='button'
                   className='btn-close'

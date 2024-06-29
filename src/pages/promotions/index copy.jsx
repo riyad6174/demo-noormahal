@@ -111,9 +111,9 @@ export default function page() {
         <div className='modal-dialog rounded-0'>
           <div className='modal-content rounded-0'>
             <div className='modal-header'>
-              <h1 className='modal-title fs-5' id='exampleModalLabel'>
+              <p className='modal-title fs-5' id='exampleModalLabel'>
                 ENQUIRY FORM
-              </h1>
+              </p>
               <button
                 type='button'
                 className='btn-close'
