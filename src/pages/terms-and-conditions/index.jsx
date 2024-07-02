@@ -1,116 +1,117 @@
 import Head from 'next/head';
-import React from 'react';
 
 function index() {
   return (
     <>
       <Head>
         <link
-          href='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'
-          rel='stylesheet'
-          id='bootstrap-css'
+          href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          rel="stylesheet"
+          id="bootstrap-css"
         />
         <title>Terms and Conditions | Noormahal Palace</title>
-        <meta name='robots' content='index, follow' />
+        <meta name="robots" content="index, follow" />
 
         <meta
-          name='keywords'
-          content='wedding venues in chandigarh,
+          name="keywords"
+          content="wedding venues in chandigarh,
                 wedding destination near delhi,
-                Luxury 5 Star Hotels in Karnal,'
+                Luxury 5 Star Hotels in Karnal,"
         />
         <meta
-          name='description'
-          content='Review the terms and conditions for staying at Noormahal Palace. Understand the policies and guidelines that govern your experience with us'
+          name="description"
+          content="Review the terms and conditions for staying at Noormahal Palace. Understand the policies and guidelines that govern your experience with us"
         />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
         {/* <script src='//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
         <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> */}
-        <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
       </Head>
-      <section className='terms_wrapper default_section_gap container pt-5'>
-        <div className='header_area text-center mx-auto'>
-          <h1 className='story_title yellow-color-c2'>
+      <section className="terms_wrapper default_section_gap container pt-5">
+        <div className="header_area text-center mx-auto">
+          <h1 className="story_title yellow-color-c2">
             OUR <br />
-            <span className='black-color-0c'> TERMS & CONDITIONS</span>
+            <span className="black-color-0c"> TERMS & CONDITIONS</span>
           </h1>
-          <div className='shape2'>
-            <img src='assets/images/shape/place_shape.png' alt='place shape' />
+          <div className="shape2">
+            <img src="assets/images/shape/place_shape.png" alt="place shape" />
           </div>
           <p className='pt-2 pb-1'>
             Hotel Noormahal Palace has a few terms & conditions, which have been
+          <p className="pt-2 pb-1">
+            Hotel Noormahal has a few terms & conditions, which have been
             thoughtfully calibrated as per the quintessential industry practices
             and law of the land. Guests and visitors are expected to follow the
             terms & conditions, which are mentioned below.
           </p>
         </div>
-        <section id='tabs'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-xs-12 '>
+        <section id="tabs">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-12 ">
                 <nav>
-                  <div className='nav nav-tabs' id='nav-tab' role='tablist'>
+                  <div className="nav nav-tabs" id="nav-tab" role="tablist">
                     <button
-                      className='nav-link active'
-                      id='terms-conditions-tab'
-                      data-bs-toggle='tab'
-                      data-bs-target='#terms-conditions'
-                      type='button'
-                      role='tab'
-                      aria-controls='terms-conditions'
-                      aria-selected='true'
+                      className="nav-link active"
+                      id="terms-conditions-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#terms-conditions"
+                      type="button"
+                      role="tab"
+                      aria-controls="terms-conditions"
+                      aria-selected="true"
                     >
                       TERMS & CONDITIONS
                     </button>
                     <button
-                      className='nav-link'
-                      id='privacy-policy-tab'
-                      data-bs-toggle='tab'
-                      data-bs-target='#privacy-policy'
-                      type='button'
-                      role='tab'
-                      aria-controls='privacy-policy'
-                      aria-selected='false'
+                      className="nav-link"
+                      id="privacy-policy-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#privacy-policy"
+                      type="button"
+                      role="tab"
+                      aria-controls="privacy-policy"
+                      aria-selected="false"
                     >
                       PRIVACY POLICY
                     </button>
                     <button
-                      className='nav-link'
-                      id='rules-regulations-tab'
-                      data-bs-toggle='tab'
-                      data-bs-target='#rules-regulations'
-                      type='button'
-                      role='tab'
-                      aria-controls='rules-regulations'
-                      aria-selected='false'
+                      className="nav-link"
+                      id="rules-regulations-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#rules-regulations"
+                      type="button"
+                      role="tab"
+                      aria-controls="rules-regulations"
+                      aria-selected="false"
                     >
                       RULES & REGULATIONS
                     </button>
                     <button
-                      className='nav-link'
-                      id='nav-confirm-policy-tab'
-                      data-bs-toggle='tab'
-                      data-bs-target='#nav-confirm-policy'
-                      type='button'
-                      role='tab'
-                      aria-controls='nav-confirm-policy'
-                      aria-selected='false'
+                      className="nav-link"
+                      id="nav-confirm-policy-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#nav-confirm-policy"
+                      type="button"
+                      role="tab"
+                      aria-controls="nav-confirm-policy"
+                      aria-selected="false"
                     >
                       RESERVE CANCEL CONFIRM POLICY
                     </button>
                   </div>
                 </nav>
 
-                <div className='tab-content' id='nav-tabContent'>
+                <div className="tab-content" id="nav-tabContent">
                   <div
-                    className='tab-pane fade show active'
-                    id='terms-conditions'
-                    role='tabpanel'
-                    aria-labelledby='terms-conditions-tab'
+                    className="tab-pane fade show active"
+                    id="terms-conditions"
+                    role="tabpanel"
+                    aria-labelledby="terms-conditions-tab"
                   >
-                    <div className='accordion-body px-4'>
-                      <div className='term_content_item p-4'>
+                    <div className="accordion-body px-4">
+                      <div className="term_content_item p-4">
                         <h4>Introduction</h4>
 
                         <p>
@@ -624,10 +625,10 @@ function index() {
                   </div>
 
                   <div
-                    className='tab-pane fade p-4'
-                    id='privacy-policy'
-                    role='tabpanel'
-                    aria-labelledby='privacy-policy-tab'
+                    className="tab-pane fade p-4"
+                    id="privacy-policy"
+                    role="tabpanel"
+                    aria-labelledby="privacy-policy-tab"
                   >
                     <ul>
                       <li>
@@ -677,8 +678,8 @@ function index() {
                       <li>
                         If you have any questions or concerns regarding your
                         privacy issues, please do not hesitate to contact
-                        Jewel’s Classic Hotels Pvt Ltd. at{' '}
-                        <a href='mailto:reservations@noormahal.in'>
+                        Jewel’s Classic Hotels Pvt Ltd. at{" "}
+                        <a href="mailto:reservations@noormahal.in">
                           reservations@noormahal.in
                         </a>
                         .
@@ -723,10 +724,10 @@ function index() {
                   </div>
 
                   <div
-                    className='tab-pane fade p-4'
-                    id='rules-regulations'
-                    role='tabpanel'
-                    aria-labelledby='rules-regulations-tab'
+                    className="tab-pane fade p-4"
+                    id="rules-regulations"
+                    role="tabpanel"
+                    aria-labelledby="rules-regulations-tab"
                   >
                     Guest signing this document represents that he/she shall
                     abide by the house rules & is authorized by person(s)
@@ -803,6 +804,7 @@ function index() {
                         security issues arising due to negligence and breach of
                         hotel rules and policies by guests.
                       </li>
+                      <li>Pets are not allowed inside the premises.</li>
                     </ol>
                     All personal particulars provided above are true and
                     correct. I have carefully read and understood the terms and
@@ -810,12 +812,12 @@ function index() {
                   </div>
 
                   <div
-                    className='tab-pane fade'
-                    id='nav-confirm-policy'
-                    role='tabpanel'
-                    aria-labelledby='nav-confirm-policy-tab'
+                    className="tab-pane fade"
+                    id="nav-confirm-policy"
+                    role="tabpanel"
+                    aria-labelledby="nav-confirm-policy-tab"
                   >
-                    <div className='panel-body p-4'>
+                    <div className="panel-body p-4">
                       <h4>Terms &amp; Conditions</h4>
 
                       <p>
@@ -844,7 +846,7 @@ function index() {
 
                       <h4>
                         GROUP/ SOCIAL EVENTS (ROOMS AND BANQUETS) PAYMENT POLICY
-                        AND SCHEDULE/ CANCELLATION{' '}
+                        AND SCHEDULE/ CANCELLATION{" "}
                       </h4>
 
                       <p>
