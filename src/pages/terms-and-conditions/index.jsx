@@ -39,7 +39,7 @@ function index() {
             <img src='assets/images/shape/place_shape.png' alt='place shape' />
           </div>
           <p className='pt-2 pb-1'>
-            Hotel Noormahal has a few terms & conditions, which have been
+            Hotel Noormahal Palace has a few terms & conditions, which have been
             thoughtfully calibrated as per the quintessential industry practices
             and law of the land. Guests and visitors are expected to follow the
             terms & conditions, which are mentioned below.
@@ -797,6 +797,7 @@ function index() {
                         the safe deposit locker. The hotel will not be
                         responsible for any loss/theft in the hotel premises.
                       </li>
+                      <li>Pets are not allowed inside the premises.</li>
                       <li>
                         The management will not be held responsible for any
                         security issues arising due to negligence and breach of
