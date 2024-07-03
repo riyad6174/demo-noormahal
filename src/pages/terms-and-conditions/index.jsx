@@ -39,10 +39,10 @@ function index() {
             <img src='assets/images/shape/place_shape.png' alt='place shape' />
           </div>
           <p className='pt-2 pb-1'>
-            Hotel Noormahal Palace Hotel has a few terms & conditions, which
-            have been thoughtfully calibrated as per the quintessential industry
-            practices and law of the land. Guests and visitors are expected to
-            follow the terms & conditions, which are mentioned below.
+            Noormahal Palace Hotel has a few terms & conditions, which have been
+            thoughtfully calibrated as per the quintessential industry practices
+            and law of the land. Guests and visitors are expected to follow the
+            terms & conditions, which are mentioned below.
           </p>
         </div>
         <section id='tabs'>
