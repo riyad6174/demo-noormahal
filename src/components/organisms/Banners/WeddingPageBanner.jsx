@@ -1,9 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import slider1 from '../../../../public/assets/images/weedings/banner2.jpg';
-import slider2 from '../../../../public/assets/images/weedings/banner1.jpg';
-import slider3 from '../../../../public/assets/images/weedings/banner3.jpg';
-import slider4 from '../../../../public/assets/images/weedings/banner-2.jpg';
 
 // import slider2 from '../../../public/assets/images/home/1. banner 2.jpg';
 // import video1 from '../../public/assets/videos/featues_video.mp4';
@@ -16,7 +12,6 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination } from 'swiper';
 import Image from 'next/image';
-import CheckIn from '../CheckIn';
 import { getBanner } from '@/utils/API';
 
 function WeddingBanner() {

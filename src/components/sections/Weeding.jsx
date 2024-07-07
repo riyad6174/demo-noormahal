@@ -1,9 +1,5 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import slider1 from '../../../public/assets/images/hero/hero_slider_img1.png';
-import slider2 from '../../../public/assets/images/meetings/sheeshmahal.jpg';
-// import slider3 from '../../../public/assets/images/hero/hero_slider_img3.png';
-import slider4 from '../../../public/assets/images/weedings/banner1.jpg';
 
 // Import Swiper styles
 import 'swiper/css';

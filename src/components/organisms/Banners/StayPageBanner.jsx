@@ -1,12 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import slider1 from '../../../../public/assets/images/stay/Banner1.jpg';
 
-import slider2 from '../../../../public/assets/images/stay/Banner2.jpg';
-import slider3 from '../../../../public/assets/images/stay/clubroyal-banner.jpg';
-// import video1 from '../../public/assets/videos/featues_video.mp4';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';

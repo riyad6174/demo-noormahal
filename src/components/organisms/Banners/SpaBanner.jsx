@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import slider1 from '../../../../public/assets/images/spa/Banner1.jpg';
-import slider2 from '../../../../public/assets/images/spa/Banner2.jpg';
 
 // import slider2 from '../../../../public/assets/images/home/1. banner 2.jpg';
 // import video1 from '../../public/assets/videos/featues_video.mp4';

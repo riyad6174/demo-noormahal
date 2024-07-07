@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-import { GrClose } from 'react-icons/gr';
 import { MdClose } from 'react-icons/md';
 
 function Popup({ showPopUp, setShowPopUp }) {

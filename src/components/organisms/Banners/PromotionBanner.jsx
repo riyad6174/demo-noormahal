@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import slider1 from '../../../../public/assets/images/home/2.ExperiencesExperiences2.jpg';
 
 // Import Swiper styles
 import 'swiper/css';
