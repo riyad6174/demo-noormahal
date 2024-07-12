@@ -17,7 +17,7 @@ function Popup({ showPopUp, setShowPopUp }) {
       <div className='position-relative'>
         <Link href={'/promotions'}>
           <img
-            src='/assets/images/popup/30_years.jpg'
+            src='/assets/images/promotion/monsoon.jpg'
             alt='independence-image'
             className='shadow popup-image object-fit-cover'
             style={{ border: '8px solid #FFFAF0' }}
