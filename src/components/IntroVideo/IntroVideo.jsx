@@ -46,7 +46,7 @@ function IntroVideo(props) {
         </video> */}
       {windowSize.width < 992 && (
         <img
-          src='/assets/videos/intro2.gif'
+          src='/assets/videos/Intro 2.gif'
           alt='intro-gif'
           className='intro-gif'
           style={{ height: '100vh', width: '100%', objectFit: 'cover' }}
