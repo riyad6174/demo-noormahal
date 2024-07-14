@@ -8,7 +8,6 @@ function IntroVideo(props) {
   const [IntroFinish, setIntroFinish] = useState(false);
   const windowSize = useWindowSize();
 
-
   // useEffect(() => {
   //   // attemptPlay();
   //   setTimeout(() => {
@@ -47,7 +46,7 @@ function IntroVideo(props) {
         </video> */}
       {windowSize.width < 992 && (
         <img
-          src='/assets/videos/5mb.gif'
+          src='/assets/videos/intro2.gif'
           alt='intro-gif'
           className='intro-gif'
           style={{ height: '100vh', width: '100%', objectFit: 'cover' }}
