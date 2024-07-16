@@ -281,7 +281,7 @@ export default function page() {
                 </div>
               </div>
             </div>
-            <div className='promotion-container mx-auto'>
+            {/* <div className='promotion-container mx-auto'>
               <div className='promotion_img text-center'>
                 <img
                   src='assets/images/promotion/classicspa.jpg'
@@ -310,7 +310,7 @@ export default function page() {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className='promotion-container mx-auto'>
               <div className='promotion_img text-center'>
                 <img
