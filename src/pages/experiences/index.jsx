@@ -48,10 +48,10 @@ function page({ experienceData, seoData }) {
         {/* <!-- Dinner   Section  --> */}
         <section className='dining_wrapper facilities_wrapper'>
           <div className='header_area text-center mx-auto'>
-            <h2 className='story_title yellow-color-c2'>
+            <h1 className='story_title yellow-color-c2'>
               OUR <br />
               <span className='black-color-0c'> LUXURIOUS FACILITIES</span>
-            </h2>
+            </h1>
             <p className='pt-2 pb-1'>
               Noormahal Palace offers a wide variety of recreational facilities
               for guests to unwind – either by themselves or in the company of

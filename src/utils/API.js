@@ -200,6 +200,18 @@ export async function getBlog() {
   return response;
 }
 
+// utils/API.js
+// export async function getAllBlogSlugs() {
+//   // Fetch all blog posts to get their slugs
+//   const response = await Axios.get(`${baseURL}/blogs`, header);
+
+//   return response;
+
+//   // const blogs = await response.json();
+
+//   // return blogs.map((blog) => blog.slug); // Adjust according to your API response structure
+// }
+
 //single blog
 
 export async function getSingleBlog(slug) {

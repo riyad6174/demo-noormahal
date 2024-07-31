@@ -45,7 +45,7 @@ export default function page() {
                     <p> dining </p>
                   </Link>
 
-                  <Link href='/weddingsandevents' className='text-uppercase'>
+                  <Link href='/weddingandevents' className='text-uppercase'>
                     <p> wedding and events</p>
                   </Link>
                 </div>
