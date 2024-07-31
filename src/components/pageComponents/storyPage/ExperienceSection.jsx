@@ -2,6 +2,10 @@ import DiningSlider from '@/components/organisms/ImageSlider/DiningImageSlider';
 import Link from 'next/link';
 import React from 'react';
 import HtmlParser from 'react-html-parser';
+
+import shape from '../../../../public/assets/images/shape/experience_shape.png';
+import Image from 'next/image';
+
 function ExperienceSection({ experienceData }) {
   return (
     <div>
@@ -9,10 +13,7 @@ function ExperienceSection({ experienceData }) {
         <div className='header_area text-center'>
           <h2 className='heading_title'>Experiences</h2>
           <div className='shape'>
-            <img
-              src='assets/images/shape/experience_shape.png'
-              alt='shape icon'
-            />
+            <Image src={shape} alt='shape icon' height={20} width={220} />
           </div>
         </div>
         {experienceData &&

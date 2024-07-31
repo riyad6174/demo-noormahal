@@ -59,6 +59,7 @@ function Weeding({ weddingData }) {
                       className='hero_item '
                       src={`https://api.noormahalpalace.com/${img.image?.path}`}
                       alt='slider image'
+                      loading='lazy'
                     />
                     <div className='content'>
                       <Link href='/weddingandevents' className='plan_btn'>

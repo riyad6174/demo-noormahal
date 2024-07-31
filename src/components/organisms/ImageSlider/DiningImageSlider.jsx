@@ -39,6 +39,7 @@ function DiningSlider({ images }) {
                   className='hero_item '
                   src={`https://api.noormahalpalace.com/${image.path}`}
                   alt='slider image'
+                  priority
                 />
               </SwiperSlide>
             );
