@@ -20,7 +20,7 @@ import { useCallback } from 'react';
 
 function SwiperBanner() {
   const [showSlider, setShowSlider] = useState(true);
-  const [banneData,setData] = useState([])
+  const [banneData, setData] = useState([]);
   const vidRef = useRef();
   useEffect(() => {
     // Delay the display of the slider for a certain duration (e.g., 5 seconds)
@@ -31,17 +31,16 @@ function SwiperBanner() {
     return () => clearTimeout(timeout);
   }, []);
 
-
   const fetchBannerData = useCallback(async () => {
     const response = await getBanner('overview');
     if (response && response.status) {
       if (response.data && Object.keys(response.data.data).length > 0) {
         setData(response.data?.data);
-        console.log(response.data.data,"home banner data")
+        console.log(response.data.data, 'home banner data');
       }
     }
   }, []);
-  
+
   useEffect(() => {
     fetchBannerData();
   }, [fetchBannerData]);
@@ -63,7 +62,6 @@ function SwiperBanner() {
           className='mySwipe  swiper-slide '
         >
           {!showSlider ? (
-      
             <SwiperSlide className='swiper-slide pb-1'>
               <Image
                 width={1500}
@@ -71,6 +69,7 @@ function SwiperBanner() {
                 className='hero_item '
                 src={slider1}
                 alt='slider image'
+                priority
               />
             </SwiperSlide>
           ) : (

@@ -1,7 +1,8 @@
 import { getRooms } from '@/utils/API';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useCallback, useEffect, useState } from 'react';
-
+import shape from '../../../../public/assets/images/shape/experience_shape.png';
 function RoomsAndSuits() {
   const [data, setData] = useState([]);
 
@@ -48,10 +49,7 @@ function RoomsAndSuits() {
           {/* <h4 className='sub_heading'>Palace</h4> */}
           <h2 className='heading_title_md'>Rooms & Suites</h2>
           <div className='shape'>
-            <img
-              src='assets/images/shape/experience_shape.png'
-              alt='shape icon'
-            />
+            <Image src={shape} alt='shape icon' height={20} width={220} />
           </div>
           <p>
             At Noormahal Palace, Karnal, we have an inventory of 125 elegant
@@ -67,10 +65,13 @@ function RoomsAndSuits() {
             data.map((room, index) => {
               return (
                 <div key={index} className='place_item '>
-                  <img
+                  <Image
                     src={`https://api.noormahalpalace.com/${room.image?.path}`}
                     alt={room.title}
                     className='place_img'
+                    width={500}
+                    height={500}
+                    loading='lazy'
                   />
                   <div className='place_content'>
                     <h4>{room.title}</h4>

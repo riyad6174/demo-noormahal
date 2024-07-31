@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import HtmlParser from 'react-html-parser';
 
@@ -32,7 +33,10 @@ function AmenitiesSection({ amenitiesData }) {
                   return (
                     <div key={index} className='amentites_innter_grid'>
                       <div className='img'>
-                        <img
+                        <Image
+                          width={400}
+                          height={400}
+                          loading='lazy'
                           src={`https://api.noormahalpalace.com/${aminities.images[0].path}`}
                           alt='Salon-image'
                         />

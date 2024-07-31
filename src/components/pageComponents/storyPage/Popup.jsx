@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 import { MdClose } from 'react-icons/md';
-
+import image from '../../../../public/assets/images/promotion/monsoon.jpg';
+import Image from 'next/image';
 function Popup({ showPopUp, setShowPopUp }) {
   // const handleClick = () =>{
   //   setShowPopUp(!showPopUp)
@@ -16,8 +17,9 @@ function Popup({ showPopUp, setShowPopUp }) {
     >
       <div className='position-relative'>
         <Link href={'/promotions'}>
-          <img
-            src='/assets/images/promotion/monsoon.jpg'
+          <Image
+            src={image}
+            quality={75}
             alt='independence-image'
             className='shadow popup-image object-fit-cover'
             style={{ border: '8px solid #FFFAF0' }}
