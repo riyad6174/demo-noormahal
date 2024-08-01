@@ -12,6 +12,19 @@ function SpaBookForm() {
   } = useForm();
 
   const onSubmit = async (data) => {
+    // Fetch the IP address
+    let ipAddress = '';
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      ipAddress = ipData.ip;
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
+
+    // Add IP address to form data
+    data.ipaddress = ipAddress;
+
     try {
       setIsLoading(true);
       const response = await fetch('/api/submitEvents', {
