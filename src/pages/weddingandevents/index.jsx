@@ -20,6 +20,19 @@ function page({ eventData, seoData }) {
   } = useForm();
 
   const onSubmit = async (data) => {
+    // Fetch the IP address
+    let ipAddress = '';
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      ipAddress = ipData.ip;
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
+
+    // Add IP address to form data
+    data.ipaddress = ipAddress;
+
     try {
       setIsLoading(true);
       const response = await fetch('/api/submitEvents', {
@@ -40,21 +53,21 @@ function page({ eventData, seoData }) {
       console.error('Error submitting form data:', error);
     }
 
-    try {
-      setIsLoading(true);
-      data.title = 'wedding';
-      data.type = 'enquire';
-      const response = await postEnquire(data);
-      setIsLoading(false);
-      if (response.status == 200 || response.status == 200) {
-        console.log('Form data submitted successfully!');
-        setIsSubmitted(true);
-      } else {
-        console.error('Failed to submit form data.');
-      }
-    } catch (error) {
-      console.error('Error submitting form data:', error);
-    }
+    // try {
+    //   setIsLoading(true);
+    //   data.title = 'wedding';
+    //   data.type = 'enquire';
+    //   const response = await postEnquire(data);
+    //   setIsLoading(false);
+    //   if (response.status == 200 || response.status == 200) {
+    //     console.log('Form data submitted successfully!');
+    //     setIsSubmitted(true);
+    //   } else {
+    //     console.error('Failed to submit form data.');
+    //   }
+    // } catch (error) {
+    //   console.error('Error submitting form data:', error);
+    // }
 
     // Reset the form after submission
     reset();
