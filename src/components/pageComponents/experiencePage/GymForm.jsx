@@ -149,7 +149,7 @@ function GymForm() {
                         className='book_table_btn w-100  btn-block
                             '
                       >
-                        <span>SUBMIT</span>
+                        <span>{isSubmitted ? 'SUBMITTED' : 'SUBMIT'}</span>
                       </button>
                     </div>
                   </div>

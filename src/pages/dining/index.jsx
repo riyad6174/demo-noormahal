@@ -552,7 +552,9 @@ function page() {
                                 {isLoading ? (
                                   <span>SUBMITTING.. </span>
                                 ) : (
-                                  <span>SUBMIT </span>
+                                  <span>
+                                    {isSubmitted ? 'SUBMITTED' : 'SUBMIT'}
+                                  </span>
                                 )}
                               </button>
                             </div>

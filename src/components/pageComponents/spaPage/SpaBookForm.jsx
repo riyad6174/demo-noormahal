@@ -158,7 +158,7 @@ function SpaBookForm() {
                 </div>
                 <div className='input_row'>
                   <button type='submit' className='view_more_btn w-100'>
-                    <span>BOOK NOW</span>
+                    <span>{isSubmitted ? 'SUBMITTED' : 'SUBMIT'}</span>
                   </button>
                 </div>
                 {isSubmitted && (
