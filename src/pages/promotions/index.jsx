@@ -506,11 +506,18 @@ export default function page() {
                         <div className='row'>
                           <div className='col-md-12 pt-2'>
                             <button
+                              disabled={isSubmitted}
                               type='submit'
                               className='book_table_btn w-100  btn-block
                             '
                             >
-                              <span>SUBMIT</span>
+                              {isLoading ? (
+                                <span>SUBMITTING.. </span>
+                              ) : (
+                                <span>
+                                  {isSubmitted ? 'SUBMITTED' : 'SUBMIT'}
+                                </span>
+                              )}
                             </button>
                           </div>
                         </div>
