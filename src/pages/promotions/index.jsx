@@ -176,36 +176,6 @@ export default function page() {
             <div className='promotion-container mx-auto'>
               <div className='promotion_img text-center'>
                 <img
-                  src='assets/images/popup/freedom.jpg'
-                  alt='promotion image'
-                />
-              </div>
-
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                {/* <a
-                  href='assets/images/promotion/monsoon.pdf'
-                  target='_blank'
-                  className='d-block'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a> */}
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                  >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div>{' '}
-            <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
                   src='assets/images/promotion/monsoon.jpg'
                   alt='promotion image'
                 />
