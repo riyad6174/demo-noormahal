@@ -1424,12 +1424,12 @@
 
 .popup-image {
   @include media-break-width(1500, 2500) {
-    width: 680px;
+    width: 800px;
     height: 455px;
     object-fit: fill;
   }
   @include media-break-width(992, 1499) {
-    width: 680px;
+    width: 800;
     height: 455px;
     object-fit: fill;
   }
