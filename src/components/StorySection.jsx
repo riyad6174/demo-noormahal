@@ -18,7 +18,7 @@ function StorySection({
 }) {
   const [showPopUp, setShowPopUp] = useState(false);
   const instaToken =
-    'IGQWROTDNJNUs5QjZAZAOWhYUVltaks2VXVYTWlOa2Q3Q0VhVk5DcVZApYWQwbmdUOUFaWEpKMGZAuVzJhZAUItb2xiY3kydXNNVFlIaEt1OHdNV3l6YktRWFlxd0FzTjRNVmtCSTlrSHBtREE0NmxNNXdpYVNxSzdWT3MZD';
+    'IGQWRPN1BKbGYwZAkt1SXlBR2k1MC0xSlluTk5hSWpNUVJYcHZAxWjlJTlJUa3M2TWpvVWJZAZA3d5Sk5uWHFLSjVpU1k4aGtyMzNwUVhvMmVfVFhMQUlmbmJMYmF4R1hESjE3ODNlMGU2b2Ntc0dCRVNQWVpURTlzWGMZD';
 
   useEffect(() => {
     setShowPopUp(false);
