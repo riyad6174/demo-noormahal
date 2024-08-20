@@ -21,7 +21,7 @@ function StorySection({
     'IGQWROTDNJNUs5QjZAZAOWhYUVltaks2VXVYTWlOa2Q3Q0VhVk5DcVZApYWQwbmdUOUFaWEpKMGZAuVzJhZAUItb2xiY3kydXNNVFlIaEt1OHdNV3l6YktRWFlxd0FzTjRNVmtCSTlrSHBtREE0NmxNNXdpYVNxSzdWT3MZD';
 
   useEffect(() => {
-    setShowPopUp(true);
+    setShowPopUp(false);
   }, []);
   return (
     <div>
