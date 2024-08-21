@@ -19,7 +19,7 @@ import { getAmenities, getBanner } from '@/utils/API';
 import { useCallback } from 'react';
 
 function SwiperBanner() {
-  const [showSlider, setShowSlider] = useState(true);
+  const [showSlider, setShowSlider] = useState(false);
   const [banneData, setData] = useState([]);
   const vidRef = useRef();
   useEffect(() => {
