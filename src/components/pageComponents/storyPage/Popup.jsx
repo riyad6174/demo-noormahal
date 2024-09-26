@@ -16,15 +16,15 @@ function Popup({ showPopUp, setShowPopUp }) {
       onClick={() => setShowPopUp(!showPopUp)}
     >
       <div className='position-relative'>
-        <Link href={'/promotions'}>
-          <Image
-            src={image}
-            quality={75}
-            alt='independence-image'
-            className='shadow popup-image object-fit-cover'
-            style={{ border: '8px solid #FFFAF0' }}
-          />
-        </Link>
+        {/* <Link href={'/promotions'}> */}
+        <Image
+          src={image}
+          quality={75}
+          alt='independence-image'
+          className='shadow popup-image object-fit-cover'
+          style={{ border: '8px solid #FFFAF0' }}
+        />
+        {/* </Link> */}
         <div
           className=' position-absolute z-3 p-1 shadow  '
           style={{
