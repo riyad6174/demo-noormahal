@@ -20,8 +20,32 @@ function StorySection({
   const instaToken =
     'IGQWRPN1BKbGYwZAkt1SXlBR2k1MC0xSlluTk5hSWpNUVJYcHZAxWjlJTlJUa3M2TWpvVWJZAZA3d5Sk5uWHFLSjVpU1k4aGtyMzNwUVhvMmVfVFhMQUlmbmJMYmF4R1hESjE3ODNlMGU2b2Ntc0dCRVNQWVpURTlzWGMZD';
 
+  // useEffect(() => {
+  //   setShowPopUp(true);
+  // }, []);
+
   useEffect(() => {
-    setShowPopUp(false);
+    const checkPopupTime = () => {
+      const currentDate = new Date();
+      // Set start and end times for the popup display window
+      const startTime = new Date('2024-09-27T00:00:00'); // Midnight 27th September
+      const endTime = new Date('2024-09-28T10:00:00'); // 10 AM 27th September
+
+      if (currentDate >= startTime && currentDate <= endTime) {
+        setShowPopUp(true); // Show popup
+      } else {
+        setShowPopUp(false); // Hide popup
+      }
+    };
+
+    // Check popup time immediately when component mounts
+    checkPopupTime();
+
+    // Optionally, re-check every minute if you want real-time updates
+    const intervalId = setInterval(checkPopupTime, 60 * 1000); // Check every minute
+
+    // Clear interval when component unmounts to avoid memory leaks
+    return () => clearInterval(intervalId);
   }, []);
   return (
     <div>
