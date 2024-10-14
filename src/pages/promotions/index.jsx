@@ -210,7 +210,7 @@ export default function page() {
                 </div>
               </div>{' '}
               {/* another promotion */}
-              <div className='promotion-container col-md-6 mx-auto'>
+              {/* <div className='promotion-container col-md-6 mx-auto'>
                 <div className='promotion_img text-center'>
                   <img
                     src='assets/images/promotion/monsoon.jpg'
@@ -239,7 +239,7 @@ export default function page() {
                     </button>
                   </div>
                 </div>
-              </div>{' '}
+              </div>{' '} */}
               {/* another promotion */}
               <div className='promotion-container col-md-6 mx-auto'>
                 <div className='promotion_img text-center'>
