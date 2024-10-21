@@ -148,36 +148,6 @@ export default function page() {
                 </div>
               </div>{' '} */}
               {/* another promotion */}
-              <div className='promotion-container col-md-6 mx-auto'>
-                <div className='promotion_img text-center'>
-                  <img
-                    src='assets/images/promotion/karwachauth.jpg'
-                    alt='promotion image'
-                  />
-                </div>
-
-                <div className='d-flex gap-4 justify-content-center py-4'>
-                  <a
-                    href='assets/images/promotion/monsoon.pdf'
-                    target='_blank'
-                    className='d-none'
-                  >
-                    {' '}
-                    <button className='book_table_btn'>
-                      <span>KNOW MORE</span>
-                    </button>
-                  </a>
-                  <div className='text-center'>
-                    <button
-                      className='book_table_btn'
-                      data-bs-toggle='modal'
-                      data-bs-target='#exampleModal'
-                    >
-                      <span>Enquire Now </span>
-                    </button>
-                  </div>
-                </div>
-              </div>{' '}
               {/* another promotion */}
               {/* <div className='promotion-container col-md-6 mx-auto'>
                 <div className='promotion_img text-center'>
