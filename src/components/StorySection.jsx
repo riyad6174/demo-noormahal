@@ -20,33 +20,33 @@ function StorySection({
   const instaToken =
     'IGQWRNWVVqd0lLc0RCQTV2VTloWUdoVnVXNUtURFBwX1RXUVV2RDVhS01hMmNYckI3b1NCdTRIX2N6YzlocDl6WDkyU0dYYmZAqaXFkN0JLTWFMbzlsdHlNaG85LUdKYm9rb1pJSkZAqR21JeWl5TG1kYmlXbUp6VnMZD';
 
-  // useEffect(() => {
-  //   setShowPopUp(true);
-  // }, []);
-
   useEffect(() => {
-    const checkPopupTime = () => {
-      const currentDate = new Date();
-      // Set start and end times for the popup display window
-      const startTime = new Date('2024-09-27T00:00:00'); // Midnight 27th September
-      const endTime = new Date('2024-09-28T10:00:00'); // 10 AM 27th September
-
-      if (currentDate >= startTime && currentDate <= endTime) {
-        setShowPopUp(true); // Show popup
-      } else {
-        setShowPopUp(false); // Hide popup
-      }
-    };
-
-    // Check popup time immediately when component mounts
-    checkPopupTime();
-
-    // Optionally, re-check every minute if you want real-time updates
-    const intervalId = setInterval(checkPopupTime, 60 * 1000); // Check every minute
-
-    // Clear interval when component unmounts to avoid memory leaks
-    return () => clearInterval(intervalId);
+    setShowPopUp(false);
   }, []);
+
+  // useEffect(() => {
+  //   const checkPopupTime = () => {
+  //     const currentDate = new Date();
+  //     // Set start and end times for the popup display window
+  //     const startTime = new Date('2024-09-27T00:00:00'); // Midnight 27th September
+  //     const endTime = new Date('2024-09-28T10:00:00'); // 10 AM 27th September
+
+  //     if (currentDate >= startTime && currentDate <= endTime) {
+  //       setShowPopUp(true); // Show popup
+  //     } else {
+  //       setShowPopUp(false); // Hide popup
+  //     }
+  //   };
+
+  //   // Check popup time immediately when component mounts
+  //   checkPopupTime();
+
+  //   // Optionally, re-check every minute if you want real-time updates
+  //   const intervalId = setInterval(checkPopupTime, 60 * 1000); // Check every minute
+
+  //   // Clear interval when component unmounts to avoid memory leaks
+  //   return () => clearInterval(intervalId);
+  // }, []);
   return (
     <div>
       <main>
