@@ -3,16 +3,9 @@ import withPlaiceholder from '@plaiceholder/next';
 
 const nextConfig = {
   reactStrictMode: true,
-  // images: {
-  //   loader: "akamai",
-  //   path: "/",
-  // },
   images: {
-    domains: ['api.noormahalpalace.com'], // Add any other domains you want to allow
-    hostname: ['api.noormahalpalace.com'],
+    domains: ['api.noormahalpalace.com'], // List any other domains that host your images
   },
 };
-
-// https://api.noormahalpalace.com
 
 export default withPlaiceholder(nextConfig);

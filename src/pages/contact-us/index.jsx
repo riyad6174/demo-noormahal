@@ -313,6 +313,11 @@ function index() {
             ></iframe>
           </div>
           <div className='guest-container mx-auto'>
+            <div className=''>
+              <p style={{ fontSize: '12px' }}>
+                Latitude & Longitude : @29.6981494,77.0304025
+              </p>
+            </div>
             <div className='contact_grid container'>
               <form
                 onSubmit={handleSubmit(onSubmit)}
