@@ -45,7 +45,7 @@ function SwiperBanner() {
     fetchBannerData();
   }, [fetchBannerData]);
   return (
-    <div>
+    <div className='position-relative'>
       <section className='hero_wrapper'>
         <Swiper
           centeredSlides={true}
@@ -103,6 +103,47 @@ function SwiperBanner() {
 
         <CheckIn />
       </section>
+      <div
+        className='position-absolute top-0'
+        style={{ color: 'transparent', visibility: 'hidden' }}
+      >
+        <h1>Best 5-star hotel near Delhi</h1>
+        <p>
+          If you’re searching for the best 5-star hotel near Delhi, look no
+          further than Noormahal Place. This luxurious hotel is renowned as the
+          best 5-star hotel near Delhi, combining elegance and comfort to make
+          it the perfect choice for both leisure and business travelers.
+          Situated just a short drive from Delhi, Noormahal Place stands out as
+          the best 5-star hotel near Delhi, offering stunning architecture,
+          exquisite interiors, and world-class amenities, ensuring a memorable
+          stay.
+        </p>
+        <p>
+          As the best 5-star hotel near Delhi, Noormahal Place boasts
+          beautifully designed rooms and suites that cater to the needs of every
+          guest. Each room is equipped with modern facilities, plush bedding,
+          and stunning views, creating an oasis of relaxation. Guests can
+          indulge in gourmet dining at the hotel’s fine restaurants, showcasing
+          the best of local and international flavors, further solidifying its
+          reputation as the best 5-star hotel near Delhi.
+        </p>
+        <p>
+          For those looking to unwind, Noormahal Place offers a range of
+          recreational facilities, including a luxurious spa, a well-equipped
+          fitness center, and inviting swimming pools. Additionally, the hotel
+          provides exceptional service, with attentive staff ready to cater to
+          your every need.
+        </p>
+        <p>
+          When it comes to hosting events or conferences, the best 5-star hotel
+          near Delhi, Noormahal Place, provides sophisticated meeting spaces
+          equipped with the latest technology. With its prime location,
+          luxurious accommodations, and outstanding service, Noormahal Place is
+          truly the best 5-star hotel near Delhi. Experience the ultimate in
+          luxury and hospitality at Noormahal Place, where every stay is a
+          remarkable experience.
+        </p>
+      </div>
     </div>
   );
 }
