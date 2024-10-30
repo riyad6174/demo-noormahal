@@ -84,14 +84,196 @@ export default function page() {
               the ordinary' choices for you. Experience your money's worth with
               the most attractive offers in town.
             </p>
-            {/* <div className='promotion-container mx-auto'>
+
+            <div className='row'>
+              <div className='promotion-container col-md-6 mx-auto'>
                 <div className='promotion_img text-center'>
                   <img
-                    src='assets/images/promotion/promotion_wild_west_nite.jpg'
+                    src='assets/images/promotion/halloween.jpg'
                     alt='promotion image'
                   />
                 </div>
 
+                <div className='d-flex gap-4 justify-content-center py-4'>
+                  <a
+                    href='assets/images/promotion/monsoon.pdf'
+                    target='_blank'
+                    className='d-none'
+                  >
+                    {' '}
+                    <button className='book_table_btn'>
+                      <span>KNOW MORE</span>
+                    </button>
+                  </a>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Enquire Now </span>
+                    </button>
+                  </div>
+                </div>
+              </div>{' '}
+              {/* another promotion */}
+              {/* <div className='promotion-container col-md-6 mx-auto'>
+                <div className='promotion_img text-center'>
+                  <img
+                    src='assets/images/promotion/dusshera.jpg'
+                    alt='promotion image'
+                  />
+                </div>
+
+                <div className='d-flex gap-4 justify-content-center py-4'>
+                  <a
+                    href='assets/images/promotion/monsoon.pdf'
+                    target='_blank'
+                    className='d-none'
+                  >
+                    {' '}
+                    <button className='book_table_btn'>
+                      <span>KNOW MORE</span>
+                    </button>
+                  </a>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Enquire Now </span>
+                    </button>
+                  </div>
+                </div>
+              </div>{' '} */}
+              {/* another promotion */}
+              <div className='promotion-container col-md-6 mx-auto'>
+                <div className='promotion_img text-center'>
+                  <img
+                    src='assets/images/promotion/karwachauth.jpg'
+                    alt='promotion image'
+                  />
+                </div>
+
+                <div className='d-flex gap-4 justify-content-center py-4'>
+                  <a
+                    href='assets/images/promotion/monsoon.pdf'
+                    target='_blank'
+                    className='d-none'
+                  >
+                    {' '}
+                    <button className='book_table_btn'>
+                      <span>KNOW MORE</span>
+                    </button>
+                  </a>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Enquire Now </span>
+                    </button>
+                  </div>
+                </div>
+              </div>{' '}
+              {/* another promotion */}
+              {/* <div className='promotion-container col-md-6 mx-auto'>
+                <div className='promotion_img text-center'>
+                  <img
+                    src='assets/images/promotion/navratri.jpg'
+                    alt='promotion image'
+                  />
+                </div>
+
+                <div className='d-flex gap-4 justify-content-center py-4'>
+                  <a
+                    href='assets/images/promotion/monsoon.pdf'
+                    target='_blank'
+                    className='d-none'
+                  >
+                    {' '}
+                    <button className='book_table_btn'>
+                      <span>KNOW MORE</span>
+                    </button>
+                  </a>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Enquire Now </span>
+                    </button>
+                  </div>
+                </div>
+              </div>{' '} */}
+              {/* another promotion */}
+              {/* <div className='promotion-container col-md-6 mx-auto'>
+                <div className='promotion_img text-center'>
+                  <img
+                    src='assets/images/promotion/monsoon.jpg'
+                    alt='promotion image'
+                  />
+                </div>
+
+                <div className='d-flex gap-4 justify-content-center py-4'>
+                  <a
+                    href='assets/images/promotion/monsoon.pdf'
+                    target='_blank'
+                    className='d-block'
+                  >
+                    {' '}
+                    <button className='book_table_btn'>
+                      <span>KNOW MORE</span>
+                    </button>
+                  </a>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Enquire Now </span>
+                    </button>
+                  </div>
+                </div>
+              </div>{' '} */}
+              {/* another promotion */}
+              <div className='promotion-container col-md-6 mx-auto'>
+                <div className='promotion_img text-center'>
+                  <img
+                    src='assets/images/promotion/chai_pe_charcha.jpeg'
+                    alt='promotion image'
+                  />
+                </div>
+
+                <div className='d-flex gap-4 justify-content-center py-4'>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Enquire Now </span>
+                    </button>
+                  </div>
+                </div>
+              </div>{' '}
+              <div className='promotion-container col-md-6 mx-auto'>
+                <div className='promotion_img text-center'>
+                  <img
+                    src='assets/images/promotion/royal_escape_noormahal.jpg'
+                    alt='promotion image'
+                  />
+                </div>
+                {/* <div className="promotion_img text-center">
+              <img
+                src="assets/images/promotion/Staycation_Packages_19jun.jpg"
+                alt="promotion image"
+              />
+            </div> */}
                 <div className='d-flex gap-4 justify-content-center py-4'>
                   <a
                     href='assets/images/promotion/knowmore.jpg'
@@ -113,373 +295,75 @@ export default function page() {
                     </button>
                   </div>
                 </div>
-              </div> */}{' '}
-            {/* <div className="promotion-container mx-auto">
-              <div className="promotion_img text-center">
-                <img
-                  src="assets/images/promotion/web_cover.jpg"
-                  alt="promotion image"
-                />
-              </div>
-
-              <div className="d-flex gap-4 justify-content-center py-4">
-                <a
-                  href="assets/images/promotion/30_years_offer.pdf"
-                  target="_blank"
-                  className=""
-                >
-                  <button className="book_table_btn">
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className="text-center">
-                  <button
-                    className="book_table_btn"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    <span>Enquire Now </span>
-                  </button>
+              </div>{' '}
+              <div className='promotion-container col-md-6 mx-auto'>
+                <div className='promotion_img text-center'>
+                  <img
+                    src='assets/images/promotion/sunday_splendor_noormahal.jpg'
+                    alt='promotion image'
+                  />
                 </div>
-              </div>
-            </div> */}
-            {/* <div className="promotion-container mx-auto">
-              <div className="promotion_img text-center">
-                <img
-                  src="assets/images/promotion/mango_mania.jpg"
-                  alt="promotion image"
-                />
-              </div>
-
-              <div className="d-flex gap-4 justify-content-center py-4">
-                <a
-                  href="assets/images/promotion/Mango.pdf"
-                  target="_blank"
-                  className=""
-                >
-                  {" "}
-                  <button className="book_table_btn">
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className="text-center">
-                  <button
-                    className="book_table_btn"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div> */}
-            <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/halloween.jpg'
-                  alt='promotion image'
-                />
-              </div>
-
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <a
-                  href='assets/images/promotion/monsoon.pdf'
-                  target='_blank'
-                  className='d-none'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                  >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div>{' '}
-            {/* another promotion */}
-            <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/dusshera.jpg'
-                  alt='promotion image'
-                />
-              </div>
-
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <a
-                  href='assets/images/promotion/monsoon.pdf'
-                  target='_blank'
-                  className='d-none'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                  >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div>{' '}
-            {/* another promotion */}
-            <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/karwachauth.jpg'
-                  alt='promotion image'
-                />
-              </div>
-
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <a
-                  href='assets/images/promotion/monsoon.pdf'
-                  target='_blank'
-                  className='d-none'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                  >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div>{' '}
-            {/* another promotion */}
-            <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/navratri.jpg'
-                  alt='promotion image'
-                />
-              </div>
-
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <a
-                  href='assets/images/promotion/monsoon.pdf'
-                  target='_blank'
-                  className='d-none'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                  >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div>{' '}
-            {/* another promotion */}
-            {/* <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/monsoon.jpg'
-                  alt='promotion image'
-                />
-              </div>
-
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <a
-                  href='assets/images/promotion/monsoon.pdf'
-                  target='_blank'
-                  className='d-block'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                  >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div>{' '} */}
-            {/* another promotion */}
-            <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/chai_pe_charcha.jpeg'
-                  alt='promotion image'
-                />
-              </div>
-
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                  >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div>{' '}
-            <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/royal_escape_noormahal.jpg'
-                  alt='promotion image'
-                />
-              </div>
-              {/* <div className="promotion_img text-center">
+                {/* <div className="promotion_img text-center">
               <img
                 src="assets/images/promotion/Staycation_Packages_19jun.jpg"
                 alt="promotion image"
               />
             </div> */}
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <a
-                  href='assets/images/promotion/knowmore.jpg'
-                  target='_blank'
-                  className='d-none'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
+                <div className='d-flex gap-4 justify-content-center py-4'>
+                  <a
+                    href='assets/images/promotion/knowmore.jpg'
+                    target='_blank'
+                    className='d-none'
                   >
-                    <span>Enquire Now </span>
-                  </button>
+                    {' '}
+                    <button className='book_table_btn'>
+                      <span>KNOW MORE</span>
+                    </button>
+                  </a>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Enquire Now </span>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>{' '}
-            <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/sunday_splendor_noormahal.jpg'
-                  alt='promotion image'
-                />
-              </div>
-              {/* <div className="promotion_img text-center">
+              <div className='promotion-container col-md-6 mx-auto'>
+                <div className='promotion_img text-center'>
+                  <img
+                    src='assets/images/promotion/NMP.jpg'
+                    alt='promotion image'
+                  />
+                </div>
+                {/* <div className="promotion_img text-center">
               <img
                 src="assets/images/promotion/Staycation_Packages_19jun.jpg"
                 alt="promotion image"
               />
             </div> */}
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <a
-                  href='assets/images/promotion/knowmore.jpg'
-                  target='_blank'
-                  className='d-none'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
+                <div className='d-flex gap-4 justify-content-center py-4'>
+                  <a
+                    href='assets/images/promotion/knowmore.jpg'
+                    target='_blank'
+                    className='d-none'
                   >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            {/* <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/classicspa.jpg'
-                  alt='promotion image'
-                />
-              </div>
-
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <a
-                  href='assets/images/promotion/classicSpaPackage.pdf'
-                  target='_blank'
-                  className='d-block'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                  >
-                    <span>Enquire Now </span>
-                  </button>
-                </div>
-              </div>
-            </div> */}
-            <div className='promotion-container mx-auto'>
-              <div className='promotion_img text-center'>
-                <img
-                  src='assets/images/promotion/NMP.jpg'
-                  alt='promotion image'
-                />
-              </div>
-              {/* <div className="promotion_img text-center">
-              <img
-                src="assets/images/promotion/Staycation_Packages_19jun.jpg"
-                alt="promotion image"
-              />
-            </div> */}
-              <div className='d-flex gap-4 justify-content-center py-4'>
-                <a
-                  href='assets/images/promotion/knowmore.jpg'
-                  target='_blank'
-                  className='d-none'
-                >
-                  {' '}
-                  <button className='book_table_btn'>
-                    <span>KNOW MORE</span>
-                  </button>
-                </a>
-                <div className='text-center'>
-                  <button
-                    className='book_table_btn'
-                    data-bs-toggle='modal'
-                    data-bs-target='#exampleModal'
-                  >
-                    <span>Enquire Now </span>
-                  </button>
+                    {' '}
+                    <button className='book_table_btn'>
+                      <span>KNOW MORE</span>
+                    </button>
+                  </a>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Enquire Now </span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
