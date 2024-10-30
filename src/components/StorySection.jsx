@@ -28,10 +28,10 @@ function StorySection({
     const checkPopupTime = () => {
       const currentDate = new Date();
       // Set start and end times for the popup display window
-      const startTime = new Date('2024-09-27T00:00:00'); // Midnight 27th September
-      const endTime = new Date('2024-09-28T10:00:00'); // 10 AM 27th September
+      const startTime = new Date('2024-10-30T00:00:00'); // Start showing on 30th October
+      const endTime = new Date('2024-11-02T03:00:00'); // Hide at 3 AM on 2nd November
 
-      if (currentDate >= startTime && currentDate <= endTime) {
+      if (currentDate >= startTime && currentDate < endTime) {
         setShowPopUp(true); // Show popup
       } else {
         setShowPopUp(false); // Hide popup
@@ -47,6 +47,7 @@ function StorySection({
     // Clear interval when component unmounts to avoid memory leaks
     return () => clearInterval(intervalId);
   }, []);
+
   return (
     <div>
       <main>
