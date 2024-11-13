@@ -86,7 +86,8 @@ export default function page() {
             </p>
 
             <div className='row'>
-              <div className='promotion-container col-md-6 mx-auto'>
+              {/* promotion start */}
+              {/* <div className='promotion-container col-md-6 mx-auto'>
                 <div className='promotion_img text-center'>
                   <img
                     src='assets/images/promotion/halloween.jpg'
@@ -115,7 +116,7 @@ export default function page() {
                     </button>
                   </div>
                 </div>
-              </div>{' '}
+              </div>{' '} */}
               {/* another promotion */}
               {/* <div className='promotion-container col-md-6 mx-auto'>
                 <div className='promotion_img text-center'>
