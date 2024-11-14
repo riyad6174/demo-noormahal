@@ -87,17 +87,48 @@ export default function page() {
 
             <div className='row'>
               {/* promotion start */}
-              {/* <div className='promotion-container col-md-6 mx-auto'>
+              <div className='promotion-container col-md-6 mx-auto'>
                 <div className='promotion_img text-center'>
                   <img
-                    src='assets/images/promotion/halloween.jpg'
+                    src='assets/images/promotion/african-night.jpg'
                     alt='promotion image'
                   />
                 </div>
 
                 <div className='d-flex gap-4 justify-content-center py-4'>
                   <a
-                    href='assets/images/promotion/monsoon.pdf'
+                    href='assets/images/promotion/african-night-package.jpg'
+                    target='_blank'
+                    className=''
+                  >
+                    {' '}
+                    <button className='book_table_btn'>
+                      <span>KNOW MORE</span>
+                    </button>
+                  </a>
+                  <div className='text-center'>
+                    <button
+                      className='book_table_btn'
+                      data-bs-toggle='modal'
+                      data-bs-target='#exampleModal'
+                    >
+                      <span>Enquire Now </span>
+                    </button>
+                  </div>
+                </div>
+              </div>{' '}
+              {/* another promotion */}
+              <div className='promotion-container col-md-6 mx-auto'>
+                <div className='promotion_img text-center'>
+                  <img
+                    src='assets/images/promotion/christmasBuffet.jpg'
+                    alt='promotion image'
+                  />
+                </div>
+
+                <div className='d-flex gap-4 justify-content-center py-4'>
+                  <a
+                    href='assets/images/promotion/african-night-package.jpg'
                     target='_blank'
                     className='d-none'
                   >
@@ -116,7 +147,7 @@ export default function page() {
                     </button>
                   </div>
                 </div>
-              </div>{' '} */}
+              </div>{' '}
               {/* another promotion */}
               {/* <div className='promotion-container col-md-6 mx-auto'>
                 <div className='promotion_img text-center'>
