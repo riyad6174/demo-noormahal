@@ -497,6 +497,7 @@ function page() {
                                   className='form-control rounded-0'
                                   placeholder='Date'
                                   required='required'
+                                  min={new Date().toISOString().split('T')[0]}
                                   data-error='Valid Date is required.'
                                   {...register('date', {
                                     required: 'Banner name is required!',

@@ -461,6 +461,7 @@ export default function page() {
                                 className='form-control rounded-0'
                                 placeholder='Date'
                                 required='required'
+                                min={new Date().toISOString().split('T')[0]}
                                 data-error='Valid email is required.'
                                 {...register('date', {})}
                               />
