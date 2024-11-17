@@ -21,7 +21,7 @@ function StorySection({
     'IGQWRNWVVqd0lLc0RCQTV2VTloWUdoVnVXNUtURFBwX1RXUVV2RDVhS01hMmNYckI3b1NCdTRIX2N6YzlocDl6WDkyU0dYYmZAqaXFkN0JLTWFMbzlsdHlNaG85LUdKYm9rb1pJSkZAqR21JeWl5TG1kYmlXbUp6VnMZD';
 
   useEffect(() => {
-    setShowPopUp(false);
+    setShowPopUp(true);
   }, []);
 
   // useEffect(() => {
@@ -48,29 +48,29 @@ function StorySection({
   //   return () => clearInterval(intervalId);
   // }, []);
 
-  useEffect(() => {
-    const checkPopupTime = () => {
-      const currentDate = new Date();
-      // Set start and end times for the popup display window
-      const startTime = new Date('2024-10-30T00:00:00'); // Start showing on 30th October
-      const endTime = new Date('2024-11-02T03:00:00'); // Hide at 3 AM on 2nd November
+  // useEffect(() => {
+  //   const checkPopupTime = () => {
+  //     const currentDate = new Date();
+  //     // Set start and end times for the popup display window
+  //     const startTime = new Date('2024-10-30T00:00:00'); // Start showing on 30th October
+  //     const endTime = new Date('2024-11-02T03:00:00'); // Hide at 3 AM on 2nd November
 
-      if (currentDate >= startTime && currentDate < endTime) {
-        setShowPopUp(true); // Show popup
-      } else {
-        setShowPopUp(false); // Hide popup
-      }
-    };
+  //     if (currentDate >= startTime && currentDate < endTime) {
+  //       setShowPopUp(true); // Show popup
+  //     } else {
+  //       setShowPopUp(false); // Hide popup
+  //     }
+  //   };
 
-    // Check popup time immediately when component mounts
-    checkPopupTime();
+  //   // Check popup time immediately when component mounts
+  //   checkPopupTime();
 
-    // Optionally, re-check every minute if you want real-time updates
-    const intervalId = setInterval(checkPopupTime, 60 * 1000); // Check every minute
+  //   // Optionally, re-check every minute if you want real-time updates
+  //   const intervalId = setInterval(checkPopupTime, 60 * 1000); // Check every minute
 
-    // Clear interval when component unmounts to avoid memory leaks
-    return () => clearInterval(intervalId);
-  }, []);
+  //   // Clear interval when component unmounts to avoid memory leaks
+  //   return () => clearInterval(intervalId);
+  // }, []);
 
   return (
     <div>
