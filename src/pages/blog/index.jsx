@@ -73,11 +73,13 @@ function page({ seoData }) {
                       <img
                         src={`https://api.noormahalpalace.com/${item.image?.path}`}
                         alt='blog image'
-                        // style={{ height: '100%', width: '100%' }}
-                        className='w-full h-full object-fit-cover'
+                        className='w-full  object-fit-cover'
+                        style={{
+                          height: '280px',
+                          objectFit: 'cover',
+                        }}
                       />
                     </Link>
-
                     <div className='content'>
                       {/* <ul className='tag_list d-flex align-items-center flex-wrap g-sm'>
                         <li>

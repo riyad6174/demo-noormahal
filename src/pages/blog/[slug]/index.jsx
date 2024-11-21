@@ -140,6 +140,15 @@ function Index({ data }) {
               'celebrate-new-year-2025-in-randeur-with-noormahal-palaces-exclusive-packages' && (
               <div className='row'>
                 <div className='col-lg-12 p-4'>
+                  <div className='container d-flex justify-content-center'>
+                    <img
+                      src='/assets/images/blog/af.jpg'
+                      alt='african-night'
+                      className=''
+                    />
+                  </div>
+                </div>
+                <div className='col-lg-12 p-4'>
                   <div className='card-body rounded-0'>
                     <div className='container d-flex justify-content-center'>
                       <form
@@ -236,9 +245,11 @@ function Index({ data }) {
                                 className='book_table_btn w-100 btn-block'
                               >
                                 {isLoading ? (
-                                  <span>BOOKING.. </span>
+                                  <span>Submitting.. </span>
                                 ) : (
-                                  <span>{isSubmitted ? 'BOOKED' : 'BOOK'}</span>
+                                  <span>
+                                    {isSubmitted ? 'SUBMITTED' : 'ENQUIRE NOW'}
+                                  </span>
                                 )}
                               </button>
                             </div>
