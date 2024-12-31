@@ -1424,34 +1424,29 @@
 
 .popup-image {
   @include media-break-width(1500, 2500) {
-    width: 700px;
-    height: 470px;
+    width: 560px;
+    height: 560px;
     object-fit: fill;
   }
   @include media-break-width(992, 1499) {
-    width: 700px;
-    height: 470px;
+    width: 560px;
+    height: 560px;
     object-fit: fill;
   }
 
   @include max-media-width(991) {
-    width: 600px;
-    height: 420px;
+    width: 500px;
+    height: 500px;
     object-fit: fill;
   }
   @include max-media-width(767) {
-    width: 600px;
-    height: 420px;
+    width: 450px;
+    height: 450px;
     object-fit: fill;
   }
   @include max-media-width(667) {
-    width: 380px;
-    height: 260px;
-    object-fit: fill;
-  }
-  @include max-media-width(467) {
-    width: 320px;
-    height: 240px;
+    width: 350px;
+    height: 350px;
     object-fit: fill;
   }
 }

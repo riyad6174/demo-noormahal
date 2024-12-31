@@ -21,8 +21,32 @@ function StorySection({
     'IGAASnGZBGM2VZABZAE5nVWRxS2xjdmYzZAlJvS0FTb3VFdEdFVnhKRFFyRG03SWFoVEwxQWhyLWctZAFc1aVV4QV85VnBBOTJkel83VV9kVEx5NlNuR3FFS1B6b1pVaDdYSU1BZAkphVlpDeFZAPeTNLeDNtcnpWaWJQOHp6OTh4YkNSSQZDZD';
 
   useEffect(() => {
-    setShowPopUp(true);
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+
+    today = dd + '/' + mm + '/' + yyyy;
+    // window.alert(today);
+
+    if (today == '01/01/2025' || today == '02/01/2025') {
+      setShowPopUp(true);
+    }
+
+    const hideTimeout = setTimeout(() => {
+      setShowPopUp(false);
+    }, 9000); // Hide after 9 seconds
+
+    // Clear the timeout when the component unmounts or when showPopUp changes
+    return () => clearTimeout(hideTimeout);
   }, []);
+
+  // ===================================
+  // useEffect(() => {
+  //   setShowPopUp(true);
+  // }, []);
+
+  //=================================
 
   // useEffect(() => {
   //   const checkPopupTime = () => {
