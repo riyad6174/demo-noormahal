@@ -33,12 +33,12 @@ function StorySection({
       setShowPopUp(true);
     }
 
-    const hideTimeout = setTimeout(() => {
-      setShowPopUp(false);
-    }, 9000); // Hide after 9 seconds
+    // const hideTimeout = setTimeout(() => {
+    //   setShowPopUp(false);
+    // }, 9000); // Hide after 9 seconds
 
     // Clear the timeout when the component unmounts or when showPopUp changes
-    return () => clearTimeout(hideTimeout);
+    // return () => clearTimeout(hideTimeout);
   }, []);
 
   // ===================================
