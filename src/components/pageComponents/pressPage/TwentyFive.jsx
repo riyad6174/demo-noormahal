@@ -1,8 +1,8 @@
 import { getPressByYear } from '@/utils/API';
-import { PressContentsTwentyThree } from '@/utils/Contents/press';
+// import { PressContentsTwentyThree } from "@/utils/Contents/press";
 import React, { useCallback, useEffect, useState } from 'react';
 
-function LatestNews() {
+function TwentyFive() {
   const [pressData, setPressData] = useState([]);
 
   const fetchPressData = useCallback(async () => {
@@ -10,6 +10,7 @@ function LatestNews() {
     if (response && response.status) {
       if (response.data && Object.keys(response.data.data).length > 0) {
         setPressData(response.data.data.reverse());
+        console.log(response.data.data, 'media');
       }
     }
   }, []);
@@ -17,26 +18,29 @@ function LatestNews() {
   useEffect(() => {
     fetchPressData();
   }, [fetchPressData]);
+
+  console.log(pressData);
   return (
     <div>
-      <div className='media_top_grid'>
+      <div className='media_tab_grid'>
         {pressData.length > 0 &&
-          pressData.slice(0, 4).map((e, index) => {
+          pressData?.map((e, index) => {
             return (
-              <div key={index} className='media_top_item'>
-                <div className='img'>
+              <div key={index} className='media_tab_item'>
+                <div className='img' style={{ overflow: 'hidden' }}>
                   <img
                     src={`https://api.noormahalpalace.com/${e?.image?.path}`}
                     alt='media image'
                   />
                 </div>
                 <div className='content'>
-                  <p className='text-center text-uppercase'>
-                    {e.title.slice(0, 90)}
-                  </p>
-                  <a href={e.link} className='media_btn'>
-                    READ MORE
-                  </a>
+                  <p className='py-3'>{e?.title}</p>
+                  <p>{e?.shortDescription.slice(0, 100) + '...'}</p>
+                  <div className='text-center'>
+                    <a href={e?.link} className='media_btn'>
+                      READ MORE
+                    </a>
+                  </div>
                 </div>
               </div>
             );
@@ -46,4 +50,4 @@ function LatestNews() {
   );
 }
 
-export default LatestNews;
+export default TwentyFive;

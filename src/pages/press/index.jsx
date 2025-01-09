@@ -5,6 +5,7 @@ import TwentyFour from '@/components/pageComponents/pressPage/TwentyFour'; // Im
 import Head from 'next/head';
 import React from 'react';
 import AwardSlider from '@/components/pageComponents/pressPage/AwardSlider';
+import TwentyFive from '@/components/pageComponents/pressPage/TwentyFive';
 
 function Index() {
   return (
@@ -65,6 +66,20 @@ function Index() {
               <li className='nav-item' role='presentation'>
                 <button
                   className='nav-link active'
+                  id='pills-2025-tab'
+                  data-bs-toggle='pill'
+                  data-bs-target='#pills-2025'
+                  type='button'
+                  role='tab'
+                  aria-controls='pills-2025'
+                  aria-selected='false'
+                >
+                  2025
+                </button>
+              </li>
+              <li className='nav-item' role='presentation'>
+                <button
+                  className='nav-link '
                   id='pills-contact-tab'
                   data-bs-toggle='pill'
                   data-bs-target='#pills-contact'
@@ -112,7 +127,7 @@ function Index() {
                 id='pills-profile'
                 role='tabpanel'
                 aria-labelledby='pills-profile-tab'
-                tabIndex='0'
+                tabIndex='3'
               >
                 <TwentyThree />
               </div>
@@ -121,19 +136,28 @@ function Index() {
                 id='pills-home'
                 role='tabpanel'
                 aria-labelledby='pills-home-tab'
-                tabIndex='1'
+                tabIndex='2'
               >
                 <TwentyTwo />
               </div>
               {/* Content for 2024 tab */}
               <div
-                className='tab-pane fade show active'
+                className='tab-pane fade show '
                 id='pills-contact'
                 role='tabpanel'
                 aria-labelledby='pills-contact-tab'
-                tabIndex='2'
+                tabIndex='1'
               >
                 <TwentyFour />
+              </div>
+              <div
+                className='tab-pane fade show active'
+                id='pills-2025'
+                role='tabpanel'
+                aria-labelledby='pills-2025-tab'
+                tabIndex='0'
+              >
+                <TwentyFive />
               </div>
             </div>
           </div>
