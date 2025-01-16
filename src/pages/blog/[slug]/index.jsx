@@ -71,6 +71,43 @@ function Index({ data }) {
     reset();
   };
 
+  const onSubmitDining = async (data) => {
+    // Fetch the IP address
+    let ipAddress = '';
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      ipAddress = ipData.ip;
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
+
+    // Add IP address to form data
+    data.ipaddress = ipAddress;
+    try {
+      setIsLoading(true);
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...data, sheetName: 'Dinning' }), // Change the sheet name as per your requirement
+      });
+      setIsLoading(false);
+      if (response.ok) {
+        console.log('Form data submitted successfully!');
+        setIsSubmitted(true);
+      } else {
+        console.error('Failed to submit form data.');
+      }
+    } catch (error) {
+      console.error('Error submitting form data:', error);
+    }
+
+    // Reset the form after submission
+    reset();
+  };
+
   return (
     <div>
       <Head>
@@ -249,6 +286,219 @@ function Index({ data }) {
                                 ) : (
                                   <span>
                                     {isSubmitted ? 'SUBMITTED' : 'ENQUIRE NOW'}
+                                  </span>
+                                )}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        {isSubmitted && (
+                          <div>
+                            <p>
+                              Thank you for reaching out to us. We will get back
+                              to you at earliest.
+                            </p>
+                          </div>
+                        )}
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {slug ===
+              'indulge-in-luxury-dining-at-noormahal-palace-the-best-romantic-dining-experience' && (
+              <div className='row p-4'>
+                {/* Image Grid */}
+                <div className='col-lg-12'>
+                  <div className='container'>
+                    <div className='row mb-4'>
+                      <div className='col-md-6 p-2 '>
+                        <img
+                          src='/assets/images/dinings/polo_bar_2.jpg'
+                          alt='image1'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '450px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/dinings/brown_sugar.jpg'
+                          alt='image2'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '450px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/dinings/cakefactory.jpg'
+                          alt='image3'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '450px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/dinings/frontier_mail_1.jpg'
+                          alt='image4'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '450px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Booking Form */}
+                <hr />
+                <div className='col-lg-12 p-4 mx-auto'>
+                  <div className='card-body rounded-0'>
+                    <h4 className='text-center'>Book A Table</h4>
+                    <div className='container px-5'>
+                      <form
+                        id='contact-form'
+                        role='form'
+                        onSubmit={handleSubmit(onSubmitDining)}
+                      >
+                        <div className='controls'>
+                          <div className='row pt-2'>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_name'
+                                  type='text'
+                                  name='name'
+                                  className='form-control rounded-0'
+                                  placeholder='Name'
+                                  required='required'
+                                  data-error='Firstname is required.'
+                                  {...register('name', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                                {errors.name && (
+                                  <span className='text-sm text-red-500'>
+                                    {errors.name?.message}
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_lastname'
+                                  type='text'
+                                  name='email'
+                                  className='form-control rounded-0'
+                                  placeholder='Email'
+                                  required='required'
+                                  data-error='Lastname is required.'
+                                  {...register('email', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row'>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_email'
+                                  type='Phone'
+                                  name='Phone'
+                                  className='form-control rounded-0'
+                                  placeholder='Phone'
+                                  required='required'
+                                  data-error='Valid Phone is required.'
+                                  {...register('phone', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_date'
+                                  type='date'
+                                  name='date'
+                                  className='form-control rounded-0'
+                                  placeholder='Date'
+                                  required='required'
+                                  min={new Date().toISOString().split('T')[0]}
+                                  data-error='Valid Date is required.'
+                                  {...register('date', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row '>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_email'
+                                  type='time'
+                                  name='time'
+                                  className='form-control rounded-0'
+                                  placeholder='time'
+                                  required='required'
+                                  data-error='Valid email is required.'
+                                  {...register('time', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row '>
+                            <div className='col-md-12 pt-2'>
+                              <div className='form-group'>
+                                <textarea
+                                  id='form_message'
+                                  name='message'
+                                  className='form-control rounded-0'
+                                  placeholder='Message'
+                                  rows='4'
+                                  required='required'
+                                  data-error='Please, leave us a message.'
+                                  {...register('message', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                ></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row'>
+                            <div className='col-md-12 pt-2'>
+                              <button
+                                disabled={isSubmitted}
+                                type='submit'
+                                className='book_table_btn w-100 btn-block'
+                              >
+                                {isLoading ? (
+                                  <span>SUBMITTING.. </span>
+                                ) : (
+                                  <span>
+                                    {isSubmitted ? 'SUBMITTED' : 'SUBMIT'}
                                   </span>
                                 )}
                               </button>
