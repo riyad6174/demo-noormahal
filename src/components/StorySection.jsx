@@ -20,26 +20,26 @@ function StorySection({
   const instaToken =
     'IGAASnGZBGM2VZABZAE5nVWRxS2xjdmYzZAlJvS0FTb3VFdEdFVnhKRFFyRG03SWFoVEwxQWhyLWctZAFc1aVV4QV85VnBBOTJkel83VV9kVEx5NlNuR3FFS1B6b1pVaDdYSU1BZAkphVlpDeFZAPeTNLeDNtcnpWaWJQOHp6OTh4YkNSSQZDZD';
 
-  useEffect(() => {
-    let today = new Date();
-    let dd = String(today.getDate()).padStart(2, '0');
-    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    let yyyy = today.getFullYear();
+  // useEffect(() => {
+  //   let today = new Date();
+  //   let dd = String(today.getDate()).padStart(2, '0');
+  //   let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  //   let yyyy = today.getFullYear();
 
-    today = dd + '/' + mm + '/' + yyyy;
-    // window.alert(today);
+  //   today = dd + '/' + mm + '/' + yyyy;
+  //   // window.alert(today);
 
-    if (today == '01/01/2025' || today == '02/01/2025') {
-      setShowPopUp(true);
-    }
+  //   if (today == '26/01/2025' || today == '27/01/2025') {
+  //     setShowPopUp(true);
+  //   }
 
-    // const hideTimeout = setTimeout(() => {
-    //   setShowPopUp(false);
-    // }, 9000); // Hide after 9 seconds
+  //   // const hideTimeout = setTimeout(() => {
+  //   //   setShowPopUp(false);
+  //   // }, 9000); // Hide after 9 seconds
 
-    // Clear the timeout when the component unmounts or when showPopUp changes
-    // return () => clearTimeout(hideTimeout);
-  }, []);
+  //   // Clear the timeout when the component unmounts or when showPopUp changes
+  //   // return () => clearTimeout(hideTimeout);
+  // }, []);
 
   // ===================================
   // useEffect(() => {
@@ -72,29 +72,29 @@ function StorySection({
   //   return () => clearInterval(intervalId);
   // }, []);
 
-  // useEffect(() => {
-  //   const checkPopupTime = () => {
-  //     const currentDate = new Date();
-  //     // Set start and end times for the popup display window
-  //     const startTime = new Date('2024-10-30T00:00:00'); // Start showing on 30th October
-  //     const endTime = new Date('2024-11-02T03:00:00'); // Hide at 3 AM on 2nd November
+  useEffect(() => {
+    const checkPopupTime = () => {
+      const currentDate = new Date();
+      // Set start and end times for the popup display window
+      const startTime = new Date('2025-01-26T00:00:00'); // Start showing on 30th October
+      const endTime = new Date('2025-01-27T06:00:00'); // Hide at 3 AM on 2nd November
 
-  //     if (currentDate >= startTime && currentDate < endTime) {
-  //       setShowPopUp(true); // Show popup
-  //     } else {
-  //       setShowPopUp(false); // Hide popup
-  //     }
-  //   };
+      if (currentDate >= startTime && currentDate < endTime) {
+        setShowPopUp(true); // Show popup
+      } else {
+        setShowPopUp(false); // Hide popup
+      }
+    };
 
-  //   // Check popup time immediately when component mounts
-  //   checkPopupTime();
+    // Check popup time immediately when component mounts
+    checkPopupTime();
 
-  //   // Optionally, re-check every minute if you want real-time updates
-  //   const intervalId = setInterval(checkPopupTime, 60 * 1000); // Check every minute
+    // Optionally, re-check every minute if you want real-time updates
+    const intervalId = setInterval(checkPopupTime, 60 * 1000); // Check every minute
 
-  //   // Clear interval when component unmounts to avoid memory leaks
-  //   return () => clearInterval(intervalId);
-  // }, []);
+    // Clear interval when component unmounts to avoid memory leaks
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div>
