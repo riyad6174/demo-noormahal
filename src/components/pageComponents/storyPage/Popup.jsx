@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { MdClose } from 'react-icons/md';
-import image from '../../../../public/assets/images/popup/newyearpopup2025.jpg';
+import image from '../../../../public/assets/images/popup/republic.jpg';
 import Image from 'next/image';
 function Popup({ showPopUp, setShowPopUp }) {
   // const handleClick = () =>{
@@ -16,15 +16,15 @@ function Popup({ showPopUp, setShowPopUp }) {
       onClick={() => setShowPopUp(!showPopUp)}
     >
       <div className='position-relative'>
-        <Link href={'/promotions'}>
-          <Image
-            src={image}
-            quality={75}
-            alt='independence-image'
-            className='shadow popup-image object-fit-cover'
-            style={{ border: '8px solid #FFFAF0' }}
-          />
-        </Link>
+        {/* <Link href={'/promotions'}> */}
+        <Image
+          src={image}
+          quality={75}
+          alt='independence-image'
+          className='shadow popup-image object-fit-cover'
+          style={{ border: '8px solid #FFFAF0' }}
+        />
+        {/* </Link> */}
         <div
           className=' position-absolute z-3 p-1 shadow  '
           style={{
