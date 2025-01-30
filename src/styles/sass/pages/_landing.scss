@@ -1424,29 +1424,29 @@
 
 .popup-image {
   @include media-break-width(1500, 2500) {
-    width: 560px;
-    height: 560px;
+    width: 660px;
+    height: 380px;
     object-fit: fill;
   }
   @include media-break-width(992, 1499) {
-    width: 560px;
-    height: 560px;
+    width: 660px;
+    height: 380px;
     object-fit: fill;
   }
 
   @include max-media-width(991) {
-    width: 500px;
-    height: 500px;
+    width: 660px;
+    height: 380px;
     object-fit: fill;
   }
   @include max-media-width(767) {
-    width: 450px;
-    height: 450px;
+    width: 480px;
+    height: 280px;
     object-fit: fill;
   }
   @include max-media-width(667) {
-    width: 350px;
-    height: 350px;
+    width: 360px;
+    height: 200px;
     object-fit: fill;
   }
 }
