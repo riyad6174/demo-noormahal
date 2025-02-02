@@ -1424,19 +1424,19 @@
 
 .popup-image {
   @include media-break-width(1500, 2500) {
-    width: 660px;
-    height: 380px;
+    width: 600px;
+    height: 340px;
     object-fit: fill;
   }
   @include media-break-width(992, 1499) {
-    width: 660px;
-    height: 380px;
+    width: 600px;
+    height: 340px;
     object-fit: fill;
   }
 
   @include max-media-width(991) {
-    width: 660px;
-    height: 380px;
+    width: 580px;
+    height: 320px;
     object-fit: fill;
   }
   @include max-media-width(767) {
