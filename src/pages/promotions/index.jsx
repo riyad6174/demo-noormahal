@@ -9,6 +9,10 @@ const promotions = [
     knowMoreLink: 'assets/images/promotion/valentines.pdf', // No "Know More" button for this promotion
   },
   {
+    image: 'assets/images/promotion/rangbarse.jpg',
+    knowMoreLink: 'assets/images/promotion/rangbarse-know-more.jpg', // No "Know More" button for this promotion
+  },
+  {
     image: 'assets/images/promotion/chai_pe_charcha.jpeg',
     knowMoreLink: null, // No "Know More" button for this promotion
   },
