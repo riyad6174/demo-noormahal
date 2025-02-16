@@ -4,9 +4,13 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const promotions = [
+  // {
+  //   image: 'assets/images/promotion/valentines.jpg',
+  //   knowMoreLink: 'assets/images/promotion/valentines.pdf', // No "Know More" button for this promotion
+  // },
   {
-    image: 'assets/images/promotion/valentines.jpg',
-    knowMoreLink: 'assets/images/promotion/valentines.pdf', // No "Know More" button for this promotion
+    image: 'assets/images/promotion/NMP.jpg',
+    knowMoreLink: null,
   },
   {
     image: 'assets/images/promotion/rangbarse.jpg',
@@ -23,10 +27,6 @@ const promotions = [
   {
     image: 'assets/images/promotion/sunday_splendor_noormahal.jpg',
     knowMoreLink: null, // No "Know More" button for this promotion
-  },
-  {
-    image: 'assets/images/promotion/NMP.jpg',
-    knowMoreLink: null,
   },
 ];
 
