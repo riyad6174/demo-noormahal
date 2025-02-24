@@ -8,10 +8,10 @@ const promotions = [
   //   image: 'assets/images/promotion/valentines.jpg',
   //   knowMoreLink: 'assets/images/promotion/valentines.pdf', // No "Know More" button for this promotion
   // },
-  {
-    image: 'assets/images/promotion/polobar.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/polobar.jpg',
+  //   knowMoreLink: null,
+  // },
   {
     image: 'assets/images/promotion/NMP.jpg',
     knowMoreLink: null,
@@ -97,9 +97,9 @@ export default function Page() {
       <main>
         <section className='promotion_wrapper default_section_gap'>
           <div className='header_area text-center mx-auto'>
-            <h1>
-              <span className='story_title yellow-color-c2'>OUR</span>
-              <span className='story_title'>SPECIAL OFFERS</span>
+            <h1 className='d-flex gap-2 justify-content-center'>
+              <span className='story_title yellow-color-c2'>OUR </span>
+              <span className='story_title'> SPECIAL OFFERS</span>
             </h1>
             <p className='pt-2 pb-1'>
               For our guests to make the most of our warm hospitality, we have
