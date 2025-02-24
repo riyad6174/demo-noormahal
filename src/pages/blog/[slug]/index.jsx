@@ -528,7 +528,7 @@ function Index({ data }) {
                     <div className='row mb-4'>
                       <div className='col-md-6 p-2 '>
                         <img
-                          src='/assets/images/blog/rang-barse-post1.jpg'
+                          src='/assets/images/blog/rang-barse-post2.jpg'
                           alt='image1'
                           className='img-fluid rounded'
                           style={{
@@ -540,7 +540,7 @@ function Index({ data }) {
                       </div>
                       <div className='col-md-6 p-2'>
                         <img
-                          src='/assets/images/blog/rang-barse-post2.jpg'
+                          src='/assets/images/blog/rang-barse-post1.jpg'
                           alt='image2'
                           className='img-fluid rounded'
                           style={{
