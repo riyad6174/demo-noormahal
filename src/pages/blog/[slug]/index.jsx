@@ -24,6 +24,10 @@ function Index({ data }) {
     message: '',
   });
 
+  const featuredImage = data?.image?.path
+    ? `https://api.noormahalpalace.com/${data.image.path}`
+    : `${baseUrl}/assets/images/default-social.jpg`;
+
   // Handle form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -135,6 +139,35 @@ function Index({ data }) {
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
+
+        {/* Open Graph / Facebook */}
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:url'
+          content={`https://api.noormahalpalace.com/${router.asPath}`}
+        />
+        <meta property='og:title' content={data?.title || 'Default Title'} />
+        <meta
+          property='og:description'
+          content={data?.subTitle || 'Default Description'}
+        />
+        <meta property='og:image' content={featuredImage} />
+
+        {/* Twitter */}
+        <meta property='twitter:card' content='summary_large_image' />
+        <meta
+          property='twitter:url'
+          content={`https://api.noormahalpalace.com/${router.asPath}`}
+        />
+        <meta
+          property='twitter:title'
+          content={data?.title || 'Default Title'}
+        />
+        <meta
+          property='twitter:description'
+          content={data?.subTitle || 'Default Description'}
+        />
+        <meta property='twitter:image' content={featuredImage} />
       </Head>
       {data && (
         <section className='blog_details_wrapper default_section_gap pt-5'>
@@ -631,6 +664,9 @@ function Index({ data }) {
                                   className='form-control rounded-0'
                                   placeholder='Date'
                                   required='required'
+                                  defaultValue={
+                                    new Date().toISOString().split('T')[0]
+                                  }
                                   min={new Date().toISOString().split('T')[0]}
                                   data-error='Valid Date is required.'
                                   {...register('date', {
