@@ -24,19 +24,6 @@ function Index({ data }) {
     message: '',
   });
 
-  const featuredImage = data?.image?.path
-    ? `https://api.noormahalpalace.com/${data.image.path}`
-    : `${baseUrl}/assets/images/default-social.jpg`;
-
-  // Handle form input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
   const onSubmit = async (data) => {
     // Fetch the IP address
     let ipAddress = '';
@@ -151,7 +138,10 @@ function Index({ data }) {
           property='og:description'
           content={data?.subTitle || 'Default Description'}
         />
-        <meta property='og:image' content={featuredImage} />
+        <meta
+          property='og:image'
+          content={`https://api.noormahalpalace.com/${data.image?.path}`}
+        />
 
         {/* Twitter */}
         <meta property='twitter:card' content='summary_large_image' />
@@ -167,7 +157,10 @@ function Index({ data }) {
           property='twitter:description'
           content={data?.subTitle || 'Default Description'}
         />
-        <meta property='twitter:image' content={featuredImage} />
+        <meta
+          property='twitter:image'
+          content={`https://api.noormahalpalace.com/${data.image?.path}`}
+        />
       </Head>
       {data && (
         <section className='blog_details_wrapper default_section_gap pt-5'>
