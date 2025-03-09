@@ -9,6 +9,7 @@ import AmenitiesSection from './pageComponents/storyPage/AmenitiesSection';
 import ExperienceSection from './pageComponents/storyPage/ExperienceSection';
 import Popup from './pageComponents/storyPage/Popup';
 import RoomsAndSuits from './pageComponents/storyPage/RoomsAndSuits';
+import InstagramEmbed from './EmbededInstagram';
 
 function StorySection({
   newsData,
@@ -150,10 +151,13 @@ function StorySection({
         <RoomsAndSuits />
         <AmenitiesSection amenitiesData={amenitiesData} />
         <Weeding weddingData={weddingData} />
-        <section className='instagram_gallery_wrapper '>
+        {/* <section className='instagram_gallery_wrapper '>
           <InstaFeedGallery token={instaToken} limit={6} />
-        </section>
+        </section> */}
 
+        <section className='instagram_gallery_wrapper '>
+          <InstagramEmbed />
+        </section>
         {/* <NewsSection newsData={newsData} /> */}
         <marquee loop={30} scrollamount='10'>
           <div className='marquee pt-5'>
