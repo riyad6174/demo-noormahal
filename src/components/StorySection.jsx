@@ -9,7 +9,7 @@ import AmenitiesSection from './pageComponents/storyPage/AmenitiesSection';
 import ExperienceSection from './pageComponents/storyPage/ExperienceSection';
 import Popup from './pageComponents/storyPage/Popup';
 import RoomsAndSuits from './pageComponents/storyPage/RoomsAndSuits';
-import InstagramEmbed from './EmbededInstagram';
+// import InstagramEmbed from './EmbededInstagram';
 
 function StorySection({
   newsData,
@@ -155,9 +155,9 @@ function StorySection({
           <InstaFeedGallery token={instaToken} limit={6} />
         </section> */}
 
-        <section className='instagram_gallery_wrapper '>
+        {/* <section className='instagram_gallery_wrapper '>
           <InstagramEmbed />
-        </section>
+        </section> */}
         {/* <NewsSection newsData={newsData} /> */}
         <marquee loop={30} scrollamount='10'>
           <div className='marquee pt-5'>
