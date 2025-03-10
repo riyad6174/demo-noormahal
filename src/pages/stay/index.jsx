@@ -58,6 +58,12 @@ function page({ roomData, seoData }) {
               the splendour of the Indian Royalty at Noormahal Palace, ‘The
               Jewel of Karnal’.
             </p>
+            <p>
+              {' '}
+              Note: Dear Guest, our rooftop is undergoing soft refurbishment to
+              enhance your future experience; we apologize for any inconvenience
+              and appreciate your patience.
+            </p>
 
             <div className='shape2'>
               <img

@@ -49,12 +49,14 @@ function RoomFacilities() {
               );
             })}
         </div>
-        <p className='py-2 text-left px-4'>
-          {' '}
-          Note: Dear Guest, our rooftop is undergoing soft refurbishment to
-          enhance your future experience; we apologize for any inconvenience and
-          appreciate your patience.
-        </p>
+        <div className='py-4' style={{ fontFamily: 'serif' }}>
+          <small className='py-4 text-left px-4 '>
+            {' '}
+            Note: Dear Guest, our rooftop is undergoing soft refurbishment to
+            enhance your future experience; we apologize for any inconvenience
+            and appreciate your patience.
+          </small>
+        </div>
       </div>
     </div>
   );
