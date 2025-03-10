@@ -49,6 +49,12 @@ function RoomFacilities() {
               );
             })}
         </div>
+        <p className='py-2 text-left px-4'>
+          {' '}
+          Note: Dear Guest, our rooftop is undergoing soft refurbishment to
+          enhance your future experience; we apologize for any inconvenience and
+          appreciate your patience.
+        </p>
       </div>
     </div>
   );
