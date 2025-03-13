@@ -22,7 +22,7 @@ const promotions = [
   // },
   {
     image: 'assets/images/promotion/NMP.jpg',
-    knowMoreLink: null,
+    knowMoreLink: 'assets/images/promotion/pre-wedding.jpg',
   },
   {
     image: 'assets/images/promotion/rangbarse.jpg',
