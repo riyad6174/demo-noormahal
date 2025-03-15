@@ -52,7 +52,7 @@ function page({ roomData, seoData }) {
             </h2>
             <p className='pt-2 pb-1'>
               At Noormahal Palace, Karnal, we have an inventory of 125 elegant
-              rooms and suites, furnished with premium furniture and upholstery.
+              rooms and suites ( w.e.f. 13 January 2026 : 175 rooms ), furnished with premium furniture and upholstery.
               Despite being styled after traditional Indian architecture, no
               modern comforts have been compromised with. Immerse yourself in
               the splendour of the Indian Royalty at Noormahal Palace, ‘The

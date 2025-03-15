@@ -4,6 +4,10 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const promotions = [
+  {
+    image: 'assets/images/promotion/saint.jpg',
+    knowMoreLink: null
+  },
   // {
   //   image: 'assets/images/promotion/valentines.jpg',
   //   knowMoreLink: 'assets/images/promotion/valentines.pdf', // No "Know More" button for this promotion
@@ -250,8 +254,8 @@ export default function Page() {
                               {isLoading
                                 ? 'SUBMITTING..'
                                 : isSubmitted
-                                ? 'SUBMITTED'
-                                : 'SUBMIT'}
+                                  ? 'SUBMITTED'
+                                  : 'SUBMIT'}
                             </button>
                           </div>
                         </div>
