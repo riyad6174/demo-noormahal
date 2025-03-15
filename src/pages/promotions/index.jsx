@@ -24,10 +24,10 @@ const promotions = [
     image: 'assets/images/promotion/NMP.jpg',
     knowMoreLink: 'assets/images/promotion/pre-wedding.jpg',
   },
-  {
-    image: 'assets/images/promotion/rangbarse.jpg',
-    knowMoreLink: 'assets/images/promotion/rangbarse-know-more.jpg', // No "Know More" button for this promotion
-  },
+  // {
+  //   image: 'assets/images/promotion/rangbarse.jpg',
+  //   knowMoreLink: 'assets/images/promotion/rangbarse-know-more.jpg', // No "Know More" button for this promotion
+  // },
   {
     image: 'assets/images/promotion/chai_pe_charcha.jpeg',
     knowMoreLink: null, // No "Know More" button for this promotion
