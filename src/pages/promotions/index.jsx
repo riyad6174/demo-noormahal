@@ -9,7 +9,7 @@ const promotions = [
     knowMoreLink: null,
   },
   {
-    image: 'assets/images/promotion/polobarnew.jpg',
+    image: 'assets/images/promotion/polobarnew2.jpg',
     knowMoreLink: null,
   },
   // {
