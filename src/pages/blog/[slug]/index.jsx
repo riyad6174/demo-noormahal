@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-function Index({ data }) {
+function Index({ data, slug }) {
   const router = useRouter();
   const { slug } = router.query; // Get the slug from the router
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -142,7 +142,7 @@ function Index({ data }) {
         <meta
           property='og:image'
           content={
-            `https://api.noormahalpalace.com/${data.image?.path}` ||
+            // `https://api.noormahalpalace.com/${data.image?.path}` ||
             `https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg`
           }
         />
@@ -164,7 +164,7 @@ function Index({ data }) {
         <meta
           property='twitter:image'
           content={
-            `https://api.noormahalpalace.com/${data.image?.path}` ||
+            // `https://api.noormahalpalace.com/${data.image?.path}` ||
             `https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg`
           }
         />
@@ -844,6 +844,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: response?.data?.data || null,
+      slug: slug || null,
     },
   };
 }
