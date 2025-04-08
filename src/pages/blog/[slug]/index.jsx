@@ -132,7 +132,7 @@ function Index({ data }) {
         <meta property='og:type' content='website' />
         <meta
           property='og:url'
-          content={`https://noormahalpalace.com${router.asPath}`}
+          content={`https://noormahalpalace.com/blog/${slug}`}
         />
         <meta property='og:title' content={data?.title || 'Default Title'} />
         <meta
@@ -141,14 +141,17 @@ function Index({ data }) {
         />
         <meta
           property='og:image'
-          content={`https://api.noormahalpalace.com/${data.image?.path}`}
+          content={
+            `https://api.noormahalpalace.com/${data.image?.path}` ||
+            `/assets/images/home/2.ExperiencesExperiences2.jpg`
+          }
         />
 
         {/* Twitter */}
         <meta property='twitter:card' content='summary_large_image' />
         <meta
           property='twitter:url'
-          content={`https://noormahalpalace.com${router.asPath}`}
+          content={`https://noormahalpalace.com/blog/${slug}`}
         />
         <meta
           property='twitter:title'
@@ -160,7 +163,10 @@ function Index({ data }) {
         />
         <meta
           property='twitter:image'
-          content={`https://api.noormahalpalace.com/${data.image?.path}`}
+          content={
+            `https://api.noormahalpalace.com/${data.image?.path}` ||
+            `/assets/images/home/2.ExperiencesExperiences2.jpg`
+          }
         />
       </Head>
       {data && (
@@ -173,7 +179,10 @@ function Index({ data }) {
                   <div className='user_grid'>
                     <a href='#'>
                       <img
-                        src={`https://api.noormahalpalace.com/${data.image?.path}`}
+                        src={
+                          `https://api.noormahalpalace.com/${data.image?.path}` ||
+                          `/assets/images/home/2.ExperiencesExperiences2.jpg`
+                        }
                         alt='user image'
                       />
                     </a>
@@ -186,7 +195,10 @@ function Index({ data }) {
             {data.image && (
               <div className='blog_details_img text-center'>
                 <img
-                  src={`https://api.noormahalpalace.com/${data.image?.path}`}
+                  src={
+                    `https://api.noormahalpalace.com/${data.image?.path}` ||
+                    `/assets/images/home/2.ExperiencesExperiences2.jpg`
+                  }
                   alt='user image'
                 />
               </div>
@@ -643,7 +655,7 @@ function Index({ data }) {
                       </div>
                       <div className='col-md-6 p-2'>
                         <img
-                          src='/assets/images/blog/rang-barse-post1.jpg'
+                          src='/assets/images/home/2.ExperiencesExperiences2.jpg'
                           alt='image2'
                           className='img-fluid rounded'
                           style={{
