@@ -132,7 +132,7 @@ function Index({ data }) {
         <meta property='og:type' content='website' />
         <meta
           property='og:url'
-          content={`https://api.noormahalpalace.com${router.asPath}`}
+          content={`https://noormahalpalace.com${router.asPath}`}
         />
         <meta property='og:title' content={data?.title || 'Default Title'} />
         <meta
@@ -148,7 +148,7 @@ function Index({ data }) {
         <meta property='twitter:card' content='summary_large_image' />
         <meta
           property='twitter:url'
-          content={`https://api.noormahalpalace.com${router.asPath}`}
+          content={`https://noormahalpalace.com${router.asPath}`}
         />
         <meta
           property='twitter:title'
