@@ -143,7 +143,7 @@ function Index({ data }) {
           property='og:image'
           content={
             `https://api.noormahalpalace.com/${data.image?.path}` ||
-            `/assets/images/home/2.ExperiencesExperiences2.jpg`
+            `https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg`
           }
         />
 
@@ -165,7 +165,7 @@ function Index({ data }) {
           property='twitter:image'
           content={
             `https://api.noormahalpalace.com/${data.image?.path}` ||
-            `/assets/images/home/2.ExperiencesExperiences2.jpg`
+            `https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg`
           }
         />
       </Head>
@@ -179,10 +179,7 @@ function Index({ data }) {
                   <div className='user_grid'>
                     <a href='#'>
                       <img
-                        src={
-                          `https://api.noormahalpalace.com/${data.image?.path}` ||
-                          `/assets/images/home/2.ExperiencesExperiences2.jpg`
-                        }
+                        src={`https://api.noormahalpalace.com/${data.image?.path}`}
                         alt='user image'
                       />
                     </a>
@@ -195,10 +192,7 @@ function Index({ data }) {
             {data.image && (
               <div className='blog_details_img text-center'>
                 <img
-                  src={
-                    `https://api.noormahalpalace.com/${data.image?.path}` ||
-                    `/assets/images/home/2.ExperiencesExperiences2.jpg`
-                  }
+                  src={`https://api.noormahalpalace.com/${data.image?.path}`}
                   alt='user image'
                 />
               </div>
@@ -655,7 +649,7 @@ function Index({ data }) {
                       </div>
                       <div className='col-md-6 p-2'>
                         <img
-                          src='/assets/images/home/2.ExperiencesExperiences2.jpg'
+                          src='/assets/images/blog/rang-barse-post1.jpg'
                           alt='image2'
                           className='img-fluid rounded'
                           style={{
