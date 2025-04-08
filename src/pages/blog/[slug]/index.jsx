@@ -9,7 +9,7 @@ import { useForm } from 'react-hook-form';
 
 function Index({ data, slug }) {
   const router = useRouter();
-  const { slug } = router.query; // Get the slug from the router
+  // const { slug } = router.query; // Get the slug from the router
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -127,7 +127,6 @@ function Index({ data, slug }) {
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
-
         {/* Open Graph / Facebook */}
         <meta property='og:type' content='website' />
         <meta
@@ -137,16 +136,22 @@ function Index({ data, slug }) {
         <meta property='og:title' content={data?.title || 'Default Title'} />
         <meta
           property='og:description'
-          content={data?.subTitle || 'Default Description'}
+          content={
+            data?.subTitle?.replace(/<[^>]+>/g, '') || 'Default Description'
+          }
         />
         <meta
           property='og:image'
           content={
-            // `https://api.noormahalpalace.com/${data.image?.path}` ||
-            `https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg`
+            data?.image?.path
+              ? `https://api.noormahalpalace.com/${data.image.path}`
+              : 'https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg'
           }
         />
-
+        <meta property='og:image:width' content='1200' />{' '}
+        {/* Replace with actual width */}
+        <meta property='og:image:height' content='630' />{' '}
+        {/* Replace with actual height */}
         {/* Twitter */}
         <meta property='twitter:card' content='summary_large_image' />
         <meta
@@ -159,13 +164,16 @@ function Index({ data, slug }) {
         />
         <meta
           property='twitter:description'
-          content={data?.subTitle || 'Default Description'}
+          content={
+            data?.subTitle?.replace(/<[^>]+>/g, '') || 'Default Description'
+          }
         />
         <meta
           property='twitter:image'
           content={
-            // `https://api.noormahalpalace.com/${data.image?.path}` ||
-            `https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg`
+            data?.image?.path
+              ? `https://api.noormahalpalace.com/${data.image.path}`
+              : 'https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg'
           }
         />
       </Head>
