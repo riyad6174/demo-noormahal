@@ -2,6 +2,7 @@ import { getSingleBlog } from '@/utils/API';
 import { BlogMain } from '@/utils/Contents/blog';
 import parse from 'html-react-parser';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -327,6 +328,82 @@ function Index({ data }) {
                           </div>
                         )}
                       </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {slug ===
+              'best-staycation-near-delhi-noormahal-palace-luxury-hotel' && (
+              <div className='row p-md-4 '>
+                {/* <div className='row d-flex justify-content-center py-5'>
+                  <Link
+                    className='book_table_btn w-100  btn-block'
+                    href={'https://noormahalpalace.com/promotions'}
+                  >
+                    Know More
+                  </Link>
+                </div> */}
+                <div className='col-md-12 py-5 d-flex justify-content-center '>
+                  <Link
+                    className='book_table_btn   btn-block'
+                    href={'https://noormahalpalace.com/promotions'}
+                  >
+                    Know More
+                  </Link>
+                </div>
+                {/* Image Grid */}
+                <div className=' col-lg-8 mx-auto'>
+                  <div className='container'>
+                    <div className='row mb-4'>
+                      <div className='col-md-6 p-2 '>
+                        <img
+                          src='/assets/images/home/PrivateDining.jpg'
+                          alt='image1'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/dinings/brown_sugar.jpg'
+                          alt='image2'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/experience/chef2.jpg'
+                          alt='image3'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/home/6.SPA.jpg'
+                          alt='image4'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
