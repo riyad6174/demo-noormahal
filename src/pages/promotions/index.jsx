@@ -9,6 +9,14 @@ const promotions = [
   //   knowMoreLink: null,
   // },
   {
+    image: 'assets/images/promotion/summer.jpg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/chefstable.jpg',
+    knowMoreLink: null,
+  },
+  {
     image: 'assets/images/promotion/easter.jpg',
     knowMoreLink: null,
   },
