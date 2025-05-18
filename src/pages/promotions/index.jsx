@@ -4,10 +4,10 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const promotions = [
-  // {
-  //   image: 'assets/images/promotion/navratrinew.jpg',
-  //   knowMoreLink: null,
-  // },
+  {
+    image: 'assets/images/promotion/snooker.jpg',
+    knowMoreLink: null,
+  },
   // {
   //   image: 'assets/images/promotion/mothers-day.jpg',
   //   knowMoreLink: null,
