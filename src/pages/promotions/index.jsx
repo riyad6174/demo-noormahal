@@ -8,6 +8,16 @@ const promotions = [
     image: 'assets/images/promotion/snooker.jpg',
     knowMoreLink: null,
   },
+  {
+    image: 'assets/images/promotion/mango-madness.jpg',
+    knowMoreLink: null,
+  },
+
+  {
+    image: 'assets/images/promotion/royal-hospitality.jpg',
+    knowMoreLink: null,
+  },
+
   // {
   //   image: 'assets/images/promotion/mothers-day.jpg',
   //   knowMoreLink: null,
