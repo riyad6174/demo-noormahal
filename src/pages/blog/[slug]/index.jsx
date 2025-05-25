@@ -347,6 +347,65 @@ function Index({ data, slug }) {
                 </div>
               </div>
             )}
+            {slug === 'luxury-weekend-gateway-near-delhi-ncr' && (
+              <div className='row p-md-4 '>
+                {/* Image Grid */}
+                <div className=' col-lg-8 mx-auto'>
+                  <div className='container'>
+                    <div className='row mb-4'>
+                      <div className='col-md-6 p-2 '>
+                        <img
+                          src='/assets/images/dinings/dining_img1.png'
+                          alt='image1'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/stay/luxurious_img2.png'
+                          alt='image2'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/stay/luxurious_img4.png'
+                          alt='image3'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/home/6.SPA.jpg'
+                          alt='image4'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             {slug ===
               'best-staycation-near-delhi-noormahal-palace-luxury-hotel' && (
               <div className='row p-md-4 '>
