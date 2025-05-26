@@ -379,7 +379,7 @@ function Index({ data, slug }) {
                       </div>
                       <div className='col-md-6 p-2'>
                         <img
-                          src='/assets/images/stay/luxurious_img4.png'
+                          src='/assets/images/meetings/sheeshmahal.jpg'
                           alt='image3'
                           className='img-fluid rounded'
                           style={{
