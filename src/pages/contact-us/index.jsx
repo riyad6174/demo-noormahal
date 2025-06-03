@@ -390,7 +390,15 @@ function index() {
                 <p> Noormahal Palace, Nirmal Kutia Chowk </p>
                 <p> Sector-32, Karnal-Delhi (NCR), INDIA</p>
                 <p> Tel:+91 9996787891/92/93/97/904</p>
-                <p> Email :sales@noormahal.in /salesbqts@noormahal.in</p>
+                <p style={{ textDecoration: 'none' }}>
+                  <a href='mailto:sales@noormahal.in '>sales@noormahal.in</a>{' '}
+                  <br />
+                  <a href='mailto:salesbqts@noormahal.in'>
+                    salesbqts@noormahal.in
+                  </a>
+                  <br />
+                  <a href='mailto:dsm@noormahal.in'>dsm@noormahal.in</a>
+                </p>
               </div>
             </div>
             <div className='contact_grid mt-5 container'>
@@ -415,8 +423,9 @@ function index() {
                       sales@noormahal.in /
                     </a>
                     <a href='mailto:salesbqts@noormahal.in'>
-                      salesbqts@noormahal.in
+                      salesbqts@noormahal.in /
                     </a>
+                    <a href='mailto:dsm@noormahal.in'>dsm@noormahal.in</a>
                   </li>
                 </ul>
                 <ul className='location_list'>
