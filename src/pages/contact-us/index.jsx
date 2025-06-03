@@ -425,7 +425,7 @@ function index() {
                     <a href='mailto:salesbqts@noormahal.in'>
                       salesbqts@noormahal.in /
                     </a>
-                    <a href='mailto:dsm@noormahal.in'>dsm@noormahal.in</a>
+                    {/* <a href='mailto:dsm@noormahal.in'>dsm@noormahal.in</a> */}
                   </li>
                 </ul>
                 <ul className='location_list'>
