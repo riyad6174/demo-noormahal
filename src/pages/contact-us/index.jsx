@@ -424,10 +424,23 @@ function index() {
                     <a href='mailto:salesbqts@noormahal.in'>
                       salesbqts@noormahal.in /
                     </a>
-                  <a href='mailto:dsm@noormahal.in'>dsm@noormahal.in</a>
+                 
                     {/* <a href='mailto:dsm@noormahal.in'>dsm@noormahal.in</a> */}
                   </li>
                 </ul>
+                
+               <ul className='location_list'>
+                  <li>Director of Sales & Marketing</li>
+                  <li>
+                    Mobile :<a href='tel: ‪+919996787904‬'> +91 9996787904‬</a>
+                  </li>
+                  <li>
+                    Email :
+                    <a href='mailto:dsm@noormahal.in'>dsm@noormahal.in</a>
+                  </li>
+                </ul>
+
+                
                 <ul className='location_list'>
                   <li>Chander Shekhar Puri</li>
                   <li>Corporate General Manager</li>
