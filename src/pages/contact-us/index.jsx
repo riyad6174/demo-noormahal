@@ -413,12 +413,10 @@ function index() {
                     <p>Sector-32, Karnal-Delhi (NCR), INDIA</p>
                   </li>
                   <li>
-                    Tel : 
-                    <a href='tel:+91 9996787891'> +91 9996787891/92/93/97/904</a>
+                    Tel : <a href='tel:+91 9996787891'> +91 9996787891/92/93/97/904</a>
                   </li>
                   <li>
-                    Email :
-                    <a href='mailto:sales@noormahal.in '>
+                    Email : <a href='mailto:sales@noormahal.in '>
                        sales@noormahal.in /
                     </a>
                     <a href='mailto:salesbqts@noormahal.in'>
@@ -435,8 +433,7 @@ function index() {
                     Mobile : <a href='tel: ‪+919996787904‬'> +91 9996787904‬</a>
                   </li>
                   <li>
-                    Email : 
-                    <a href='mailto:dsm@noormahal.in'> dsm@noormahal.in</a>
+                    Email : <a href='mailto:dsm@noormahal.in'> dsm@noormahal.in</a>
                   </li>
                 </ul>
 
@@ -448,8 +445,7 @@ function index() {
                     Mobile : <a href='tel:+919996787881'> +91 9996787881</a>
                   </li>
                   <li>
-                    Email : 
-                    <a href='mailto:cgm@noormahal.in'> cgm@noormahal.in</a>
+                    Email : <a href='mailto:cgm@noormahal.in'> cgm@noormahal.in</a>
                   </li>
                 </ul>
               </div>
@@ -463,8 +459,7 @@ function index() {
                     <p>Sector-32, Karnal-Delhi (NCR) INDIA.</p>
                   </li>
                   <li>
-                    Tel : 
-                    <a href='tel:+91 9996787891'> +91 9996787891/92/93/97/904</a>
+                    Tel : <a href='tel:+91 9996787891'> +91 9996787891/92/93/97/904</a>
                   </li>
                   <li>
                     Email : 
