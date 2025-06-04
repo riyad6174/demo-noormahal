@@ -462,8 +462,7 @@ function index() {
                     Tel : <a href='tel:+91 9996787891'> +91 9996787891/92/93/97/904</a>
                   </li>
                   <li>
-                    Email : 
-                    <a href='mailto:info@noormahal.in'> info@noormahal.in</a>
+                    Email : <a href='mailto:info@noormahal.in'> info@noormahal.in</a>
                   </li>
                 </ul>
                 <ul className='location_list'>
