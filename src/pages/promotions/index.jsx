@@ -5,13 +5,17 @@ import { useForm } from 'react-hook-form';
 
 const promotions = [
   {
-    image: 'assets/images/promotion/ipl-final.jpg',
+    image: 'assets/images/promotion/fathersday.jpg',
     knowMoreLink: null,
   },
-  {
-    image: 'assets/images/promotion/snooker.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/ipl-final.jpg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/snooker.jpg',
+  //   knowMoreLink: null,
+  // },
   {
     image: 'assets/images/promotion/mango-madness.jpg',
     knowMoreLink: null,
@@ -46,10 +50,10 @@ const promotions = [
     image: 'assets/images/promotion/dinnerbuffet.jpg',
     knowMoreLink: null,
   },
-  {
-    image: 'assets/images/promotion/polobarnew2.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/polobarnew2.jpg',
+  //   knowMoreLink: null,
+  // },
   // {
   //   image: 'assets/images/promotion/saint.jpg',
   //   knowMoreLink: null
