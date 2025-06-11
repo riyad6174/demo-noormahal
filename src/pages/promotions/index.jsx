@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 const promotions = [
   {
     image: 'assets/images/promotion/fathersday.jpg',
-    knowMoreLink: null,
+    knowMoreLink: 'assets/images/promotion/fathersdaypackage.pdf',
   },
   // {
   //   image: 'assets/images/promotion/ipl-final.jpg',
