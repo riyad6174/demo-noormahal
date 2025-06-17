@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import ScrollToTop from '@/components/atoms/ScrollToTop';
 import IntroVideo from '@/components/IntroVideo/IntroVideo';
 import BookNowButton from '@/components/atoms/BookNowButton';
@@ -18,60 +18,65 @@ import { StructuredData } from '@/components/StructuredData';
 import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }) {
-  const [data, setData] = useState([]);
-  const [showContent, setShowContent] = useState(false);
-  const [showIntro, setShowIntro] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
+  const [data, setData] = useState([]);
+  const [isIntroFinished, setIsIntroFinished] = useState(false); // Set to false to enable intro video by default
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-    AOS.init({ duration: 800, once: true });
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
 
-    if (typeof document !== 'undefined') {
-      require('bootstrap/dist/js/bootstrap');
+  useEffect(() => {
+    typeof document !== undefined
+      ? require('bootstrap/dist/js/bootstrap')
+      : null;
+  }, []);
+
+  const handleIntroFinishChanged = (value) => {
+    setIsIntroFinished(value);
+  };
+
+  const handleShowContentChanged = (value) => {
+    setShowContent(value);
+  };
+
+  const fetchData = useCallback(async () => {
+    const response = await getSettings();
+    if (response && response.status) {
+      if (response?.data && Object.keys(response?.data?.data).length > 0) {
+        setData(response?.data?.data);
+        console.log(response?.data?.data, 'settings list');
+      }
     }
   }, []);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await getSettings();
-      if (response?.status && response.data?.data) {
-        setData(response.data.data);
-      }
-    };
     fetchData();
-  }, []);
+  }, [fetchData]);
 
+  // Determine if the current path is the root URL
+  const isRootUrl = router.pathname === '/';
+
+  // Show content immediately for non-root URLs
   useEffect(() => {
-    if (!isMounted) return;
-
-    const introSeen = sessionStorage.getItem('introSeen');
-    const isRootPath = router.pathname === '/';
-
-    if (isRootPath && !introSeen) {
-      setShowIntro(true);
-    } else {
+    if (!isRootUrl) {
       setShowContent(true);
     }
-  }, [router.pathname, isMounted]);
-
-  const handleIntroFinish = () => {
-    sessionStorage.setItem('introSeen', 'true');
-    setShowIntro(false);
-    setShowContent(true);
-  };
+  }, [isRootUrl]);
 
   return (
     <>
-      {isMounted && showIntro && (
+      {isRootUrl && (
         <IntroVideo
-          isIntroFinished={false}
-          handleIntroFinish={handleIntroFinish}
-          handleShowContent={setShowContent}
+          isIntroFinished={isIntroFinished}
+          handleIntroFinish={handleIntroFinishChanged}
+          handleShowContent={handleShowContentChanged}
         />
       )}
-
       {showContent && (
         <>
           <GoogleAnalytics />
