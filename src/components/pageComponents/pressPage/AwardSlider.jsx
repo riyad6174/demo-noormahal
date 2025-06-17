@@ -61,6 +61,15 @@ function AwardSlider() {
             </a>
           </div>
           <div className='award_gallery_item'>
+            <a href='assets/images/awards/award6.jpg'>
+              <img
+                src='assets/images/awards/award6.jpg'
+                alt='event image'
+                className='border border-5 border-light'
+              />
+            </a>
+          </div>
+          <div className='award_gallery_item'>
             <a href='assets/images/awards/award2.jpg'>
               <img
                 src='assets/images/awards/award2.jpg'
