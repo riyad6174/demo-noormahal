@@ -6,6 +6,7 @@ import SpaGallery from '@/components/pageComponents/spaPage/SpaGallery';
 import SpaRituals from '@/components/pageComponents/spaPage/SpaRituals';
 import SpaWellness from '@/components/pageComponents/spaPage/SpaWellness';
 import { getSeo } from '@/utils/API';
+import { format } from 'date-fns';
 import Head from 'next/head';
 
 import Image from 'next/image';
@@ -34,9 +35,11 @@ function index({ seoData }) {
     } catch (error) {
       console.error('Error fetching IP address:', error);
     }
+    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
 
     // Add IP address to form data
     data.ipaddress = ipAddress;
+    data.timestamp = Timestamp; // Add timestamp to form data
 
     try {
       setIsLoading(true);
