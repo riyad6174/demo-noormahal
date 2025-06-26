@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -21,9 +22,11 @@ function RecreationForm() {
     } catch (error) {
       console.error('Error fetching IP address:', error);
     }
+    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
 
     // Add IP address to form data
     data.ipaddress = ipAddress;
+    data.timestamp = Timestamp; // Add timestamp to form data
 
     try {
       setIsLoading(true);

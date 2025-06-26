@@ -9,6 +9,7 @@ import Head from 'next/head';
 import DiningBanner from '@/components/organisms/Banners/DiningPageBanner';
 // import image1 from '/public/assets/images/shape/place_shape.png'
 import { useForm } from 'react-hook-form';
+import { format } from 'date-fns';
 // import Layout from '@/components/Layout';
 function page() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -30,9 +31,10 @@ function page() {
     } catch (error) {
       console.error('Error fetching IP address:', error);
     }
-
+    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
     // Add IP address to form data
     data.ipaddress = ipAddress;
+    data.timestamp = Timestamp; // Add timestamp to form data
     try {
       setIsLoading(true);
       const response = await fetch('/api/submit', {

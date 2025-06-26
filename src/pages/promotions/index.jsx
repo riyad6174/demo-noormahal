@@ -1,4 +1,5 @@
 import PromotionBanner from '@/components/organisms/Banners/PromotionBanner';
+import { format } from 'date-fns';
 import Head from 'next/head';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -115,8 +116,10 @@ export default function Page() {
     } catch (error) {
       console.error('Error fetching IP address:', error);
     }
+    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
 
     data.ipaddress = ipAddress;
+    data.timestamp = Timestamp; // Add timestamp to form data
 
     try {
       setIsLoading(true);
