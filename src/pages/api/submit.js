@@ -6,8 +6,17 @@
 import { google } from 'googleapis';
 
 export default async (req, res) => {
-  const { name, email, message, phone, time, date, sheetName, ipaddress } =
-    req.body;
+  const {
+    name,
+    email,
+    message,
+    phone,
+    time,
+    date,
+    sheetName,
+    ipaddress,
+    timestamp,
+  } = req.body;
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -25,7 +34,9 @@ export default async (req, res) => {
       range: `${sheetName}!A1`,
       valueInputOption: 'USER_ENTERED',
       resource: {
-        values: [[name, email, phone, message, time, date, '', ipaddress]],
+        values: [
+          [name, email, phone, message, time, date, '', ipaddress, timestamp],
+        ],
       },
     });
 

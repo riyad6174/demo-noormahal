@@ -1,3 +1,4 @@
+import { format } from 'date-fns';
 import Head from 'next/head';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -49,9 +50,11 @@ function index() {
     } catch (error) {
       console.error('Error fetching IP address:', error);
     }
+    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
 
     // Add IP address to form data
     data.ipaddress = ipAddress;
+    data.timestamp = Timestamp; // Add timestamp to form data
 
     try {
       setIsLoading(true);
@@ -396,7 +399,6 @@ function index() {
                   <a href='mailto:salesbqts@noormahal.in'>
                     salesbqts@noormahal.in
                   </a>
-
                 </p>
               </div>
             </div>
@@ -413,31 +415,35 @@ function index() {
                     <p>Sector-32, Karnal-Delhi (NCR), INDIA</p>
                   </li>
                   <li>
-                    Tel : <a href='tel:+91 9996787891'> +91 9996787891/92/93/97/904</a>
+                    Tel :{' '}
+                    <a href='tel:+91 9996787891'>
+                      {' '}
+                      +91 9996787891/92/93/97/904
+                    </a>
                   </li>
                   <li>
-                    Email : <a href='mailto:sales@noormahal.in '>
-                       sales@noormahal.in /
+                    Email :{' '}
+                    <a href='mailto:sales@noormahal.in '>
+                      sales@noormahal.in /
                     </a>
                     <a href='mailto:salesbqts@noormahal.in'>
-                      salesbqts@noormahal.in 
+                      salesbqts@noormahal.in
                     </a>
-                 
                     {/* <a href='mailto:dsm@noormahal.in'>dsm@noormahal.in</a> */}
                   </li>
                 </ul>
-                
-               <ul className='location_list'>
+
+                <ul className='location_list'>
                   <li>Director of Sales & Marketing</li>
                   <li>
                     Mobile : <a href='tel: ‪+919996787904‬'> +91 9996787904‬</a>
                   </li>
                   <li>
-                    Email : <a href='mailto:dsm@noormahal.in'> dsm@noormahal.in</a>
+                    Email :{' '}
+                    <a href='mailto:dsm@noormahal.in'> dsm@noormahal.in</a>
                   </li>
                 </ul>
 
-                
                 <ul className='location_list'>
                   <li>Chander Shekhar Puri</li>
                   <li>Corporate General Manager</li>
@@ -445,7 +451,8 @@ function index() {
                     Mobile : <a href='tel:+919996787881'> +91 9996787881</a>
                   </li>
                   <li>
-                    Email : <a href='mailto:cgm@noormahal.in'> cgm@noormahal.in</a>
+                    Email :{' '}
+                    <a href='mailto:cgm@noormahal.in'> cgm@noormahal.in</a>
                   </li>
                 </ul>
               </div>
@@ -459,10 +466,15 @@ function index() {
                     <p>Sector-32, Karnal-Delhi (NCR) INDIA.</p>
                   </li>
                   <li>
-                    Tel : <a href='tel:+91 9996787891'> +91 9996787891/92/93/97/904</a>
+                    Tel :{' '}
+                    <a href='tel:+91 9996787891'>
+                      {' '}
+                      +91 9996787891/92/93/97/904
+                    </a>
                   </li>
                   <li>
-                    Email : <a href='mailto:info@noormahal.in'> info@noormahal.in</a>
+                    Email :{' '}
+                    <a href='mailto:info@noormahal.in'> info@noormahal.in</a>
                   </li>
                 </ul>
                 <ul className='location_list'>

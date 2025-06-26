@@ -2,6 +2,7 @@ import MeetingBanner from '@/components/organisms/Banners/MeetingBanner';
 import MeetingSlider from '@/components/organisms/MeetingSlider';
 import MeetingSection from '@/components/pageComponents/meetingPage/MeetingSection';
 import { getMeeting, getSeo } from '@/utils/API';
+import { format } from 'date-fns';
 import Head from 'next/head';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -26,9 +27,11 @@ function page({ meetingData, seoData }) {
     } catch (error) {
       console.error('Error fetching IP address:', error);
     }
+    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
 
     // Add IP address to form data
     data.ipaddress = ipAddress;
+    data.timestamp = Timestamp; // Add timestamp to form data
 
     try {
       setIsLoading(true);
