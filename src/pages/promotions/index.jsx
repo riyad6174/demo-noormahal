@@ -21,7 +21,10 @@ const promotions = [
   //   image: 'assets/images/promotion/mango-madness.jpg',
   //   knowMoreLink: null,
   // },
-
+ {
+    image: 'assets/images/promotion/chefstable.jpg',
+    knowMoreLink: null,
+  },
   {
     image: 'assets/images/promotion/royal-hospitality.jpg',
     knowMoreLink: null,
@@ -35,10 +38,7 @@ const promotions = [
     image: 'assets/images/promotion/summer.jpg',
     knowMoreLink: null,
   },
-  {
-    image: 'assets/images/promotion/chefstable.jpg',
-    knowMoreLink: null,
-  },
+ 
   // {
   //   image: 'assets/images/promotion/easter.jpg',
   //   knowMoreLink: null,
