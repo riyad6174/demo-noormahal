@@ -360,6 +360,49 @@ function TestimonialSlider() {
               style={{ height: '100%', width: '100%' }}
             >
               <div className='pic'>
+                <img src='/assets/images/guest/sohail_khan.jpg' />
+              </div>
+              <div className='d-flex flex-column justify-content-between'>
+                <p className='description'>
+                  This is the first time I've fallen in love with the place
+                  and the people ❤
+                </p>
+                <div className='testimonial-profile'>
+                  <h3 className='title'>Sohail Khan</h3> <br />
+                  <span className='post'>Bollywood Actor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='col-md-4'>
+          <div>
+            <div
+              className='testimonial '
+              style={{ height: '100%', width: '100%' }}
+            >
+              <div className='pic'>
+                <img src='/assets/images/guest/neeru.jpeg' />
+              </div>
+              <div className='d-flex flex-column justify-content-between'>
+                <p className='description'>
+                  Thank you to the whole team !! Amazing place, and hospitality.
+                </p>
+                <div className='testimonial-profile'>
+                  <h3 className='title'>Neeru Bajwa</h3> <br />
+                  <span className='post'>Bollywood Actress</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='col-md-4'>
+          <div>
+            <div
+              className='testimonial '
+              style={{ height: '100%', width: '100%' }}
+            >
+              <div className='pic'>
                 <img src='/assets/images/guest/guest_img1.png' />
               </div>
               <div className='d-flex flex-column justify-content-between'>
