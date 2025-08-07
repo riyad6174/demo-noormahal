@@ -7,10 +7,10 @@ import image5 from '../../../public/assets/images/dinings/Khaas_Mahal.jpg';
 import image6 from '../../../public/assets/images/dinings/cakefactory.jpg';
 import Head from 'next/head';
 import DiningBanner from '@/components/organisms/Banners/DiningPageBanner';
-// import image1 from '/public/assets/images/shape/place_shape.png'
 import { useForm } from 'react-hook-form';
 import { format } from 'date-fns';
-// import Layout from '@/components/Layout';
+import { baseURL } from '@/utils/API';
+
 function page() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -22,42 +22,83 @@ function page() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    // Fetch the IP address
-    let ipAddress = '';
-    try {
-      const ipResponse = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipResponse.json();
-      ipAddress = ipData.ip;
-    } catch (error) {
-      console.error('Error fetching IP address:', error);
-    }
-    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
-    // Add IP address to form data
-    data.ipaddress = ipAddress;
-    data.timestamp = Timestamp; // Add timestamp to form data
     try {
       setIsLoading(true);
-      const response = await fetch('/api/submit', {
+
+      // Format date and time for spreadsheet payload
+      const currentDate = new Date();
+      const formattedDate = format(currentDate, 'yyyy-MM-dd');
+      const formattedTime = format(currentDate, 'HH:mm');
+
+      // Prepare spreadsheet payload
+      const spreadsheetPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        date: formattedDate,
+        time: formattedTime,
+        title: 'Query Form - Dining',
+        type: 'dining',
+        sheetName: 'Dinning',
+      };
+
+      // Prepare backend payload (without date and time)
+      const backendPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        date: formattedDate,
+        time: formattedTime,
+        title: 'Query Form - Dining',
+        type: 'book',
+      };
+
+      // First API call: Submit to spreadsheet
+      const spreadsheetResponse = await fetch('/api/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...data, sheetName: 'Dinning' }), // Change the sheet name as per your requirement
+        body: JSON.stringify(spreadsheetPayload),
       });
+
+      if (!spreadsheetResponse.ok) {
+        console.error(
+          'Failed to submit to spreadsheet:',
+          await spreadsheetResponse.text()
+        );
+      }
+
+      // Second API call: Submit to backend database
+      const backendResponse = await fetch(`${baseURL}/contact/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(backendPayload),
+      });
+
       setIsLoading(false);
-      if (response.ok) {
-        console.log('Form data submitted successfully!');
+
+      if (spreadsheetResponse.ok && backendResponse.ok) {
+        console.log(
+          'Form data submitted successfully to both spreadsheet and backend!'
+        );
         setIsSubmitted(true);
       } else {
-        console.error('Failed to submit form data.');
+        console.error('Failed to submit form data to one or both endpoints.');
       }
     } catch (error) {
+      setIsLoading(false);
       console.error('Error submitting form data:', error);
     }
 
     // Reset the form after submission
     reset();
   };
+
   return (
     <div>
       <Head>
@@ -67,7 +108,6 @@ function page() {
           content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
         />
         <meta name='robots' content='index, follow' />
-
         <meta
           name='description'
           content="Indulge in a culinary journey of flavors at Noormahal Palace's dining venues.From traditional delights to international cuisines, elevate your dining experience with us."
@@ -75,12 +115,10 @@ function page() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      {/* <Layout> */}
       <main>
         <div id='custom-swiper-bottom'>
           <DiningBanner />
         </div>
-        {/* <!-- Dinner   Section  --> */}
         <section className='dining_wrapper facilities_wrapper'>
           <div className='header_area text-center mx-auto'>
             <h2 className='story_title yellow-color-c2'>
@@ -422,8 +460,6 @@ function page() {
                   aria-label='Close'
                 ></button>
               </div>
-
-              {/* <form className="contact-form modal-form"> */}
               <div className='row '>
                 <div className='col-lg-12 p-4 mx-auto'>
                   <div className='card-body rounded-0'>
@@ -446,7 +482,7 @@ function page() {
                                   required='required'
                                   data-error='Firstname is required.'
                                   {...register('name', {
-                                    required: 'Banner name is required!',
+                                    required: 'Name is required!',
                                   })}
                                 />
                                 {errors.name && (
@@ -460,16 +496,21 @@ function page() {
                               <div className='form-group'>
                                 <input
                                   id='form_lastname'
-                                  type='text'
+                                  type='email'
                                   name='email'
                                   className='form-control rounded-0'
                                   placeholder='Email'
                                   required='required'
-                                  data-error='Lastname is required.'
+                                  data-error='Email is required.'
                                   {...register('email', {
-                                    required: 'Banner name is required!',
+                                    required: 'Email is required!',
                                   })}
                                 />
+                                {errors.email && (
+                                  <span className='text-sm text-red-500'>
+                                    {errors.email?.message}
+                                  </span>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -478,16 +519,21 @@ function page() {
                               <div className='form-group'>
                                 <input
                                   id='form_email'
-                                  type='Phone'
-                                  name='Phone'
+                                  type='tel'
+                                  name='phone'
                                   className='form-control rounded-0'
                                   placeholder='Phone'
                                   required='required'
                                   data-error='Valid Phone is required.'
                                   {...register('phone', {
-                                    required: 'Banner name is required!',
+                                    required: 'Phone is required!',
                                   })}
                                 />
+                                {errors.phone && (
+                                  <span className='text-sm text-red-500'>
+                                    {errors.phone?.message}
+                                  </span>
+                                )}
                               </div>
                             </div>
                             <div className='col-md-6 pt-2'>
@@ -502,31 +548,41 @@ function page() {
                                   min={new Date().toISOString().split('T')[0]}
                                   data-error='Valid Date is required.'
                                   {...register('date', {
-                                    required: 'Banner name is required!',
+                                    required: 'Date is required!',
                                   })}
                                 />
+                                {errors.date && (
+                                  <span className='text-sm text-red-500'>
+                                    {errors.date?.message}
+                                  </span>
+                                )}
                               </div>
                             </div>
                           </div>
-                          <div className='row '>
+                          <div className='row'>
                             <div className='col-md-6 pt-2'>
                               <div className='form-group'>
                                 <input
-                                  id='form_email'
+                                  id='form_time'
                                   type='time'
                                   name='time'
                                   className='form-control rounded-0'
-                                  placeholder='time'
+                                  placeholder='Time'
                                   required='required'
-                                  data-error='Valid email is required.'
+                                  data-error='Valid Time is required.'
                                   {...register('time', {
-                                    required: 'Banner name is required!',
+                                    required: 'Time is required!',
                                   })}
                                 />
+                                {errors.time && (
+                                  <span className='text-sm text-red-500'>
+                                    {errors.time?.message}
+                                  </span>
+                                )}
                               </div>
                             </div>
                           </div>
-                          <div className='row '>
+                          <div className='row'>
                             <div className='col-md-12 pt-2'>
                               <div className='form-group'>
                                 <textarea
@@ -538,9 +594,14 @@ function page() {
                                   required='required'
                                   data-error='Please, leave us a message.'
                                   {...register('message', {
-                                    required: 'Banner name is required!',
+                                    required: 'Message is required!',
                                   })}
                                 ></textarea>
+                                {errors.message && (
+                                  <span className='text-sm text-red-500'>
+                                    {errors.message?.message}
+                                  </span>
+                                )}
                               </div>
                             </div>
                           </div>
@@ -549,8 +610,7 @@ function page() {
                               <button
                                 disabled={isSubmitted}
                                 type='submit'
-                                className='book_table_btn w-100  btn-block
-                            '
+                                className='book_table_btn w-100 btn-block'
                               >
                                 {isLoading ? (
                                   <span>SUBMITTING.. </span>
@@ -577,11 +637,9 @@ function page() {
                 </div>
               </div>
             </div>
-            {/* </form> */}
           </div>
         </div>
       </main>
-      {/* </Layout> */}
     </div>
   );
 }
