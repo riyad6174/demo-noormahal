@@ -1,3 +1,4 @@
+import { baseURL } from '@/utils/API';
 import { format } from 'date-fns';
 import Head from 'next/head';
 import React, { useState } from 'react';
@@ -18,9 +19,6 @@ function index() {
   } = useForm();
 
   const handleToggle = (value) => {
-    // setToggledAir(false);
-    // setToggledRoad(false);
-
     if (value == 'train') {
       setToggledTrain(!toggledTrain);
     } else {
@@ -41,48 +39,82 @@ function index() {
   };
 
   const onSubmit = async (data) => {
-    // Fetch the IP address
-    let ipAddress = '';
-    try {
-      const ipResponse = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipResponse.json();
-      ipAddress = ipData.ip;
-    } catch (error) {
-      console.error('Error fetching IP address:', error);
-    }
-    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
-
-    // Add IP address to form data
-    data.ipaddress = ipAddress;
-    data.timestamp = Timestamp; // Add timestamp to form data
-
     try {
       setIsLoading(true);
-      const response = await fetch('/api/submitContact', {
+
+      // Format date and time for spreadsheet payload
+      const currentDate = new Date();
+      const formattedDate = format(currentDate, 'yyyy-MM-dd');
+      const formattedTime = format(currentDate, 'HH:mm');
+
+      // Prepare spreadsheet payload
+      const spreadsheetPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        date: formattedDate,
+        time: formattedTime,
+        title: 'Query Form - Contact',
+        type: 'contact',
+        sheetName: 'contact',
+        spreadsheetId: '1fio4F5mQxqhrDwt9P5NjE_lHkIUy74s6Ng7dZfD4Mk0',
+      };
+
+      // Prepare backend payload (without date and time)
+      const backendPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        title: 'Query Form - Contact',
+        type: 'contact',
+      };
+
+      // First API call: Submit to spreadsheet
+      const spreadsheetResponse = await fetch('/api/submitContact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...data,
-          sheetName: 'contact',
-          spreadsheetId: '1fio4F5mQxqhrDwt9P5NjE_lHkIUy74s6Ng7dZfD4Mk0',
-        }), // Change the sheet name as per your requirement
+        body: JSON.stringify(spreadsheetPayload),
       });
+
+      if (!spreadsheetResponse.ok) {
+        console.error(
+          'Failed to submit to spreadsheet:',
+          await spreadsheetResponse.text()
+        );
+      }
+
+      // Second API call: Submit to backend database
+      const backendResponse = await fetch(`${baseURL}/contact/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(backendPayload),
+      });
+
       setIsLoading(false);
-      if (response.ok) {
-        console.log('Form data submitted successfully!');
+
+      if (spreadsheetResponse.ok && backendResponse.ok) {
+        console.log(
+          'Form data submitted successfully to both spreadsheet and backend!'
+        );
         setIsSubmitted(true);
       } else {
-        console.error('Failed to submit form data.');
+        console.error('Failed to submit form data to one or both endpoints.');
       }
     } catch (error) {
+      setIsLoading(false);
       console.error('Error submitting form data:', error);
     }
 
     // Reset the form after submission
     reset();
   };
+
   return (
     <div>
       <Head>
@@ -92,7 +124,6 @@ function index() {
           content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
         />
         <meta name='robots' content='index, follow' />
-
         <meta
           name='description'
           content='Contact Noormahal Palace for reservations, inquiries, and assistance. Our dedicated team is here to help you plan your perfect getaway, event, or dining experience.'
@@ -134,7 +165,6 @@ function index() {
                   type='button'
                   className='dropdonw_btn  d-flex-between '
                   onClick={() => {
-                    // setToggledTrain(!toggledTrain);
                     handleToggle('train');
                   }}
                 >
@@ -159,7 +189,6 @@ function index() {
                   type='button'
                   className='dropdonw_btn  d-flex-between '
                   onClick={() => {
-                    // setToggledAir(!toggledAir);
                     handleToggle('air');
                   }}
                 >
@@ -227,86 +256,15 @@ function index() {
                   </ul>
                   <p>
                     Visitors can also avail state roadways and air conditioned
-                    private buses and ordinary bus services from
-                    Noormahal Palace.
+                    private buses and ordinary bus services from Noormahal
+                    Palace.
                   </p>
                 </div>
               </div>
-              {/* <div className='address_item'>
-                <button
-                  type='button'
-                  className='dropdonw_btn  d-flex-between '
-                  onClick={() => {
-                    setToggled(true);
-                  }}
-                >
-                  <span>BY AIR </span>
-                  <div className='icon'>
-                    <BiPlus />
-                    <BiMinus />
-                  </div>
-                </button>
-                <div className='address_area '>
-                  <h4>BY AIR</h4>
-                  <p>
-                    The vintage historical Karnal railway station is situated 7
-                    KM away from the main Delhi-Panipat-Karnal-Ambala-Kalka line
-                    also called DUK route.
-                  </p>
-                </div>
-              </div> */}
-              {/* <div className='address_item'>
-                <button
-                  type='button'
-                  className='dropdonw_btn  d-flex-between '
-                  onClick={() => {
-                    setToggled(true);
-                  }}
-                >
-                  <span>BY AIR </span>
-                  <div className='icon'>
-                    <BiPlus />
-                    <BiMinus />
-                  </div>
-                </button>
-                <div className='address_area'>
-                  <h4>BY ROAD</h4>
-                  <p>
-                    Noormahal Palace is connected by roads and national highways
-                    connecting major cities like
-                  </p>
-                  <ul>
-                    <li>
-                      <b>Delhi : </b> 122 KM
-                    </li>
-                    <li>
-                      <b>Chandigarh:</b> 127 KM
-                    </li>
-                    <li>
-                      <b>Karnal:</b> 6 KM.
-                    </li>
-                    <li>
-                      <b>Punjab:</b> 262 KM.
-                    </li>
-                  </ul>
-                  <p>
-                    Visitors can also avail state roadways and air conditioned
-                    private buses and ordinary bus services from
-                    Noormahal Palace.
-                  </p>
-                </div>
-              </div> */}
             </div>
             <div className='overlay' id='dropdwonOverlay'></div>
           </div>
           <div className='map_area container'>
-            {/*  style='border: 0' */}
-            {/* <iframe
-                  src='https://www.google.com/maps/embed?'
-                  allowfullscreen=''
-                  loading='lazy'
-                  referrerpolicy='no-referrer-when-downgrade'
-                ></iframe> */}
             <iframe
               src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13862.98310637001!2d77.0304025!3d29.6981494!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e65572f52f80b%3A0xfdf50a402caa8cd2!2sNoormahal%20Palace%20Hotel!5e0!3m2!1sen!2sin!4v1688563762636!5m2!1sen!2sin'
               allowfullscreen=''
@@ -358,7 +316,7 @@ function index() {
                   <div className='input_row'>
                     <input
                       type='tel'
-                      name='number'
+                      name='phone'
                       placeholder='Phone Number'
                       required
                       {...register('phone', {})}
@@ -368,8 +326,7 @@ function index() {
                     </div>
                   </div>
                 </div>
-
-                <div className='input_row  '>
+                <div className='input_row'>
                   <textarea
                     name='message'
                     id=''
@@ -387,7 +344,6 @@ function index() {
                   </button>
                 </div>
               </form>
-              {/* Noormahal Palace, Nirmal Kutia Chowk ,NH1 Sector-32, Karnal-Delhi (NCR) INDIA */}
               <div className='contact_info p-4 m-2'>
                 <h3>Karnal Office</h3>
                 <p> Noormahal Palace, Nirmal Kutia Chowk </p>
@@ -429,10 +385,8 @@ function index() {
                     <a href='mailto:salesbqts@noormahal.in'>
                       salesbqts@noormahal.in
                     </a>
-                    {/* <a href='mailto:dsm@noormahal.in'>dsm@noormahal.in</a> */}
                   </li>
                 </ul>
-
                 <ul className='location_list'>
                   <li>Director of Sales & Marketing</li>
                   <li>
@@ -443,7 +397,6 @@ function index() {
                     <a href='mailto:dsm@noormahal.in'> dsm@noormahal.in</a>
                   </li>
                 </ul>
-
                 <ul className='location_list'>
                   <li>Chander Shekhar Puri</li>
                   <li>Corporate General Manager</li>
@@ -487,16 +440,6 @@ function index() {
               </div>
             </div>
           </div>
-          {/* <img
-            src='assets/images/shape/left_flowerbg_top.png'
-            alt='flower shape'
-            className='left_shape'
-          />
-          <img
-            src='assets/images/shape/right_flowerbg_botom.png'
-            alt='flower shape'
-            className='right_shape'
-          /> */}
         </div>
       </section>
     </div>
