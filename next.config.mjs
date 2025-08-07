@@ -4,7 +4,14 @@ import withPlaiceholder from '@plaiceholder/next';
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['api.noormahalpalace.com'], // List any other domains that host your images
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.noormahalpalace.com',
+        port: '', // Leave empty for default HTTPS port (443)
+        pathname: '/', // Allow all paths; adjust to '/images/' if images are under a specific path
+      },
+    ],
   },
 };
 
