@@ -3,7 +3,7 @@ import EventGallarySlider from '@/components/organisms/EventGallarySlider';
 import EventPlan from '@/components/pageComponents/weddingPage/EventPlan';
 import Memories from '@/components/pageComponents/weddingPage/Memories';
 import SpecialService from '@/components/pageComponents/weddingPage/SpecialService';
-import { getEvent, getSeo, postEnquire } from '@/utils/API';
+import { baseURL, getEvent, getSeo } from '@/utils/API';
 import { format } from 'date-fns';
 import Head from 'next/head';
 import React, { useState } from 'react';
@@ -21,60 +21,83 @@ function page({ eventData, seoData }) {
   } = useForm();
 
   const onSubmit = async (data) => {
-    // Fetch the IP address
-    let ipAddress = '';
-    try {
-      const ipResponse = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipResponse.json();
-      ipAddress = ipData.ip;
-    } catch (error) {
-      console.error('Error fetching IP address:', error);
-    }
-    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
-
-    // Add IP address to form data
-    data.ipaddress = ipAddress;
-    data.timestamp = Timestamp; // Add timestamp to form data
-
     try {
       setIsLoading(true);
-      const response = await fetch('/api/submitEvents', {
+
+      // Format date and time for spreadsheet payload
+      const currentDate = new Date();
+      const formattedDate = format(currentDate, 'yyyy-MM-dd');
+      const formattedTime = format(currentDate, 'HH:mm');
+
+      // Prepare spreadsheet payload
+      const spreadsheetPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        date: formattedDate,
+        time: formattedTime,
+        title: 'Query Form - Wedding',
+        type: 'wedding',
+        sheetName: 'WeddindAndEvents',
+      };
+
+      // Prepare backend payload (without date and time)
+      const backendPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        date: formattedDate,
+
+        message: data.message,
+        title: 'Query Form - Wedding',
+        type: 'enquire',
+      };
+
+      // First API call: Submit to spreadsheet
+      const spreadsheetResponse = await fetch('/api/submitEvents', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...data, sheetName: 'WeddindAndEvents' }), // Change the sheet name as per your requirement
+        body: JSON.stringify(spreadsheetPayload),
       });
+
+      if (!spreadsheetResponse.ok) {
+        console.error(
+          'Failed to submit to spreadsheet:',
+          await spreadsheetResponse.text()
+        );
+      }
+
+      // Second API call: Submit to backend database
+      const backendResponse = await fetch(`${baseURL}/contact/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(backendPayload),
+      });
+
       setIsLoading(false);
-      if (response.ok) {
-        console.log('Form data submitted successfully!');
+
+      if (spreadsheetResponse.ok && backendResponse.ok) {
+        console.log(
+          'Form data submitted successfully to both spreadsheet and backend!'
+        );
         setIsSubmitted(true);
       } else {
-        console.error('Failed to submit form data.');
+        console.error('Failed to submit form data to one or both endpoints.');
       }
     } catch (error) {
+      setIsLoading(false);
       console.error('Error submitting form data:', error);
     }
-
-    // try {
-    //   setIsLoading(true);
-    //   data.title = 'wedding';
-    //   data.type = 'enquire';
-    //   const response = await postEnquire(data);
-    //   setIsLoading(false);
-    //   if (response.status == 200 || response.status == 200) {
-    //     console.log('Form data submitted successfully!');
-    //     setIsSubmitted(true);
-    //   } else {
-    //     console.error('Failed to submit form data.');
-    //   }
-    // } catch (error) {
-    //   console.error('Error submitting form data:', error);
-    // }
 
     // Reset the form after submission
     reset();
   };
+
   return (
     <>
       <Head>
@@ -156,7 +179,9 @@ function page({ eventData, seoData }) {
             Noormahal Palace remains the best hotels for destination wedding
             near Delhi. Whether you are planning a grand celebration or an
             intimate gathering, this royal venue will bring your dream wedding
-            to life. Located conveniently in Karnal, it is regarded as the best
+            to life. Whether you are planning a grand celebration or an intimate
+            gathering, this royal venue will bring your dream wedding to life.
+            Located conveniently in Karnal, it is regarded as the best
             destination wedding hotel in Karnal, making it an ideal choice for
             couples seeking a luxurious and memorable wedding experience.
           </p>
@@ -170,7 +195,7 @@ function page({ eventData, seoData }) {
         <EventPlan eventData={eventData} />
 
         <EventGallarySlider />
-        {/* <!-- Gallery Description  --> */}
+
         <div className='gallery_description mx-auto'>
           <h4 className='luxurious_title'>
             OUR SPECIAL PACKAGES FOR YOUR SPECIAL EVENT
@@ -218,8 +243,6 @@ function page({ eventData, seoData }) {
                   aria-label='Close'
                 ></button>
               </div>
-
-              {/* <form className="contact-form modal-form"> */}
               <div className='row '>
                 <div className='col-lg-12 p-4 mx-auto'>
                   <div className='card-body rounded-0'>
@@ -256,8 +279,10 @@ function page({ eventData, seoData }) {
                                   className='form-control rounded-0'
                                   placeholder='Email'
                                   required='required'
-                                  data-error='Lastname is required.'
-                                  {...register('email', {})}
+                                  data-error='Email is required.'
+                                  {...register('email', {
+                                    required: 'Email is required!',
+                                  })}
                                 />
                               </div>
                             </div>
@@ -272,23 +297,27 @@ function page({ eventData, seoData }) {
                                   className='form-control rounded-0'
                                   placeholder='Phone'
                                   required='required'
-                                  data-error='Valid email is required.'
-                                  {...register('phone', {})}
+                                  data-error='Valid Phone is required.'
+                                  {...register('phone', {
+                                    required: 'Phone is required!',
+                                  })}
                                 />
                               </div>
                             </div>
                             <div className='col-md-6 pt-2'>
                               <div className='form-group'>
                                 <input
-                                  id='form_email'
+                                  id='form_date'
                                   type='date'
                                   name='date'
                                   className='form-control rounded-0'
                                   placeholder='Date'
                                   required='required'
                                   min={new Date().toISOString().split('T')[0]}
-                                  data-error='Valid email is required.'
-                                  {...register('date', {})}
+                                  data-error='Valid Date is required.'
+                                  {...register('date', {
+                                    required: 'Date is required!',
+                                  })}
                                 />
                               </div>
                             </div>
@@ -304,7 +333,9 @@ function page({ eventData, seoData }) {
                                   rows='4'
                                   required='required'
                                   data-error='Please, leave us a message.'
-                                  {...register('message', {})}
+                                  {...register('message', {
+                                    required: 'Message is required!',
+                                  })}
                                 ></textarea>
                               </div>
                             </div>
@@ -314,8 +345,7 @@ function page({ eventData, seoData }) {
                               <button
                                 disabled={isSubmitted}
                                 type='submit'
-                                className='book_table_btn w-100  btn-block
-                            '
+                                className='book_table_btn w-100 btn-block'
                               >
                                 {isLoading ? (
                                   <span>SUBMITTING.. </span>
@@ -342,7 +372,6 @@ function page({ eventData, seoData }) {
                 </div>
               </div>
             </div>
-            {/* </form> */}
           </div>
         </div>
       </section>
@@ -358,7 +387,7 @@ export async function getServerSideProps() {
     const responseSeo = await getSeo('weddingPlan');
 
     if (!responseEvent || !responseEvent.data) {
-      throw new Error('Invalid Dinning API response');
+      throw new Error('Invalid Event API response');
     }
     if (!responseSeo || !responseSeo.data) {
       throw new Error('Invalid Seo API response');

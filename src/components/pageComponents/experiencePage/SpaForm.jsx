@@ -1,6 +1,7 @@
-import { postEnquire } from '@/utils/API';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { format } from 'date-fns';
+import { baseURL } from '@/utils/API';
 
 function SpaForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -13,65 +14,85 @@ function SpaForm() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    // Fetch the IP address
-    let ipAddress = '';
-    try {
-      const ipResponse = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipResponse.json();
-      ipAddress = ipData.ip;
-    } catch (error) {
-      console.error('Error fetching IP address:', error);
-    }
-
-    // Add IP address to form data
-    data.ipaddress = ipAddress;
-
     try {
       setIsLoading(true);
-      const response = await fetch('/api/submitSpa', {
+
+      // Format date and time for spreadsheet payload
+      const currentDate = new Date();
+      const formattedDate = format(currentDate, 'yyyy-MM-dd');
+      const formattedTime = format(currentDate, 'HH:mm');
+
+      // Prepare spreadsheet payload
+      const spreadsheetPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        date: formattedDate,
+        time: formattedTime,
+        title: 'Spa',
+        type: 'enquire',
+        sheetName: 'spa',
+        spreadsheetId: '1y7OPm4M4JVh38JqendkknQj0TlT8hOwRLE_fcoJk_x4',
+      };
+
+      // Prepare backend payload (without date and time)
+      const backendPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        title: 'Spa',
+        type: 'enquire',
+      };
+
+      // First API call: Submit to spreadsheet
+      const spreadsheetResponse = await fetch('/api/submitSpa', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...data,
-          sheetName: 'spa',
-          spreadsheetId: '1y7OPm4M4JVh38JqendkknQj0TlT8hOwRLE_fcoJk_x4',
-        }), // Change the sheet name as per your requirement
+        body: JSON.stringify(spreadsheetPayload),
       });
+
+      if (!spreadsheetResponse.ok) {
+        console.error(
+          'Failed to submit to spreadsheet:',
+          await spreadsheetResponse.text()
+        );
+      }
+
+      // Second API call: Submit to backend database
+      const backendResponse = await fetch(`${baseURL}/contact/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(backendPayload),
+      });
+
       setIsLoading(false);
-      if (response.ok) {
-        console.log('Form data submitted successfully!');
+
+      if (spreadsheetResponse.ok && backendResponse.ok) {
+        console.log(
+          'Form data submitted successfully to both spreadsheet and backend!'
+        );
         setIsSubmitted(true);
       } else {
-        console.error('Failed to submit form data.');
+        console.error('Failed to submit form data to one or both endpoints.');
       }
     } catch (error) {
+      setIsLoading(false);
       console.error('Error submitting form data:', error);
     }
-
-    // try {
-    //   setIsLoading(true);
-    //   data.title = 'Spa';
-    //   data.type = 'enquire';
-    //   const response = await postEnquire(data);
-    //   setIsLoading(false);
-    //   if (response.status == 200 || response.status == 200) {
-    //     console.log('Form data submitted successfully!');
-    //     setIsSubmitted(true);
-    //   } else {
-    //     console.error('Failed to submit form data.');
-    //   }
-    // } catch (error) {
-    //   console.error('Error submitting form data:', error);
-    // }
 
     // Reset the form after submission
     reset();
   };
+
   return (
     <div>
-      <div className='row '>
+      <div className='row'>
         <div className='col-lg-12 p-4 mx-auto'>
           <div className='card-body rounded-0'>
             <div className='container'>
@@ -91,11 +112,16 @@ function SpaForm() {
                           className='form-control rounded-0'
                           placeholder='Name'
                           required='required'
-                          data-error='Firstname is required.'
+                          data-error='Name is required.'
                           {...register('name', {
                             required: 'Name is required!',
                           })}
                         />
+                        {errors.name && (
+                          <span className='text-sm text-red-500'>
+                            {errors.name?.message}
+                          </span>
+                        )}
                       </div>
                     </div>
                     <div className='col-md-6'>
@@ -107,9 +133,16 @@ function SpaForm() {
                           className='form-control rounded-0'
                           placeholder='Email'
                           required='required'
-                          data-error='Lastname is required.'
-                          {...register('email', {})}
+                          data-error='Email is required.'
+                          {...register('email', {
+                            required: 'Email is required!',
+                          })}
                         />
+                        {errors.email && (
+                          <span className='text-sm text-red-500'>
+                            {errors.email?.message}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -123,9 +156,16 @@ function SpaForm() {
                           className='form-control rounded-0'
                           placeholder='Phone'
                           required='required'
-                          data-error='Valid email is required.'
-                          {...register('phone', {})}
+                          data-error='Phone is required.'
+                          {...register('phone', {
+                            required: 'Phone is required!',
+                          })}
                         />
+                        {errors.phone && (
+                          <span className='text-sm text-red-500'>
+                            {errors.phone?.message}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -139,20 +179,31 @@ function SpaForm() {
                           placeholder='Message'
                           rows='4'
                           required='required'
-                          data-error='Please, leave us a message.'
-                          {...register('message', {})}
+                          data-error='Message is required.'
+                          {...register('message', {
+                            required: 'Message is required!',
+                          })}
                         ></textarea>
+                        {errors.message && (
+                          <span className='text-sm text-red-500'>
+                            {errors.message?.message}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
                   <div className='row'>
                     <div className='col-md-12 pt-2'>
                       <button
+                        disabled={isSubmitted}
                         type='submit'
-                        className='book_table_btn w-100  btn-block
-                            '
+                        className='book_table_btn w-100 btn-block'
                       >
-                        <span>{isSubmitted ? 'SUBMITTED' : 'SUBMIT'}</span>
+                        {isLoading ? (
+                          <span>SUBMITTING.. </span>
+                        ) : (
+                          <span>{isSubmitted ? 'SUBMITTED' : 'SUBMIT'}</span>
+                        )}
                       </button>
                     </div>
                   </div>
