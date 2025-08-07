@@ -1,7 +1,7 @@
 import MeetingBanner from '@/components/organisms/Banners/MeetingBanner';
 import MeetingSlider from '@/components/organisms/MeetingSlider';
 import MeetingSection from '@/components/pageComponents/meetingPage/MeetingSection';
-import { getMeeting, getSeo } from '@/utils/API';
+import { baseURL, getMeeting, getSeo } from '@/utils/API';
 import { format } from 'date-fns';
 import Head from 'next/head';
 import React, { useState } from 'react';
@@ -18,44 +18,82 @@ function page({ meetingData, seoData }) {
   } = useForm();
 
   const onSubmit = async (data) => {
-    // Fetch the IP address
-    let ipAddress = '';
-    try {
-      const ipResponse = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipResponse.json();
-      ipAddress = ipData.ip;
-    } catch (error) {
-      console.error('Error fetching IP address:', error);
-    }
-    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
-
-    // Add IP address to form data
-    data.ipaddress = ipAddress;
-    data.timestamp = Timestamp; // Add timestamp to form data
-
     try {
       setIsLoading(true);
-      const response = await fetch('/api/submitMeeting', {
+
+      // Format date and time for spreadsheet payload
+      const currentDate = new Date();
+      const formattedDate = format(currentDate, 'yyyy-MM-dd');
+      const formattedTime = format(currentDate, 'HH:mm');
+
+      // Prepare spreadsheet payload
+      const spreadsheetPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        date: formattedDate,
+        time: formattedTime,
+        title: 'Query Form - Meeting',
+        type: 'meeting',
+        sheetName: 'meetingAndConference',
+      };
+
+      // Prepare backend payload (without date and time)
+      const backendPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        date: formattedDate, // Use formatted date for backend
+        message: data.message,
+        title: 'Query Form - Meeting',
+        type: 'enquire',
+      };
+
+      // First API call: Submit to spreadsheet
+      const spreadsheetResponse = await fetch('/api/submitMeeting', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ...data, sheetName: 'meetingAndConference' }), // Change the sheet name as per your requirement
+        body: JSON.stringify(spreadsheetPayload),
       });
+
+      if (!spreadsheetResponse.ok) {
+        console.error(
+          'Failed to submit to spreadsheet:',
+          await spreadsheetResponse.text()
+        );
+      }
+
+      // Second API call: Submit to backend database
+      const backendResponse = await fetch(`${baseURL}/contact/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(backendPayload),
+      });
+
       setIsLoading(false);
-      if (response.ok) {
-        console.log('Form data submitted successfully!');
+
+      if (spreadsheetResponse.ok && backendResponse.ok) {
+        console.log(
+          'Form data submitted successfully to both spreadsheet and backend!'
+        );
         setIsSubmitted(true);
       } else {
-        console.error('Failed to submit form data.');
+        console.error('Failed to submit form data to one or both endpoints.');
       }
     } catch (error) {
+      setIsLoading(false);
       console.error('Error submitting form data:', error);
     }
 
     // Reset the form after submission
     reset();
   };
+
   return (
     <div>
       <Head>
@@ -65,7 +103,6 @@ function page({ meetingData, seoData }) {
             : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
         </title>
         <meta name='robots' content='index, follow' />
-
         <meta
           name='keywords'
           content={
@@ -89,8 +126,6 @@ function page({ meetingData, seoData }) {
         <div id='custom-swiper-bottom'>
           <MeetingBanner />
         </div>
-        {/* <!-- Dinner   Section  --> */}
-
         <section className='dining_wrapper facilities_wrapper'>
           <div className='header_area text-center mx-auto'>
             <h1 className='story_title yellow-color-c2'>
@@ -104,7 +139,6 @@ function page({ meetingData, seoData }) {
               outdoor pool with a bar next to it. There are also a few indoor
               and outdoor games for our little guests to have a good time.
             </p>
-
             <div className='shape2'>
               <img
                 src='assets/images/shape/place_shape.png'
@@ -137,8 +171,6 @@ function page({ meetingData, seoData }) {
                   aria-label='Close'
                 ></button>
               </div>
-
-              {/* <form className="contact-form modal-form"> */}
               <div className='row '>
                 <div className='col-lg-12 p-4 mx-auto'>
                   <div className='card-body rounded-0'>
@@ -159,7 +191,7 @@ function page({ meetingData, seoData }) {
                                   className='form-control rounded-0'
                                   placeholder='Name'
                                   required='required'
-                                  data-error='Firstname is required.'
+                                  data-error='Name is required.'
                                   {...register('name', {
                                     required: 'Name is required!',
                                   })}
@@ -175,8 +207,10 @@ function page({ meetingData, seoData }) {
                                   className='form-control rounded-0'
                                   placeholder='Email'
                                   required='required'
-                                  data-error='Lastname is required.'
-                                  {...register('email', {})}
+                                  data-error='Email is required.'
+                                  {...register('email', {
+                                    required: 'Email is required!',
+                                  })}
                                 />
                               </div>
                             </div>
@@ -191,23 +225,27 @@ function page({ meetingData, seoData }) {
                                   className='form-control rounded-0'
                                   placeholder='Phone'
                                   required='required'
-                                  data-error='Valid email is required.'
-                                  {...register('phone', {})}
+                                  data-error='Phone is required.'
+                                  {...register('phone', {
+                                    required: 'Phone is required!',
+                                  })}
                                 />
                               </div>
                             </div>
                             <div className='col-md-6 pt-2'>
                               <div className='form-group'>
                                 <input
-                                  id='form_email'
+                                  id='form_date'
                                   type='date'
                                   name='date'
                                   className='form-control rounded-0'
                                   placeholder='Date'
                                   required='required'
                                   min={new Date().toISOString().split('T')[0]}
-                                  data-error='Valid email is required.'
-                                  {...register('date', {})}
+                                  data-error='Date is required.'
+                                  {...register('date', {
+                                    required: 'Date is required!',
+                                  })}
                                 />
                               </div>
                             </div>
@@ -222,8 +260,10 @@ function page({ meetingData, seoData }) {
                                   placeholder='Message'
                                   rows='4'
                                   required='required'
-                                  data-error='Please, leave us a message.'
-                                  {...register('message', {})}
+                                  data-error='Message is required.'
+                                  {...register('message', {
+                                    required: 'Message is required!',
+                                  })}
                                 ></textarea>
                               </div>
                             </div>
@@ -233,8 +273,7 @@ function page({ meetingData, seoData }) {
                               <button
                                 disabled={isSubmitted}
                                 type='submit'
-                                className='book_table_btn w-100  btn-block
-                            '
+                                className='book_table_btn w-100 btn-block'
                               >
                                 {isLoading ? (
                                   <span>SUBMITTING.. </span>
@@ -261,8 +300,6 @@ function page({ meetingData, seoData }) {
                 </div>
               </div>
             </div>
-
-            {/* </form> */}
           </div>
         </div>
       </main>
@@ -278,7 +315,7 @@ export async function getServerSideProps() {
     const responseSeo = await getSeo('meeting');
 
     if (!responseMeeting || !responseMeeting.data) {
-      throw new Error('Invalid Dinning API response');
+      throw new Error('Invalid Meeting API response');
     }
     if (!responseSeo || !responseSeo.data) {
       throw new Error('Invalid Seo API response');

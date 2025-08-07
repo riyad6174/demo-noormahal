@@ -1,4 +1,5 @@
 import PromotionBanner from '@/components/organisms/Banners/PromotionBanner';
+import { baseURL } from '@/utils/API';
 import { format } from 'date-fns';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -25,14 +26,6 @@ const promotions = [
     image: 'assets/images/promotion/royal-splendour.jpg',
     knowMoreLink: null,
   },
-  // {
-  //   image: 'assets/images/promotion/snooker.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/mango-madness.jpg',
-  //   knowMoreLink: null,
-  // },
   {
     image: 'assets/images/promotion/chefstable.jpg',
     knowMoreLink: null,
@@ -41,63 +34,25 @@ const promotions = [
     image: 'assets/images/promotion/royal-hospitality.jpg',
     knowMoreLink: null,
   },
-
-  // {
-  //   image: 'assets/images/promotion/mothers-day.jpg',
-  //   knowMoreLink: null,
-  // },
   {
     image: 'assets/images/promotion/summer.jpg',
     knowMoreLink: null,
   },
-
-  // {
-  //   image: 'assets/images/promotion/easter.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/baishakh.jpg',
-  //   knowMoreLink: null,
-  // },
   {
     image: 'assets/images/promotion/dinnerbuffet.jpg',
     knowMoreLink: null,
   },
-  // {
-  //   image: 'assets/images/promotion/polobarnew2.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/saint.jpg',
-  //   knowMoreLink: null
-  // },
-  // {
-  //   image: 'assets/images/promotion/valentines.jpg',
-  //   knowMoreLink: 'assets/images/promotion/valentines.pdf', // No "Know More" button for this promotion
-  // },
-  // {
-  //   image: 'assets/images/promotion/polobar.jpg',
-  //   knowMoreLink: null,
-  // },
   {
     image: 'assets/images/promotion/member.jpg',
     knowMoreLink: null,
   },
-  // {
-  //   image: 'assets/images/promotion/polobar25.jpg',
-  //   knowMoreLink: null,
-  // },
   {
     image: 'assets/images/promotion/NMP.jpg',
     knowMoreLink: 'assets/images/promotion/pre-wedding.jpg',
   },
-  // {
-  //   image: 'assets/images/promotion/rangbarse.jpg',
-  //   knowMoreLink: 'assets/images/promotion/rangbarse-know-more.jpg', // No "Know More" button for this promotion
-  // },
   {
     image: 'assets/images/promotion/chai_pe_charcha.jpeg',
-    knowMoreLink: null, // No "Know More" button for this promotion
+    knowMoreLink: null,
   },
   {
     image: 'assets/images/promotion/royal_escape_noormahal.jpg',
@@ -105,7 +60,7 @@ const promotions = [
   },
   {
     image: 'assets/images/promotion/sunday_splendor_noormahal.jpg',
-    knowMoreLink: null, // No "Know More" button for this promotion
+    knowMoreLink: null,
   },
 ];
 
@@ -120,37 +75,80 @@ export default function Page() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    let ipAddress = '';
-    try {
-      const ipResponse = await fetch('https://api.ipify.org?format=json');
-      const ipData = await ipResponse.json();
-      ipAddress = ipData.ip;
-    } catch (error) {
-      console.error('Error fetching IP address:', error);
-    }
-    const Timestamp = format(new Date(), 'EEE, do MMMM, yyyy h:mm a');
-
-    data.ipaddress = ipAddress;
-    data.timestamp = Timestamp; // Add timestamp to form data
-
     try {
       setIsLoading(true);
-      const response = await fetch('/api/submitPromotion', {
+
+      // Format date and time for spreadsheet payload
+      const currentDate = new Date();
+      const formattedDate = format(currentDate, 'yyyy-MM-dd');
+      const formattedTime = format(currentDate, 'HH:mm');
+
+      // Prepare spreadsheet payload
+      const spreadsheetPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+        date: formattedDate,
+        time: formattedTime,
+        title: 'Query Form - Promotions',
+        type: 'promotions',
+        sheetName: 'promotions',
+      };
+
+      // Prepare backend payload (without date and time)
+      const backendPayload = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        date: formattedDate,
+
+        message: data.message,
+        title: 'Query Form - Promotions',
+        type: 'enquire',
+      };
+
+      // First API call: Submit to spreadsheet
+      const spreadsheetResponse = await fetch('/api/submitPromotion', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, sheetName: 'promotions' }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(spreadsheetPayload),
       });
+
+      if (!spreadsheetResponse.ok) {
+        console.error(
+          'Failed to submit to spreadsheet:',
+          await spreadsheetResponse.text()
+        );
+      }
+
+      // Second API call: Submit to backend database
+      const backendResponse = await fetch(`${baseURL}/contact/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(backendPayload),
+      });
+
       setIsLoading(false);
-      if (response.ok) {
-        console.log('Form data submitted successfully!');
+
+      if (spreadsheetResponse.ok && backendResponse.ok) {
+        console.log(
+          'Form data submitted successfully to both spreadsheet and backend!'
+        );
         setIsSubmitted(true);
       } else {
-        console.error('Failed to submit form data.');
+        console.error('Failed to submit form data to one or both endpoints.');
       }
     } catch (error) {
+      setIsLoading(false);
       console.error('Error submitting form data:', error);
     }
 
+    // Reset the form after submission
     reset();
   };
 
@@ -270,7 +268,9 @@ export default function Page() {
                               name='email'
                               className='form-control rounded-0'
                               placeholder='Email'
-                              {...register('email', {})}
+                              {...register('email', {
+                                required: 'Email is required!',
+                              })}
                             />
                           </div>
                         </div>
@@ -282,18 +282,22 @@ export default function Page() {
                               name='phone'
                               className='form-control rounded-0'
                               placeholder='Phone'
-                              {...register('phone', {})}
+                              {...register('phone', {
+                                required: 'Phone is required!',
+                              })}
                             />
                           </div>
                           <div className='col-md-6'>
                             <input
-                              id='form_email'
+                              id='form_date'
                               type='date'
                               name='date'
                               className='form-control rounded-0'
                               placeholder='Date'
                               min={new Date().toISOString().split('T')[0]}
-                              {...register('date', {})}
+                              {...register('date', {
+                                required: 'Date is required!',
+                              })}
                             />
                           </div>
                         </div>
@@ -305,7 +309,9 @@ export default function Page() {
                               className='form-control rounded-0'
                               placeholder='Message'
                               rows='4'
-                              {...register('message', {})}
+                              {...register('message', {
+                                required: 'Message is required!',
+                              })}
                             ></textarea>
                           </div>
                         </div>
