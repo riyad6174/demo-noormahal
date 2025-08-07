@@ -9,7 +9,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'api.noormahalpalace.com',
         port: '', // Leave empty for default HTTPS port (443)
-        pathname: '/', // Allow all paths; adjust to '/images/' if images are under a specific path
+        pathname: '/**', // Allow all paths; adjust to '/images/' if images are under a specific path
       },
     ],
   },
