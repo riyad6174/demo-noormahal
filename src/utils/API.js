@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 // export const baseURL = 'http://localhost:4000/api/v1/frontend';
-export const baseURL = 'https://api.noormahalpalace.com/api/v1/frontend';
+export const baseURL = 'https://noormahalpalace.com/api/v1/frontend';
 
 //story page ====>>>>>
 

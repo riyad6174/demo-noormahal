@@ -82,7 +82,7 @@ function index() {
               </div>
               <div className=''>
                 <Image
-                  src={`https://api.noormahalpalace.com/${faqData.image?.path}`}
+                  src={`https://noormahalpalace.com/files/${faqData.image?.path}`}
                   width={1400}
                   height={500}
                   className='faq_img'

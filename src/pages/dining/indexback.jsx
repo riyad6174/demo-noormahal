@@ -109,7 +109,7 @@ function page({ dinningData }) {
                       <Image
                         width={1000}
                         height={600}
-                        src={`https://api.noormahalpalace.com/${dine.images[0].path}`}
+                        src={`https://noormahalpalace.com/files/${dine.images[0].path}`}
                         alt='dinings image'
                       />
                     </div>
@@ -155,7 +155,7 @@ function page({ dinningData }) {
                   <div key={index} className='dining_grid'>
                     <div className='img' data-aos='fade-right'>
                       <img
-                        src={`https://api.noormahalpalace.com/${dine.images[0].path}`}
+                        src={`https://noormahalpalace.com/files/${dine.images[0].path}`}
                         alt='dinings image'
                       />
                     </div>
@@ -167,27 +167,27 @@ function page({ dinningData }) {
                         <span> {HtmlParser(dine?.description)}</span>
                         {dine.totalCapacity > 0 &&
                           dine.settingCapacity >
-                            0(
-                              <div className='d-flex justify-content-center align-items-baseline  gap-3 total-capacity'>
-                                <div className='d-flex flex-column justify-content-center align-items-center gap-3'>
-                                  <p className='text-uppercase'>
-                                    total capacity
-                                  </p>
-                                  <p style={{ fontSize: '28px' }}>
-                                    {dine?.totalCapacity}
-                                  </p>
-                                </div>
-                                <div>|</div>
-                                <div className='d-flex  flex-column justify-content-center align-items-center gap-3'>
-                                  <p className='text-uppercase'>
-                                    Seating capacity
-                                  </p>
-                                  <p style={{ fontSize: '28px' }}>
-                                    {dine?.seatingCapacity}
-                                  </p>
-                                </div>
+                          0(
+                            <div className='d-flex justify-content-center align-items-baseline  gap-3 total-capacity'>
+                              <div className='d-flex flex-column justify-content-center align-items-center gap-3'>
+                                <p className='text-uppercase'>
+                                  total capacity
+                                </p>
+                                <p style={{ fontSize: '28px' }}>
+                                  {dine?.totalCapacity}
+                                </p>
                               </div>
-                            )}
+                              <div>|</div>
+                              <div className='d-flex  flex-column justify-content-center align-items-center gap-3'>
+                                <p className='text-uppercase'>
+                                  Seating capacity
+                                </p>
+                                <p style={{ fontSize: '28px' }}>
+                                  {dine?.seatingCapacity}
+                                </p>
+                              </div>
+                            </div>
+                          )}
 
                         <div className='text-center'>
                           <button

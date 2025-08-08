@@ -18,7 +18,7 @@ function MeetingSection({ meetingData }) {
                       data-aos-once='true'
                     >
                       <img
-                        src={`https://api.noormahalpalace.com/${meeting.images[0].path}`}
+                        src={`https://noormahalpalace.com/files/${meeting.images[0].path}`}
                         alt='dinings image'
                       />
                     </div>
@@ -66,7 +66,7 @@ function MeetingSection({ meetingData }) {
                       data-aos-once='true'
                     >
                       <img
-                        src={`https://api.noormahalpalace.com/${meeting.images[0].path}`}
+                        src={`https://noormahalpalace.com/files/${meeting.images[0].path}`}
                         alt='dinings image'
                       />
                     </div>

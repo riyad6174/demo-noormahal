@@ -22,7 +22,7 @@ function ExperiencesSection({ experienceData }) {
               <div key={index} className='dining_grid'>
                 {/* <div className='img'>
                   <img
-                    src={`https://api.noormahalpalace.com/${experience?.service[0].images[0].path}`}
+                    src={`https://noormahalpalace.com/files/${experience?.service[0].images[0].path}`}
                   />
                 </div> */}
                 <RecrationalSlider images={experience.service[0].images} />
@@ -41,11 +41,11 @@ function ExperiencesSection({ experienceData }) {
                         data-bs-toggle='modal'
                         data-bs-target={
                           experience?.service[0]?.queryFormType == 'enquire' ||
-                          'require'
+                            'require'
                             ? '#exampleModal'
                             : '#exampleModal2'
                         }
-                        // data-bs-target='#exampleModal'
+                      // data-bs-target='#exampleModal'
                       >
                         <span>{experience?.service[0].btnName} </span>
                       </button>
@@ -59,7 +59,7 @@ function ExperiencesSection({ experienceData }) {
               <div key={index} className='dining_grid'>
                 <div className='img'>
                   {/* <img
-                    src={`https://api.noormahalpalace.com/${experience.service[0].images[0].path}`}
+                    src={`https://noormahalpalace.com/files/${experience.service[0].images[0].path}`}
                     alt='dinings image'
                   /> */}
                   <RecrationalSlider images={experience.service[0].images} />
@@ -77,7 +77,7 @@ function ExperiencesSection({ experienceData }) {
                         data-bs-toggle='modal'
                         data-bs-target={
                           experience?.service[0]?.queryFormType == 'enquire' ||
-                          'require'
+                            'require'
                             ? '#exampleModal'
                             : '#exampleModal2'
                         }

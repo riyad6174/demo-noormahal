@@ -31,7 +31,7 @@ function NewsSection({ newsData }) {
                     }}
                   >
                     <img
-                      src={`https://api.noormahalpalace.com/${news.image.path}`}
+                      src={`https://noormahalpalace.com/files/${news.image.path}`}
                       alt='ad-news '
                       style={{
                         objectFit: 'fill',

@@ -53,7 +53,7 @@ function StayBanner() {
                   width={1500}
                   height={1500}
                   className='hero_item '
-                  src={`https://api.noormahalpalace.com/${image.image.path}`}
+                  src={`https://noormahalpalace.com/files/${image.image.path}`}
                   alt='slider image'
                 />
               </SwiperSlide>
