@@ -7,9 +7,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'api.noormahalpalace.com',
-        port: '', // Leave empty for default HTTPS port (443)
-        pathname: '/**', // Allow all paths; adjust to '/images/' if images are under a specific path
+        hostname: 'noormahalpalace.com',
+        port: '', // Default HTTPS
+        pathname: '/files/**', // Adjust based on how images are served
       },
     ],
   },

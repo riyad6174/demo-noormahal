@@ -21,7 +21,7 @@ function EventPlan({ eventData }) {
                         data-aos-once='true'
                       >
                         <Image
-                          src={`https://api.noormahalpalace.com/${event.images[0].path}`}
+                          src={`https://noormahalpalace.com/files/${event.images[0].path}`}
                           alt='dinings image'
                           height={600}
                           width={1000}
@@ -74,11 +74,11 @@ function EventPlan({ eventData }) {
                         data-aos-once='true'
                       >
                         <Image
-                          src={`https://api.noormahalpalace.com/${event.images[0].path}`}
+                          src={`https://noormahalpalace.com/files/${event.images[0].path}`}
                           alt='dinings image'
                           height={600}
                           width={1000}
-                          // placeholder='blur'
+                        // placeholder='blur'
                         />
                       </div>
                       <div

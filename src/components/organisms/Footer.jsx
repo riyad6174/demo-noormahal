@@ -112,7 +112,7 @@ function Footer({ data }) {
                     <li key={i}>
                       <a href={s.btnLink} target='_blank'>
                         <img
-                          src={`https://api.noormahalpalace.com/${s?.icon?.path}`}
+                          src={`https://noormahalpalace.com/files/${s?.icon?.path}`}
                           alt='social icon'
                         />
                       </a>

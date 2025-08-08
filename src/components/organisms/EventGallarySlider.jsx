@@ -82,7 +82,7 @@ function EventGallarySlider() {
                     <div className='event_gallery_item'>
                       <a href='assets/images/event/memories_img1.png'>
                         <img
-                          src={`https://api.noormahalpalace.com/${image.path}`}
+                          src={`https://noormahalpalace.com/files/${image.path}`}
                           alt='event image'
                           className='event_img'
                         />

@@ -24,7 +24,7 @@ function RightMenu() {
           <div className='price_left_item'>
             <div className='icon'>
               <img
-                src={`https://api.noormahalpalace.com/${item.icon.path}`}
+                src={`https://noormahalpalace.com/files/${item.icon.path}`}
                 alt=''
               />
             </div>

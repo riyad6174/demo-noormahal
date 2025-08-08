@@ -66,7 +66,7 @@ function RoomsAndSuits() {
               return (
                 <div key={index} className='place_item '>
                   <Image
-                    src={`https://api.noormahalpalace.com/${room.image?.path}`}
+                    src={`https://noormahalpalace.com/files/${room.image?.path}`}
                     alt={room.title}
                     className='place_img'
                     width={500}

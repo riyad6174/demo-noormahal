@@ -71,7 +71,7 @@ function page({ seoData }) {
                   <div className='blog_item' data-aos='fade-up'>
                     <Link href={`/blog/${item.slug}`} className='title'>
                       <img
-                        src={`https://api.noormahalpalace.com/${item.image?.path}`}
+                        src={`https://noormahalpalace.com/files/${item.image?.path}`}
                         alt='blog image'
                         className='w-full  object-fit-cover'
                         style={{

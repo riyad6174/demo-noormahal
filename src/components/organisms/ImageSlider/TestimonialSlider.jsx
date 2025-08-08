@@ -69,7 +69,7 @@
 //                 >
 //                   <div className='pic'>
 //                     <img
-//                       src={`https://api.noormahalpalace.com/${testimonial?.image?.path}`}
+//                       src={`https://noormahalpalace.com/files/${testimonial?.image?.path}`}
 //                     />
 //                   </div>
 //                   {HtmlParser(testimonial.message)}
