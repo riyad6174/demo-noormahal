@@ -75,7 +75,7 @@ function RoomsAndSuits() {
                   />
                   <div className='place_content'>
                     <h4>{room.title}</h4>
-                    <h4 className='text-light fw-bold'>{room.subTitle}</h4>
+                    {/* <h4 className='text-light fw-bold'>{room.subTitle}</h4> */}
                     <Link href={room.btnLink} className='book_now_btn'>
                       <span>View Rooms</span>
                       <svg
