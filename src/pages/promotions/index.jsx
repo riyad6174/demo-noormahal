@@ -75,6 +75,14 @@ export default function Page() {
   } = useForm();
 
   const onSubmit = async (data) => {
+    let ipAddress = '';
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      ipAddress = ipData.ip;
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
     try {
       setIsLoading(true);
 
@@ -83,46 +91,19 @@ export default function Page() {
       const formattedDate = format(currentDate, 'yyyy-MM-dd');
       const formattedTime = format(currentDate, 'HH:mm');
 
-      // Prepare spreadsheet payload
-      const spreadsheetPayload = {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        message: data.message,
-        date: formattedDate,
-        time: formattedTime,
-        title: 'Query Form - Promotions',
-        type: 'promotions',
-        sheetName: 'promotions',
-      };
-
       // Prepare backend payload (without date and time)
       const backendPayload = {
         name: data.name,
         email: data.email,
         phone: data.phone,
         date: formattedDate,
+        time: formattedTime,
+        ipaddress: ipAddress,
 
         message: data.message,
         title: 'Query Form - Promotions',
-        type: 'enquire',
+        type: 'promotions',
       };
-
-      // First API call: Submit to spreadsheet
-      const spreadsheetResponse = await fetch('/api/submitPromotion', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(spreadsheetPayload),
-      });
-
-      if (!spreadsheetResponse.ok) {
-        console.error(
-          'Failed to submit to spreadsheet:',
-          await spreadsheetResponse.text()
-        );
-      }
 
       // Second API call: Submit to backend database
       const backendResponse = await fetch(`${baseURL}/contact/`, {
@@ -135,7 +116,7 @@ export default function Page() {
 
       setIsLoading(false);
 
-      if (spreadsheetResponse.ok && backendResponse.ok) {
+      if (backendResponse.ok) {
         console.log(
           'Form data submitted successfully to both spreadsheet and backend!'
         );

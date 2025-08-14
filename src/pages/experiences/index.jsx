@@ -2,7 +2,7 @@ import SpaBanner from '@/components/organisms/Banners/SpaBanner';
 import ChefSlider from '@/components/organisms/ImageSlider/ChefImageSlider';
 import RecrationalSlider from '@/components/organisms/ImageSlider/RecreationalActivities';
 import SwiperBanner from '@/components/organisms/Slider';
-import DinningForm from '@/components/pageComponents/experiencePage/DinningForm';
+import ExperienceForm from '@/components/pageComponents/experiencePage/ExperienceForm';
 import ExperiencesSection from '@/components/pageComponents/experiencePage/ExperiencesSection';
 import GymForm from '@/components/pageComponents/experiencePage/GymForm';
 import RecreationForm from '@/components/pageComponents/experiencePage/RecreationForm';
@@ -93,7 +93,7 @@ function page({ experienceData, seoData }) {
             </div>
 
             {/* <form className="contact-form modal-form"> */}
-            <DinningForm />
+            <ExperienceForm />
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ function page({ experienceData, seoData }) {
             </div>
 
             {/* <form className="contact-form modal-form"> */}
-            <DinningForm />
+            <ExperienceForm />
           </div>
         </div>
       </div>
