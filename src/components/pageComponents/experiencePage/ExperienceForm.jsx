@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { format } from 'date-fns';
 import { baseURL } from '@/utils/API';
 
-function DinningForm() {
+function ExperienceForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -40,8 +40,8 @@ function DinningForm() {
         date: formattedDate,
         time: formattedTime,
         ipaddress: ipAddress,
-        title: 'Query Form - Dining',
-        type: 'Dinning',
+        title: 'Query Form - Experiences',
+        type: 'experience',
       };
 
       // Second API call: Submit to backend database
@@ -207,4 +207,4 @@ function DinningForm() {
   );
 }
 
-export default DinningForm;
+export default ExperienceForm;
