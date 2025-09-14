@@ -42,10 +42,10 @@ const promotions = [
     image: 'assets/images/promotion/royal-hospitality.jpg',
     knowMoreLink: null,
   },
-  {
-    image: 'assets/images/promotion/summer.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/summer.jpg',
+  //   knowMoreLink: null,
+  // },
   {
     image: 'assets/images/promotion/dinnerbuffet.jpg',
     knowMoreLink: null,
