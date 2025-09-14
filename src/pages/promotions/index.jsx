@@ -10,10 +10,10 @@ const promotions = [
     image: 'assets/images/promotion/asia-cup.jpg',
     knowMoreLink: null,
   },
-  {
-    image: 'assets/images/promotion/ind-vs-pak.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/ind-vs-pak.jpg',
+  //   knowMoreLink: null,
+  // },
   {
     image: 'assets/images/promotion/teachersday.jpg',
     knowMoreLink: null,
