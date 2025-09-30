@@ -140,83 +140,59 @@ function Index({ data, slug }) {
     reset();
   };
 
-  return (
-    <div>
+  function BlogHead({ data, slug }) {
+    const siteUrl = 'https://noormahalpalace.com';
+    const blogUrl = `${siteUrl}/blog/${slug}`;
+
+    // Prepare safe values with fallbacks
+    const title =
+      data?.title ||
+      'Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace';
+
+    const description =
+      data?.subTitle?.replace(/<[^>]+>/g, '') ||
+      'An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.';
+
+    const keywords =
+      data?.keyWords ||
+      'Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal';
+
+    const ogImage = data?.image?.path
+      ? `${siteUrl}/files/${data.image.path}`
+      : `${siteUrl}/assets/images/home/2.ExperiencesExperiences2.jpg`;
+
+    return (
       <Head>
-        <title>
-          {data && data.title
-            ? data.title
-            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
-        </title>
+        {/* Primary Meta */}
+        <title>{title}</title>
         <meta name='robots' content='index, follow' />
-        <meta
-          name='keywords'
-          content={
-            data && data.keyWords
-              ? data.keyWords
-              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
-          }
-        />
-        <meta
-          name='description'
-          content={
-            data && data.subTitle
-              ? data.subTitle
-              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
-          }
-        />
+        <meta name='keywords' content={keywords} />
+        <meta name='description' content={description} />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
+
         {/* Open Graph / Facebook */}
         <meta property='og:type' content='website' />
-        <meta
-          property='og:url'
-          content={`https://noormahalpalace.com/blog/${slug}`}
-        />
-        <meta property='og:title' content={data?.title || 'Default Title'} />
-        <meta
-          property='og:description'
-          content={
-            data?.subTitle?.replace(/<[^>]+>/g, '') || 'Default Description'
-          }
-        />
-        <meta
-          property='og:image'
-          content={
-            data?.image?.path
-              ? `https://noormahalpalace.com/files/${data.image.path}`
-              : 'https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg'
-          }
-        />
-        <meta property='og:image:width' content='1200' />{' '}
-        {/* Replace with actual width */}
-        <meta property='og:image:height' content='630' />{' '}
-        {/* Replace with actual height */}
+        <meta property='og:url' content={blogUrl} />
+        <meta property='og:title' content={title} />
+        <meta property='og:description' content={description} />
+        <meta property='og:image' content={ogImage} />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
+
         {/* Twitter */}
-        <meta property='twitter:card' content='summary_large_image' />
-        <meta
-          property='twitter:url'
-          content={`https://noormahalpalace.com/blog/${slug}`}
-        />
-        <meta
-          property='twitter:title'
-          content={data?.title || 'Default Title'}
-        />
-        <meta
-          property='twitter:description'
-          content={
-            data?.subTitle?.replace(/<[^>]+>/g, '') || 'Default Description'
-          }
-        />
-        <meta
-          property='twitter:image'
-          content={
-            data?.image?.path
-              ? `https://noormahalpalace.com/files/${data.image.path}`
-              : 'https://noormahalpalace.com/assets/images/home/2.ExperiencesExperiences2.jpg'
-          }
-        />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:url' content={blogUrl} />
+        <meta name='twitter:title' content={title} />
+        <meta name='twitter:description' content={description} />
+        <meta name='twitter:image' content={ogImage} />
       </Head>
+    );
+  }
+
+  return (
+    <div>
+      <BlogHead data={data} slug={slug} />
       {data && (
         <section className='blog_details_wrapper default_section_gap pt-5'>
           <div className='instagram-container mx-auto'>
@@ -251,142 +227,142 @@ function Index({ data, slug }) {
                 className='content_item'
                 dangerouslySetInnerHTML={{ __html: data?.description }}
               >
-                { }
+                {}
               </div>
             </div>
             {slug ===
               'celebrate-new-year-2025-in-randeur-with-noormahal-palaces-exclusive-packages' && (
-                <div className='row'>
-                  <div className='col-lg-12 p-4'>
-                    <div className='container d-flex justify-content-center'>
-                      <img
-                        src='/assets/images/blog/af.jpg'
-                        alt='african-night'
-                        className=''
-                      />
-                    </div>
+              <div className='row'>
+                <div className='col-lg-12 p-4'>
+                  <div className='container d-flex justify-content-center'>
+                    <img
+                      src='/assets/images/blog/af.jpg'
+                      alt='african-night'
+                      className=''
+                    />
                   </div>
-                  <div className='col-lg-12 p-4'>
-                    <div className='card-body rounded-0'>
-                      <div className='container d-flex justify-content-center'>
-                        <form
-                          id='contact-form'
-                          role='form'
-                          onSubmit={handleSubmit(onSubmit)}
-                          className='form-container'
-                        >
-                          <div className='controls'>
-                            <div className='row py-2'>
-                              <div className='col-md-6'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_name'
-                                    type='text'
-                                    name='name'
-                                    className='form-control rounded-0'
-                                    placeholder='Name'
-                                    required='required'
-                                    data-error='Firstname is required.'
-                                    {...register('name', {
-                                      required: 'Name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                              <div className='col-md-6'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_lastname'
-                                    type='email'
-                                    name='email'
-                                    className='form-control rounded-0'
-                                    placeholder='Email'
-                                    required='required'
-                                    data-error='Lastname is required.'
-                                    {...register('email', {})}
-                                  />
-                                </div>
+                </div>
+                <div className='col-lg-12 p-4'>
+                  <div className='card-body rounded-0'>
+                    <div className='container d-flex justify-content-center'>
+                      <form
+                        id='contact-form'
+                        role='form'
+                        onSubmit={handleSubmit(onSubmit)}
+                        className='form-container'
+                      >
+                        <div className='controls'>
+                          <div className='row py-2'>
+                            <div className='col-md-6'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_name'
+                                  type='text'
+                                  name='name'
+                                  className='form-control rounded-0'
+                                  placeholder='Name'
+                                  required='required'
+                                  data-error='Firstname is required.'
+                                  {...register('name', {
+                                    required: 'Name is required!',
+                                  })}
+                                />
                               </div>
                             </div>
-                            <div className='row'>
-                              <div className='col-md-6'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_email'
-                                    type='tel'
-                                    name='phone'
-                                    className='form-control rounded-0'
-                                    placeholder='Phone'
-                                    required='required'
-                                    data-error='Valid email is required.'
-                                    {...register('phone', {})}
-                                  />
-                                </div>
-                              </div>
-                              <div className='col-md-6'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_email'
-                                    type='date'
-                                    name='date'
-                                    className='form-control rounded-0'
-                                    placeholder='Date'
-                                    required='required'
-                                    min={new Date().toISOString().split('T')[0]}
-                                    data-error='Valid email is required.'
-                                    {...register('date', {})}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row py-2'>
-                              <div className='col-md-12'>
-                                <div className='form-group'>
-                                  <textarea
-                                    id='form_message'
-                                    name='message'
-                                    className='form-control rounded-0'
-                                    placeholder='Message'
-                                    rows='4'
-                                    required='required'
-                                    data-error='Please, leave us a message.'
-                                    {...register('message', {})}
-                                  ></textarea>
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row'>
-                              <div className='col-md-12 pt-2'>
-                                <button
-                                  disabled={isSubmitted}
-                                  type='submit'
-                                  className='book_table_btn w-100 btn-block'
-                                >
-                                  {isLoading ? (
-                                    <span>Submitting.. </span>
-                                  ) : (
-                                    <span>
-                                      {isSubmitted ? 'SUBMITTED' : 'ENQUIRE NOW'}
-                                    </span>
-                                  )}
-                                </button>
+                            <div className='col-md-6'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_lastname'
+                                  type='email'
+                                  name='email'
+                                  className='form-control rounded-0'
+                                  placeholder='Email'
+                                  required='required'
+                                  data-error='Lastname is required.'
+                                  {...register('email', {})}
+                                />
                               </div>
                             </div>
                           </div>
-                          {isSubmitted && (
-                            <div>
-                              <p>
-                                Thank you for reaching out to us. We will get back
-                                to you at earliest.
-                              </p>
+                          <div className='row'>
+                            <div className='col-md-6'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_email'
+                                  type='tel'
+                                  name='phone'
+                                  className='form-control rounded-0'
+                                  placeholder='Phone'
+                                  required='required'
+                                  data-error='Valid email is required.'
+                                  {...register('phone', {})}
+                                />
+                              </div>
                             </div>
-                          )}
-                        </form>
-                      </div>
+                            <div className='col-md-6'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_email'
+                                  type='date'
+                                  name='date'
+                                  className='form-control rounded-0'
+                                  placeholder='Date'
+                                  required='required'
+                                  min={new Date().toISOString().split('T')[0]}
+                                  data-error='Valid email is required.'
+                                  {...register('date', {})}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row py-2'>
+                            <div className='col-md-12'>
+                              <div className='form-group'>
+                                <textarea
+                                  id='form_message'
+                                  name='message'
+                                  className='form-control rounded-0'
+                                  placeholder='Message'
+                                  rows='4'
+                                  required='required'
+                                  data-error='Please, leave us a message.'
+                                  {...register('message', {})}
+                                ></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row'>
+                            <div className='col-md-12 pt-2'>
+                              <button
+                                disabled={isSubmitted}
+                                type='submit'
+                                className='book_table_btn w-100 btn-block'
+                              >
+                                {isLoading ? (
+                                  <span>Submitting.. </span>
+                                ) : (
+                                  <span>
+                                    {isSubmitted ? 'SUBMITTED' : 'ENQUIRE NOW'}
+                                  </span>
+                                )}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        {isSubmitted && (
+                          <div>
+                            <p>
+                              Thank you for reaching out to us. We will get back
+                              to you at earliest.
+                            </p>
+                          </div>
+                        )}
+                      </form>
                     </div>
                   </div>
                 </div>
-              )}
+              </div>
+            )}
             {slug === 'luxury-weekend-gateway-near-delhi-ncr' && (
               <div className='row p-md-4 '>
                 {/* Image Grid */}
@@ -448,8 +424,8 @@ function Index({ data, slug }) {
             )}
             {slug ===
               'best-staycation-near-delhi-noormahal-palace-luxury-hotel' && (
-                <div className='row p-md-4 '>
-                  {/* <div className='row d-flex justify-content-center py-5'>
+              <div className='row p-md-4 '>
+                {/* <div className='row d-flex justify-content-center py-5'>
                   <Link
                     className='book_table_btn w-100  btn-block'
                     href={'https://noormahalpalace.com/promotions'}
@@ -457,601 +433,601 @@ function Index({ data, slug }) {
                     Know More
                   </Link>
                 </div> */}
-                  <div className='col-md-12 py-5 d-flex justify-content-center '>
-                    <Link
-                      className='book_table_btn   btn-block'
-                      href={'https://noormahalpalace.com/promotions'}
-                    >
-                      Know More
-                    </Link>
-                  </div>
-                  {/* Image Grid */}
-                  <div className=' col-lg-8 mx-auto'>
-                    <div className='container'>
-                      <div className='row mb-4'>
-                        <div className='col-md-6 p-2 '>
-                          <img
-                            src='/assets/images/home/PrivateDining.jpg'
-                            alt='image1'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '350px',
-                              objectFit: 'cover',
-                            }}
-                          />
-                        </div>
-                        <div className='col-md-6 p-2'>
-                          <img
-                            src='/assets/images/dinings/brown_sugar.jpg'
-                            alt='image2'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '350px',
-                              objectFit: 'cover',
-                            }}
-                          />
-                        </div>
-                        <div className='col-md-6 p-2'>
-                          <img
-                            src='/assets/images/experience/chef2.jpg'
-                            alt='image3'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '350px',
-                              objectFit: 'cover',
-                            }}
-                          />
-                        </div>
-                        <div className='col-md-6 p-2'>
-                          <img
-                            src='/assets/images/home/6.SPA.jpg'
-                            alt='image4'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '350px',
-                              objectFit: 'cover',
-                            }}
-                          />
-                        </div>
+                <div className='col-md-12 py-5 d-flex justify-content-center '>
+                  <Link
+                    className='book_table_btn   btn-block'
+                    href={'https://noormahalpalace.com/promotions'}
+                  >
+                    Know More
+                  </Link>
+                </div>
+                {/* Image Grid */}
+                <div className=' col-lg-8 mx-auto'>
+                  <div className='container'>
+                    <div className='row mb-4'>
+                      <div className='col-md-6 p-2 '>
+                        <img
+                          src='/assets/images/home/PrivateDining.jpg'
+                          alt='image1'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/dinings/brown_sugar.jpg'
+                          alt='image2'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/experience/chef2.jpg'
+                          alt='image3'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/home/6.SPA.jpg'
+                          alt='image4'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '350px',
+                            objectFit: 'cover',
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-              )}
+              </div>
+            )}
             {slug ===
               'indulge-in-luxury-dining-at-noormahal-palace-the-best-romantic-dining-experience' && (
-                <div className='row p-4'>
-                  {/* Image Grid */}
-                  <div className='col-lg-12'>
-                    <div className='container'>
-                      <div className='row mb-4'>
-                        <div className='col-md-6 p-2 '>
-                          <img
-                            src='/assets/images/dinings/polo_bar_2.jpg'
-                            alt='image1'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '450px',
-                              objectFit: 'cover',
-                            }}
-                          />
-                        </div>
-                        <div className='col-md-6 p-2'>
-                          <img
-                            src='/assets/images/dinings/brown_sugar.jpg'
-                            alt='image2'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '450px',
-                              objectFit: 'cover',
-                            }}
-                          />
-                        </div>
-                        <div className='col-md-6 p-2'>
-                          <img
-                            src='/assets/images/dinings/cakefactory.jpg'
-                            alt='image3'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '450px',
-                              objectFit: 'cover',
-                            }}
-                          />
-                        </div>
-                        <div className='col-md-6 p-2'>
-                          <img
-                            src='/assets/images/dinings/frontier_mail_1.jpg'
-                            alt='image4'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '450px',
-                              objectFit: 'cover',
-                            }}
-                          />
-                        </div>
+              <div className='row p-4'>
+                {/* Image Grid */}
+                <div className='col-lg-12'>
+                  <div className='container'>
+                    <div className='row mb-4'>
+                      <div className='col-md-6 p-2 '>
+                        <img
+                          src='/assets/images/dinings/polo_bar_2.jpg'
+                          alt='image1'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '450px',
+                            objectFit: 'cover',
+                          }}
+                        />
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Booking Form */}
-                  <hr />
-                  <div className='col-lg-12 p-4 mx-auto'>
-                    <div className='card-body rounded-0'>
-                      <h4 className='text-center'>Book A Table</h4>
-                      <div className='container px-5'>
-                        <form
-                          id='contact-form'
-                          role='form'
-                          onSubmit={handleSubmit(onSubmitDining)}
-                        >
-                          <div className='controls'>
-                            <div className='row pt-2'>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_name'
-                                    type='text'
-                                    name='name'
-                                    className='form-control rounded-0'
-                                    placeholder='Name'
-                                    required='required'
-                                    data-error='Firstname is required.'
-                                    {...register('name', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                  {errors.name && (
-                                    <span className='text-sm text-red-500'>
-                                      {errors.name?.message}
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_lastname'
-                                    type='text'
-                                    name='email'
-                                    className='form-control rounded-0'
-                                    placeholder='Email'
-                                    required='required'
-                                    data-error='Lastname is required.'
-                                    {...register('email', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row'>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_email'
-                                    type='Phone'
-                                    name='Phone'
-                                    className='form-control rounded-0'
-                                    placeholder='Phone'
-                                    required='required'
-                                    data-error='Valid Phone is required.'
-                                    {...register('phone', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_date'
-                                    type='date'
-                                    name='date'
-                                    className='form-control rounded-0'
-                                    placeholder='Date'
-                                    required='required'
-                                    min={new Date().toISOString().split('T')[0]}
-                                    data-error='Valid Date is required.'
-                                    {...register('date', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row '>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_email'
-                                    type='time'
-                                    name='time'
-                                    className='form-control rounded-0'
-                                    placeholder='time'
-                                    required='required'
-                                    data-error='Valid email is required.'
-                                    {...register('time', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row '>
-                              <div className='col-md-12 pt-2'>
-                                <div className='form-group'>
-                                  <textarea
-                                    id='form_message'
-                                    name='message'
-                                    className='form-control rounded-0'
-                                    placeholder='Message'
-                                    rows='4'
-                                    required='required'
-                                    data-error='Please, leave us a message.'
-                                    {...register('message', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  ></textarea>
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row'>
-                              <div className='col-md-12 pt-2'>
-                                <button
-                                  disabled={isSubmitted}
-                                  type='submit'
-                                  className='book_table_btn w-100 btn-block'
-                                >
-                                  {isLoading ? (
-                                    <span>SUBMITTING.. </span>
-                                  ) : (
-                                    <span>
-                                      {isSubmitted ? 'SUBMITTED' : 'SUBMIT'}
-                                    </span>
-                                  )}
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                          {isSubmitted && (
-                            <div>
-                              <p>
-                                Thank you for reaching out to us. We will get back
-                                to you at earliest.
-                              </p>
-                            </div>
-                          )}
-                        </form>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/dinings/brown_sugar.jpg'
+                          alt='image2'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '450px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/dinings/cakefactory.jpg'
+                          alt='image3'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '450px',
+                            objectFit: 'cover',
+                          }}
+                        />
+                      </div>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/dinings/frontier_mail_1.jpg'
+                          alt='image4'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '450px',
+                            objectFit: 'cover',
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-              )}
+
+                {/* Booking Form */}
+                <hr />
+                <div className='col-lg-12 p-4 mx-auto'>
+                  <div className='card-body rounded-0'>
+                    <h4 className='text-center'>Book A Table</h4>
+                    <div className='container px-5'>
+                      <form
+                        id='contact-form'
+                        role='form'
+                        onSubmit={handleSubmit(onSubmitDining)}
+                      >
+                        <div className='controls'>
+                          <div className='row pt-2'>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_name'
+                                  type='text'
+                                  name='name'
+                                  className='form-control rounded-0'
+                                  placeholder='Name'
+                                  required='required'
+                                  data-error='Firstname is required.'
+                                  {...register('name', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                                {errors.name && (
+                                  <span className='text-sm text-red-500'>
+                                    {errors.name?.message}
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_lastname'
+                                  type='text'
+                                  name='email'
+                                  className='form-control rounded-0'
+                                  placeholder='Email'
+                                  required='required'
+                                  data-error='Lastname is required.'
+                                  {...register('email', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row'>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_email'
+                                  type='Phone'
+                                  name='Phone'
+                                  className='form-control rounded-0'
+                                  placeholder='Phone'
+                                  required='required'
+                                  data-error='Valid Phone is required.'
+                                  {...register('phone', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_date'
+                                  type='date'
+                                  name='date'
+                                  className='form-control rounded-0'
+                                  placeholder='Date'
+                                  required='required'
+                                  min={new Date().toISOString().split('T')[0]}
+                                  data-error='Valid Date is required.'
+                                  {...register('date', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row '>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_email'
+                                  type='time'
+                                  name='time'
+                                  className='form-control rounded-0'
+                                  placeholder='time'
+                                  required='required'
+                                  data-error='Valid email is required.'
+                                  {...register('time', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row '>
+                            <div className='col-md-12 pt-2'>
+                              <div className='form-group'>
+                                <textarea
+                                  id='form_message'
+                                  name='message'
+                                  className='form-control rounded-0'
+                                  placeholder='Message'
+                                  rows='4'
+                                  required='required'
+                                  data-error='Please, leave us a message.'
+                                  {...register('message', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                ></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row'>
+                            <div className='col-md-12 pt-2'>
+                              <button
+                                disabled={isSubmitted}
+                                type='submit'
+                                className='book_table_btn w-100 btn-block'
+                              >
+                                {isLoading ? (
+                                  <span>SUBMITTING.. </span>
+                                ) : (
+                                  <span>
+                                    {isSubmitted ? 'SUBMITTED' : 'SUBMIT'}
+                                  </span>
+                                )}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        {isSubmitted && (
+                          <div>
+                            <p>
+                              Thank you for reaching out to us. We will get back
+                              to you at earliest.
+                            </p>
+                          </div>
+                        )}
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             {slug ===
               'celebrate-holi-in-royal-style-at-noormahal-palace-rang-barse-festival' && (
-                <div className='row p-4'>
-                  {/* Image Grid */}
-                  <div className='col-lg-12'>
-                    <div className='container'>
-                      <div className='row mb-4'>
-                        <div className='col-md-6 p-2 '>
-                          <img
-                            src='/assets/images/blog/rang-barse-post2.jpg'
-                            alt='image1'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              // objectFit: 'cover',
-                            }}
-                          />
-                        </div>
-                        <div className='col-md-6 p-2'>
-                          <img
-                            src='/assets/images/blog/rang-barse-post1.jpg'
-                            alt='image2'
-                            className='img-fluid rounded'
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              // objectFit: 'cover',
-                            }}
-                          />
-                        </div>
+              <div className='row p-4'>
+                {/* Image Grid */}
+                <div className='col-lg-12'>
+                  <div className='container'>
+                    <div className='row mb-4'>
+                      <div className='col-md-6 p-2 '>
+                        <img
+                          src='/assets/images/blog/rang-barse-post2.jpg'
+                          alt='image1'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            // objectFit: 'cover',
+                          }}
+                        />
                       </div>
-                    </div>
-                  </div>
-
-                  {/* Booking Form */}
-                  <hr />
-                  <div className='col-lg-12 p-4 mx-auto'>
-                    <div className='card-body rounded-0'>
-                      <h4 className='text-center'>Enquire Now</h4>
-                      <div className='container px-5'>
-                        <form
-                          id='contact-form'
-                          role='form'
-                          onSubmit={handleSubmit(onSubmitDining)}
-                        >
-                          <div className='controls'>
-                            <div className='row pt-2'>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_name'
-                                    type='text'
-                                    name='name'
-                                    className='form-control rounded-0'
-                                    placeholder='Name'
-                                    required='required'
-                                    data-error='Firstname is required.'
-                                    {...register('name', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                  {errors.name && (
-                                    <span className='text-sm text-red-500'>
-                                      {errors.name?.message}
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_lastname'
-                                    type='text'
-                                    name='email'
-                                    className='form-control rounded-0'
-                                    placeholder='Email'
-                                    required='required'
-                                    data-error='Lastname is required.'
-                                    {...register('email', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row'>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_email'
-                                    type='Phone'
-                                    name='Phone'
-                                    className='form-control rounded-0'
-                                    placeholder='Phone'
-                                    required='required'
-                                    data-error='Valid Phone is required.'
-                                    {...register('phone', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_date'
-                                    type='date'
-                                    name='date'
-                                    className='form-control rounded-0'
-                                    placeholder='Date'
-                                    required='required'
-                                    defaultValue={
-                                      new Date().toISOString().split('T')[0]
-                                    }
-                                    min={new Date().toISOString().split('T')[0]}
-                                    data-error='Valid Date is required.'
-                                    {...register('date', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row '>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_email'
-                                    type='time'
-                                    name='time'
-                                    className='form-control rounded-0'
-                                    placeholder='time'
-                                    required='required'
-                                    data-error='Valid email is required.'
-                                    {...register('time', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row '>
-                              <div className='col-md-12 pt-2'>
-                                <div className='form-group'>
-                                  <textarea
-                                    id='form_message'
-                                    name='message'
-                                    className='form-control rounded-0'
-                                    placeholder='Message'
-                                    rows='4'
-                                    required='required'
-                                    data-error='Please, leave us a message.'
-                                    {...register('message', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  ></textarea>
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row'>
-                              <div className='col-md-12 pt-2'>
-                                <button
-                                  disabled={isSubmitted}
-                                  type='submit'
-                                  className='book_table_btn w-100 btn-block'
-                                >
-                                  {isLoading ? (
-                                    <span>SUBMITTING.. </span>
-                                  ) : (
-                                    <span>
-                                      {isSubmitted ? 'SUBMITTED' : 'SUBMIT'}
-                                    </span>
-                                  )}
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                          {isSubmitted && (
-                            <div>
-                              <p>
-                                Thank you for reaching out to us. We will get back
-                                to you at earliest.
-                              </p>
-                            </div>
-                          )}
-                        </form>
+                      <div className='col-md-6 p-2'>
+                        <img
+                          src='/assets/images/blog/rang-barse-post1.jpg'
+                          alt='image2'
+                          className='img-fluid rounded'
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            // objectFit: 'cover',
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-              )}
+
+                {/* Booking Form */}
+                <hr />
+                <div className='col-lg-12 p-4 mx-auto'>
+                  <div className='card-body rounded-0'>
+                    <h4 className='text-center'>Enquire Now</h4>
+                    <div className='container px-5'>
+                      <form
+                        id='contact-form'
+                        role='form'
+                        onSubmit={handleSubmit(onSubmitDining)}
+                      >
+                        <div className='controls'>
+                          <div className='row pt-2'>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_name'
+                                  type='text'
+                                  name='name'
+                                  className='form-control rounded-0'
+                                  placeholder='Name'
+                                  required='required'
+                                  data-error='Firstname is required.'
+                                  {...register('name', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                                {errors.name && (
+                                  <span className='text-sm text-red-500'>
+                                    {errors.name?.message}
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_lastname'
+                                  type='text'
+                                  name='email'
+                                  className='form-control rounded-0'
+                                  placeholder='Email'
+                                  required='required'
+                                  data-error='Lastname is required.'
+                                  {...register('email', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row'>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_email'
+                                  type='Phone'
+                                  name='Phone'
+                                  className='form-control rounded-0'
+                                  placeholder='Phone'
+                                  required='required'
+                                  data-error='Valid Phone is required.'
+                                  {...register('phone', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_date'
+                                  type='date'
+                                  name='date'
+                                  className='form-control rounded-0'
+                                  placeholder='Date'
+                                  required='required'
+                                  defaultValue={
+                                    new Date().toISOString().split('T')[0]
+                                  }
+                                  min={new Date().toISOString().split('T')[0]}
+                                  data-error='Valid Date is required.'
+                                  {...register('date', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row '>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_email'
+                                  type='time'
+                                  name='time'
+                                  className='form-control rounded-0'
+                                  placeholder='time'
+                                  required='required'
+                                  data-error='Valid email is required.'
+                                  {...register('time', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row '>
+                            <div className='col-md-12 pt-2'>
+                              <div className='form-group'>
+                                <textarea
+                                  id='form_message'
+                                  name='message'
+                                  className='form-control rounded-0'
+                                  placeholder='Message'
+                                  rows='4'
+                                  required='required'
+                                  data-error='Please, leave us a message.'
+                                  {...register('message', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                ></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row'>
+                            <div className='col-md-12 pt-2'>
+                              <button
+                                disabled={isSubmitted}
+                                type='submit'
+                                className='book_table_btn w-100 btn-block'
+                              >
+                                {isLoading ? (
+                                  <span>SUBMITTING.. </span>
+                                ) : (
+                                  <span>
+                                    {isSubmitted ? 'SUBMITTED' : 'SUBMIT'}
+                                  </span>
+                                )}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        {isSubmitted && (
+                          <div>
+                            <p>
+                              Thank you for reaching out to us. We will get back
+                              to you at earliest.
+                            </p>
+                          </div>
+                        )}
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             {slug ===
               'best-spa-in-karnal-luxury-spa-at-noormahal-palace-haryana' && (
-                <div className='row p-4'>
-                  {/* Image Grid */}
+              <div className='row p-4'>
+                {/* Image Grid */}
 
-                  {/* Booking Form */}
-                  <hr />
-                  <div className='col-lg-12 p-4 mx-auto'>
-                    <div className='card-body rounded-0'>
-                      <h4 className='text-center'>Enquire Now</h4>
-                      <div className='container px-5'>
-                        <form
-                          id='contact-form'
-                          role='form'
-                          onSubmit={handleSubmit(onSubmitBlog)}
-                        >
-                          <div className='controls'>
-                            <div className='row pt-2'>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_name'
-                                    type='text'
-                                    name='name'
-                                    className='form-control rounded-0'
-                                    placeholder='Name'
-                                    required='required'
-                                    data-error='Firstname is required.'
-                                    {...register('name', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                  {errors.name && (
-                                    <span className='text-sm text-red-500'>
-                                      {errors.name?.message}
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_lastname'
-                                    type='text'
-                                    name='email'
-                                    className='form-control rounded-0'
-                                    placeholder='Email'
-                                    required='required'
-                                    data-error='Lastname is required.'
-                                    {...register('email', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
+                {/* Booking Form */}
+                <hr />
+                <div className='col-lg-12 p-4 mx-auto'>
+                  <div className='card-body rounded-0'>
+                    <h4 className='text-center'>Enquire Now</h4>
+                    <div className='container px-5'>
+                      <form
+                        id='contact-form'
+                        role='form'
+                        onSubmit={handleSubmit(onSubmitBlog)}
+                      >
+                        <div className='controls'>
+                          <div className='row pt-2'>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_name'
+                                  type='text'
+                                  name='name'
+                                  className='form-control rounded-0'
+                                  placeholder='Name'
+                                  required='required'
+                                  data-error='Firstname is required.'
+                                  {...register('name', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                                {errors.name && (
+                                  <span className='text-sm text-red-500'>
+                                    {errors.name?.message}
+                                  </span>
+                                )}
                               </div>
                             </div>
-                            <div className='row'>
-                              <div className='col-md-6 pt-2'>
-                                <div className='form-group'>
-                                  <input
-                                    id='form_email'
-                                    type='Phone'
-                                    name='Phone'
-                                    className='form-control rounded-0'
-                                    placeholder='Phone'
-                                    required='required'
-                                    data-error='Valid Phone is required.'
-                                    {...register('phone', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-
-                            <div className='row '>
-                              <div className='col-md-12 pt-2'>
-                                <div className='form-group'>
-                                  <textarea
-                                    id='form_message'
-                                    name='message'
-                                    className='form-control rounded-0'
-                                    placeholder='Message'
-                                    rows='4'
-                                    required='required'
-                                    data-error='Please, leave us a message.'
-                                    {...register('message', {
-                                      required: 'Banner name is required!',
-                                    })}
-                                  ></textarea>
-                                </div>
-                              </div>
-                            </div>
-                            <div className='row'>
-                              <div className='col-md-12 pt-2'>
-                                <button
-                                  disabled={isSubmitted}
-                                  type='submit'
-                                  className='book_table_btn w-100 btn-block'
-                                >
-                                  {isLoading ? (
-                                    <span>SUBMITTING.. </span>
-                                  ) : (
-                                    <span>
-                                      {isSubmitted ? 'SUBMITTED' : 'SUBMIT'}
-                                    </span>
-                                  )}
-                                </button>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_lastname'
+                                  type='text'
+                                  name='email'
+                                  className='form-control rounded-0'
+                                  placeholder='Email'
+                                  required='required'
+                                  data-error='Lastname is required.'
+                                  {...register('email', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
                               </div>
                             </div>
                           </div>
-                          {isSubmitted && (
-                            <div>
-                              <p>
-                                Thank you for reaching out to us. We will get back
-                                to you at earliest.
-                              </p>
+                          <div className='row'>
+                            <div className='col-md-6 pt-2'>
+                              <div className='form-group'>
+                                <input
+                                  id='form_email'
+                                  type='Phone'
+                                  name='Phone'
+                                  className='form-control rounded-0'
+                                  placeholder='Phone'
+                                  required='required'
+                                  data-error='Valid Phone is required.'
+                                  {...register('phone', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                />
+                              </div>
                             </div>
-                          )}
-                        </form>
-                      </div>
+                          </div>
+
+                          <div className='row '>
+                            <div className='col-md-12 pt-2'>
+                              <div className='form-group'>
+                                <textarea
+                                  id='form_message'
+                                  name='message'
+                                  className='form-control rounded-0'
+                                  placeholder='Message'
+                                  rows='4'
+                                  required='required'
+                                  data-error='Please, leave us a message.'
+                                  {...register('message', {
+                                    required: 'Banner name is required!',
+                                  })}
+                                ></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          <div className='row'>
+                            <div className='col-md-12 pt-2'>
+                              <button
+                                disabled={isSubmitted}
+                                type='submit'
+                                className='book_table_btn w-100 btn-block'
+                              >
+                                {isLoading ? (
+                                  <span>SUBMITTING.. </span>
+                                ) : (
+                                  <span>
+                                    {isSubmitted ? 'SUBMITTED' : 'SUBMIT'}
+                                  </span>
+                                )}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        {isSubmitted && (
+                          <div>
+                            <p>
+                              Thank you for reaching out to us. We will get back
+                              to you at earliest.
+                            </p>
+                          </div>
+                        )}
+                      </form>
                     </div>
                   </div>
                 </div>
-              )}
+              </div>
+            )}
           </div>
 
           {/* Conditional Form Rendering */}
