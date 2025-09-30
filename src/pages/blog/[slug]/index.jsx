@@ -2,6 +2,7 @@ import { getSingleBlog } from '@/utils/API';
 import { BlogMain } from '@/utils/Contents/blog';
 import { format } from 'date-fns';
 import parse from 'html-react-parser';
+import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
