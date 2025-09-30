@@ -9,6 +9,14 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 function Index({ data, slug }) {
+  console.log(data, slug);
+
+  const siteUrl = 'https://noormahalpalace.com';
+  const blogUrl = `${siteUrl}/blog/${slug}`;
+  const ogImage = data?.image?.path
+    ? `${siteUrl}/files/${data.image.path}`
+    : `${siteUrl}/assets/images/home/2.ExperiencesExperiences2.jpg`;
+
   const router = useRouter();
   // const { slug } = router.query; // Get the slug from the router
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -140,59 +148,82 @@ function Index({ data, slug }) {
     reset();
   };
 
-  function BlogHead({ data, slug }) {
-    const siteUrl = 'https://noormahalpalace.com';
-    const blogUrl = `${siteUrl}/blog/${slug}`;
+  // function BlogHead({ data, slug }) {
+  //   const siteUrl = 'https://noormahalpalace.com';
+  //   const blogUrl = `${siteUrl}/blog/${slug}`;
 
-    // Prepare safe values with fallbacks
-    const title =
-      data?.title ||
-      'Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace';
+  //   // Prepare safe values with fallbacks
+  //   const title =
+  //     data?.title ||
+  //     'Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace';
 
-    const description =
-      data?.subTitle?.replace(/<[^>]+>/g, '') ||
-      'An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.';
+  //   const description =
+  //     data?.subTitle?.replace(/<[^>]+>/g, '') ||
+  //     'An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.';
 
-    const keywords =
-      data?.keyWords ||
-      'Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal';
+  //   const keywords =
+  //     data?.keyWords ||
+  //     'Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal';
 
-    const ogImage = data?.image?.path
-      ? `${siteUrl}/files/${data.image.path}`
-      : `${siteUrl}/assets/images/home/2.ExperiencesExperiences2.jpg`;
+  //   const ogImage = data?.image?.path
+  //     ? `${siteUrl}/files/${data.image.path}`
+  //     : `${siteUrl}/assets/images/home/2.ExperiencesExperiences2.jpg`;
 
-    return (
-      <Head>
-        {/* Primary Meta */}
-        <title>{title}</title>
-        <meta name='robots' content='index, follow' />
-        <meta name='keywords' content={keywords} />
-        <meta name='description' content={description} />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
+  //   return (
+  //     <Head>
+  //       {/* Primary Meta */}
+  //       <title>{title}</title>
+  //       <meta name='robots' content='index, follow' />
+  //       <meta name='keywords' content={keywords} />
+  //       <meta name='description' content={description} />
+  //       <meta name='viewport' content='width=device-width, initial-scale=1' />
+  //       <link rel='icon' href='/favicon.ico' />
 
-        {/* Open Graph / Facebook */}
-        <meta property='og:type' content='website' />
-        <meta property='og:url' content={blogUrl} />
-        <meta property='og:title' content={title} />
-        <meta property='og:description' content={description} />
-        <meta property='og:image' content={ogImage} />
-        <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='630' />
+  //       {/* Open Graph / Facebook */}
+  //       <meta property='og:type' content='website' />
+  //       <meta property='og:url' content={blogUrl} />
+  //       <meta property='og:title' content={title} />
+  //       <meta property='og:description' content={description} />
+  //       <meta property='og:image' content={ogImage} />
+  //       <meta property='og:image:width' content='1200' />
+  //       <meta property='og:image:height' content='630' />
 
-        {/* Twitter */}
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:url' content={blogUrl} />
-        <meta name='twitter:title' content={title} />
-        <meta name='twitter:description' content={description} />
-        <meta name='twitter:image' content={ogImage} />
-      </Head>
-    );
-  }
+  //       {/* Twitter */}
+  //       <meta name='twitter:card' content='summary_large_image' />
+  //       <meta name='twitter:url' content={blogUrl} />
+  //       <meta name='twitter:title' content={title} />
+  //       <meta name='twitter:description' content={description} />
+  //       <meta name='twitter:image' content={ogImage} />
+  //     </Head>
+  //   );
+  // }
 
   return (
     <div>
-      <BlogHead data={data} slug={slug} />
+      <NextSeo
+        title={data?.title || 'Default Title'}
+        description={
+          data?.subTitle?.replace(/<[^>]+>/g, '') || 'Default Description'
+        }
+        canonical={blogUrl}
+        openGraph={{
+          url: blogUrl,
+          title: data?.title || 'Default Title',
+          description:
+            data?.subTitle?.replace(/<[^>]+>/g, '') || 'Default Description',
+          images: [
+            {
+              url: ogImage,
+              width: 1200,
+              height: 630,
+              alt: data?.title || 'NoorMahal Palace',
+            },
+          ],
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+      />
       {data && (
         <section className='blog_details_wrapper default_section_gap pt-5'>
           <div className='instagram-container mx-auto'>
@@ -1041,14 +1072,10 @@ export default Index;
 
 export async function getServerSideProps(context) {
   const { slug } = context.query;
-  console.log(slug, 'Slug');
-
-  // Fetch data for the specific blog post using the slug
   const response = await getSingleBlog(slug);
 
-  // console.log(response.data.data, 'Response');
+  console.log('DEBUG SSR BLOG DATA:', response?.data?.data);
 
-  // Pass the fetched data as props to the component
   return {
     props: {
       data: response?.data?.data || null,
