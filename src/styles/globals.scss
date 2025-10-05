@@ -1,18 +1,34 @@
 //Vendor
-@import "./sass/vendors/_vendors-dir";
+@import './sass/vendors/_vendors-dir';
 
 //Abstract
-@import "./sass/abstracts/_abstracts-dir";
+@import './sass/abstracts/_abstracts-dir';
 
-//Layouts 
-@import "./sass/layouts/_layouts-dir";
+//Layouts
+@import './sass/layouts/_layouts-dir';
 
-//Pages 
-@import "./sass/pages/_pages-dir";
+//Pages
+@import './sass/pages/_pages-dir';
 
-//Components 
-@import "./sass/components/_components-dir"; 
+//Components
+@import './sass/components/_components-dir';
 
-// Base 
-@import "./sass/base/_base-dir";
+// Base
+@import './sass/base/_base-dir';
 
+// globals.scss
+.app-content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out; // Smooth for home intro
+}
+
+.app-content-hidden {
+  opacity: 0 !important; // !important to override if needed
+  visibility: hidden !important;
+  pointer-events: none; // Prevent clicks during hide
+}
+
+.main-content {
+  min-height: 100vh; // Stable layout
+}
