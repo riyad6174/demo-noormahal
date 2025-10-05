@@ -199,25 +199,71 @@ function Index({ data, slug }) {
   //   );
   // }
 
+  // Site-wide defaults (use these as fallbacks to avoid domain inference)
+  const defaultTitle =
+    'Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace';
+  const defaultDescription =
+    'An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.';
+  const defaultKeywords =
+    'Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal';
+
+  // Safe values with fallbacks
+  const title = data?.title || defaultTitle;
+  const description = data?.subTitle
+    ? data.subTitle
+        .replace(/<[^>]+>/g, '')
+        .trim()
+        .substring(0, 160)
+    : defaultDescription; // Limit desc length
+  const keywords = data?.keyWords || defaultKeywords;
+
   return (
     <div>
+      <Head>
+        {/* Primary Meta */}
+        <title>{title}</title>
+        <meta name='robots' content='index, follow' />
+        <meta name='keywords' content={keywords} />
+        <meta name='description' content={description} />
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <link rel='icon' href='/favicon.ico' />
+        <link rel='canonical' href={blogUrl} />
+        {/* Open Graph / Facebook - EXPLICIT to avoid inference */}
+        <meta property='og:type' content='article' />{' '}
+        {/* 'article' for blog posts */}
+        <meta property='og:url' content={blogUrl} />
+        <meta property='og:title' content={title} />
+        <meta property='og:description' content={description} />
+        <meta property='og:site_name' content='NoorMahal Palace' />
+        <meta property='og:image' content={ogImage} />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
+        <meta property='og:image:alt' content={title} />
+        <meta property='og:locale' content='en_US' />
+        {/* Twitter Cards */}
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:url' content={blogUrl} />
+        <meta name='twitter:title' content={title} />
+        <meta name='twitter:description' content={description} />
+        <meta name='twitter:image' content={ogImage} />
+        <meta name='twitter:image:alt' content={title} />
+      </Head>
       <NextSeo
-        title={data?.title || 'Default Title'}
-        description={
-          data?.subTitle?.replace(/<[^>]+>/g, '') || 'Default Description'
-        }
+        title={title}
+        description={description}
         canonical={blogUrl}
         openGraph={{
+          type: 'article',
           url: blogUrl,
-          title: data?.title || 'Default Title',
-          description:
-            data?.subTitle?.replace(/<[^>]+>/g, '') || 'Default Description',
+          title: title,
+          description: description,
+          siteName: 'NoorMahal Palace',
           images: [
             {
               url: ogImage,
               width: 1200,
               height: 630,
-              alt: data?.title || 'NoorMahal Palace',
+              alt: title,
             },
           ],
         }}
