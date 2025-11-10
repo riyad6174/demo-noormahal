@@ -11,7 +11,7 @@ const promotions = [
     knowMoreLink: null,
   },
   {
-    image: 'assets/images/promotion/children.jpg',
+    image: 'assets/images/promotion/children-promo.jpg',
     knowMoreLink: 'assets/images/promotion/children-day-img.jpg',
   },
 
