@@ -14,54 +14,7 @@ const promotions = [
     image: 'assets/images/promotion/children.jpg',
     knowMoreLink: 'assets/images/promotion/children-day-img.jpg',
   },
-  // {
-  //   image: 'assets/images/promotion/evening.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/diwali.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/karwachauth-2025-2.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/karwachauth-2025.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/navratri.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/asia-cup.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/ind-vs-pak.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/teachersday.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/monsoon-gateway.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/monsoon-magesty.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/escape.jpg',
-  //   knowMoreLink: null,
-  // },
-  // {
-  //   image: 'assets/images/promotion/royal-splendour.jpg',
-  //   knowMoreLink: null,
-  // },
+
   {
     image: 'assets/images/promotion/chefstable.jpg',
     knowMoreLink: null,
