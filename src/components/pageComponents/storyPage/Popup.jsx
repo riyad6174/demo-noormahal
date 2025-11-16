@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { MdClose } from 'react-icons/md';
-import image from '../../../../public/assets/images/promotion/children-promo.jpg';
+import image from '../../../../public/assets/images/promotion/new-year.jpg';
 import Image from 'next/image';
 function Popup({ showPopUp, setShowPopUp }) {
   // const handleClick = () =>{
