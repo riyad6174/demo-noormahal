@@ -6,14 +6,14 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const promotions = [
-  {
-    image: 'assets/images/promotion/festive.jpeg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/carnival.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/festive.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/carnival.jpg',
+  //   knowMoreLink: null,
+  // },
   {
     image: 'assets/images/promotion/new-year.jpg',
     knowMoreLink: null,
@@ -303,8 +303,8 @@ export default function Page() {
                               {isLoading
                                 ? 'SUBMITTING..'
                                 : isSubmitted
-                                ? 'SUBMITTED'
-                                : 'SUBMIT'}
+                                  ? 'SUBMITTED'
+                                  : 'SUBMIT'}
                             </button>
                           </div>
                         </div>
