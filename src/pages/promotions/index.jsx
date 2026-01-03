@@ -14,10 +14,10 @@ const promotions = [
   //   image: 'assets/images/promotion/carnival.jpg',
   //   knowMoreLink: null,
   // },
-  {
-    image: 'assets/images/promotion/new-year.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/new-year.jpg',
+  //   knowMoreLink: null,
+  // },
   // {
   //   image: 'assets/images/promotion/children-promo.jpg',
   //   knowMoreLink: 'assets/images/promotion/children-day-img.jpg',
@@ -303,8 +303,8 @@ export default function Page() {
                               {isLoading
                                 ? 'SUBMITTING..'
                                 : isSubmitted
-                                  ? 'SUBMITTED'
-                                  : 'SUBMIT'}
+                                ? 'SUBMITTED'
+                                : 'SUBMIT'}
                             </button>
                           </div>
                         </div>
