@@ -61,7 +61,7 @@ function CheckIn() {
           <h4>CHECK IN</h4>
           <BsCalendarDate className='text-white' />
           <ReactDatePicker
-            showIcon
+            // showIcon
             selected={startDate}
             minDate={new Date()}
             onChange={handleStartDateChange}
@@ -73,7 +73,7 @@ function CheckIn() {
           <h4>CHECK OUT</h4>
           <BsCalendarDate className='text-white' />
           <ReactDatePicker
-            showIcon
+            // showIcon
             selected={endDate}
             minDate={endDateMinDate}
             onChange={(date) => setEndDate(date)}
