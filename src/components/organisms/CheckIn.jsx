@@ -59,7 +59,7 @@ function CheckIn() {
       >
         <div className='form_item'>
           <h4>CHECK IN</h4>
-          <BsCalendarDate className='text-white' />
+          <BsCalendarDate className='text-white me-2' />
           <ReactDatePicker
             // showIcon
             selected={startDate}
@@ -71,7 +71,7 @@ function CheckIn() {
         </div>
         <div className='form_item'>
           <h4>CHECK OUT</h4>
-          <BsCalendarDate className='text-white' />
+          <BsCalendarDate className='text-white me-2' />
           <ReactDatePicker
             // showIcon
             selected={endDate}
