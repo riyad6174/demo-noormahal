@@ -4,6 +4,7 @@ import { BiLogoTripAdvisor } from 'react-icons/bi';
 
 function Footer({ data }) {
   console.log(data.address, data.email, data.phone, data.social, data);
+  const currentYear = new Date().getFullYear();
   return (
     <div>
       <footer className='footer_wrapper'>
@@ -124,7 +125,7 @@ function Footer({ data }) {
           </div>
         </div>
         <div className='copyright_area '>
-          <p>{data?.copyright}</p>
+          <p>Copyright@{currentYear} Noormahal Palace. All Right Reserved.</p>
         </div>
       </footer>
     </div>

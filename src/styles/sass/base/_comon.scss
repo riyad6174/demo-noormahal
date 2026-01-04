@@ -1477,6 +1477,40 @@ input[type='number'] {
   text-align: center;
 }
 
+// Marquee wrapper and animation
+.marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  animation: marquee 40s linear infinite;
+  white-space: nowrap;
+
+  a {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 input[type='time']:not(:valid):before {
   content: 'Time:';
   margin-right: 0.6em;
