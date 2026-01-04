@@ -159,8 +159,8 @@ function StorySection({
           <InstagramEmbed />
         </section> */}
         {/* <NewsSection newsData={newsData} /> */}
-        <marquee loop={30} scrollamount='10'>
-          <div className='marquee pt-5'>
+        <div className='marquee-wrapper pt-5'>
+          <div className='marquee-content'>
             <Link
               href='https://www.gqindia.com/content/looking-for-a-secluded-valentines-day-getaway-these-places-near-mumbai-and-delhi-would-be-perfect'
               style={{
@@ -575,7 +575,7 @@ function StorySection({
               </div>
             </Link>
           </div>
-        </marquee>
+        </div>
       </main>
       {/* <Popup showPopUp={showPopUp} setShowPopUp={setShowPopUp} /> */}
       <Popup

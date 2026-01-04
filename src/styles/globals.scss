@@ -29,6 +29,23 @@
   pointer-events: none; // Prevent clicks during hide
 }
 
+// Hide content immediately on root page until intro finishes
+// This prevents flash of content before IntroVideo
+// Content is still in DOM for SEO/crawlers
+body:not(.intro-finished) .app-content-root-initial {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+// Smooth transition when intro finishes
+body.intro-finished .app-content-root-initial {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.5s ease-in-out;
+}
+
 .main-content {
   min-height: 100vh; // Stable layout
 }

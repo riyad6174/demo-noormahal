@@ -21,7 +21,9 @@ export default function App({ Component, pageProps }) {
   const router = useRouter();
   const [data, setData] = useState([]);
   const [isIntroFinished, setIsIntroFinished] = useState(false);
-  const [showContent, setShowContent] = useState(true); // Default TRUE to avoid SSR skip
+
+  // Determine if the current path is the root URL
+  const isRootUrl = router.pathname === '/';
 
   useEffect(() => {
     AOS.init({
@@ -36,12 +38,15 @@ export default function App({ Component, pageProps }) {
     }
   }, []);
 
+  // Add intro-finished class to body when intro completes
+  useEffect(() => {
+    if (typeof document !== 'undefined' && isIntroFinished) {
+      document.body.classList.add('intro-finished');
+    }
+  }, [isIntroFinished]);
+
   const handleIntroFinishChanged = (value) => {
     setIsIntroFinished(value);
-  };
-
-  const handleShowContentChanged = (value) => {
-    setShowContent(value);
   };
 
   const fetchData = useCallback(async () => {
@@ -62,29 +67,6 @@ export default function App({ Component, pageProps }) {
     fetchData();
   }, [fetchData]);
 
-  // Determine if the current path is the root URL
-  const isRootUrl = router.pathname === '/';
-
-  // For root: Start hidden, show after intro (client-side)
-  // For non-root: Already true, no change
-  useEffect(() => {
-    if (isRootUrl && !isIntroFinished) {
-      setShowContent(false); // Hide until intro ends
-    } else {
-      setShowContent(true);
-    }
-  }, [isRootUrl, isIntroFinished]);
-
-  // Client-side only: Add/remove CSS class after mount (avoids hydration mismatch)
-  useEffect(() => {
-    if (typeof document !== undefined) {
-      const appContent = document.querySelector('.app-content');
-      if (appContent) {
-        appContent.classList.toggle('app-content-hidden', !showContent);
-      }
-    }
-  }, [showContent]);
-
   return (
     <>
       {/* IntroVideo only on root */}
@@ -92,14 +74,12 @@ export default function App({ Component, pageProps }) {
         <IntroVideo
           isIntroFinished={isIntroFinished}
           handleIntroFinish={handleIntroFinishChanged}
-          handleShowContent={handleShowContentChanged}
         />
       )}
 
       {/* ALWAYS render for SSR: Full HTML with Head/content */}
-      <div className='app-content'>
-        {' '}
-        {/* No dynamic class here – toggle via JS */}
+      {/* Apply class on root page to hide content initially via CSS */}
+      <div className={isRootUrl ? 'app-content app-content-root-initial' : 'app-content'}>
         <GoogleAnalytics />
         <StructuredData />
         <Navbar data={data} />

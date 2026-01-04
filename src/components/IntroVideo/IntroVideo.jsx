@@ -25,10 +25,6 @@ function IntroVideo(props) {
       setIntroFinish(true);
       props.handleIntroFinish(true);
     }, 3000);
-
-    setTimeout(() => {
-      props.handleShowContent(true);
-    }, 1000);
   }, [props]);
 
   return (
