@@ -19,6 +19,22 @@ const promotions = [
   //   knowMoreLink: null,
   // },
   {
+    image: 'assets/images/promotion/sunday.jpg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/eclair.jpg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/lohri.jpg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/republic.jpeg',
+    knowMoreLink: null,
+  },
+  {
     image: 'assets/images/popup/wpl.jpeg',
     knowMoreLink: null,
   },
