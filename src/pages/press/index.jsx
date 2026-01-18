@@ -6,6 +6,7 @@ import Head from 'next/head';
 import React from 'react';
 import AwardSlider from '@/components/pageComponents/pressPage/AwardSlider';
 import TwentyFive from '@/components/pageComponents/pressPage/TwentyFive';
+import TwentySix from '@/components/pageComponents/pressPage/TwentySix';
 
 function Index() {
   return (
@@ -66,6 +67,20 @@ function Index() {
               <li className='nav-item' role='presentation'>
                 <button
                   className='nav-link active'
+                  id='pills-home-tab'
+                  data-bs-toggle='pill'
+                  data-bs-target='#pills-2026'
+                  type='button'
+                  role='tab'
+                  aria-controls='pills-2026'
+                  aria-selected='true'
+                >
+                  2026
+                </button>
+              </li>
+              <li className='nav-item' role='presentation'>
+                <button
+                  className='nav-link '
                   id='pills-2025-tab'
                   data-bs-toggle='pill'
                   data-bs-target='#pills-2025'
@@ -151,13 +166,22 @@ function Index() {
                 <TwentyFour />
               </div>
               <div
-                className='tab-pane fade show active'
+                className='tab-pane fade show '
                 id='pills-2025'
                 role='tabpanel'
                 aria-labelledby='pills-2025-tab'
                 tabIndex='0'
               >
                 <TwentyFive />
+              </div>
+              <div
+                className='tab-pane fade show active'
+                id='pills-2026'
+                role='tabpanel'
+                aria-labelledby='pills-2026-tab'
+                tabIndex='0'
+              >
+                <TwentySix />
               </div>
             </div>
           </div>
