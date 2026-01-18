@@ -68,7 +68,7 @@ function page({ eventData, seoData }) {
 
       if (backendResponse.ok) {
         console.log(
-          'Form data submitted successfully to both spreadsheet and backend!'
+          'Form data submitted successfully to both spreadsheet and backend!',
         );
         setIsSubmitted(true);
       } else {
@@ -136,6 +136,11 @@ function page({ eventData, seoData }) {
             event in our spacious ball rooms. Equipped with latest
             state-of-the-art facilities and having a flair for warm hospitality,
             we ensure that you have memorable celebrations.
+          </p>
+          <p className='pt-2 pb-0'>
+            With an expansive event area of approximately 300,000 sq. ft., our
+            venue stands among the largest and most prestigious spaces for grand
+            celebrations.
           </p>
         </div>
         <div className='' style={{ visibility: 'hidden', lineHeight: '.2' }}>
