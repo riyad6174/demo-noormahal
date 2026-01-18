@@ -61,7 +61,7 @@ function page({ meetingData, seoData }) {
 
       if (backendResponse.ok) {
         console.log(
-          'Form data submitted successfully to both spreadsheet and backend!'
+          'Form data submitted successfully to both spreadsheet and backend!',
         );
         setIsSubmitted(true);
       } else {
@@ -120,6 +120,11 @@ function page({ meetingData, seoData }) {
               their loved ones. These include a spa & wellness center, and an
               outdoor pool with a bar next to it. There are also a few indoor
               and outdoor games for our little guests to have a good time.
+            </p>
+            <p className='pt-2 pb-1'>
+              With an expansive event area of approximately 300,000 sq. ft., our
+              venue stands among the largest and most prestigious spaces for
+              grand celebrations.
             </p>
             <div className='shape2'>
               <img
