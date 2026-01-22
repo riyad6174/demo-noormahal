@@ -44,7 +44,7 @@ function StorySection({
 
   // ===================================
   useEffect(() => {
-    setShowPopUp(false);
+    setShowPopUp(true);
   }, []);
 
   //=================================

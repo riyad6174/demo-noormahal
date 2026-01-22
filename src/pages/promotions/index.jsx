@@ -6,6 +6,14 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const promotions = [
+  {
+    image: 'assets/images/promotion/republic.jpeg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/eclair.jpg',
+    knowMoreLink: null,
+  },
   // {
   //   image: 'assets/images/promotion/festive.jpeg',
   //   knowMoreLink: null,
@@ -22,18 +30,12 @@ const promotions = [
     image: 'assets/images/promotion/sunday.jpg',
     knowMoreLink: null,
   },
-  {
-    image: 'assets/images/promotion/eclair.jpg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/lohri.jpg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/republic.jpeg',
-    knowMoreLink: null,
-  },
+
+  // {
+  //   image: 'assets/images/promotion/lohri.jpg',
+  //   knowMoreLink: null,
+  // },
+
   {
     image: 'assets/images/popup/wpl.jpeg',
     knowMoreLink: null,
@@ -131,7 +133,7 @@ export default function Page() {
 
       if (backendResponse.ok) {
         console.log(
-          'Form data submitted successfully to both spreadsheet and backend!'
+          'Form data submitted successfully to both spreadsheet and backend!',
         );
         setIsSubmitted(true);
       } else {
@@ -319,8 +321,8 @@ export default function Page() {
                               {isLoading
                                 ? 'SUBMITTING..'
                                 : isSubmitted
-                                ? 'SUBMITTED'
-                                : 'SUBMIT'}
+                                  ? 'SUBMITTED'
+                                  : 'SUBMIT'}
                             </button>
                           </div>
                         </div>
