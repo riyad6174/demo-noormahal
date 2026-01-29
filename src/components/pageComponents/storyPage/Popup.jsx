@@ -16,9 +16,10 @@ function Popup({ showPopUp, setShowPopUp }) {
     setShowPopUp(false);
   };
 
-  const handleLinkClick = (e) => {
-    e.stopPropagation(); // Prevent outer div from closing when clicking the image/link
-  };
+  // const handleLinkClick = (e) => {
+  //   e.stopPropagation(); // Prevent outer div from closing when clicking the image/link
+
+  // };
 
   return (
     <div
@@ -27,8 +28,8 @@ function Popup({ showPopUp, setShowPopUp }) {
       }`}
       onClick={handleOuterClick}
     >
-      <Link href={'/promotions'} className='position-relative'>
-        <div>
+      <div className='position-relative'>
+        <Link href={'/promotions'}>
           <Image
             src={currentImage}
             quality={75}
@@ -36,7 +37,7 @@ function Popup({ showPopUp, setShowPopUp }) {
             className='shadow popup-image object-fit-cover'
             style={{ border: '8px solid #FFFAF0' }}
           />
-        </div>
+        </Link>
         <div
           className='position-absolute z-3 p-1 shadow'
           style={{
@@ -58,7 +59,7 @@ function Popup({ showPopUp, setShowPopUp }) {
             onClick={handleClose}
           />
         </div>
-      </Link>
+      </div>
     </div>
   );
 }
