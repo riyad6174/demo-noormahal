@@ -81,7 +81,7 @@ function index() {
 
       if (backendResponse.ok) {
         console.log(
-          'Form data submitted successfully to both spreadsheet and backend!'
+          'Form data submitted successfully to both spreadsheet and backend!',
         );
         setIsSubmitted(true);
       } else {
@@ -371,7 +371,7 @@ function index() {
                 <ul className='location_list'>
                   <li>Director of Sales & Marketing</li>
                   <li>
-                    Mobile : <a href='tel: ‪+919996787904‬'> +91 9996787904‬</a>
+                    Mobile : <a href='tel: +919996787904'> +91 9996787904</a>
                   </li>
                   <li>
                     Email :{' '}
@@ -379,14 +379,14 @@ function index() {
                   </li>
                 </ul>
                 <ul className='location_list'>
-                  <li>Chander Shekhar Puri</li>
+                  <li>Mahesh Singh Jasrotia</li>
                   <li>Corporate General Manager</li>
-                  <li>
+                  {/* <li>
                     Mobile : <a href='tel:+919996787881'> +91 9996787881</a>
-                  </li>
+                  </li> */}
                   <li>
                     Email :{' '}
-                    <a href='mailto:cgm@noormahal.in'> cgm@noormahal.in</a>
+                    <a href='mailto:cgm@noormahal.in'> gm@noormahal.in</a>
                   </li>
                 </ul>
               </div>
