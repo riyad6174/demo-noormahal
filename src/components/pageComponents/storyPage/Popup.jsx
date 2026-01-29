@@ -4,7 +4,7 @@ import { MdClose } from 'react-icons/md';
 import Image from 'next/image';
 
 // Single image (Dec 31, 2025, till 23:59:59)
-import currentImage from '../../../../public/assets/images/promotion/republic.jpeg';
+import currentImage from '../../../../public/assets/images/promotion/brs.jpeg';
 
 function Popup({ showPopUp, setShowPopUp }) {
   const handleClose = (e) => {
@@ -27,7 +27,7 @@ function Popup({ showPopUp, setShowPopUp }) {
       }`}
       onClick={handleOuterClick}
     >
-      <div className='position-relative' onClick={handleLinkClick}>
+      <Link href={'/promotions'} className='position-relative'>
         <div>
           <Image
             src={currentImage}
@@ -58,7 +58,7 @@ function Popup({ showPopUp, setShowPopUp }) {
             onClick={handleClose}
           />
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
