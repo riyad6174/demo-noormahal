@@ -10,22 +10,22 @@ const promotions = [
   //   image: 'assets/images/promotion/republic.jpeg',
   //   knowMoreLink: null,
   // },
-  {
-    image: 'assets/images/promotion/brs.jpeg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/cake.jpeg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/frm.jpeg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/polo.jpeg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/brs.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/cake.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/frm.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/polo.jpeg',
+  //   knowMoreLink: null,
+  // },
   {
     image: 'assets/images/promotion/buffet.jpeg',
     knowMoreLink: null,
