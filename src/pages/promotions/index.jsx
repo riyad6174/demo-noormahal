@@ -7,6 +7,10 @@ import { useForm } from 'react-hook-form';
 
 const promotions = [
   {
+    image: 'assets/images/promotion/thrill.jpeg',
+    knowMoreLink: null,
+  },
+  {
     image: 'assets/images/promotion/holi.jpeg',
     knowMoreLink: null,
   },
@@ -61,10 +65,10 @@ const promotions = [
   //   knowMoreLink: null,
   // },
 
-  {
-    image: 'assets/images/popup/wpl.jpeg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/popup/wpl.jpeg',
+  //   knowMoreLink: null,
+  // },
 
   {
     image: 'assets/images/promotion/chefstable.jpg',
