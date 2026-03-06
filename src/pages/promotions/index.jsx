@@ -10,10 +10,10 @@ const promotions = [
     image: 'assets/images/promotion/thrill.jpeg',
     knowMoreLink: null,
   },
-  {
-    image: 'assets/images/promotion/holi.jpeg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/holi.jpeg',
+  //   knowMoreLink: null,
+  // },
   {
     image: 'assets/images/promotion/womens.jpeg',
     knowMoreLink: null,
