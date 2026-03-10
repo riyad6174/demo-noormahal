@@ -6,18 +6,18 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const promotions = [
-  {
-    image: 'assets/images/promotion/thrill.jpeg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/thrill.jpeg',
+  //   knowMoreLink: null,
+  // },
   // {
   //   image: 'assets/images/promotion/holi.jpeg',
   //   knowMoreLink: null,
   // },
-  {
-    image: 'assets/images/promotion/womens.jpeg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/womens.jpeg',
+  //   knowMoreLink: null,
+  // },
 
   // {
   //   image: 'assets/images/promotion/brs.jpeg',
@@ -35,14 +35,14 @@ const promotions = [
   //   image: 'assets/images/promotion/polo.jpeg',
   //   knowMoreLink: null,
   // },
-  {
-    image: 'assets/images/promotion/buffet.jpeg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/eclair.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/buffet.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/eclair.jpg',
+  //   knowMoreLink: null,
+  // },
   // {
   //   image: 'assets/images/promotion/festive.jpeg',
   //   knowMoreLink: null,
