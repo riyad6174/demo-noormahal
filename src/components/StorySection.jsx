@@ -44,7 +44,10 @@ function StorySection({
 
   // ===================================
   useEffect(() => {
-    setShowPopUp(false);
+    const endTime = new Date('2026-03-28T00:00:00');
+    if (new Date() < endTime) {
+      setShowPopUp(true);
+    }
   }, []);
 
   //=================================
