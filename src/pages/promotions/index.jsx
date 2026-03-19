@@ -6,6 +6,10 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const promotions = [
+  {
+    image: 'assets/images/promotion/navratri2026.jpeg',
+    knowMoreLink: null,
+  },
   // {
   //   image: 'assets/images/promotion/thrill.jpeg',
   //   knowMoreLink: null,
@@ -55,10 +59,10 @@ const promotions = [
   //   image: 'assets/images/promotion/new-year.jpg',
   //   knowMoreLink: null,
   // },
-  {
-    image: 'assets/images/promotion/sunday.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/sunday.jpg',
+  //   knowMoreLink: null,
+  // },
 
   // {
   //   image: 'assets/images/promotion/lohri.jpg',
