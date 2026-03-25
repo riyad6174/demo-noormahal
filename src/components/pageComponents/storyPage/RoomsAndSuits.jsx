@@ -52,11 +52,11 @@ function RoomsAndSuits() {
             <Image src={shape} alt='shape icon' height={20} width={220} />
           </div>
           <p>
-            At Noormahal Palace, Karnal, we have an inventory of 125 elegant
+            At Noor Mahal, Karnal, we have an inventory of 125 elegant
             rooms and suites, furnished with premium furniture and upholstery.
             Despite being styled after traditional Indian architecture, no
             modern comforts have been compromised with. Immerse yourself in the
-            splendour of the Indian Royalty at Noormahal Palace, ‘The Jewel of
+            splendour of the Indian Royalty at Noor Mahal, ‘The Jewel of
             Karnal’.
           </p>
         </div>

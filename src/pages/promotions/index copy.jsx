@@ -63,7 +63,7 @@ export default function page() {
             <p className='pt-2 pb-1'>
               For our guests to make the most of our warm hospitality, we have
               curated various lucrative offers and packages. Being one of the
-              best hotels in KARNAL, Noormahal Palace brings an array of 'out of
+              best hotels in KARNAL, Noor Mahal brings an array of 'out of
               the ordinary' choices for you. Experience your money's worth with
               the most attractive offers in town.
             </p>

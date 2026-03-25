@@ -15,14 +15,14 @@ function index() {
   return (
     <div>
       <Head>
-        <title>Press and Media | Noormahal Palace</title>
+        <title>Press and Media | Noor Mahal</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
         />
         <meta
           name='description'
-          content='	Read about Noormahal Palace in the press and media. Discover articles, features, and stories highlighting our luxury hotel, services, and events.'
+          content='	Read about Noor Mahal in the press and media. Discover articles, features, and stories highlighting our luxury hotel, services, and events.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -34,7 +34,7 @@ function index() {
           </h2>
           {/* <p className='pt-2 pb-1'>
             One of the most preferred destinations for a big fat Indian wedding
-            or for a leisurely weekend getaway, Hotel Noormahal Palace has been
+            or for a leisurely weekend getaway, Hotel Noor Mahal has been
             the receiver of many accolades. To learn more about us, explore
             these news bites.
           </p> */}
@@ -48,7 +48,7 @@ function index() {
           </h2>
           <p className='pt-2 pb-1'>
             One of the most preferred destinations for a big fat Indian wedding
-            or for a leisurely weekend getaway, Hotel Noormahal Palace has been
+            or for a leisurely weekend getaway, Hotel Noor Mahal has been
             the receiver of many accolades. To learn more about us, explore
             these news bites.
           </p>

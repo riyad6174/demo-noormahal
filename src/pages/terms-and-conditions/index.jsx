@@ -10,7 +10,7 @@ function index() {
           rel='stylesheet'
           id='bootstrap-css'
         />
-        <title>Terms and Conditions | Noormahal Palace</title>
+        <title>Terms and Conditions | Noor Mahal</title>
         <meta name='robots' content='index, follow' />
 
         <meta
@@ -21,7 +21,7 @@ function index() {
         />
         <meta
           name='description'
-          content='Review the terms and conditions for staying at Noormahal Palace. Understand the policies and guidelines that govern your experience with us'
+          content='Review the terms and conditions for staying at Noor Mahal. Understand the policies and guidelines that govern your experience with us'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -39,7 +39,7 @@ function index() {
             <img src='assets/images/shape/place_shape.png' alt='place shape' />
           </div>
           <p className='pt-2 pb-1'>
-            Noormahal Palace Hotel has a few terms & conditions, which have been
+            Noor Mahal Hotel has a few terms & conditions, which have been
             thoughtfully calibrated as per the quintessential industry practices
             and law of the land. Guests and visitors are expected to follow the
             terms & conditions, which are mentioned below.

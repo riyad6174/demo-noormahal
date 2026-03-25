@@ -99,15 +99,15 @@ function index() {
   return (
     <div>
       <Head>
-        <title>Contact Us | Noormahal Palace</title>
+        <title>Contact Us | Noor Mahal</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
         />
         <meta name='robots' content='index, follow' />
         <meta
           name='description'
-          content='Contact Noormahal Palace for reservations, inquiries, and assistance. Our dedicated team is here to help you plan your perfect getaway, event, or dining experience.'
+          content='Contact Noor Mahal for reservations, inquiries, and assistance. Our dedicated team is here to help you plan your perfect getaway, event, or dining experience.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -218,7 +218,7 @@ function index() {
                 <div className='address_area '>
                   <h4>BY ROAD</h4>
                   <p>
-                    Noormahal Palace is connected by roads and national highways
+                    Noor Mahal is connected by roads and national highways
                     connecting major cities like
                   </p>
                   <ul>
@@ -327,8 +327,8 @@ function index() {
               </form>
               <div className='contact_info p-4 m-2'>
                 <h3>Karnal Office</h3>
-                <p> Noormahal Palace, Nirmal Kutia Chowk </p>
-                <p> Sector-32, Karnal-Delhi (NCR), INDIA</p>
+                <p> Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk </p>
+                <p> Sector-32, Delhi (NCR) INDIA</p>
                 <p> Tel : +91 9996787891/92/93/97/904</p>
                 <p style={{ textDecoration: 'none' }}>
                   <a href='mailto:sales@noormahal.in '>sales@noormahal.in</a>{' '}
@@ -346,10 +346,10 @@ function index() {
                 </h3>
                 <ul className='location_list'>
                   <li>
-                    <b>Karnal Office :</b> Noormahal Palace, Nirmal Kutia Chowk
+                    <b>Karnal Office :</b> Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk
                   </li>
                   <li>
-                    <p>Sector-32, Karnal-Delhi (NCR), INDIA</p>
+                    <p>Sector-32, Delhi (NCR) INDIA</p>
                   </li>
                   <li>
                     Tel :{' '}
@@ -392,12 +392,12 @@ function index() {
               </div>
               <div className='location_area'>
                 <h3 className='luxurious_title black-color-0c'>
-                  NOORMAHAL PALACE
+                  NOOR MAHAL
                 </h3>
                 <ul className='location_list'>
-                  <li>Noormahal Palace, Nirmal Kutia Chowk</li>
+                  <li>Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk</li>
                   <li>
-                    <p>Sector-32, Karnal-Delhi (NCR) INDIA.</p>
+                    <p>Sector-32, Delhi (NCR) INDIA</p>
                   </li>
                   <li>
                     Tel :{' '}

@@ -7,7 +7,7 @@ const structuredSchema = {
   '@context': 'https://schema.org',
   '@type': 'Corporation',
   name: 'Noor Mahal Palace',
-  alternateName: 'NOORMAHAL PALACE,KARNAL',
+  alternateName: 'NOOR MAHAL,KARNAL',
   url: 'https://www.noormahalpalace.com/',
   logo: 'https://www.noormahalpalace.com/',
   contactPoint: {
