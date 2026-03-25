@@ -89,7 +89,7 @@ function page({ eventData, seoData }) {
         <title>
           {seoData && seoData.metaTitle
             ? seoData.metaTitle
-            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
+            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel Noor Mahal'}
         </title>
         <meta name='robots' content='index, follow' />
         <meta
@@ -97,7 +97,7 @@ function page({ eventData, seoData }) {
           content={
             seoData && seoData.keyWords
               ? seoData.keyWords
-              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
           }
         />
         <meta
@@ -105,7 +105,7 @@ function page({ eventData, seoData }) {
           content={
             seoData && seoData.metaDescription
               ? seoData.metaDescription
-              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel Noor Mahal offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
           }
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -145,28 +145,28 @@ function page({ eventData, seoData }) {
         </div>
         <div className='' style={{ visibility: 'hidden', lineHeight: '.2' }}>
           <p className='' style={{ fontSize: '2px', lineHeight: '.2' }}>
-            Noormahal Palace is one of the best hotels for destination wedding
+            Noor Mahal is one of the best hotels for destination wedding
             near Delhi, offering a regal experience for couples seeking a royal
             touch to their big day. Nestled in Karnal, this magnificent property
             stands out as the best destination wedding hotel near Delhi,
             combining luxury and grandeur. With a sprawling property, stunning
-            architecture, and top-notch services, Noormahal Palace ensures a
+            architecture, and top-notch services, Noor Mahal ensures a
             memorable celebration, making it one of the best hotels for wedding
             near Delhi.
           </p>
           <p className='' style={{ fontSize: '2px', lineHeight: '.2' }}>
             For those looking for destination wedding hotels near Delhi,
-            Noormahal Palace offers the perfect blend of tradition and
+            Noor Mahal offers the perfect blend of tradition and
             modernity. The palace's intricate design and lush surroundings make
             it the best destination wedding hotel in Karnal, ensuring that every
             moment of your special day is filled with elegance. The dedicated
-            staff at Noormahal Palace strives to provide unmatched services,
+            staff at Noor Mahal strives to provide unmatched services,
             making it one of the most sought-after destination wedding hotels
             near Delhi.
           </p>
           <p className='' style={{ fontSize: '2px', lineHeight: '.2' }}>
             With state-of-the-art amenities and customized wedding packages,
-            Noormahal Palace remains the best hotels for destination wedding
+            Noor Mahal remains the best hotels for destination wedding
             near Delhi. Whether you are planning a grand celebration or an
             intimate gathering, this royal venue will bring your dream wedding
             to life. Whether you are planning a grand celebration or an intimate
@@ -177,7 +177,7 @@ function page({ eventData, seoData }) {
           </p>
           <p className='' style={{ fontSize: '2px', lineHeight: '.2' }}>
             For those searching for the best destination wedding hotel near
-            Delhi, Noormahal Palace is the perfect choice, ensuring that your
+            Delhi, Noor Mahal is the perfect choice, ensuring that your
             wedding is nothing short of extraordinary.
           </p>
         </div>
@@ -191,7 +191,7 @@ function page({ eventData, seoData }) {
             OUR SPECIAL PACKAGES FOR YOUR SPECIAL EVENT
           </h4>
           <p>
-            Celebrate your special moments in style at Noormahal Palace. Our
+            Celebrate your special moments in style at Noor Mahal. Our
             exclusive event packages offer luxurious accommodations,
             personalized service, elegant venues, and exquisite dining options.
             From weddings to anniversaries, corporate gatherings to social

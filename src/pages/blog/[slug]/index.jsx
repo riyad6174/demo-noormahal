@@ -156,15 +156,15 @@ function Index({ data, slug }) {
   //   // Prepare safe values with fallbacks
   //   const title =
   //     data?.title ||
-  //     'Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace';
+  //     'Weekend Getaways near Delhi NCR & Chandigarh - Hotel Noor Mahal';
 
   //   const description =
   //     data?.subTitle?.replace(/<[^>]+>/g, '') ||
-  //     'An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.';
+  //     'An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel Noor Mahal offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.';
 
   //   const keywords =
   //     data?.keyWords ||
-  //     'Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal';
+  //     'Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal';
 
   //   const ogImage = data?.image?.path
   //     ? `${siteUrl}/files/${data.image.path}`
@@ -217,7 +217,7 @@ function Index({ data, slug }) {
               url: ogImage,
               width: 1200,
               height: 630,
-              alt: data?.title || 'NoorMahal Palace',
+              alt: data?.title || 'Noor Mahal',
             },
           ],
         }}

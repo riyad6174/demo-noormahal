@@ -8,7 +8,7 @@ export default function page() {
   return (
     <div>
       <Head>
-        <title>Sitemap | Noormahal Palace</title>
+        <title>Sitemap | Noor Mahal</title>
         <meta
           name='keywords'
           content='wedding venues in chandigarh,
@@ -19,7 +19,7 @@ export default function page() {
 
         <meta
           name='description'
-          content='Navigate through the Noormahal Palace website using our sitemap. Find links to all important pages, helping you discover the richness of our offerings.'
+          content='Navigate through the Noor Mahal website using our sitemap. Find links to all important pages, helping you discover the richness of our offerings.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />

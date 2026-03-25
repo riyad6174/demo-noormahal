@@ -184,15 +184,15 @@ export default function Page() {
   return (
     <div>
       <Head>
-        <title>Special Promotions | Noormahal Palace</title>
+        <title>Special Promotions | Noor Mahal</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
         />
         <meta name='robots' content='index, follow' />
         <meta
           name='description'
-          content='Explore our special promotions and offers at Noormahal Palace. Enhance your stay with exclusive packages designed to make your experience even more memorable.'
+          content='Explore our special promotions and offers at Noor Mahal. Enhance your stay with exclusive packages designed to make your experience even more memorable.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -208,7 +208,7 @@ export default function Page() {
             <p className='pt-2 pb-1'>
               For our guests to make the most of our warm hospitality, we have
               curated various lucrative offers and packages. Being one of the
-              best hotels in KARNAL, Noormahal Palace brings an array of 'out of
+              best hotels in KARNAL, Noor Mahal brings an array of 'out of
               the ordinary' choices for you. Experience your money's worth with
               the most attractive offers in town.
             </p>

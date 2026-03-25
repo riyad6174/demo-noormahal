@@ -83,15 +83,15 @@ function page() {
   return (
     <div>
       <Head>
-        <title>Exquisite Dining | Noormahal Palace</title>
+        <title>Exquisite Dining | Noor Mahal</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
         />
         <meta name='robots' content='index, follow' />
         <meta
           name='description'
-          content="Indulge in a culinary journey of flavors at Noormahal Palace's dining venues.From traditional delights to international cuisines, elevate your dining experience with us."
+          content="Indulge in a culinary journey of flavors at Noor Mahal's dining venues.From traditional delights to international cuisines, elevate your dining experience with us."
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -113,11 +113,11 @@ function page() {
               />
             </div>
             <p className='pt-2 pb-1'>
-              Noormahal Palace welcomes its guests to a pleasant dining
+              Noor Mahal welcomes its guests to a pleasant dining
               experience with exquisitely hand crafted delicacies. Indulge in
               the art of fine dining from the royal kitchens of India and savour
               global cuisines. Each restaurant has an interesting tale to tell
-              on account of its origin or inspiration. Noormahal Palace offers a
+              on account of its origin or inspiration. Noor Mahal offers a
               range of settings and cuisines. These are royal dining experiences
               to remember.
             </p>
@@ -178,9 +178,9 @@ function page() {
                     Jal Mahal
                   </h3>
                   <p>
-                    Jal Mahal adoring the Beauty of Noormahal Palace, bringing
+                    Jal Mahal adoring the Beauty of Noor Mahal, bringing
                     you the perfect reflections. Enjoy a perfect getaway with
-                    your family and friends at Noormahal Palace and take
+                    your family and friends at Noor Mahal and take
                     beautiful memories away.
                   </p>
 

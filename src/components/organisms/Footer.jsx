@@ -48,8 +48,10 @@ function Footer({ data }) {
             <div className='address_area'>
               <div className='address_item'>
                 <h3>Address :</h3>
-                <a href='#' target='_blank' className='location'>
-                  {data.address}
+                <a href='/' className='location'>
+                  {/* {data.address} */}
+                  Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk,
+                  Sector-32, Delhi (NCR) INDIA
                 </a>
               </div>
               <div className='address_item'>
@@ -82,8 +84,8 @@ function Footer({ data }) {
                 <li className=''>
                   <Link href='/'>
                     <img
-                      src='/assets/images/logos/nmlogo.png'
-                      alt='noormahal-logo'
+                      src='/assets/logo-updated.png'
+                      alt='logo'
                     />
                   </Link>
                 </li>
@@ -125,7 +127,7 @@ function Footer({ data }) {
           </div>
         </div>
         <div className='copyright_area '>
-          <p>Copyright@{currentYear} Noormahal Palace. All Right Reserved.</p>
+          <p>Copyright@{currentYear} Noor Mahal. All Right Reserved.</p>
         </div>
       </footer>
     </div>

@@ -61,15 +61,15 @@ function page({ dinningData }) {
       <main>
         <Head>
           <title>
-            Hotel with Restaurants in Karnal – Hotel NoorMahal Palace
+            Hotel with Restaurants in Karnal – Hotel Noor Mahal
           </title>
           <meta
             name='keywords'
-            content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+            content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
           />
           <meta
             name='description'
-            content='⦁	A hotel with restaurants in Karnal, NoorMahal Palace has a 24 hour coffee shop, multi-cuisine and open air restaurant, Cake Factory and a Royal Sports Bar. Book your table now!'
+            content='⦁	A hotel with restaurants in Karnal, Noor Mahal has a 24 hour coffee shop, multi-cuisine and open air restaurant, Cake Factory and a Royal Sports Bar. Book your table now!'
           />
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <link rel='icon' href='/favicon.ico' />
@@ -90,11 +90,11 @@ function page({ dinningData }) {
               />
             </div>
             <p className='pt-2 pb-1'>
-              Noormahal Palace welcomes its guests to a pleasant dining
+              Noor Mahal welcomes its guests to a pleasant dining
               experience with exquisitely hand crafted delicacies. Indulge in
               the art of fine dining from the royal kitchens of India and savour
               global cuisines. Each restaurant has an interesting tale to tell
-              on account of its origin or inspiration. Noormahal Palace offers a
+              on account of its origin or inspiration. Noor Mahal offers a
               range of settings and cuisines. These are royal dining experiences
               to remember.
             </p>

@@ -86,7 +86,7 @@ function Navbar() {
                   <li className='main_menu_list d-flex align-items-center justify-content-center flex-wrap'>
                     <div className='logo'>
                       <Link href='/'>
-                        <img src='/assets/images/logos/nmlogo.png' alt='logo' />
+                        <img src='/assets/logo-updated.png' alt='logo' />
                       </Link>
                     </div>
                   </li>
@@ -145,7 +145,7 @@ function Navbar() {
               <div className='mobile_logo'>
                 <div className='logo'>
                   <Link href='/'>
-                    <img src='/assets/images/logos/nmlogo.png' alt='logo' />
+                    <img src='/assets/logo-updated.png' alt='logo' />
                   </Link>
                 </div>
               </div>
@@ -184,7 +184,7 @@ function Navbar() {
                 {/* header_button_area */}
                 <div className='logo'>
                   <Link href='/'>
-                    <img src='/assets/images/logos/nmlogo.png' alt='logo' />
+                    <img src='/assets/logo-updated.png' alt='logo' />
                   </Link>
                 </div>
               </div>
@@ -226,7 +226,9 @@ function Navbar() {
                       href='/dining'
                       onClick={() => setNavToggled(!navToggled)}
                       className={`${
-                        router.pathname === '/dining' ? 'mobile_active_menu' : ''
+                        router.pathname === '/dining'
+                          ? 'mobile_active_menu'
+                          : ''
                       }`}
                     >
                       dining
@@ -312,7 +314,7 @@ function Navbar() {
               </div>
               <div className='py-5 d-flex align-items-center justify-content-center '>
                 {/* header_btn */}
-                <a href="https://bookings.simplotel.com/?propertyId=6217">
+                <a href='https://bookings.simplotel.com/?propertyId=6217'>
                   <button className='border border-dark '>BOOK NOW</button>
                 </a>
               </div>

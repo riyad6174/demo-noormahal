@@ -114,14 +114,14 @@ function StorySection({
                   </span>
 
                   <span className='story_title mt-2'>
-                    <span>Noormahal Palace, &nbsp; </span>
+                    <span>Noor Mahal, &nbsp; </span>
                     <span> karnal</span>
                   </span>
                 </h2>
 
                 <p>
                   {' '}
-                  Embracing India’s rich heritage, Noormahal Palace endorses the
+                  Embracing India’s rich heritage, Noor Mahal endorses the
                   opulent royalty of the era of Indian maharajas, flaunting an
                   enchanting fusion of elements inspired from traditional Mughal
                   and Rajputana schools of architecture. A unique mélange of
@@ -129,7 +129,7 @@ function StorySection({
                   Palace Hotel in Karnal exudes warmth and comfort for all its
                   guests by preserving the legacy of India’s deep-rooted past
                   heritage. Stunningly set in vast expanse of natural splendour,
-                  Noormahal Palace is truly a one of its kind Palace in the
+                  Noor Mahal is truly a one of its kind Palace in the
                   region; an epitome of grandiose.
                 </p>
               </div>
@@ -216,7 +216,7 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
                   This Long Weekend
                 </p>
               </div>
@@ -344,7 +344,7 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
                   This Long Weekend
                 </p>
               </div>
@@ -472,7 +472,7 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
                   This Long Weekend
                 </p>
               </div>
