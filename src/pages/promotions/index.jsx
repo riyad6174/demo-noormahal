@@ -7,6 +7,10 @@ import { useForm } from 'react-hook-form';
 
 const promotions = [
   {
+    image: 'assets/images/promotion/thrill2026.jpeg',
+    knowMoreLink: null,
+  },
+  {
     image: 'assets/images/promotion/navratri2026.jpeg',
     knowMoreLink: null,
   },
@@ -208,9 +212,9 @@ export default function Page() {
             <p className='pt-2 pb-1'>
               For our guests to make the most of our warm hospitality, we have
               curated various lucrative offers and packages. Being one of the
-              best hotels in KARNAL, Noor Mahal brings an array of 'out of
-              the ordinary' choices for you. Experience your money's worth with
-              the most attractive offers in town.
+              best hotels in KARNAL, Noor Mahal brings an array of 'out of the
+              ordinary' choices for you. Experience your money's worth with the
+              most attractive offers in town.
             </p>
             <div className='row'>
               {promotions.map((promotion, index) => (
