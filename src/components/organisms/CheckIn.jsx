@@ -42,11 +42,7 @@ function CheckIn() {
     }
 
     router.push(
-      `https://bookings.simplotel.com/?propertyId=6217&Ln=en&checkIn=${
-        moment(startDate).format().split('T')[0]
-      }&checkOut=${
-        moment(endDate).format().split('T')[0]
-      }&adults=${selectedAdults}&rooms=${selectedRooms}`
+      `https://www.marriott.com/en-us/hotels/ixcnm-noormahal-delhi-ncr-karnal-autograph-collection/overview/`,
     );
   };
 

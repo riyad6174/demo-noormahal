@@ -128,7 +128,7 @@ function Navbar() {
                     </li>
                     <li className='relative'>
                       <a
-                        href='https://bookings.simplotel.com/?propertyId=6217'
+                        href='https://www.marriott.com/en-us/hotels/ixcnm-noormahal-delhi-ncr-karnal-autograph-collection/overview/'
                         target='_blank'
                       >
                         <button href='' className='btn btn-three'>
@@ -314,7 +314,7 @@ function Navbar() {
               </div>
               <div className='py-5 d-flex align-items-center justify-content-center '>
                 {/* header_btn */}
-                <a href='https://bookings.simplotel.com/?propertyId=6217'>
+                <a href='https://www.marriott.com/en-us/hotels/ixcnm-noormahal-delhi-ncr-karnal-autograph-collection/overview/'>
                   <button className='border border-dark '>BOOK NOW</button>
                 </a>
               </div>
