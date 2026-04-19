@@ -10,8 +10,8 @@ import moment from 'moment/moment';
 function CheckIn() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(addDays(new Date(), 1)); // Default to next day
-  const [selectedRooms, setSelectedRooms] = useState('');
-  const [selectedAdults, setSelectedAdults] = useState('');
+  const [selectedRooms, setSelectedRooms] = useState(1);
+  const [selectedAdults, setSelectedAdults] = useState(2);
   const [endDateMinDate, setEndDateMinDate] = useState(new Date());
 
   const router = useRouter();
