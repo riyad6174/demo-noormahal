@@ -22,8 +22,8 @@ function Rooms({ roomData }) {
 
                     <div className='text-center'>
                       <a
-                        // href='https://bookings.simplotel.com/?propertyId=6217'
-                        href={room.btnLink}
+                        href='https://www.marriott.com/en-us/hotels/ixcnm-noormahal-delhi-ncr-karnal-autograph-collection/overview/'
+                        // href={room.btnLink}
                         className='book_now_btn'
                       >
                         <span>{room.btnName}</span>
