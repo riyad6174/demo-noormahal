@@ -83,10 +83,7 @@ function Footer({ data }) {
                 </li>
                 <li className=''>
                   <Link href='/'>
-                    <img
-                      src='/assets/logo-updated.png'
-                      alt='logo'
-                    />
+                    <img src='/assets/new-logo.png' alt='logo' />
                   </Link>
                 </li>
 
