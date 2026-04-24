@@ -45,6 +45,10 @@ export default function Document() {
           `,
           }}
         />
+        <script
+          async
+          src="https://api-revlytics.onvirtualworld.com.bd/tracker.js?id=aiw_O0VSPfBDqJn69ApF"
+        />
       </Head>
       <body>
         <Main />
