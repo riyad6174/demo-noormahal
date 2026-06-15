@@ -6,6 +6,18 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const promotions = [
+  {
+    image: 'assets/images/promotion/wedding-package-1.jpeg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/wedding-package-2.jpeg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/wedding-package-3.jpeg',
+    knowMoreLink: null,
+  },
   // {
   //   image: 'assets/images/promotion/thrill2026.jpeg',
   //   knowMoreLink: null,
