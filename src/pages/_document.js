@@ -54,10 +54,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           `,
           }}
         />
-        <script
-          async
-          src="https://api-revlytics.onvirtualworld.com.bd/tracker.js?id=aiw_O0VSPfBDqJn69ApF"
-        />
+ 
       </Head>
       <body>
         <noscript>
