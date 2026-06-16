@@ -261,6 +261,16 @@ function Index({ data, slug }) {
               >
                 {}
               </div>
+              {slug === 'three-curated-ways-to-experience-noor-mahal' && (
+                <div className='d-flex justify-content-center py-4'>
+                  <Link
+                    className='book_table_btn btn-block'
+                    href='/promotions'
+                  >
+                    <span>Book Now</span>
+                  </Link>
+                </div>
+              )}
             </div>
             {slug ===
               'celebrate-new-year-2025-in-randeur-with-noormahal-palaces-exclusive-packages' && (
