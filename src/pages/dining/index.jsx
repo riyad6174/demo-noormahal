@@ -65,7 +65,7 @@ function page() {
 
       if (backendResponse.ok) {
         console.log(
-          'Form data submitted successfully to both spreadsheet and backend!'
+          'Form data submitted successfully to both spreadsheet and backend!',
         );
         setIsSubmitted(true);
       } else {
@@ -113,13 +113,13 @@ function page() {
               />
             </div>
             <p className='pt-2 pb-1'>
-              Noor Mahal welcomes its guests to a pleasant dining
-              experience with exquisitely hand crafted delicacies. Indulge in
-              the art of fine dining from the royal kitchens of India and savour
-              global cuisines. Each restaurant has an interesting tale to tell
-              on account of its origin or inspiration. Noor Mahal offers a
-              range of settings and cuisines. These are royal dining experiences
-              to remember.
+              Noor Mahal welcomes its guests to a pleasant dining experience
+              with exquisitely hand crafted delicacies. Indulge in the art of
+              fine dining from the royal kitchens of India and savour global
+              cuisines. Each restaurant has an interesting tale to tell on
+              account of its origin or inspiration. Noor Mahal offers a range of
+              settings and cuisines. These are royal dining experiences to
+              remember.
             </p>
           </div>
 
@@ -178,10 +178,10 @@ function page() {
                     Jal Mahal
                   </h3>
                   <p>
-                    Jal Mahal adoring the Beauty of Noor Mahal, bringing
-                    you the perfect reflections. Enjoy a perfect getaway with
-                    your family and friends at Noor Mahal and take
-                    beautiful memories away.
+                    Jal Mahal adoring the Beauty of Noor Mahal, bringing you the
+                    perfect reflections. Enjoy a perfect getaway with your
+                    family and friends at Noor Mahal and take beautiful memories
+                    away.
                   </p>
 
                   <div className='text-center'>
@@ -223,23 +223,27 @@ function page() {
                       <li style={{ fontSize: '19px', listStyleType: 'disc' }}>
                         Lunch Timing
                       </li>
-                      <p style={{ marginLeft: '25px', paddingTop: '10px' }}>
-                        Monday to Sunday
+                      <p style={{ marginLeft: '0px', paddingTop: '10px' }}>
+                        Only on Saturday and Sunday
                       </p>
-                      <p style={{ marginLeft: '25px' }}>
-                        12:30 hrs - 15:30 hrs
-                      </p>
+                      <p style={{ marginLeft: '0px' }}>12:30 Hrs - 15:30 Hrs</p>
                     </div>
                     <div className='d-flex flex-column justify-content-start align-items-start'>
-                      <li style={{ fontSize: '19px', listStyleType: 'disc' }}>
+                      <li
+                        style={{
+                          marginLeft: '20px',
+                          fontSize: '19px',
+                          listStyleType: 'disc',
+                        }}
+                      >
                         Dinner Timing
                       </li>
-                      <p style={{ marginLeft: '25px', paddingTop: '10px' }}>
+                      <p style={{ marginLeft: '20px', paddingTop: '10px' }}>
                         {' '}
-                        Only on Saturday and Sunday{' '}
+                        Monday to Sunday
                       </p>
-                      <p style={{ marginLeft: '25px' }}>
-                        19:30 hrs - 23:00 hrs
+                      <p style={{ marginLeft: '20px' }}>
+                        19:00 Hrs - 23:00 Hrs
                       </p>
                     </div>
                   </div>
