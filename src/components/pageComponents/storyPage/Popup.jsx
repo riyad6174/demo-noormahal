@@ -4,7 +4,7 @@ import { MdClose } from 'react-icons/md';
 import Image from 'next/image';
 
 // Single image (Dec 31, 2025, till 23:59:59)
-import currentImage from '../../../../public/assets/images/promotion/navratri2026.jpeg';
+import currentImage from '../../../../public/assets/images/promotion/wedding-package-1.jpeg';
 
 function Popup({ showPopUp, setShowPopUp }) {
   const handleClose = (e) => {

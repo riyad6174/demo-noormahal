@@ -43,11 +43,16 @@ function StorySection({
   // }, []);
 
   // ===================================
+  // useEffect(() => {
+  //   const endTime = new Date('2026-03-28T00:00:00');
+  //   if (new Date() < endTime) {
+  //     setShowPopUp(true);
+  //   }
+  // }, []);
+
+  // ===================================
   useEffect(() => {
-    const endTime = new Date('2026-03-28T00:00:00');
-    if (new Date() < endTime) {
-      setShowPopUp(true);
-    }
+    setShowPopUp(true);
   }, []);
 
   //=================================
@@ -129,8 +134,8 @@ function StorySection({
                   Palace Hotel in Karnal exudes warmth and comfort for all its
                   guests by preserving the legacy of India’s deep-rooted past
                   heritage. Stunningly set in vast expanse of natural splendour,
-                  Noor Mahal is truly a one of its kind Palace in the
-                  region; an epitome of grandiose.
+                  Noor Mahal is truly a one of its kind Palace in the region; an
+                  epitome of grandiose.
                 </p>
               </div>
               <div className='story_image_area item_grid'>
@@ -216,8 +221,8 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
-                  This Long Weekend
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This
+                  Long Weekend
                 </p>
               </div>
             </Link>
@@ -344,8 +349,8 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
-                  This Long Weekend
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This
+                  Long Weekend
                 </p>
               </div>
             </Link>
@@ -472,8 +477,8 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
-                  This Long Weekend
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This
+                  Long Weekend
                 </p>
               </div>
             </Link>
