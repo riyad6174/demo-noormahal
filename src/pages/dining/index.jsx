@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import image1 from '../../../public/assets/images/dinings/frontier_mail_1.jpg';
 import image4 from '../../../public/assets/images/dinings/polobar1.jpg';
-import image2 from '../../../public/assets/images/dinings/dining_img2.png';
+import image2 from '../../../public/assets/images/dinings/colonelsaab.jpeg';
 import image5 from '../../../public/assets/images/dinings/Khaas_Mahal.jpg';
 import image6 from '../../../public/assets/images/dinings/cakefactory.jpg';
 import Head from 'next/head';
@@ -271,15 +271,14 @@ function page() {
               <div className='content' data-aos='fade-left'>
                 <div className='inner_content_area mx-auto'>
                   <h3 className='heading_title text-center text-uppercase'>
-                    The Brown Sugar
+                    Colonel Saab
                   </h3>
                   <p>
-                    A place where you can enjoy an international dining
-                    experience that is quite unforgettable, this all day diner
-                    offers buffet meals as well as an à la carte menu. Relax,
-                    entertain or conduct leisurely meetings over a wide range of
-                    exotic teas, coffees and savories. It also features
-                    delectable buffet meals.
+                    Sample an array of delicious cuisines from across the globe
+                    at our contemporary all-day dining destination. Indulge in a
+                    generous buffet feast or choose from our menu of à la carte
+                    signatures, complemented by an exotic selection of tea and
+                    coffee.
                   </p>
 
                   <div className='time_grid'>
