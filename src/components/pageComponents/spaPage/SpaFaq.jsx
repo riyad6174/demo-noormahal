@@ -32,7 +32,7 @@ function SpaFaq() {
           <div className='spa_faq_grid'>
             <div className='spa_faq_img_area text-center'>
               <img
-                src={`https://api.noormahalpalace.com/${data.image?.path}`}
+                src={`https://noormahalpalace.com/files/${data.image?.path}`}
                 alt='spa faq image'
                 className='faqq_image'
               />

@@ -29,7 +29,7 @@ function SpaGallery() {
               return (
                 <div key={index} className='gallery_item'>
                   <img
-                    src={`https://api.noormahalpalace.com/${item.path}`}
+                    src={`https://noormahalpalace.com/files/${item.path}`}
                     alt='spa gallery image'
                   />
                 </div>

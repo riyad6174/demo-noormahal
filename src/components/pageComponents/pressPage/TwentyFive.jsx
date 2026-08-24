@@ -29,7 +29,7 @@ function TwentyFive() {
               <div key={index} className='media_tab_item'>
                 <div className='img' style={{ overflow: 'hidden' }}>
                   <img
-                    src={`https://api.noormahalpalace.com/${e?.image?.path}`}
+                    src={`https://noormahalpalace.com/files/${e?.image?.path}`}
                     alt='media image'
                   />
                 </div>

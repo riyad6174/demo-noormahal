@@ -78,7 +78,7 @@ function MeetingSlider() {
                         </div>
                         <div className='img mx-auto'>
                           <img
-                            src={`https://api.noormahalpalace.com/${review.image?.path}`}
+                            src={`https://noormahalpalace.com/files/${review.image?.path}`}
                             alt='slider image'
                           />
                         </div>

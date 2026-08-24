@@ -52,7 +52,7 @@ function SpaWellness() {
               <div className='relax_grid'>
                 <div className='img'>
                   <img
-                    src={`https://api.noormahalpalace.com/${data.image?.path}`}
+                    src={`https://noormahalpalace.com/files/${data.image?.path}`}
                     alt='spa slider image'
                   />
                 </div>

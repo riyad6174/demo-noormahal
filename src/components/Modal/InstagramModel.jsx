@@ -105,7 +105,7 @@ const InstagramModel = (props) => {
                   />
                   <div>
                     <a href='#' target='_blank' className='name'>
-                      Noormahal Palace Karnal
+                      Noor Mahal Karnal
                     </a>
                     <a href='#' target='_blank' className='link'>
                       {' '}
