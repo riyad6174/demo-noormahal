@@ -1,12 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from 'next/font/google';
 import Navbar from '@/components/organisms/Navbar';
 import StorySection from '@/components/StorySection';
 import SwiperBanner from '@/components/organisms/Slider';
 import { getAmenities, getExperience, getNews, getSeo } from '@/utils/API';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home({
   newsData,

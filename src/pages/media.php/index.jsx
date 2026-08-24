@@ -1,14 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import Navbar from '@/components/organisms/Navbar'
 import StorySection from '@/components/StorySection'
 import SwiperBanner from '@/components/organisms/Slider'
 import { useEffect, useState } from 'react'
 import  Router  from 'next/router'
-
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [loaded,setLoaded] = useState(false)
