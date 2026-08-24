@@ -119,25 +119,32 @@ function StorySection({
                   </span>
 
                   <span className='story_title mt-2'>
-                    <span>Noor Mahal, &nbsp; </span>
+                    <span>Noor Mahal&nbsp; </span>
                     <span> karnal</span>
                   </span>
                 </h2>
 
                 <p>
-                  {' '}
                   Story Of Noor Mahal, Autograph Collection, Marriott
                   International Hotel Embracing India’s rich heritage, Noor
                   Mahal endorses the opulent royalty of the era of Indian
                   maharajas, flaunting an enchanting fusion of elements inspired
                   from traditional Mughal and Rajputana schools of architecture.
                   A unique mélange of traditional royal essence with modern
-                  amenities, Noormahal Palace Hotel in Karnal exudes warmth and
-                  comfort for all its guests by preserving the legacy of India’s
-                  deep-rooted past heritage. Stunningly set in vast expanse of
-                  natural splendour, Noor Mahal is truly a one of its kind
-                  Palace in the region; an epitome of grandiose.
+                  amenities, Noor Mahal, Autograph Collection, Marriott
+                  International Hotel in Karnal exudes warmth and comfort for
+                  all its guests by preserving the legacy of India’s deep-rooted
+                  past heritage. Stunningly set in vast expanse of natural
+                  splendour, Noor Mahal, Autograph Collection, Marriott
+                  International Hotel is truly a one of its kind Palace in the
+                  region; an epitome of grandiose.
                 </p>
+                <img
+                  src='assets/marriott-bonvoy-seeklogo.png'
+                  alt='Marriott Bonvoy'
+                  style={{ width: '200px', height: 'auto', marginTop: '20px' }}
+                  data-aos='fade-up'
+                />
               </div>
               <div className='story_image_area item_grid'>
                 <img

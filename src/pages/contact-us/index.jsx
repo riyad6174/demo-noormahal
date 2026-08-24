@@ -237,8 +237,8 @@ function index() {
                   </ul>
                   <p>
                     Visitors can also avail state roadways and air conditioned
-                    private buses and ordinary bus services from Noormahal
-                    Palace.
+                    private buses and ordinary bus services from Noor Mahal,
+                    Autograph Collection, Marriott International Hotel.
                   </p>
                 </div>
               </div>

@@ -40,8 +40,8 @@ function SpaWellness() {
           face therapy where ingredients are chosen as per various skin zones .
         </p>
         <p>
-          Welcome to Wellness and healing. Welcome to The Spa at Noormahal
-          Palace
+          Welcome to Wellness and healing. Welcome to The Spa at Noor Mahal,
+          Autograph Collection, Marriott International Hotel
         </p>
       </div>
       <div className='relax_slider_area mx-auto position-relative'>

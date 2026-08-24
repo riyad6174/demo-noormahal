@@ -66,16 +66,16 @@ function StayBanner() {
         className='position-absolute top-0'
         style={{ color: 'transparent', visibility: 'hidden' }}
       >
-        <h1>Noormahal Place is luxury stay near Delhi</h1>
+        <h1>Noor Mahal, Autograph Collection, Marriott International Hotel is luxury stay near Delhi</h1>
         <p>
           If you’re searching for a luxury stay near Delhi, look no further than
-          Noormahal Place. This stunning hotel provides the ultimate luxury stay
+          Noor Mahal, Autograph Collection, Marriott International Hotel. This stunning hotel provides the ultimate luxury stay
           near Delhi, combining modern comfort with traditional elegance. As you
-          step into Noormahal Place, you will find that it truly embodies the
+          step into Noor Mahal, Autograph Collection, Marriott International Hotel, you will find that it truly embodies the
           essence of a luxury stay near Delhi.
         </p>
         <p>
-          At Noormahal Place, every moment is crafted to ensure a perfect
+          At Noor Mahal, Autograph Collection, Marriott International Hotel, every moment is crafted to ensure a perfect
           getaway. The spacious rooms offer a rich experience of opulence,
           making it the ideal destination for anyone seeking a luxury stay near
           Delhi. Guests can indulge in a variety of upscale amenities, including
@@ -83,16 +83,16 @@ function StayBanner() {
           Delhi is nothing short of exceptional.
         </p>
         <p>
-          Located conveniently close to major attractions, Noormahal Place is
+          Located conveniently close to major attractions, Noor Mahal, Autograph Collection, Marriott International Hotel is
           perfect for travelers wanting both relaxation and adventure. Whether
           you're here for business or leisure, a luxury stay near Delhi at
-          Noormahal Place guarantees that you'll enjoy a sophisticated ambiance.
+          Noor Mahal, Autograph Collection, Marriott International Hotel guarantees that you'll enjoy a sophisticated ambiance.
         </p>
         <p>
-          For those who wish to elevate their travel experience, Noormahal Place
+          For those who wish to elevate their travel experience, Noor Mahal, Autograph Collection, Marriott International Hotel
           is the epitome of a luxury stay near Delhi. Don't miss your chance to
           experience unparalleled hospitality and comfort—book your luxury stay
-          near Delhi at Noormahal Place today!
+          near Delhi at Noor Mahal, Autograph Collection, Marriott International Hotel today!
         </p>
       </div>
     </div>

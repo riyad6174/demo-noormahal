@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import slider1 from '../../../public/assets/images/home/banner1.jpg';
+import slider2 from '../../../public/assets/images/hero/banner22.jpeg';
 
 // import slider2 from '../../../public/assets/images/home/banner2.jpg';
 // import video1 from '../../public/assets/videos/featues_video.mp4';
@@ -62,16 +63,28 @@ function SwiperBanner() {
           className='mySwipe  swiper-slide '
         >
           {!showSlider ? (
-            <SwiperSlide className='swiper-slide pb-1'>
-              <Image
-                width={1500}
-                height={1500}
-                className='hero_item '
-                src={slider1}
-                alt='slider image'
-                priority
-              />
-            </SwiperSlide>
+            <>
+              <SwiperSlide className='swiper-slide pb-1'>
+                <Image
+                  width={1500}
+                  height={1500}
+                  className='hero_item '
+                  src={slider1}
+                  alt='slider image'
+                  priority
+                />
+              </SwiperSlide>
+              <SwiperSlide className='swiper-slide pb-1'>
+                <Image
+                  width={1500}
+                  height={1500}
+                  className='hero_item '
+                  src={slider2}
+                  alt='slider image'
+                  priority
+                />
+              </SwiperSlide>
+            </>
           ) : (
             ''
           )}
@@ -110,38 +123,43 @@ function SwiperBanner() {
         <h1>Best 5-star hotel near Delhi</h1>
         <p>
           If you’re searching for the best 5-star hotel near Delhi, look no
-          further than Noormahal Place. This luxurious hotel is renowned as the
-          best 5-star hotel near Delhi, combining elegance and comfort to make
-          it the perfect choice for both leisure and business travelers.
-          Situated just a short drive from Delhi, Noormahal Place stands out as
-          the best 5-star hotel near Delhi, offering stunning architecture,
-          exquisite interiors, and world-class amenities, ensuring a memorable
-          stay.
+          further than Noor Mahal, Autograph Collection, Marriott International
+          Hotel. This luxurious hotel is renowned as the best 5-star hotel near
+          Delhi, combining elegance and comfort to make it the perfect choice
+          for both leisure and business travelers. Situated just a short drive
+          from Delhi, Noor Mahal, Autograph Collection, Marriott International
+          Hotel stands out as the best 5-star hotel near Delhi, offering
+          stunning architecture, exquisite interiors, and world-class amenities,
+          ensuring a memorable stay.
         </p>
         <p>
-          As the best 5-star hotel near Delhi, Noormahal Place boasts
-          beautifully designed rooms and suites that cater to the needs of every
-          guest. Each room is equipped with modern facilities, plush bedding,
-          and stunning views, creating an oasis of relaxation. Guests can
-          indulge in gourmet dining at the hotel’s fine restaurants, showcasing
-          the best of local and international flavors, further solidifying its
-          reputation as the best 5-star hotel near Delhi.
+          As the best 5-star hotel near Delhi, Noor Mahal, Autograph Collection,
+          Marriott International Hotel boasts beautifully designed rooms and
+          suites that cater to the needs of every guest. Each room is equipped
+          with modern facilities, plush bedding, and stunning views, creating an
+          oasis of relaxation. Guests can indulge in gourmet dining at the
+          hotel’s fine restaurants, showcasing the best of local and
+          international flavors, further solidifying its reputation as the best
+          5-star hotel near Delhi.
         </p>
         <p>
-          For those looking to unwind, Noormahal Place offers a range of
-          recreational facilities, including a luxurious spa, a well-equipped
-          fitness center, and inviting swimming pools. Additionally, the hotel
-          provides exceptional service, with attentive staff ready to cater to
-          your every need.
+          For those looking to unwind, Noor Mahal, Autograph Collection,
+          Marriott International Hotel offers a range of recreational
+          facilities, including a luxurious spa, a well-equipped fitness center,
+          and inviting swimming pools. Additionally, the hotel provides
+          exceptional service, with attentive staff ready to cater to your every
+          need.
         </p>
         <p>
           When it comes to hosting events or conferences, the best 5-star hotel
-          near Delhi, Noormahal Place, provides sophisticated meeting spaces
-          equipped with the latest technology. With its prime location,
-          luxurious accommodations, and outstanding service, Noormahal Place is
-          truly the best 5-star hotel near Delhi. Experience the ultimate in
-          luxury and hospitality at Noormahal Place, where every stay is a
-          remarkable experience.
+          near Delhi, Noor Mahal, Autograph Collection, Marriott International
+          Hotel, provides sophisticated meeting spaces equipped with the latest
+          technology. With its prime location, luxurious accommodations, and
+          outstanding service, Noor Mahal, Autograph Collection, Marriott
+          International Hotel is truly the best 5-star hotel near Delhi.
+          Experience the ultimate in luxury and hospitality at Noor Mahal,
+          Autograph Collection, Marriott International Hotel, where every stay
+          is a remarkable experience.
         </p>
       </div>
     </div>
