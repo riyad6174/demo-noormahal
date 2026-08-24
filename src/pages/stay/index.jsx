@@ -15,7 +15,7 @@ function page({ roomData, seoData }) {
         <title>
           {seoData && seoData.metaTitle
             ? seoData.metaTitle
-            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
+            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel Noor Mahal'}
         </title>
         <meta name='robots' content='index, follow' />
 
@@ -24,7 +24,7 @@ function page({ roomData, seoData }) {
           content={
             seoData && seoData.keyWords
               ? seoData.keyWords
-              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
           }
         />
         <meta
@@ -32,7 +32,7 @@ function page({ roomData, seoData }) {
           content={
             seoData && seoData.metaDescription
               ? seoData.metaDescription
-              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel Noor Mahal offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
           }
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -51,18 +51,12 @@ function page({ roomData, seoData }) {
               LUXURIOUS STAY
             </h2>
             <p className='pt-2 pb-1'>
-              At Noormahal Palace, Karnal, we have an inventory of 125 elegant
-              rooms and suites ( w.e.f. 13 January 2026 : 175 rooms ), furnished with premium furniture and upholstery.
-              Despite being styled after traditional Indian architecture, no
-              modern comforts have been compromised with. Immerse yourself in
-              the splendour of the Indian Royalty at Noormahal Palace, ‘The
-              Jewel of Karnal’.
-            </p>
-            <p>
-              {' '}
-              Note: Dear Guest, our rooftop is undergoing soft refurbishment to
-              enhance your future experience; we apologize for any inconvenience
-              and appreciate your patience.
+              At Noor Mahal, Autograph Collection by Marriott International, we
+              have an inventory of 176 elegant rooms and suites, furnished with
+              premium furniture and upholstery. Despite being styled after
+              traditional Indian architecture, no modern comforts have been
+              compromised with. Immerse yourself in the splendour of the Indian
+              Royalty at Noor Mahal, ‘The Jewel of Karnal’
             </p>
 
             <div className='shape2'>

@@ -28,9 +28,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal</title>
-        <meta name="keywords" content="Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal" />
-        <meta name="description" content="One of the best 5 star luxury business hotels in Karnal, Panipat, Kurukshetra Haryana, NoorMahal Palace is located near IOCL, bus stand and railway station. Book online and get best deals." />
+        <title>Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal</title>
+        <meta name="keywords" content="Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal" />
+        <meta name="description" content="One of the best 5 star luxury business hotels in Karnal, Panipat, Kurukshetra Haryana, Noor Mahal is located near IOCL, bus stand and railway station. Book online and get best deals." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         

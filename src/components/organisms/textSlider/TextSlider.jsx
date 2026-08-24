@@ -87,7 +87,7 @@ function NewsSlider() {
                   />
                 </div>
                 <p className='news-text pt-2 d-inline-block'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
                   This Long Weekend
                 </p>
               </div>
@@ -125,7 +125,7 @@ function NewsSlider() {
                   />
                 </div>
                 <p className='news-text pt-2 d-inline-block'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
                   This Long Weekend
                 </p>
               </div>
@@ -163,7 +163,7 @@ function NewsSlider() {
                   />
                 </div>
                 <p className='news-text pt-2 d-inline-block'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
                   This Long Weekend
                 </p>
               </div>
@@ -200,7 +200,7 @@ function NewsSlider() {
                   />
                 </div>
                 <p className='news-text pt-2 d-inline-block'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay,
                   This Long Weekend
                 </p>
               </div>
@@ -214,7 +214,7 @@ function NewsSlider() {
                     <img src='/assets/images/news/press2.webp' alt='ad-news' />
                   </div>
                   <p className='news-text'>
-                    Noormahal Palace In Karnal Invites You To Enjoy A Regal
+                    Noor Mahal In Karnal Invites You To Enjoy A Regal
                     Stay, This Long Weekend
                   </p>
                 </div>
@@ -239,7 +239,7 @@ function NewsSlider() {
                     />
                   </div>
                   <p className='news-text pt-2 d-inline-block'>
-                    Noormahal Palace In Karnal Invites You To Enjoy A Regal
+                    Noor Mahal In Karnal Invites You To Enjoy A Regal
                     Stay, This Long Weekend
                   </p>
                 </div>

@@ -57,7 +57,7 @@ function Weeding({ weddingData }) {
                       height={1500}
                       style={{ objectFit: 'cover' }}
                       className='hero_item '
-                      src={`https://api.noormahalpalace.com/${img.image?.path}`}
+                      src={`https://noormahalpalace.com/files/${img.image?.path}`}
                       alt='slider image'
                       loading='lazy'
                     />

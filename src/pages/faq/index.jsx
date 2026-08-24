@@ -28,7 +28,7 @@ function index() {
   return (
     <div>
       <Head>
-        <title>Frequently Asked Questions | Noormahal Palace</title>
+        <title>Frequently Asked Questions | Noor Mahal</title>
         <meta
           name='keywords'
           content='wedding venues in chandigarh,
@@ -39,7 +39,7 @@ function index() {
 
         <meta
           name='description'
-          content='Find answers to commonly asked questions about Noormahal Palace, including accommodations, amenities, dining, events, and more.'
+          content='Find answers to commonly asked questions about Noor Mahal, including accommodations, amenities, dining, events, and more.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -82,7 +82,7 @@ function index() {
               </div>
               <div className=''>
                 <Image
-                  src={`https://api.noormahalpalace.com/${faqData.image?.path}`}
+                  src={`https://noormahalpalace.com/files/${faqData.image?.path}`}
                   width={1400}
                   height={500}
                   className='faq_img'

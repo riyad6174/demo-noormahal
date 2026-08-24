@@ -69,7 +69,7 @@
 //                 >
 //                   <div className='pic'>
 //                     <img
-//                       src={`https://api.noormahalpalace.com/${testimonial?.image?.path}`}
+//                       src={`https://noormahalpalace.com/files/${testimonial?.image?.path}`}
 //                     />
 //                   </div>
 //                   {HtmlParser(testimonial.message)}
@@ -326,7 +326,7 @@ function TestimonialSlider() {
                 <img src="/assets/images/guest/guest_img12.png" />
               </div>
               <p className="description">
-                Noormahal Palace is a jewel in the crown of Haryana.
+                Noor Mahal is a jewel in the crown of Haryana.
               </p>
               <div className="testimonial-profile">
                 <h3 className="title">JAGJIT SINGH</h3>
