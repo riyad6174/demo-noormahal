@@ -10,8 +10,8 @@ import moment from 'moment/moment';
 function CheckIn() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(addDays(new Date(), 1)); // Default to next day
-  const [selectedRooms, setSelectedRooms] = useState('');
-  const [selectedAdults, setSelectedAdults] = useState('');
+  const [selectedRooms, setSelectedRooms] = useState(1);
+  const [selectedAdults, setSelectedAdults] = useState(2);
   const [endDateMinDate, setEndDateMinDate] = useState(new Date());
 
   const router = useRouter();
@@ -42,11 +42,7 @@ function CheckIn() {
     }
 
     router.push(
-      `https://bookings.simplotel.com/?propertyId=6217&Ln=en&checkIn=${
-        moment(startDate).format().split('T')[0]
-      }&checkOut=${
-        moment(endDate).format().split('T')[0]
-      }&adults=${selectedAdults}&rooms=${selectedRooms}`
+      `https://www.marriott.com/en-us/hotels/ixcnm-noormahal-delhi-ncr-karnal-autograph-collection/overview/`,
     );
   };
 
@@ -59,9 +55,9 @@ function CheckIn() {
       >
         <div className='form_item'>
           <h4>CHECK IN</h4>
-          <BsCalendarDate className='text-white' />
+          <BsCalendarDate className='text-white me-2' />
           <ReactDatePicker
-            showIcon
+            // showIcon
             selected={startDate}
             minDate={new Date()}
             onChange={handleStartDateChange}
@@ -71,9 +67,9 @@ function CheckIn() {
         </div>
         <div className='form_item'>
           <h4>CHECK OUT</h4>
-          <BsCalendarDate className='text-white' />
+          <BsCalendarDate className='text-white me-2' />
           <ReactDatePicker
-            showIcon
+            // showIcon
             selected={endDate}
             minDate={endDateMinDate}
             onChange={(date) => setEndDate(date)}

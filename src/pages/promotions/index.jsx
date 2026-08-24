@@ -6,26 +6,102 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const promotions = [
+  {
+    image: 'assets/images/promotion/package1.png',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/package2.png',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/moon.jpeg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/wedding-package-1.jpeg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/wedding-package-2.jpeg',
+    knowMoreLink: null,
+  },
+  {
+    image: 'assets/images/promotion/wedding-package-3.jpeg',
+    knowMoreLink: null,
+  },
   // {
-  //   image: 'assets/images/promotion/raksha-bandhan.jpg',
+  //   image: 'assets/images/promotion/thrill2026.jpeg',
   //   knowMoreLink: null,
   // },
-  {
-    image: 'assets/images/promotion/monsoon-gateway.jpg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/monsoon-magesty.jpg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/escape.jpg',
-    knowMoreLink: null,
-  },
-  {
-    image: 'assets/images/promotion/royal-splendour.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/navratri2026.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/thrill.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/holi.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/womens.jpeg',
+  //   knowMoreLink: null,
+  // },
+
+  // {
+  //   image: 'assets/images/promotion/brs.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/cake.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/frm.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/polo.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/buffet.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/eclair.jpg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/festive.jpeg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/carnival.jpg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/new-year.jpg',
+  //   knowMoreLink: null,
+  // },
+  // {
+  //   image: 'assets/images/promotion/sunday.jpg',
+  //   knowMoreLink: null,
+  // },
+
+  // {
+  //   image: 'assets/images/promotion/lohri.jpg',
+  //   knowMoreLink: null,
+  // },
+
+  // {
+  //   image: 'assets/images/popup/wpl.jpeg',
+  //   knowMoreLink: null,
+  // },
+
   {
     image: 'assets/images/promotion/chefstable.jpg',
     knowMoreLink: null,
@@ -34,10 +110,10 @@ const promotions = [
     image: 'assets/images/promotion/royal-hospitality.jpg',
     knowMoreLink: null,
   },
-  {
-    image: 'assets/images/promotion/summer.jpg',
-    knowMoreLink: null,
-  },
+  // {
+  //   image: 'assets/images/promotion/summer.jpg',
+  //   knowMoreLink: null,
+  // },
   {
     image: 'assets/images/promotion/dinnerbuffet.jpg',
     knowMoreLink: null,
@@ -75,6 +151,14 @@ export default function Page() {
   } = useForm();
 
   const onSubmit = async (data) => {
+    let ipAddress = '';
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      ipAddress = ipData.ip;
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
     try {
       setIsLoading(true);
 
@@ -83,46 +167,19 @@ export default function Page() {
       const formattedDate = format(currentDate, 'yyyy-MM-dd');
       const formattedTime = format(currentDate, 'HH:mm');
 
-      // Prepare spreadsheet payload
-      const spreadsheetPayload = {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        message: data.message,
-        date: formattedDate,
-        time: formattedTime,
-        title: 'Query Form - Promotions',
-        type: 'promotions',
-        sheetName: 'promotions',
-      };
-
       // Prepare backend payload (without date and time)
       const backendPayload = {
         name: data.name,
         email: data.email,
         phone: data.phone,
         date: formattedDate,
+        time: formattedTime,
+        ipaddress: ipAddress,
 
         message: data.message,
         title: 'Query Form - Promotions',
-        type: 'enquire',
+        type: 'promotions',
       };
-
-      // First API call: Submit to spreadsheet
-      const spreadsheetResponse = await fetch('/api/submitPromotion', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(spreadsheetPayload),
-      });
-
-      if (!spreadsheetResponse.ok) {
-        console.error(
-          'Failed to submit to spreadsheet:',
-          await spreadsheetResponse.text()
-        );
-      }
 
       // Second API call: Submit to backend database
       const backendResponse = await fetch(`${baseURL}/contact/`, {
@@ -135,9 +192,9 @@ export default function Page() {
 
       setIsLoading(false);
 
-      if (spreadsheetResponse.ok && backendResponse.ok) {
+      if (backendResponse.ok) {
         console.log(
-          'Form data submitted successfully to both spreadsheet and backend!'
+          'Form data submitted successfully to both spreadsheet and backend!',
         );
         setIsSubmitted(true);
       } else {
@@ -155,15 +212,15 @@ export default function Page() {
   return (
     <div>
       <Head>
-        <title>Special Promotions | Noormahal Palace</title>
+        <title>Special Promotions | Noor Mahal</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
         />
         <meta name='robots' content='index, follow' />
         <meta
           name='description'
-          content='Explore our special promotions and offers at Noormahal Palace. Enhance your stay with exclusive packages designed to make your experience even more memorable.'
+          content='Explore our special promotions and offers at Noor Mahal. Enhance your stay with exclusive packages designed to make your experience even more memorable.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -179,9 +236,9 @@ export default function Page() {
             <p className='pt-2 pb-1'>
               For our guests to make the most of our warm hospitality, we have
               curated various lucrative offers and packages. Being one of the
-              best hotels in KARNAL, Noormahal Palace brings an array of 'out of
-              the ordinary' choices for you. Experience your money's worth with
-              the most attractive offers in town.
+              best hotels in KARNAL, Noor Mahal brings an array of 'out of the
+              ordinary' choices for you. Experience your money's worth with the
+              most attractive offers in town.
             </p>
             <div className='row'>
               {promotions.map((promotion, index) => (
@@ -325,8 +382,8 @@ export default function Page() {
                               {isLoading
                                 ? 'SUBMITTING..'
                                 : isSubmitted
-                                ? 'SUBMITTED'
-                                : 'SUBMIT'}
+                                  ? 'SUBMITTED'
+                                  : 'SUBMIT'}
                             </button>
                           </div>
                         </div>

@@ -8,16 +8,16 @@ function index() {
   return (
     <div>
       <Head>
-        <title>Gallery | Noormahal Palace</title>
+        <title>Gallery | Noor Mahal</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
         />
         <meta name='robots' content='index, follow' />
 
         <meta
           name='description'
-          content=' Explore the visual grandeur of Noormahal Palace through our gallery. View images showcasing the elegant architecture, luxurious interiors, and memorable experiences.'
+          content=' Explore the visual grandeur of Noor Mahal through our gallery. View images showcasing the elegant architecture, luxurious interiors, and memorable experiences.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />

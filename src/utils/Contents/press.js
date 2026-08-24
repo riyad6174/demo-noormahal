@@ -15,10 +15,10 @@ const PressContentsTwentyTwo = [
     link: '#',
 
     header:
-      'NOORMAHAL PALACE HOTEL WINS THE BEST 5- STAR LUXURY PALACE HOTEL AWARD.',
+      'NOOR MAHAL HOTEL WINS THE BEST 5- STAR LUXURY PALACE HOTEL AWARD.',
 
     shortDescription:
-      'Noormahal Palace Hotel was awarded Best 5-star Luxury Palace Hotel at the Iconic Platinum Awards',
+      'Noor Mahal Hotel was awarded Best 5-star Luxury Palace Hotel at the Iconic Platinum Awards',
 
     image: '/assets/images/press/2.jpg',
   },
@@ -30,7 +30,7 @@ const PressContentsTwentyTwo = [
       'LAVISH & QUIRKY HOTELS TO BOOK FOR YOUR DIWALI VACATION JUST 7 HOURS AWAY FROM DELHI!',
 
     shortDescription:
-      'Noormahal Palace is betting big on the upcoming festive and wedding season with new additions, ultra-luxe packages',
+      'Noor Mahal is betting big on the upcoming festive and wedding season with new additions, ultra-luxe packages',
 
     image: '/assets/images/press/4.jpg',
   },
@@ -70,10 +70,10 @@ const PressContentsTwentyThree = [
     link: 'https://peaklife.in/binny-choudhary-of-noormahal-palace-hotel-shares-insights-on-promoting-indias-heritage-globally/?fbclid=PAAabIx32dA9dt6wI5GXN207XbQ_oCbu4UTRWRtFakF90uFVgP3juCv5mOIVs',
 
     header:
-      'Binny Choudhary of Noormahal Palace Hotel Shares Insights on Promoting India’s Heritage Globally',
+      'Binny Choudhary of Noor Mahal Hotel Shares Insights on Promoting India’s Heritage Globally',
 
     shortDescription:
-      'Her profound passion for artworks, antiques, and architecture breathed life into the iconic Noormahal Palace Hotel',
+      'Her profound passion for artworks, antiques, and architecture breathed life into the iconic Noor Mahal Hotel',
     image: '/assets/images/press/press64.png',
   },
 
@@ -93,7 +93,7 @@ const PressContentsTwentyThree = [
     header: 'Embark on a Culinary Odyssey',
 
     shortDescription:
-      'Nestled within the lavish embrace of Noormahal Palace, Frontier Mail Restaurant extends a cordial invitation to  embark on an epicurean journey befitting royalty.',
+      'Nestled within the lavish embrace of Noor Mahal, Frontier Mail Restaurant extends a cordial invitation to  embark on an epicurean journey befitting royalty.',
     image: '/assets/images/press/press61.png',
   },
   {
@@ -110,10 +110,10 @@ const PressContentsTwentyThree = [
     link: 'https://sugermint.com/roop-partap-choudhary',
 
     header:
-      'Interview with Roop Partap Choudhary, Executive Director of Noormahal Palace and Founder of Colonel Saab, London',
+      'Interview with Roop Partap Choudhary, Executive Director of Noor Mahal and Founder of Colonel Saab, London',
 
     shortDescription:
-      'An exclusive interview with Roop Partap Choudhary, Executive Director of Noormahal Palace and Founder of Colonel Saab, London .....',
+      'An exclusive interview with Roop Partap Choudhary, Executive Director of Noor Mahal and Founder of Colonel Saab, London .....',
 
     image: '/assets/images/press/sugermint.png',
   },
@@ -233,7 +233,7 @@ const PressContentsTwentyThree = [
     header: 'A Ride Back In Time',
 
     shortDescription:
-      'Held at the iconic Noormahal Palace, an incredible vintage car rally marked a true ode to the golden era of....',
+      'Held at the iconic Noor Mahal, an incredible vintage car rally marked a true ode to the golden era of....',
 
     image: '/assets/images/press/press37.png',
   },
@@ -265,7 +265,7 @@ const PressContentsTwentyThree = [
       'From heritage to fine dining: Hotelier Roop Partap Choudhary’s inspiring entrepreneurial saga',
 
     shortDescription:
-      'When his parents began their journey of conceptualising and building the Noormahal Palace, they spent...',
+      'When his parents began their journey of conceptualising and building the Noor Mahal, they spent...',
 
     image: '/assets/images/press/press34.png',
   },
@@ -302,10 +302,10 @@ const PressContentsTwentyThree = [
   {
     link: 'https://peaklife.in/binny-choudhary-of-noormahal-palace-hotel-shares-insights-on-promoting-indias-heritage-globally/',
 
-    header: 'Binny Choudhary of Noormahal Palace Shares...',
+    header: 'Binny Choudhary of Noor Mahal Shares...',
 
     shortDescription:
-      'Her profound passion for artworks, antiques, and architecture breathed life into the iconic Noormahal Palace Hotel ...',
+      'Her profound passion for artworks, antiques, and architecture breathed life into the iconic Noor Mahal Hotel ...',
 
     image: '/assets/images/press/press30.png',
   },
@@ -325,7 +325,7 @@ const PressContentsTwentyThree = [
     header: 'Trending Staycation Resorts Near Delhi NCR',
 
     shortDescription:
-      'Experience the magnificence of Noormahal Palace Hotel in Karnal, where...',
+      'Experience the magnificence of Noor Mahal Hotel in Karnal, where...',
 
     image: '/assets/images/press/press28.png',
   },
@@ -356,7 +356,7 @@ const PressContentsTwentyThree = [
       'Vintage Car Rally Shines at India’s Heritage Palace Hotel Noormahal',
 
     shortDescription:
-      'In a spectacular showcase of opulence and heritage, Noormahal Palace, a lan ...',
+      'In a spectacular showcase of opulence and heritage, Noor Mahal, a lan ...',
 
     image: '/assets/images/press/press26.png',
   },
@@ -367,7 +367,7 @@ const PressContentsTwentyThree = [
       '21 Long Weekend Retreats: Unveiling Luxurious Getaways in Stunning Locations',
 
     shortDescription:
-      'India’s Iconic Heritage Hospitality Landmark, Noormahal Palace in Karnal is ...',
+      'India’s Iconic Heritage Hospitality Landmark, Noor Mahal in Karnal is ...',
 
     image: '/assets/images/press/press27.png',
   },
@@ -375,7 +375,7 @@ const PressContentsTwentyThree = [
     link: 'https://www.travelandleisureasia.com/in/news/vintage-car-rally-held-by-heritage-motoring-club-of-india-and-noormahal-palace/amp/',
 
     header:
-      'Vintage Car Rally Dazzles At The Iconic Noormahal Palace In Karnal',
+      'Vintage Car Rally Dazzles At The Iconic Noor Mahal In Karnal',
 
     shortDescription:
       'In a unique initiative to preserve Indian heritage and its glory, Noormahal...',
@@ -398,7 +398,7 @@ const PressContentsTwentyThree = [
     header: 'Vintage Car Rally emits a lustre of Royalty',
 
     shortDescription:
-      'In a spectacular showcase of opulence and heritage, Noormahal Palace, a landmark...',
+      'In a spectacular showcase of opulence and heritage, Noor Mahal, a landmark...',
 
     image: '/assets/images/press/press20.jpg',
   },
@@ -409,7 +409,7 @@ const PressContentsTwentyThree = [
       'Vintage Car Rally Shines at India’s Heritage Palace Hotel Noormahal',
 
     shortDescription:
-      ' In a spectacular showcase of opulence and heritage, Noormahal Palace, a land...',
+      ' In a spectacular showcase of opulence and heritage, Noor Mahal, a land...',
 
     image: '/assets/images/press/press19.png',
   },
@@ -439,7 +439,7 @@ const PressContentsTwentyThree = [
     link: '/assets/images/press/Web.pdf',
 
     header:
-      'Indulge in the Serene Splendour and Unforgettable Luxury of Noormahal Palace this Monsoon Season',
+      'Indulge in the Serene Splendour and Unforgettable Luxury of Noor Mahal this Monsoon Season',
 
     shortDescription:
       'Escape the chaos of city life and indulge in a monsoon getaway at Noormahal ...',
@@ -485,7 +485,7 @@ const PressContentsTwentyThree = [
     link: 'https://curlytales.com/noormahal-palace-in-karnal-invites-you-to-enjoy-a-regal-stay-this-long-weekend/',
 
     header:
-      'Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay, This Long Weekend',
+      'Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This Long Weekend',
 
     shortDescription:
       ' I am sure you must have checked the list of long weekends and tried planning small getaways with your family or friends. As it’s summer, people are opting for staycations more than going to faraway destinations. How about spending the upcoming long weekend in the most royal manner by staying in a palace?..',
@@ -521,7 +521,7 @@ const PressContentsTwentyThree = [
     header: "Father's Day Gift Ideas For The Dad Who Loves Luxury ",
 
     shortDescription:
-      'Book a weekend of bliss for your main man at the Noormahal Palace, Karnal. An uber-luxury experiential space that recreates the Indian Princely era in full splendor, is just a two-hour drive from Delhi. Be it the architecture, t interiors, the choice of art, or the antiques that fill the space...',
+      'Book a weekend of bliss for your main man at the Noor Mahal, Karnal. An uber-luxury experiential space that recreates the Indian Princely era in full splendor, is just a two-hour drive from Delhi. Be it the architecture, t interiors, the choice of art, or the antiques that fill the space...',
 
     image: '/assets/images/press/press10.png',
   },
@@ -565,17 +565,17 @@ const PressContentsTwentyThree = [
     link: 'https://contentmediasolution.com/business/this-long-weekend-noormahal-palace-invites-travellers-to-stay-explore-indias-heritage-luxury/amp/ ',
 
     header:
-      'This Long weekend Noormahal Palace invites travellers to stay & explore India’s Heritage Luxury',
+      'This Long weekend Noor Mahal invites travellers to stay & explore India’s Heritage Luxury',
 
     shortDescription:
-      'Long Weekend trips and short-haul destinations are trending on Indian Travel map. As short-haul destinations turn hot this summer, luxury hotels and travel companies are witnessing a hike in long weekend staycation bookings. Enticing the heritage and opulence loving traveller generations, India’s Iconic Heritage Hospitality Landmark, Noormahal Palace is inviting people to indulge in a royal long weekend affaire. ',
+      'Long Weekend trips and short-haul destinations are trending on Indian Travel map. As short-haul destinations turn hot this summer, luxury hotels and travel companies are witnessing a hike in long weekend staycation bookings. Enticing the heritage and opulence loving traveller generations, India’s Iconic Heritage Hospitality Landmark, Noor Mahal is inviting people to indulge in a royal long weekend affaire. ',
 
     image: '/assets/images/press/press14.png',
   },
   {
     link: 'https://hospibuz.com/indulge-in-the-serene-splendor-and-unforgettable-luxury-of-noormahal-palace-this-monsoon-season-with-exclusive-staycation-package/',
     header:
-      ' Indulge in the Serene Splendor and Unforgettable Luxury of Noormahal Palace',
+      ' Indulge in the Serene Splendor and Unforgettable Luxury of Noor Mahal',
     shortDescription:
       '  New Delhi, India, 21st July 2023: Escape the chaos of city life and indulge...',
     image: '/assets/images/press/press4.png',
@@ -591,7 +591,7 @@ const PressContentsTwentyThree = [
 
   {
     link: 'https://www.travelturtle.world/news/noor-mahal-bets-big-on-festive-travel-and-wedding-season/',
-    header: 'NOORMAHAL PALACE BETS BIG ON FESTIVE TRAVEL AND WEDDING SEASON',
+    header: 'NOOR MAHAL BETS BIG ON FESTIVE TRAVEL AND WEDDING SEASON',
     shortDescription:
       'With the festive season and long weekends ahead, Indian hospitality sector is betting big on recovery.',
     image: '/assets/images/press/turtle.jpg',
@@ -607,7 +607,7 @@ const PressContentsTwentyThree = [
 
   {
     link: 'https://www.travelwithanunay.com/2019/07/31/noor-mahal-odyssey/',
-    header: 'NOORMAHAL PALACE – AN ODYSSEY',
+    header: 'NOOR MAHAL – AN ODYSSEY',
     shortDescription:
       'Authenticity is one characteristic we look for and admire in the place we visit. Hotels, cities, countries, the truer to their culture they are, the more enhanced is the experience. Don’t you think so?...',
     image: '/assets/images/press/travel.jpg',
@@ -619,7 +619,7 @@ const PressContentsTwentyFour = [
     link: 'https://hospitality-horizon.com/slider-details/Fairytale-nuptials54955',
 
     header:
-      'Billed as one of India’s leading hotels for weddings, Noormahal Palace in Karnal is the dream destination for majestic marriage celebrations',
+      'Billed as one of India’s leading hotels for weddings, Noor Mahal in Karnal is the dream destination for majestic marriage celebrations',
 
     shortDescription:
       'Noormahal, an award-winning property, stands as one of India’s most iconic hotels. Located approximately two hours from Delhi, along the Chandigarh highway,.... ',
@@ -638,10 +638,10 @@ const PressContentsTwentyFour = [
     link: 'https://hospibuz.com/discover-tranquility-at-noormahal-palace-introducing-our-classic-spa-summer-retreat-package/',
 
     header:
-      'Discover Tranquility at Noormahal Palace: Introducing Our Classic Spa Summer Retreat Package',
+      'Discover Tranquility at Noor Mahal: Introducing Our Classic Spa Summer Retreat Package',
 
     shortDescription:
-      'As we navigate through life’s demands and challenges, finding moments to unwind and rejuvenate becomes increasingly essential. At Noormahal Palace Hotel in Karnal.... ',
+      'As we navigate through life’s demands and challenges, finding moments to unwind and rejuvenate becomes increasingly essential. At Noor Mahal Hotel in Karnal.... ',
     image: '/assets/images/press/press73.png',
   },
   {
@@ -688,10 +688,10 @@ const PressContentsTwentyFour = [
     link: 'https://globalspaonline.com/wellness/spa/a-regal-odyssey-of-serenity-and-self-discovery-at-the-spa-noormahal-palace-karnal/',
 
     header:
-      'A Regal Odyssey of Serenity and Self-Discovery at The Spa, Noormahal Palace, Karnal ..',
+      'A Regal Odyssey of Serenity and Self-Discovery at The Spa, Noor Mahal, Karnal ..',
 
     shortDescription:
-      'There are luxury properties, and then there is the Noormahal Palace Hotel. Ensconced in the rustic hinterlands of Karnal, it has earned a reputation.... ',
+      'There are luxury properties, and then there is the Noor Mahal Hotel. Ensconced in the rustic hinterlands of Karnal, it has earned a reputation.... ',
     image: '/assets/images/press/press68.png',
   },
 ];

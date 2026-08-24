@@ -53,7 +53,7 @@ function PromotionBanner() {
                   height={2000}
                   property={true}
                   className='hero_item '
-                  src={`https://api.noormahalpalace.com/${banner.image.path}`}
+                  src={`https://noormahalpalace.com/files/${banner.image.path}`}
                   alt='slider image'
                 />
               </SwiperSlide>

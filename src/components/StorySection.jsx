@@ -43,6 +43,14 @@ function StorySection({
   // }, []);
 
   // ===================================
+  // useEffect(() => {
+  //   const endTime = new Date('2026-03-28T00:00:00');
+  //   if (new Date() < endTime) {
+  //     setShowPopUp(true);
+  //   }
+  // }, []);
+
+  // ===================================
   useEffect(() => {
     setShowPopUp(false);
   }, []);
@@ -77,8 +85,8 @@ function StorySection({
   //   const checkPopupTime = () => {
   //     const currentDate = new Date();
   //     // Set start and end times for the popup display window
-  //     const startTime = new Date('2025-01-26T00:00:00'); // Start showing on 30th October
-  //     const endTime = new Date('2025-01-27T06:00:00'); // Hide at 3 AM on 2nd November
+  //     const startTime = new Date('2025-09-01T00:00:00'); // Start showing on 30th October
+  //     const endTime = new Date('2025-09-05T06:00:00'); // Hide at 3 AM on 2nd November
 
   //     if (currentDate >= startTime && currentDate < endTime) {
   //       setShowPopUp(true); // Show popup
@@ -111,24 +119,32 @@ function StorySection({
                   </span>
 
                   <span className='story_title mt-2'>
-                    <span>Noormahal Palace, &nbsp; </span>
+                    <span>Noor Mahal&nbsp; </span>
                     <span> karnal</span>
                   </span>
                 </h2>
 
                 <p>
-                  {' '}
-                  Embracing India’s rich heritage, Noormahal Palace endorses the
-                  opulent royalty of the era of Indian maharajas, flaunting an
-                  enchanting fusion of elements inspired from traditional Mughal
-                  and Rajputana schools of architecture. A unique mélange of
-                  traditional royal essence with modern amenities, Noormahal
-                  Palace Hotel in Karnal exudes warmth and comfort for all its
-                  guests by preserving the legacy of India’s deep-rooted past
-                  heritage. Stunningly set in vast expanse of natural splendour,
-                  Noormahal Palace is truly a one of its kind Palace in the
-                  region; an epitome of grandiose.
+                  Story Of Noor Mahal, Autograph Collection, Marriott
+                  International Hotel Embracing India’s rich heritage, Noor
+                  Mahal endorses the opulent royalty of the era of Indian
+                  maharajas, flaunting an enchanting fusion of elements inspired
+                  from traditional Mughal and Rajputana schools of architecture.
+                  A unique mélange of traditional royal essence with modern
+                  amenities, Noor Mahal, Autograph Collection, Marriott
+                  International Hotel in Karnal exudes warmth and comfort for
+                  all its guests by preserving the legacy of India’s deep-rooted
+                  past heritage. Stunningly set in vast expanse of natural
+                  splendour, Noor Mahal, Autograph Collection, Marriott
+                  International Hotel is truly a one of its kind Palace in the
+                  region; an epitome of grandiose.
                 </p>
+                <img
+                  src='assets/marriott-bonvoy-seeklogo.png'
+                  alt='Marriott Bonvoy'
+                  style={{ width: '200px', height: 'auto', marginTop: '20px' }}
+                  data-aos='fade-up'
+                />
               </div>
               <div className='story_image_area item_grid'>
                 <img
@@ -159,8 +175,8 @@ function StorySection({
           <InstagramEmbed />
         </section> */}
         {/* <NewsSection newsData={newsData} /> */}
-        <marquee loop={30} scrollamount='10'>
-          <div className='marquee pt-5'>
+        <div className='marquee-wrapper pt-5'>
+          <div className='marquee-content'>
             <Link
               href='https://www.gqindia.com/content/looking-for-a-secluded-valentines-day-getaway-these-places-near-mumbai-and-delhi-would-be-perfect'
               style={{
@@ -213,8 +229,8 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
-                  This Long Weekend
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This
+                  Long Weekend
                 </p>
               </div>
             </Link>
@@ -341,8 +357,8 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
-                  This Long Weekend
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This
+                  Long Weekend
                 </p>
               </div>
             </Link>
@@ -469,8 +485,8 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
-                  This Long Weekend
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This
+                  Long Weekend
                 </p>
               </div>
             </Link>
@@ -575,7 +591,7 @@ function StorySection({
               </div>
             </Link>
           </div>
-        </marquee>
+        </div>
       </main>
       {/* <Popup showPopUp={showPopUp} setShowPopUp={setShowPopUp} /> */}
       <Popup
