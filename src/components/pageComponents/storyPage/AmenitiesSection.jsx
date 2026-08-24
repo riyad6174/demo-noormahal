@@ -16,7 +16,8 @@ function AmenitiesSection({ amenitiesData }) {
             />
           </div>
           <p>
-            Noor Mahal offers a wide variety of recreational facilities
+            Noor Mahal, Autograph Collection, Marriott International Hotel
+            offers a wide variety of recreational facilities
             for guests to unwind – either by themselves or in the company of
             their loved ones. These include a spa & wellness center, and an
             outdoor pool with a bar next to it. There are also a few indoor and

@@ -6,7 +6,7 @@ import Script from 'next/script';
 const structuredSchema = {
   '@context': 'https://schema.org',
   '@type': 'Corporation',
-  name: 'Noor Mahal Palace',
+  name: 'Noor Mahal, Autograph Collection, Marriott International Hotel',
   alternateName: 'NOOR MAHAL,KARNAL',
   url: 'https://www.noormahalpalace.com/',
   logo: 'https://www.noormahalpalace.com/',
