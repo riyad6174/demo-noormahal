@@ -18,6 +18,14 @@ function page({ meetingData, seoData }) {
   } = useForm();
 
   const onSubmit = async (data) => {
+    let ipAddress = '';
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      ipAddress = ipData.ip;
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
     try {
       setIsLoading(true);
 
@@ -26,45 +34,19 @@ function page({ meetingData, seoData }) {
       const formattedDate = format(currentDate, 'yyyy-MM-dd');
       const formattedTime = format(currentDate, 'HH:mm');
 
-      // Prepare spreadsheet payload
-      const spreadsheetPayload = {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        message: data.message,
-        date: formattedDate,
-        time: formattedTime,
-        title: 'Query Form - Meeting',
-        type: 'meeting',
-        sheetName: 'meetingAndConference',
-      };
-
       // Prepare backend payload (without date and time)
       const backendPayload = {
         name: data.name,
         email: data.email,
         phone: data.phone,
+        ipaddress: ipAddress,
+
         date: formattedDate, // Use formatted date for backend
+        time: formattedTime,
         message: data.message,
         title: 'Query Form - Meeting',
-        type: 'enquire',
+        type: 'meetingAndConference',
       };
-
-      // First API call: Submit to spreadsheet
-      const spreadsheetResponse = await fetch('/api/submitMeeting', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(spreadsheetPayload),
-      });
-
-      if (!spreadsheetResponse.ok) {
-        console.error(
-          'Failed to submit to spreadsheet:',
-          await spreadsheetResponse.text()
-        );
-      }
 
       // Second API call: Submit to backend database
       const backendResponse = await fetch(`${baseURL}/contact/`, {
@@ -77,9 +59,9 @@ function page({ meetingData, seoData }) {
 
       setIsLoading(false);
 
-      if (spreadsheetResponse.ok && backendResponse.ok) {
+      if (backendResponse.ok) {
         console.log(
-          'Form data submitted successfully to both spreadsheet and backend!'
+          'Form data submitted successfully to both spreadsheet and backend!',
         );
         setIsSubmitted(true);
       } else {
@@ -100,7 +82,7 @@ function page({ meetingData, seoData }) {
         <title>
           {seoData && seoData.metaTitle
             ? seoData.metaTitle
-            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
+            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel Noor Mahal'}
         </title>
         <meta name='robots' content='index, follow' />
         <meta
@@ -108,7 +90,7 @@ function page({ meetingData, seoData }) {
           content={
             seoData && seoData.keyWords
               ? seoData.keyWords
-              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
           }
         />
         <meta
@@ -116,7 +98,7 @@ function page({ meetingData, seoData }) {
           content={
             seoData && seoData.metaDescription
               ? seoData.metaDescription
-              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel Noor Mahal offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
           }
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -133,11 +115,16 @@ function page({ meetingData, seoData }) {
               <span className='black-color-0c'> FOR FLAWLESS PLANNING</span>
             </h1>
             <p className='pt-2 pb-1'>
-              Noormahal Palace offers a wide variety of recreational facilities
+              Noor Mahal offers a wide variety of recreational facilities
               for guests to unwind – either by themselves or in the company of
               their loved ones. These include a spa & wellness center, and an
               outdoor pool with a bar next to it. There are also a few indoor
               and outdoor games for our little guests to have a good time.
+            </p>
+            <p className='pt-2 pb-1'>
+              With an expansive event area of approximately 300,000 sq. ft., our
+              venue stands among the largest and most prestigious spaces for
+              grand celebrations.
             </p>
             <div className='shape2'>
               <img

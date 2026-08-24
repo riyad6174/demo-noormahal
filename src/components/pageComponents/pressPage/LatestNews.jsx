@@ -6,7 +6,7 @@ function LatestNews() {
   const [pressData, setPressData] = useState([]);
 
   const fetchPressData = useCallback(async () => {
-    const response = await getPressByYear(2025);
+    const response = await getPressByYear(2026);
     if (response && response.status) {
       if (response.data && Object.keys(response.data.data).length > 0) {
         setPressData(response.data.data.reverse());
@@ -26,7 +26,7 @@ function LatestNews() {
               <div key={index} className='media_top_item'>
                 <div className='img'>
                   <img
-                    src={`https://api.noormahalpalace.com/${e?.image?.path}`}
+                    src={`https://noormahalpalace.com/files/${e?.image?.path}`}
                     alt='media image'
                   />
                 </div>

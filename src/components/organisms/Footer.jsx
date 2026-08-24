@@ -4,6 +4,7 @@ import { BiLogoTripAdvisor } from 'react-icons/bi';
 
 function Footer({ data }) {
   console.log(data.address, data.email, data.phone, data.social, data);
+  const currentYear = new Date().getFullYear();
   return (
     <div>
       <footer className='footer_wrapper'>
@@ -47,8 +48,10 @@ function Footer({ data }) {
             <div className='address_area'>
               <div className='address_item'>
                 <h3>Address :</h3>
-                <a href='#' target='_blank' className='location'>
-                  {data.address}
+                <a href='/' className='location'>
+                  {/* {data.address} */}
+                  Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk,
+                  Sector-32, Delhi (NCR) INDIA
                 </a>
               </div>
               <div className='address_item'>
@@ -80,10 +83,7 @@ function Footer({ data }) {
                 </li>
                 <li className=''>
                   <Link href='/'>
-                    <img
-                      src='/assets/images/logos/nmlogo.png'
-                      alt='noormahal-logo'
-                    />
+                    <img src='/assets/new-logo.png' alt='logo' />
                   </Link>
                 </li>
 
@@ -112,7 +112,7 @@ function Footer({ data }) {
                     <li key={i}>
                       <a href={s.btnLink} target='_blank'>
                         <img
-                          src={`https://api.noormahalpalace.com/${s?.icon?.path}`}
+                          src={`https://noormahalpalace.com/files/${s?.icon?.path}`}
                           alt='social icon'
                         />
                       </a>
@@ -124,7 +124,7 @@ function Footer({ data }) {
           </div>
         </div>
         <div className='copyright_area '>
-          <p>{data?.copyright}</p>
+          <p>Copyright@{currentYear} Noor Mahal. All Right Reserved.</p>
         </div>
       </footer>
     </div>

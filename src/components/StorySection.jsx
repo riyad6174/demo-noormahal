@@ -43,6 +43,14 @@ function StorySection({
   // }, []);
 
   // ===================================
+  // useEffect(() => {
+  //   const endTime = new Date('2026-03-28T00:00:00');
+  //   if (new Date() < endTime) {
+  //     setShowPopUp(true);
+  //   }
+  // }, []);
+
+  // ===================================
   useEffect(() => {
     setShowPopUp(false);
   }, []);
@@ -77,8 +85,8 @@ function StorySection({
   //   const checkPopupTime = () => {
   //     const currentDate = new Date();
   //     // Set start and end times for the popup display window
-  //     const startTime = new Date('2025-01-26T00:00:00'); // Start showing on 30th October
-  //     const endTime = new Date('2025-01-27T06:00:00'); // Hide at 3 AM on 2nd November
+  //     const startTime = new Date('2025-09-01T00:00:00'); // Start showing on 30th October
+  //     const endTime = new Date('2025-09-05T06:00:00'); // Hide at 3 AM on 2nd November
 
   //     if (currentDate >= startTime && currentDate < endTime) {
   //       setShowPopUp(true); // Show popup
@@ -111,7 +119,7 @@ function StorySection({
                   </span>
 
                   <span className='story_title mt-2'>
-                    <span>Noormahal Palace, &nbsp; </span>
+                    <span>Noor Mahal, &nbsp; </span>
                     <span> karnal</span>
                   </span>
                 </h2>
@@ -160,8 +168,8 @@ function StorySection({
           <InstagramEmbed />
         </section> */}
         {/* <NewsSection newsData={newsData} /> */}
-        <marquee loop={30} scrollamount='10'>
-          <div className='marquee pt-5'>
+        <div className='marquee-wrapper pt-5'>
+          <div className='marquee-content'>
             <Link
               href='https://www.gqindia.com/content/looking-for-a-secluded-valentines-day-getaway-these-places-near-mumbai-and-delhi-would-be-perfect'
               style={{
@@ -214,8 +222,8 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
-                  This Long Weekend
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This
+                  Long Weekend
                 </p>
               </div>
             </Link>
@@ -342,8 +350,8 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
-                  This Long Weekend
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This
+                  Long Weekend
                 </p>
               </div>
             </Link>
@@ -470,8 +478,8 @@ function StorySection({
                   <img src='/assets/images/news/press2.webp' alt='ad-news ' />
                 </div>
                 <p className='news-text pt-2'>
-                  Noormahal Palace In Karnal Invites You To Enjoy A Regal Stay,
-                  This Long Weekend
+                  Noor Mahal In Karnal Invites You To Enjoy A Regal Stay, This
+                  Long Weekend
                 </p>
               </div>
             </Link>
@@ -576,7 +584,7 @@ function StorySection({
               </div>
             </Link>
           </div>
-        </marquee>
+        </div>
       </main>
       {/* <Popup showPopUp={showPopUp} setShowPopUp={setShowPopUp} /> */}
       <Popup

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import image1 from '../../../public/assets/images/dinings/frontier_mail_1.jpg';
 import image4 from '../../../public/assets/images/dinings/polobar1.jpg';
-import image2 from '../../../public/assets/images/dinings/dining_img2.png';
+import image2 from '../../../public/assets/images/dinings/colonelsaab.jpeg';
 import image5 from '../../../public/assets/images/dinings/Khaas_Mahal.jpg';
 import image6 from '../../../public/assets/images/dinings/cakefactory.jpg';
 import Head from 'next/head';
@@ -22,6 +22,14 @@ function page() {
   } = useForm();
 
   const onSubmit = async (data) => {
+    let ipAddress = '';
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      ipAddress = ipData.ip;
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
     try {
       setIsLoading(true);
 
@@ -30,46 +38,19 @@ function page() {
       const formattedDate = format(currentDate, 'yyyy-MM-dd');
       const formattedTime = format(currentDate, 'HH:mm');
 
-      // Prepare spreadsheet payload
-      const spreadsheetPayload = {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        message: data.message,
-        date: formattedDate,
-        time: formattedTime,
-        title: 'Query Form - Dining',
-        type: 'dining',
-        sheetName: 'Dinning',
-      };
-
       // Prepare backend payload (without date and time)
       const backendPayload = {
         name: data.name,
         email: data.email,
         phone: data.phone,
         message: data.message,
+        ipaddress: ipAddress,
+
         date: formattedDate,
         time: formattedTime,
         title: 'Query Form - Dining',
-        type: 'book',
+        type: 'Dinning',
       };
-
-      // First API call: Submit to spreadsheet
-      const spreadsheetResponse = await fetch('/api/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(spreadsheetPayload),
-      });
-
-      if (!spreadsheetResponse.ok) {
-        console.error(
-          'Failed to submit to spreadsheet:',
-          await spreadsheetResponse.text()
-        );
-      }
 
       // Second API call: Submit to backend database
       const backendResponse = await fetch(`${baseURL}/contact/`, {
@@ -82,9 +63,9 @@ function page() {
 
       setIsLoading(false);
 
-      if (spreadsheetResponse.ok && backendResponse.ok) {
+      if (backendResponse.ok) {
         console.log(
-          'Form data submitted successfully to both spreadsheet and backend!'
+          'Form data submitted successfully to both spreadsheet and backend!',
         );
         setIsSubmitted(true);
       } else {
@@ -102,15 +83,15 @@ function page() {
   return (
     <div>
       <Head>
-        <title>Exquisite Dining | Noormahal Palace</title>
+        <title>Exquisite Dining | Noor Mahal</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
         />
         <meta name='robots' content='index, follow' />
         <meta
           name='description'
-          content="Indulge in a culinary journey of flavors at Noormahal Palace's dining venues.From traditional delights to international cuisines, elevate your dining experience with us."
+          content="Indulge in a culinary journey of flavors at Noor Mahal's dining venues.From traditional delights to international cuisines, elevate your dining experience with us."
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -132,13 +113,13 @@ function page() {
               />
             </div>
             <p className='pt-2 pb-1'>
-              Noormahal Palace welcomes its guests to a pleasant dining
-              experience with exquisitely hand crafted delicacies. Indulge in
-              the art of fine dining from the royal kitchens of India and savour
-              global cuisines. Each restaurant has an interesting tale to tell
-              on account of its origin or inspiration. Noormahal Palace offers a
-              range of settings and cuisines. These are royal dining experiences
-              to remember.
+              Noor Mahal welcomes its guests to a pleasant dining experience
+              with exquisitely hand crafted delicacies. Indulge in the art of
+              fine dining from the royal kitchens of India and savour global
+              cuisines. Each restaurant has an interesting tale to tell on
+              account of its origin or inspiration. Noor Mahal offers a range of
+              settings and cuisines. These are royal dining experiences to
+              remember.
             </p>
           </div>
 
@@ -197,10 +178,10 @@ function page() {
                     Jal Mahal
                   </h3>
                   <p>
-                    Jal Mahal adoring the Beauty of Noormahal Palace, bringing
-                    you the perfect reflections. Enjoy a perfect getaway with
-                    your family and friends at Noormahal Palace and take
-                    beautiful memories away.
+                    Jal Mahal adoring the Beauty of Noor Mahal, bringing you the
+                    perfect reflections. Enjoy a perfect getaway with your
+                    family and friends at Noor Mahal and take beautiful memories
+                    away.
                   </p>
 
                   <div className='text-center'>
@@ -242,23 +223,27 @@ function page() {
                       <li style={{ fontSize: '19px', listStyleType: 'disc' }}>
                         Lunch Timing
                       </li>
-                      <p style={{ marginLeft: '25px', paddingTop: '10px' }}>
-                        Monday to Sunday
+                      <p style={{ marginLeft: '0px', paddingTop: '10px' }}>
+                        Only on Saturday and Sunday
                       </p>
-                      <p style={{ marginLeft: '25px' }}>
-                        12:30 hrs - 15:30 hrs
-                      </p>
+                      <p style={{ marginLeft: '0px' }}>12:30 Hrs - 15:30 Hrs</p>
                     </div>
                     <div className='d-flex flex-column justify-content-start align-items-start'>
-                      <li style={{ fontSize: '19px', listStyleType: 'disc' }}>
+                      <li
+                        style={{
+                          marginLeft: '20px',
+                          fontSize: '19px',
+                          listStyleType: 'disc',
+                        }}
+                      >
                         Dinner Timing
                       </li>
-                      <p style={{ marginLeft: '25px', paddingTop: '10px' }}>
+                      <p style={{ marginLeft: '20px', paddingTop: '10px' }}>
                         {' '}
-                        Only on Saturday and Sunday{' '}
+                        Monday to Sunday
                       </p>
-                      <p style={{ marginLeft: '25px' }}>
-                        19:30 hrs - 23:00 hrs
+                      <p style={{ marginLeft: '20px' }}>
+                        19:00 Hrs - 23:00 Hrs
                       </p>
                     </div>
                   </div>
@@ -286,15 +271,14 @@ function page() {
               <div className='content' data-aos='fade-left'>
                 <div className='inner_content_area mx-auto'>
                   <h3 className='heading_title text-center text-uppercase'>
-                    The Brown Sugar
+                    Colonel Saab
                   </h3>
                   <p>
-                    A place where you can enjoy an international dining
-                    experience that is quite unforgettable, this all day diner
-                    offers buffet meals as well as an à la carte menu. Relax,
-                    entertain or conduct leisurely meetings over a wide range of
-                    exotic teas, coffees and savories. It also features
-                    delectable buffet meals.
+                    Sample an array of delicious cuisines from across the globe
+                    at our contemporary all-day dining destination. Indulge in a
+                    generous buffet feast or choose from our menu of à la carte
+                    signatures, complemented by an exotic selection of tea and
+                    coffee.
                   </p>
 
                   <div className='time_grid'>

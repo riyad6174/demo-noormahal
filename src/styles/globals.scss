@@ -1,18 +1,51 @@
 //Vendor
-@import "./sass/vendors/_vendors-dir";
+@import './sass/vendors/_vendors-dir';
 
 //Abstract
-@import "./sass/abstracts/_abstracts-dir";
+@import './sass/abstracts/_abstracts-dir';
 
-//Layouts 
-@import "./sass/layouts/_layouts-dir";
+//Layouts
+@import './sass/layouts/_layouts-dir';
 
-//Pages 
-@import "./sass/pages/_pages-dir";
+//Pages
+@import './sass/pages/_pages-dir';
 
-//Components 
-@import "./sass/components/_components-dir"; 
+//Components
+@import './sass/components/_components-dir';
 
-// Base 
-@import "./sass/base/_base-dir";
+// Base
+@import './sass/base/_base-dir';
 
+// globals.scss
+.app-content {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out; // Smooth for home intro
+}
+
+.app-content-hidden {
+  opacity: 0 !important; // !important to override if needed
+  visibility: hidden !important;
+  pointer-events: none; // Prevent clicks during hide
+}
+
+// Hide content immediately on root page until intro finishes
+// This prevents flash of content before IntroVideo
+// Content is still in DOM for SEO/crawlers
+body:not(.intro-finished) .app-content-root-initial {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+// Smooth transition when intro finishes
+body.intro-finished .app-content-root-initial {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.main-content {
+  min-height: 100vh; // Stable layout
+}

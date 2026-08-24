@@ -39,6 +39,14 @@ function index() {
   };
 
   const onSubmit = async (data) => {
+    let ipAddress = '';
+    try {
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      ipAddress = ipData.ip;
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
     try {
       setIsLoading(true);
 
@@ -47,45 +55,18 @@ function index() {
       const formattedDate = format(currentDate, 'yyyy-MM-dd');
       const formattedTime = format(currentDate, 'HH:mm');
 
-      // Prepare spreadsheet payload
-      const spreadsheetPayload = {
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        message: data.message,
-        date: formattedDate,
-        time: formattedTime,
-        title: 'Query Form - Contact',
-        type: 'contact',
-        sheetName: 'contact',
-        spreadsheetId: '1fio4F5mQxqhrDwt9P5NjE_lHkIUy74s6Ng7dZfD4Mk0',
-      };
-
       // Prepare backend payload (without date and time)
       const backendPayload = {
         name: data.name,
         email: data.email,
         phone: data.phone,
+        ipaddress: ipAddress,
+        date: formattedDate,
+        time: formattedTime,
         message: data.message,
         title: 'Query Form - Contact',
         type: 'contact',
       };
-
-      // First API call: Submit to spreadsheet
-      const spreadsheetResponse = await fetch('/api/submitContact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(spreadsheetPayload),
-      });
-
-      if (!spreadsheetResponse.ok) {
-        console.error(
-          'Failed to submit to spreadsheet:',
-          await spreadsheetResponse.text()
-        );
-      }
 
       // Second API call: Submit to backend database
       const backendResponse = await fetch(`${baseURL}/contact/`, {
@@ -98,9 +79,9 @@ function index() {
 
       setIsLoading(false);
 
-      if (spreadsheetResponse.ok && backendResponse.ok) {
+      if (backendResponse.ok) {
         console.log(
-          'Form data submitted successfully to both spreadsheet and backend!'
+          'Form data submitted successfully to both spreadsheet and backend!',
         );
         setIsSubmitted(true);
       } else {
@@ -118,15 +99,15 @@ function index() {
   return (
     <div>
       <Head>
-        <title>Contact Us | Noormahal Palace</title>
+        <title>Contact Us | Noor Mahal</title>
         <meta
           name='keywords'
-          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+          content='Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
         />
         <meta name='robots' content='index, follow' />
         <meta
           name='description'
-          content='Contact Noormahal Palace for reservations, inquiries, and assistance. Our dedicated team is here to help you plan your perfect getaway, event, or dining experience.'
+          content='Contact Noor Mahal for reservations, inquiries, and assistance. Our dedicated team is here to help you plan your perfect getaway, event, or dining experience.'
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
@@ -237,7 +218,7 @@ function index() {
                 <div className='address_area '>
                   <h4>BY ROAD</h4>
                   <p>
-                    Noormahal Palace is connected by roads and national highways
+                    Noor Mahal is connected by roads and national highways
                     connecting major cities like
                   </p>
                   <ul>
@@ -346,8 +327,8 @@ function index() {
               </form>
               <div className='contact_info p-4 m-2'>
                 <h3>Karnal Office</h3>
-                <p> Noormahal Palace, Nirmal Kutia Chowk </p>
-                <p> Sector-32, Karnal-Delhi (NCR), INDIA</p>
+                <p> Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk </p>
+                <p> Sector-32, Delhi (NCR) INDIA</p>
                 <p> Tel : +91 9996787891/92/93/97/904</p>
                 <p style={{ textDecoration: 'none' }}>
                   <a href='mailto:sales@noormahal.in '>sales@noormahal.in</a>{' '}
@@ -365,10 +346,10 @@ function index() {
                 </h3>
                 <ul className='location_list'>
                   <li>
-                    <b>Karnal Office :</b> Noormahal Palace, Nirmal Kutia Chowk
+                    <b>Karnal Office :</b> Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk
                   </li>
                   <li>
-                    <p>Sector-32, Karnal-Delhi (NCR), INDIA</p>
+                    <p>Sector-32, Delhi (NCR) INDIA</p>
                   </li>
                   <li>
                     Tel :{' '}
@@ -390,7 +371,7 @@ function index() {
                 <ul className='location_list'>
                   <li>Director of Sales & Marketing</li>
                   <li>
-                    Mobile : <a href='tel: ‪+919996787904‬'> +91 9996787904‬</a>
+                    Mobile : <a href='tel: +919996787904'> +91 9996787904</a>
                   </li>
                   <li>
                     Email :{' '}
@@ -398,25 +379,25 @@ function index() {
                   </li>
                 </ul>
                 <ul className='location_list'>
-                  <li>Chander Shekhar Puri</li>
+                  <li>Mahesh Singh Jasrotia</li>
                   <li>Corporate General Manager</li>
-                  <li>
+                  {/* <li>
                     Mobile : <a href='tel:+919996787881'> +91 9996787881</a>
-                  </li>
+                  </li> */}
                   <li>
                     Email :{' '}
-                    <a href='mailto:cgm@noormahal.in'> cgm@noormahal.in</a>
+                    <a href='mailto:cgm@noormahal.in'> gm@noormahal.in</a>
                   </li>
                 </ul>
               </div>
               <div className='location_area'>
                 <h3 className='luxurious_title black-color-0c'>
-                  NOORMAHAL PALACE
+                  NOOR MAHAL
                 </h3>
                 <ul className='location_list'>
-                  <li>Noormahal Palace, Nirmal Kutia Chowk</li>
+                  <li>Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk</li>
                   <li>
-                    <p>Sector-32, Karnal-Delhi (NCR) INDIA.</p>
+                    <p>Sector-32, Delhi (NCR) INDIA</p>
                   </li>
                   <li>
                     Tel :{' '}

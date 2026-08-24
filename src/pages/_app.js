@@ -20,8 +20,10 @@ import { useRouter } from 'next/router';
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const [data, setData] = useState([]);
-  const [isIntroFinished, setIsIntroFinished] = useState(false); // Set to false to enable intro video by default
-  const [showContent, setShowContent] = useState(false);
+  const [isIntroFinished, setIsIntroFinished] = useState(false);
+
+  // Determine if the current path is the root URL
+  const isRootUrl = router.pathname === '/';
 
   useEffect(() => {
     AOS.init({
@@ -31,26 +33,33 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   useEffect(() => {
-    typeof document !== undefined
-      ? require('bootstrap/dist/js/bootstrap')
-      : null;
+    if (typeof document !== undefined) {
+      require('bootstrap/dist/js/bootstrap');
+    }
   }, []);
+
+  // Add intro-finished class to body when intro completes
+  useEffect(() => {
+    if (typeof document !== 'undefined' && isIntroFinished) {
+      document.body.classList.add('intro-finished');
+    }
+  }, [isIntroFinished]);
 
   const handleIntroFinishChanged = (value) => {
     setIsIntroFinished(value);
   };
 
-  const handleShowContentChanged = (value) => {
-    setShowContent(value);
-  };
-
   const fetchData = useCallback(async () => {
-    const response = await getSettings();
-    if (response && response.status) {
-      if (response?.data && Object.keys(response?.data?.data).length > 0) {
-        setData(response?.data?.data);
-        console.log(response?.data?.data, 'settings list');
+    try {
+      const response = await getSettings();
+      if (response && response.status) {
+        if (response?.data && Object.keys(response?.data?.data).length > 0) {
+          setData(response?.data?.data);
+          console.log(response?.data?.data, 'settings list');
+        }
       }
+    } catch (error) {
+      console.error('Settings fetch error:', error); // Log without crashing
     }
   }, []);
 
@@ -58,36 +67,29 @@ export default function App({ Component, pageProps }) {
     fetchData();
   }, [fetchData]);
 
-  // Determine if the current path is the root URL
-  const isRootUrl = router.pathname === '/';
-
-  // Show content immediately for non-root URLs
-  useEffect(() => {
-    if (!isRootUrl) {
-      setShowContent(true);
-    }
-  }, [isRootUrl]);
-
   return (
     <>
+      {/* IntroVideo only on root */}
       {isRootUrl && (
         <IntroVideo
           isIntroFinished={isIntroFinished}
           handleIntroFinish={handleIntroFinishChanged}
-          handleShowContent={handleShowContentChanged}
         />
       )}
-      {showContent && (
-        <>
-          <GoogleAnalytics />
-          <StructuredData />
-          <Navbar data={data} />
+
+      {/* ALWAYS render for SSR: Full HTML with Head/content */}
+      {/* Apply class on root page to hide content initially via CSS */}
+      <div className={isRootUrl ? 'app-content app-content-root-initial' : 'app-content'}>
+        <GoogleAnalytics />
+        <StructuredData />
+        <Navbar data={data} />
+        <main className='main-content'>
           <Component {...pageProps} />
-          <Footer data={data} />
-          <BookNowButton />
-          <ScrollToTop />
-        </>
-      )}
+        </main>
+        <Footer data={data} />
+        <BookNowButton />
+        <ScrollToTop />
+      </div>
     </>
   );
 }

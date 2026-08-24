@@ -2,7 +2,7 @@ import SpaBanner from '@/components/organisms/Banners/SpaBanner';
 import ChefSlider from '@/components/organisms/ImageSlider/ChefImageSlider';
 import RecrationalSlider from '@/components/organisms/ImageSlider/RecreationalActivities';
 import SwiperBanner from '@/components/organisms/Slider';
-import DinningForm from '@/components/pageComponents/experiencePage/DinningForm';
+import ExperienceForm from '@/components/pageComponents/experiencePage/ExperienceForm';
 import ExperiencesSection from '@/components/pageComponents/experiencePage/ExperiencesSection';
 import GymForm from '@/components/pageComponents/experiencePage/GymForm';
 import RecreationForm from '@/components/pageComponents/experiencePage/RecreationForm';
@@ -18,7 +18,7 @@ function page({ experienceData, seoData }) {
         <title>
           {seoData && seoData.metaTitle
             ? seoData.metaTitle
-            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel NoorMahal Palace'}
+            : ' Weekend Getaways near Delhi NCR & Chandigarh - Hotel Noor Mahal'}
         </title>
         <meta name='robots' content='index, follow' />
 
@@ -27,7 +27,7 @@ function page({ experienceData, seoData }) {
           content={
             seoData && seoData.keyWords
               ? seoData.keyWords
-              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel NoorMahal Palace, Karnal'
+              : ' Luxury 5 Star Hotels in Karnal, Panipat, Kurukshetra Haryana - Hotel Noor Mahal, Karnal'
           }
         />
         <meta
@@ -35,7 +35,7 @@ function page({ experienceData, seoData }) {
           content={
             seoData && seoData.metaDescription
               ? seoData.metaDescription
-              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel NoorMahal Palace offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
+              : ' An ideal weekend getaway near Delhi NCR and Chandigarh, Hotel Noor Mahal offers luxury hotel accommodations in Karnal. Book online and get the best deals on official website.'
           }
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -53,7 +53,7 @@ function page({ experienceData, seoData }) {
               <span className='black-color-0c'> LUXURIOUS FACILITIES</span>
             </h1>
             <p className='pt-2 pb-1'>
-              Noormahal Palace offers a wide variety of recreational facilities
+              Noor Mahal offers a wide variety of recreational facilities
               for guests to unwind – either by themselves or in the company of
               their loved ones. These include a spa & wellness center, and an
               outdoor pool with a bar next to it. There are also a few indoor
@@ -93,7 +93,7 @@ function page({ experienceData, seoData }) {
             </div>
 
             {/* <form className="contact-form modal-form"> */}
-            <DinningForm />
+            <ExperienceForm />
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ function page({ experienceData, seoData }) {
             </div>
 
             {/* <form className="contact-form modal-form"> */}
-            <DinningForm />
+            <ExperienceForm />
           </div>
         </div>
       </div>

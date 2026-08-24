@@ -16,7 +16,7 @@ function AmenitiesSection({ amenitiesData }) {
             />
           </div>
           <p>
-            Noormahal Palace offers a wide variety of recreational facilities
+            Noor Mahal offers a wide variety of recreational facilities
             for guests to unwind – either by themselves or in the company of
             their loved ones. These include a spa & wellness center, and an
             outdoor pool with a bar next to it. There are also a few indoor and
@@ -37,7 +37,7 @@ function AmenitiesSection({ amenitiesData }) {
                           width={400}
                           height={400}
                           loading='lazy'
-                          src={`https://api.noormahalpalace.com/${aminities.images[0].path}`}
+                          src={`https://noormahalpalace.com/files/${aminities.images[0].path}`}
                           alt='Salon-image'
                         />
                       </div>
@@ -53,7 +53,7 @@ function AmenitiesSection({ amenitiesData }) {
           </div>
           {/*  */}
 
-          {}
+          { }
           <div className='amentites_outer_grid'>
             {amenitiesData &&
               amenitiesData
@@ -64,7 +64,7 @@ function AmenitiesSection({ amenitiesData }) {
                     <div key={index} className='amentites_innter_grid'>
                       <div className='img'>
                         <img
-                          src={`https://api.noormahalpalace.com/${aminities.images[0].path}`}
+                          src={`https://noormahalpalace.com/files/${aminities.images[0].path}`}
                           alt='aminities-image'
                         />
                       </div>
