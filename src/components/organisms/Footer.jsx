@@ -1,9 +1,6 @@
 import Link from 'next/link';
 
-import { BiLogoTripAdvisor } from 'react-icons/bi';
-
 function Footer({ data }) {
-  console.log(data.address, data.email, data.phone, data.social, data);
   const currentYear = new Date().getFullYear();
   return (
     <div>
@@ -59,9 +56,7 @@ function Footer({ data }) {
                 <h3>
                   Tel:
                   <a href='tel:+919996787904'>+919996787904, 999678792/93/97</a>
-                  <a href='tel:+919996787904'>+919996787904, 999678792/93/97</a>
                 </h3>
-
 
                 <h3>
                   Email :
@@ -70,13 +65,7 @@ function Footer({ data }) {
                     Teena.Nichani@marriott.com
                   </a>
                   {/* <a href='mailto:salesbqts@noormahal.in'>
-                  <a href='mailto:Teena.Nichani@marriott.com'>
-                    {' '}
-                    Teena.Nichani@marriott.com
-                  </a>
-                  {/* <a href='mailto:salesbqts@noormahal.in'>
                     salesbqts@noormahal.in
-                  </a> */}
                   </a> */}
                 </h3>
               </div>
@@ -89,6 +78,7 @@ function Footer({ data }) {
                     <img
                       src='/assets/images/logos/marriott.png'
                       alt='marriott-logo'
+                      style={{ transform: 'scale(0.85)' }}
                     />
                   </a>
                 </li>
