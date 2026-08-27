@@ -50,23 +50,26 @@ function Footer({ data }) {
                 <h3>Address :</h3>
                 <a href='/' className='location'>
                   {/* {data.address} */}
-                  Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk,
-                  Sector-32, Delhi (NCR) INDIA
+                  Noor Mahal By Marriott International NH-44, Sector-32,
+                  Karnal.(Haryana)
                 </a>
               </div>
               <div className='address_item'>
                 <h3>Contact :</h3>
-
                 <h3>
                   Tel:
-                  <a href='tel:+919996787891'>{data.phone}</a>
+                  <a href='tel:+919996787904'>+919996787904, 999678792/93/97</a>
                 </h3>
+
                 <h3>
                   Email :
-                  <a href='mailto:sales@noormahal.in '>sales@noormahal.in /</a>
-                  <a href='mailto:salesbqts@noormahal.in'>
-                    salesbqts@noormahal.in
+                  <a href='mailto:Teena.Nichani@marriott.com'>
+                    {' '}
+                    Teena.Nichani@marriott.com
                   </a>
+                  {/* <a href='mailto:salesbqts@noormahal.in'>
+                    salesbqts@noormahal.in
+                  </a> */}
                 </h3>
               </div>
             </div>

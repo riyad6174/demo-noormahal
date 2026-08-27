@@ -69,7 +69,7 @@ function SwiperBanner() {
                   width={1500}
                   height={1500}
                   className='hero_item '
-                  src={slider1}
+                  src={slider2}
                   alt='slider image'
                   priority
                 />
@@ -79,7 +79,7 @@ function SwiperBanner() {
                   width={1500}
                   height={1500}
                   className='hero_item '
-                  src={slider2}
+                  src={slider1}
                   alt='slider image'
                   priority
                 />

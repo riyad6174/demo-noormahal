@@ -26,10 +26,13 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
+.env
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+noormahal-7cd3602ed7cc-latest.json
+noormahal-7cd3602ed7cc-latest.json

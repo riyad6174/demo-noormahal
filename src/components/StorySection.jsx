@@ -119,25 +119,26 @@ function StorySection({
                   </span>
 
                   <span className='story_title mt-2'>
-                    <span>Noor Mahal&nbsp; </span>
-                    <span> karnal</span>
+                    <span>
+                      NoorMahal by Marriott International &nbsp; <br />{' '}
+                    </span>
+                    <span> Autograph Collection Hotels</span>
                   </span>
                 </h2>
 
                 <p>
-                  Story Of Noor Mahal, Autograph Collection, Marriott
-                  International Hotel Embracing India’s rich heritage, Noor
-                  Mahal endorses the opulent royalty of the era of Indian
-                  maharajas, flaunting an enchanting fusion of elements inspired
-                  from traditional Mughal and Rajputana schools of architecture.
-                  A unique mélange of traditional royal essence with modern
-                  amenities, Noor Mahal, Autograph Collection, Marriott
-                  International Hotel in Karnal exudes warmth and comfort for
-                  all its guests by preserving the legacy of India’s deep-rooted
-                  past heritage. Stunningly set in vast expanse of natural
-                  splendour, Noor Mahal, Autograph Collection, Marriott
-                  International Hotel is truly a one of its kind Palace in the
-                  region; an epitome of grandiose.
+                  The Story of Noor Mahal, by Marriott International Hotel
+                  Embraces India’s rich heritage and endorses the opulent
+                  royalty of the era of Indian maharajas. Flaunting an
+                  enchanting fusion of elements inspired from traditional Mughal
+                  and Rajputana schools of architecture is a unique mélange of
+                  traditional royal essence with modern amenities. Noor Mahal,
+                  by Marriott International Hotel in Delhi NCR exudes warmth and
+                  comfort for all its guests by preserving the legacy of India’s
+                  deep-rooted past heritage. Stunningly set in vast expanse of
+                  natural splendor, this Marriott International Hotel is truly a
+                  one of its kind Palace in the region right from Lahore to New
+                  Delhi.
                 </p>
                 <img
                   src='assets/marriott-bonvoy-seeklogo.png'
