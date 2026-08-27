@@ -327,15 +327,21 @@ function index() {
               </form>
               <div className='contact_info p-4 m-2'>
                 <h3>Karnal Office</h3>
-                <p> Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk </p>
-                <p> Sector-32, Delhi (NCR) INDIA</p>
-                <p> Tel : +91 9996787891/92/93/97/904</p>
+                <p>
+                  {' '}
+                  Noor Mahal By Marriott International NH-44, Sector-32,
+                  Karnal.(Haryana)
+                </p>
+                {/* <p> Sector-32, Delhi (NCR) INDIA</p> */}
+                <p> Tel : +919996787904, 999678792/93/97</p>
                 <p style={{ textDecoration: 'none' }}>
-                  <a href='mailto:sales@noormahal.in '>sales@noormahal.in</a>{' '}
+                  <a href='mailto:Teena.Nichani@marriott.com'>
+                    Teena.Nichani@marriott.com
+                  </a>{' '}
                   <br />
-                  <a href='mailto:salesbqts@noormahal.in'>
+                  {/* <a href='mailto:salesbqts@noormahal.in'>
                     salesbqts@noormahal.in
-                  </a>
+                  </a> */}
                 </p>
               </div>
             </div>
@@ -346,7 +352,8 @@ function index() {
                 </h3>
                 <ul className='location_list'>
                   <li>
-                    <b>Karnal Office :</b> Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk
+                    <b>Karnal Office :</b> Noor Mahal Autograph Collection
+                    Hotels, Nirmal Kutia Chowk
                   </li>
                   <li>
                     <p>Sector-32, Delhi (NCR) INDIA</p>
@@ -391,11 +398,11 @@ function index() {
                 </ul>
               </div>
               <div className='location_area'>
-                <h3 className='luxurious_title black-color-0c'>
-                  NOOR MAHAL
-                </h3>
+                <h3 className='luxurious_title black-color-0c'>NOOR MAHAL</h3>
                 <ul className='location_list'>
-                  <li>Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk</li>
+                  <li>
+                    Noor Mahal Autograph Collection Hotels, Nirmal Kutia Chowk
+                  </li>
                   <li>
                     <p>Sector-32, Delhi (NCR) INDIA</p>
                   </li>
