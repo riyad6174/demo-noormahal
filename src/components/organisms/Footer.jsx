@@ -59,7 +59,9 @@ function Footer({ data }) {
                 <h3>
                   Tel:
                   <a href='tel:+919996787904'>+919996787904, 999678792/93/97</a>
+                  <a href='tel:+919996787904'>+919996787904, 999678792/93/97</a>
                 </h3>
+
 
                 <h3>
                   Email :
@@ -68,7 +70,13 @@ function Footer({ data }) {
                     Teena.Nichani@marriott.com
                   </a>
                   {/* <a href='mailto:salesbqts@noormahal.in'>
+                  <a href='mailto:Teena.Nichani@marriott.com'>
+                    {' '}
+                    Teena.Nichani@marriott.com
+                  </a>
+                  {/* <a href='mailto:salesbqts@noormahal.in'>
                     salesbqts@noormahal.in
+                  </a> */}
                   </a> */}
                 </h3>
               </div>
