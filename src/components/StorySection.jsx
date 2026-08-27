@@ -119,8 +119,10 @@ function StorySection({
                   </span>
 
                   <span className='story_title mt-2'>
-                    <span>NoorMahal by Marriott International &nbsp; <br/> </span>
-                    <span> (Autograph Collection Hotels)</span>
+                    <span>
+                      NoorMahal by Marriott International &nbsp; <br />{' '}
+                    </span>
+                    <span> Autograph Collection Hotels</span>
                   </span>
                 </h2>
 
