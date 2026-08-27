@@ -77,12 +77,12 @@ function Footer({ data }) {
               {/* d-flex align-items-center justify-content-end flex-wrap */}
               <ul className='footer_shape_list d-flex text-center align-items-center justify-content-end flex-wrap gap-4'>
                 <li className=''>
-                  {/* <a href='https://www.hoteljewels.com/' target='_blank'> */}
-                  <img
-                    src='/assets/images/logos/marriott.png'
-                    alt='marriott-logo'
-                  />
-                  {/* </a> */}
+                  <a href='https://www.hoteljewels.com/' target='_blank'>
+                    <img
+                      src='/assets/images/logos/marriott.png'
+                      alt='marriott-logo'
+                    />
+                  </a>
                 </li>
                 <li className=''>
                   <a href='https://www.hoteljewels.com/' target='_blank'>
