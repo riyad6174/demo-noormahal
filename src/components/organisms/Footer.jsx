@@ -50,7 +50,7 @@ function Footer({ data }) {
                 <h3>Address :</h3>
                 <a href='/' className='location'>
                   {/* {data.address} */}
-                  Noor Mahal By Marriott International NH-44, Sector-32,
+                  Noor Mahal By Marriott International <br /> NH-44, Sector-32,
                   Karnal.(Haryana)
                 </a>
               </div>
@@ -76,6 +76,14 @@ function Footer({ data }) {
             <div className='footer_rigt_area'>
               {/* d-flex align-items-center justify-content-end flex-wrap */}
               <ul className='footer_shape_list d-flex text-center align-items-center justify-content-end flex-wrap gap-4'>
+                <li className=''>
+                  {/* <a href='https://www.hoteljewels.com/' target='_blank'> */}
+                  <img
+                    src='/assets/images/logos/marriott.png'
+                    alt='marriott-logo'
+                  />
+                  {/* </a> */}
+                </li>
                 <li className=''>
                   <a href='https://www.hoteljewels.com/' target='_blank'>
                     <img
