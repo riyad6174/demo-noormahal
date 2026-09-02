@@ -34,5 +34,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Google service-account key files — never commit these
 noormahal-7cd3602ed7cc-latest.json
-noormahal-7cd3602ed7cc-latest.json
+*-service-account*.json
+noormahal-*.json
+polar-plate-*.json
+src/utils/*.json
