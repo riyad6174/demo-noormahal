@@ -333,7 +333,7 @@ function index() {
                   Karnal.(Haryana)
                 </p>
                 {/* <p> Sector-32, Delhi (NCR) INDIA</p> */}
-                <p> Tel : +919996787904, 999678792/93/97</p>
+                <p> Tel : +919996766644, 999678792/93/97</p>
                 <p style={{ textDecoration: 'none' }}>
                   <a href='mailto:Teena.Nichani@marriott.com'>
                     Teena.Nichani@marriott.com
@@ -378,7 +378,7 @@ function index() {
                 <ul className='location_list'>
                   <li>Director of Sales & Marketing</li>
                   <li>
-                    Mobile : <a href='tel: +919996787904'> +91 9996787904</a>
+                    Mobile : <a href='tel: +919996766644'> +91 9996766644</a>
                   </li>
                   <li>
                     Email :{' '}
